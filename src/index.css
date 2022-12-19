@@ -1,13 +1,77 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import-normalize; /* bring in normalize.css styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'Marianna';
+  font-weight: 400;
+  src: url('./fonts/marianna/marianna.eot');
+  src: url('./fonts/marianna/marianna.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/marianna/marianna.woff2') format('woff2'),
+    url('./fonts/marianna/marianna.woff') format('woff'),
+    url('./fonts/marianna/marianna.ttf') format('truetype'),
+    url('./fonts/marianna/marianna.svg#marianna') format('svg');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  --accent-bg: #ff852d;
+  --accent-text: #ff852d;
+  --background: #030305;
+  --button-bg: rgba(255, 255, 255, 0.05);
+  --panel-bg: #0f0908;
+  --text: #b5b5b5;
+  --white-text: #ffffff;
+  --shadow: 0px 0px 209px -30px rgba(199, 103, 56, 0.2);
+  --white: #ffffff;
+  --overlay: rgba(3, 3, 5, 0.7);
+  --good: #1f9632;
+  --error: #f03333;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 150%;
+
+  background-color: var(--background);
+  color: var(--white);
+}
+
+a {
+  text-decoration: none;
+}
+
+a:focus {
+  outline: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+svg {
+  fill: currentColor;
+}
+
+button {
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+}
+
+section {
+  margin: 0 auto;
 }

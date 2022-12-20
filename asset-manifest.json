@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.e2d5b0fe.css",
-    "main.js": "/static/js/main.a2eb55b0.js",
-    "static/media/marianna.svg": "/static/media/marianna.6b010a98d3694b48d32b.svg",
-    "static/media/marianna.eot": "/static/media/marianna.fb2d74796f5162918d27.eot",
-    "static/media/marianna.ttf": "/static/media/marianna.af26289d937bce4f48dc.ttf",
-    "static/media/marianna.woff": "/static/media/marianna.e1196a120ac9958aafc2.woff",
-    "static/media/marianna.woff2": "/static/media/marianna.452ca86af04b35179812.woff2",
-    "index.html": "/index.html",
-    "main.e2d5b0fe.css.map": "/static/css/main.e2d5b0fe.css.map",
-    "main.a2eb55b0.js.map": "/static/js/main.a2eb55b0.js.map"
+    "main.css": "/patissier-client/static/css/main.0bca469d.css",
+    "main.js": "/patissier-client/static/js/main.38773c50.js",
+    "static/media/marianna.svg": "/patissier-client/static/media/marianna.6b010a98d3694b48d32b.svg",
+    "static/media/marianna.eot": "/patissier-client/static/media/marianna.fb2d74796f5162918d27.eot",
+    "static/media/marianna.ttf": "/patissier-client/static/media/marianna.af26289d937bce4f48dc.ttf",
+    "static/media/marianna.woff": "/patissier-client/static/media/marianna.e1196a120ac9958aafc2.woff",
+    "static/media/marianna.woff2": "/patissier-client/static/media/marianna.452ca86af04b35179812.woff2",
+    "index.html": "/patissier-client/index.html",
+    "main.0bca469d.css.map": "/patissier-client/static/css/main.0bca469d.css.map",
+    "main.38773c50.js.map": "/patissier-client/static/js/main.38773c50.js.map"
   },
   "entrypoints": [
-    "static/css/main.e2d5b0fe.css",
-    "static/js/main.a2eb55b0.js"
+    "static/css/main.0bca469d.css",
+    "static/js/main.38773c50.js"
   ]
 }

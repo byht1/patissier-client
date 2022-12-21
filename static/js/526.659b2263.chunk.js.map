@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/526.659b2263.chunk.js","mappings":"yLAEe,SAASA,IACtB,OAAO,4CACT,C","sources":["page/SelectedProduct/SelectedProduct.jsx"],"sourcesContent":["import React from 'react';\n\nexport default function SelectedProduct() {\n  return <div>SelectedProduct</div>;\n}\n"],"names":["SelectedProduct"],"sourceRoot":""}

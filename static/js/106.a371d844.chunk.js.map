@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/106.a371d844.chunk.js","mappings":"yLAEe,SAASA,IACtB,OAAO,2CACT,C","sources":["page/CurrentCourses/CurrentCourses.jsx"],"sourcesContent":["import React from 'react';\n\nexport default function CurrentCourses() {\n  return <div>CurrentCourses</div>;\n}\n"],"names":["CurrentCourses"],"sourceRoot":""}

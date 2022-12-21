@@ -15,6 +15,7 @@
 html {
   --accent-bg: #ff852d;
   --accent-text: #ff852d;
+  --accent-hover: #ff6b00;
   --background: #030305;
   --button-bg: rgba(255, 255, 255, 0.05);
   --panel-bg: #0f0908;
@@ -25,6 +26,10 @@ html {
   --overlay: rgba(3, 3, 5, 0.7);
   --good: #1f9632;
   --error: #f03333;
+
+  --transition-bg: background-color 250ms linear;
+  --transition-color: color 250ms linear;
+  --transition-border-color: border-color 250ms linear;
 }
 
 * {

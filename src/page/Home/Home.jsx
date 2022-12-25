@@ -1,3 +1,4 @@
+import { Box } from 'components/global/Box';
 import { Button, ButtonsGhost } from 'components/global/button';
 import { TitleH1, TitleH2, TitleH3, TitleH4 } from 'components/global/text';
 import { Text } from 'components/global/text/Text';
@@ -6,6 +7,7 @@ import React from 'react';
 export default function Home() {
   return (
     <>
+      <Box display="np"></Box>
       <TitleH1>Title one</TitleH1>
       <TitleH2>Title Two</TitleH2>
       <TitleH3>Title Three</TitleH3>

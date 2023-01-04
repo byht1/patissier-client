@@ -1,6 +1,11 @@
-import { Container } from 'components/global/Container';
+// import { Container } from 'components/global/Container';
 import React from 'react';
+import { Courses } from 'components/modules/Courses/Courses';
 
 export default function Home() {
-  return <Container>Home</Container>;
+  return (
+    <div>
+      <Courses />
+    </div>
+  );
 }

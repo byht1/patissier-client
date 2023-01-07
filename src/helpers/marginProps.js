@@ -18,8 +18,8 @@ export const marginProps = p => {
   if (p.m) {
     margin.push(marginPropsType(p.m));
   }
-
-  return margin.length ? margin.join(',') : '';
+  console.log('🚀  margin', margin);
+  return margin.length ? margin.join(';') : '';
 };
 
 function marginPropsType(value, position = 'margin') {

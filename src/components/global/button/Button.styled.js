@@ -1,13 +1,15 @@
-import { marginProps } from 'helpers';
+import { marginProps, paddingProps, widthTypeOf } from 'helpers';
 import styled from 'styled-components';
 
 const Button = styled.button`
   border: none;
   outline: none;
 
-  ${p => marginProps(p)}
-
   padding: 16px;
+
+  ${p => marginProps(p)}
+  ${p => paddingProps(p)}
+  ${p => p.width && `${widthTypeOf(p.width)}; text-align: center;`}
 
   border-radius: ${p => p.theme.radii.normal};
 
@@ -17,16 +19,6 @@ const Button = styled.button`
   line-height: ${p => p.theme.lineHeights.heading};
 
   transition: var(--transition-bg), var(--transition-color);
-
-  ${p => {
-    if (!p.width) return;
-
-    const type = typeof p.width;
-
-    return type === 'string'
-      ? `width: ${p.width}; text-align: center;`
-      : `width: ${p.width}px; text-align: center;`;
-  }}
 `;
 
 export const Btn = styled(Button)`

@@ -1,4 +1,4 @@
-import { marginType } from 'helpers';
+import { marginType, widthType } from 'helpers';
 import PropTypes from 'prop-types';
 
 export const weights = Object.freeze({
@@ -48,6 +48,11 @@ export const propTypeText = {
   ml: marginType,
   mr: marginType,
   m: PropTypes.string,
+  width: widthType,
   color: PropTypes.oneOf(colorsEnum),
-  children: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+    PropTypes.string,
+  ]).isRequired,
 };

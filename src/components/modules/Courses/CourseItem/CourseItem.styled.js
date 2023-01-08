@@ -1,10 +1,4 @@
-import { ButtonsGhost } from 'components/global/button';
-import { TitleH4 } from 'components/global/text';
 import styled from 'styled-components';
-
-export const Button = styled(ButtonsGhost)`
-  padding: 16px 40px;
-`;
 
 export const CourseCard = styled.div`
   width: 360px;
@@ -18,13 +12,11 @@ export const CourseCard = styled.div`
   transition: var(--transition-border-color);
   &:hover {
     border: 1px solid var(--accent-bg);
+    button {
+      background-color: ${p => p.theme.colors.aBg};
+      color: ${p => p.theme.colors.bg};
+    }
   }
-`;
-
-export const CardTitle = styled(TitleH4)`
-  color: var(--accent-text);
-  text-align: center;
-  margin-bottom: 24px;
 `;
 
 export const ImageList = styled.ul`
@@ -38,6 +30,7 @@ export const ImageWpar = styled.li`
   height: 160px;
   background-color: var(--background);
 `;
+
 export const CourseImage = styled.img`
   display: block;
   width: 100%;
@@ -52,6 +45,7 @@ export const InfoList = styled.ul`
   gap: 8px;
   margin-bottom: 32px;
 `;
+
 export const InfoItem = styled.li`
   display: flex;
   align-items: center;

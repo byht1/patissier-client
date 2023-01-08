@@ -6,11 +6,11 @@ import {
   InfoList,
   InfoItem,
   CardFooter,
-  Button,
 } from './CourseItem.styled';
 
 import Image from 'img/courses/courseImg.jpg';
 import { Text, TitleH4 } from 'components/global/text';
+import { ButtonsGhost } from 'components/global/button';
 
 export const CourseItem = () => {
   return (
@@ -60,7 +60,7 @@ export const CourseItem = () => {
         <Text weight={600} size={20} lh="big">
           10 000грн.
         </Text>
-        <Button>Детальніше</Button>
+        <ButtonsGhost p="16px 40px">Детальніше</ButtonsGhost>
       </CardFooter>
     </CourseCard>
   );

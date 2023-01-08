@@ -1,26 +1,23 @@
-// import { ButtonsGhost } from 'components/global/button';
 import {
   CourseCard,
-  CardTitle,
   ImageList,
   ImageWpar,
   CourseImage,
-  DetailsText,
   InfoList,
   InfoItem,
-  InfoTitle,
-  InfoText,
   CardFooter,
-  Price,
   Button,
 } from './CourseItem.styled';
 
 import Image from 'img/courses/courseImg.jpg';
+import { Text, TitleH4 } from 'components/global/text';
 
 export const CourseItem = () => {
   return (
     <CourseCard>
-      <CardTitle>Випічка</CardTitle>
+      <TitleH4 textAlign="center" color="at" mb={24}>
+        Випічка
+      </TitleH4>
       <ImageList>
         <ImageWpar>
           <CourseImage src={Image} alt="" loading="lazy" />
@@ -29,26 +26,40 @@ export const CourseItem = () => {
           <CourseImage src={Image} alt="" loading="lazy" />
         </ImageWpar>
       </ImageList>
-      <DetailsText>
+      <Text mb={24} lh="body">
         На курсі ви навчитеся працювати з різними видами тіста, створювати
         круасани, сінабони та запашні булочки
-      </DetailsText>
+      </Text>
       <InfoList>
         <InfoItem>
-          <InfoTitle>Група:</InfoTitle>
-          <InfoText>15 осіб</InfoText>
+          <Text weight={700} size={16} lh="big">
+            Група:
+          </Text>
+          <Text weight={400} size={20} lh="big">
+            15 осіб
+          </Text>
         </InfoItem>
         <InfoItem>
-          <InfoTitle>Термін:</InfoTitle>
-          <InfoText>5 днів</InfoText>
+          <Text weight={700} size={16} lh="big">
+            Термін:
+          </Text>
+          <Text weight={400} size={20} lh="big">
+            5 днів
+          </Text>
         </InfoItem>
         <InfoItem>
-          <InfoTitle>Старт:</InfoTitle>
-          <InfoText>15 грудня</InfoText>
+          <Text weight={700} size={16} lh="big">
+            Старт:
+          </Text>
+          <Text weight={400} size={20} lh="big">
+            15 грудня
+          </Text>
         </InfoItem>
       </InfoList>
       <CardFooter>
-        <Price>10 000грн.</Price>
+        <Text weight={600} size={20} lh="big">
+          10 000грн.
+        </Text>
         <Button>Детальніше</Button>
       </CardFooter>
     </CourseCard>

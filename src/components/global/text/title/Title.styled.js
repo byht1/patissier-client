@@ -9,8 +9,8 @@ export const H1 = styled.h1`
   font-weight: ${p => p.theme.fontWeights[weights[p.weight]]};
   font-size: ${p => p.theme.fontSizes[sizes[p.size]]};
   line-height: ${p => p.theme.lineHeights[p.lh]};
-  ${p => p.ta && `text-align: ${p.textAlign};`}
-  ${p => p.c && `color: ${p.theme.colors[p.color]}`}
+  ${p => p.textAlign && `text-align: ${p.textAlign};`}
+  ${p => p.color && `color: ${p.theme.colors[p.color]}`}
 `;
 
 export const H2 = styled.h2`
@@ -20,8 +20,8 @@ export const H2 = styled.h2`
   font-weight: ${p => p.theme.fontWeights[weights[p.weight]]};
   font-size: ${p => p.theme.fontSizes[sizes[p.size]]};
   line-height: ${p => p.theme.lineHeights[p.lh]};
-  ${p => p.ta && `text-align: ${p.textAlign};`}
-  ${p => p.c && `color: ${p.theme.colors[p.color]}`}
+  ${p => p.textAlign && `text-align: ${p.textAlign};`}
+  ${p => p.color && `color: ${p.theme.colors[p.color]}`}
 `;
 
 export const H3 = styled.h3`
@@ -31,8 +31,8 @@ export const H3 = styled.h3`
   font-weight: ${p => p.theme.fontWeights[weights[p.weight]]};
   font-size: ${p => p.theme.fontSizes[sizes[p.size]]};
   line-height: ${p => p.theme.lineHeights[p.lh]};
-  ${p => p.ta && `text-align: ${p.textAlign};`}
-  ${p => p.c && `color: ${p.theme.colors[p.color]}`}
+  ${p => p.textAlign && `text-align: ${p.textAlign};`}
+  ${p => p.color && `color: ${p.theme.colors[p.color]}`}
 `;
 
 export const H4 = styled.h4`
@@ -42,6 +42,6 @@ export const H4 = styled.h4`
   font-weight: ${p => p.theme.fontWeights[weights[p.weight]]};
   font-size: ${p => p.theme.fontSizes[sizes[p.size]]};
   line-height: ${p => p.theme.lineHeights[p.lh]};
-  ${p => p.ta && `text-align: ${p.textAlign};`}
-  ${p => p.c && `color: ${p.theme.colors[p.color]}`}
+  ${p => p.textAlign && `text-align: ${p.textAlign};`}
+  ${p => p.color && `color: ${p.theme.colors[p.color]}`}
 `;

@@ -1,35 +1,29 @@
-// import { Text, TitleH2 } from 'components/global/text';
-// import { ButtonsGhost } from 'components/global/button';
+import { Text, TitleH2 } from 'components/global/text';
 import { CourseItem } from './CourseItem/CourseItem';
-import {
-  FlexContainer,
-  TopTitle,
-  TopText,
-  Button,
-  CourseList,
-} from './Courses.styled';
+import { FlexContainer, TopText, Button, CourseList } from './Courses.styled';
 
 const { Box } = require('components/global/Box');
-// const { Container } = require('components/global/Container');
 
 export const Courses = () => {
   return (
-    <>
-      <Box pt={114} pb={100}>
-        <FlexContainer display="flex">
-          <TopTitle>Курси та майстер-класи</TopTitle>
-          <TopText>
-            Перегляньте найближчі по даті події, авторські курси та
-            майстер-класи
-          </TopText>
-          <Button>Дивитись усі заходи</Button>
-          <CourseList>
-            <CourseItem />
-            <CourseItem />
-            <CourseItem />
-          </CourseList>
-        </FlexContainer>
-      </Box>
-    </>
+    <Box pt={114} pb={100}>
+      <FlexContainer>
+        <TitleH2 mb={32} color="at">
+          Курси та майстер-класи
+        </TitleH2>
+        <TopText mb={30} color="t" lh="body">
+          Перегляньте найближчі по даті події, авторські курси та майстер-класи
+        </TopText>
+        <Text mb={30} color="t" lh="body" width="272px">
+          Перегляньте найближчі по даті події, авторські курси та майстер-класи
+        </Text>
+        <Button>Дивитись усі заходи</Button>
+        <CourseList>
+          <CourseItem />
+          <CourseItem />
+          <CourseItem />
+        </CourseList>
+      </FlexContainer>
+    </Box>
   );
 };

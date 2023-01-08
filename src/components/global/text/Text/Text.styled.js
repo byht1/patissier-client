@@ -9,6 +9,6 @@ export const TextBox = styled.p`
   font-weight: ${p => p.theme.fontWeights[weights[p.weight]]};
   font-size: ${p => p.theme.fontSizes[sizes[p.size]]};
   line-height: ${p => p.theme.lineHeights[p.lh]};
-  ${p => p.ta && `text-align: ${p.textAlign};`}
+  ${p => p.textAlign && `text-align: ${p.textAlign};`}
   ${p => p.color && `color: ${p.theme.colors[p.color]}`}
 `;

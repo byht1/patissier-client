@@ -1,10 +1,14 @@
 import React from 'react';
-import { TitleH2 } from 'components/global/text';
+import { Button } from 'components/global/button';
+import { Text } from 'components/global/text';
 
 export default function Home() {
   return (
     <div>
-      <TitleH2 col="ssssss"> 111111111111111</TitleH2>
+      {/* <Button width={400}> 111111111111111</Button>
+      <Text width={500} mt="20px" textAlign="center">
+        22222222222
+      </Text> */}
       {/* Це лише приклад назви можуть бути інші */}
       {/* <Hero /> */}
       {/* <Statistics /> */}

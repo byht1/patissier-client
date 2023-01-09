@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'components/global/button';
 import { Text } from 'components/global/text';
-
+import { Insta } from 'components/modules/Insta';
 export default function Home() {
   return (
     <div>
@@ -17,7 +17,7 @@ export default function Home() {
       {/* <Course /> */}
       {/* <Reviews /> */}
       {/* <Spam /> */}
-      {/* <Insta /> */}
+      <Insta />
     </div>
   );
 }

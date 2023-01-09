@@ -1,0 +1,1 @@
+export { Insta } from './Insta';

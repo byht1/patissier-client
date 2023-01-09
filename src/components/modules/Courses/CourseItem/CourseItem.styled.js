@@ -28,7 +28,6 @@ export const ImageList = styled.ul`
 export const ImageWpar = styled.li`
   width: 150px;
   height: 160px;
-  background-color: var(--background);
 `;
 
 export const CourseImage = styled.img`
@@ -37,6 +36,7 @@ export const CourseImage = styled.img`
   height: 102%;
   object-fit: cover;
   border-radius: 12px;
+  background-color: var(--panel-bg);
 `;
 
 export const InfoList = styled.ul`

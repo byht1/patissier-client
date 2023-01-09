@@ -1,10 +1,10 @@
 import React from 'react';
-import { Courses } from 'components/modules/Courses/Courses';
+import { Courses } from 'components/modules/Courses';
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Courses />
-    </div>
+    </>
   );
 }

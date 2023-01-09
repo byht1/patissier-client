@@ -1,17 +1,17 @@
+import { Box } from 'components/global/Box';
+import { Container } from 'components/global/Container';
 import { Text, TitleH2 } from 'components/global/text';
-import { CourseItem } from './CourseItem/CourseItem';
-import { FlexContainer, Button, CourseList } from './Courses.styled';
-
-const { Box } = require('components/global/Box');
+import { CourseItem } from './CourseItem';
+import { Button, CourseList } from './Courses.styled';
 
 export const Courses = () => {
   return (
-    <Box pt={114} pb={100}>
-      <FlexContainer>
+    <Container pt={114} pb={100}>
+      <Box display="flex" flexDirection="column" alignItems="center">
         <TitleH2 mb={32} color="at">
           Курси та майстер-класи
         </TitleH2>
-        <Text mb={30} color="t" lh="body" width={272}>
+        <Text mb={30} color="t" lh="body" textAlign="center" width={272}>
           Перегляньте найближчі по даті події, авторські курси та майстер-класи
         </Text>
         <Button>Дивитись усі заходи</Button>
@@ -20,7 +20,7 @@ export const Courses = () => {
           <CourseItem />
           <CourseItem />
         </CourseList>
-      </FlexContainer>
-    </Box>
+      </Box>
+    </Container>
   );
 };

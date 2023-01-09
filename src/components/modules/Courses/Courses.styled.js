@@ -1,12 +1,5 @@
 import styled from 'styled-components';
 import { ButtonsGhost } from 'components/global/button';
-import { Container } from 'components/global/Container';
-
-export const FlexContainer = styled(Container)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
 
 export const Button = styled(ButtonsGhost)`
   margin-right: auto;

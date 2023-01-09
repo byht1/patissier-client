@@ -4,14 +4,14 @@ export const CourseCard = styled.div`
   width: 360px;
   padding: 24px;
 
-  background-color: var(--background);
-  box-shadow: var(--shadow);
-  border-radius: 12px;
+  background-color: ${p => p.theme.colors.bg};
+  box-shadow: ${p => p.theme.shadows.s};
+  border-radius: ${p => p.theme.radii.normal};
   border: 1px solid transparent;
 
   transition: var(--transition-border-color);
   &:hover {
-    border: 1px solid var(--accent-bg);
+    border: 1px solid ${p => p.theme.colors.aBg};
     button {
       background-color: ${p => p.theme.colors.aBg};
       color: ${p => p.theme.colors.bg};
@@ -35,8 +35,8 @@ export const CourseImage = styled.img`
   width: 100%;
   height: 102%;
   object-fit: cover;
-  border-radius: 12px;
-  background-color: var(--panel-bg);
+  border-radius: ${p => p.theme.radii.normal};
+  background-color: ${p => p.theme.colors.panelBg};
 `;
 
 export const InfoList = styled.ul`

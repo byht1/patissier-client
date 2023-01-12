@@ -4,15 +4,15 @@ export const ReviewItem = ({ reviewItem }) => {
   return (
     <>
       <ReviewWrap>
-        <ReviewData>
+        <RevieData>
           <ImgWrap>
             <img src={reviewItem.avatar} alt="аватар"></img>
           </ImgWrap>
-          <ReviewData>
+          <div>
             <p>{reviewItem.name}</p>
             <p>{reviewItem.date}</p>
-          </ReviewData>
-        </div>
+          </div>
+        </RevieData>
         <p>{reviewItem.comments}</p>
         Перегляньте найближчі по даті події, авторські курси та майстер-класи
       </ReviewWrap>

@@ -1,12 +1,11 @@
 import { server } from './basic';
 
-const REVIEWS_URL = '/reviews';
+const UrlReviews = Object.freeze({ all: './reviewss' });
 
 export const getReviews = async () => {
   try {
-    const response = await server.get(REVIEWS_URL);
-    const reviews = await response.data;
-    return reviews;
+    const { data } = await server.get(UrlReviews.all);
+    return data;
   } catch (error) {
     console.error(error);
     throw error;

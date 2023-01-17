@@ -8,22 +8,31 @@ import {
   ReviewComment,
 } from './ReviewItem.styled';
 
-export const ReviewItem = ({ reviewItem }) => {
-  const formatedDate = formatDate(reviewItem.date);
+export const ReviewItem = ({
+  reviewItem: { date, avatar, name, comments },
+}) => {
+  // if (date.length>6) {
+  //   formatDate(date);
+  // }
+  // const formatedDate = formatDate(date);
+  console.log(date);
 
   return (
     <>
       <ReviewWrap>
         <ReviewData>
           <ImgWrap>
-            <Img src={reviewItem.avatar} alt="аватар"></Img>
+            <Img src="../../../../img/reviews/review-1.png" alt="аватар"></Img>
+            {/* <Img src="../../../../img/reviews/review-1.png" alt="fbdfb">
+              Picture
+            </Img> */}
           </ImgWrap>
           <div>
-            <ReviewName>{reviewItem.name}</ReviewName>
-            <p>{formatedDate}</p>
+            <ReviewName>{name}</ReviewName>
+            <p>{formatDate(date)}</p>
           </div>
         </ReviewData>
-        <ReviewComment>{reviewItem.comments}</ReviewComment>
+        <ReviewComment>{comments}</ReviewComment>
       </ReviewWrap>
     </>
   );

@@ -1,10 +1,11 @@
 import { server } from './basic';
 
+const REVIEWS_URL = '/reviews';
+
 export const getReviews = async () => {
   try {
-    const response = await server.get('/reviews');
+    const response = await server.get(REVIEWS_URL);
     const reviews = await response.data;
-    console.log(reviews);
     return reviews;
   } catch (error) {
     console.error(error);

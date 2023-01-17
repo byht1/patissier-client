@@ -4,7 +4,7 @@ import { Box } from 'components/global/Box';
 import { Container } from 'components/global/Container';
 import { TitleH2 } from 'components/global/text';
 import { ReviewsList } from './Reviews.styled';
-import { ReviewItem } from './ReviewItem';
+import { ReviewItem } from './ReviewsItem';
 
 export const Reviews = () => {
   const [reviewsList, setReviewsList] = useState([]);
@@ -33,10 +33,6 @@ export const Reviews = () => {
               {reviewsList.map(reviewItem => (
                 <ReviewItem key={reviewItem._id} reviewItem={reviewItem} />
               ))}
-              {/* <ReviewItem>
-                Перегляньте найближчі по даті події, авторські курси та
-                майстер-класи
-              </ReviewItem> */}
             </ReviewsList>
           </Box>
         </Container>

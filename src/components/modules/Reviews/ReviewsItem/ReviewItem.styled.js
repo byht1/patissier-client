@@ -6,6 +6,7 @@ export const ReviewWrap = styled.li`
   border-radius: ${p => p.theme.radii.normal};
   border: 1px solid transparent;
   padding: 20px 20px 38px 20px;
+  width: 282px;
   height: 269px;
   overflow-y: auto;
 

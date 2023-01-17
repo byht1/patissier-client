@@ -23,12 +23,7 @@ export const ReviewItem = ({ reviewItem }) => {
             <p>{formatedDate}</p>
           </div>
         </ReviewData>
-        <ReviewComment>
-          {reviewItem.comments}
-          Дівчата, ці тістечка посто бомба-ракєта!!! Нарешті дійшов мій
-          марципан, і я одразу приготувала, тому тепер я в графіку і в ногу з
-          іншими учасниками курсу.
-        </ReviewComment>
+        <ReviewComment>{reviewItem.comments}</ReviewComment>
       </ReviewWrap>
     </>
   );

@@ -1,6 +1,6 @@
 import { server } from './basic';
 
-const UrlReviews = Object.freeze({ all: './reviewss' });
+const UrlReviews = Object.freeze({ all: './reviews' });
 
 export const getReviews = async () => {
   try {

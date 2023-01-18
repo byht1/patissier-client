@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/6.dd3aa0c0.chunk.js","mappings":"qLAEe,SAASA,IACtB,OAAO,mCACT,C","sources":["page/Basket/Basket.jsx"],"sourcesContent":["import React from 'react';\n\nexport default function Basket() {\n  return <div>Basket</div>;\n}\n"],"names":["Basket"],"sourceRoot":""}

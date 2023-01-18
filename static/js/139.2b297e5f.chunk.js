@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkpatissier_client=self.webpackChunkpatissier_client||[]).push([[139],{139:function(e,n,i){i.r(n),i.d(n,{default:function(){return t}});i(791);var s=i(329);function t(){return(0,s.jsx)("div",{children:"Courses"})}}}]);
-//# sourceMappingURL=139.2b297e5f.chunk.js.map

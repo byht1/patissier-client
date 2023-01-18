@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/139.a2f5d467.chunk.js","mappings":"4LAEe,SAASA,IACtB,OAAO,oCACT,C","sources":["page/Courses/Courses.jsx"],"sourcesContent":["import React from 'react';\n\nexport default function Courses() {\n  return <div>Courses</div>;\n}\n"],"names":["Courses"],"sourceRoot":""}

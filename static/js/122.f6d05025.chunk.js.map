@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/122.f6d05025.chunk.js","mappings":"2LAEe,SAASA,IACtB,OAAO,mDACT,C","sources":["page/RegistrationForCourses/RegistrationForCourses.jsx"],"sourcesContent":["import React from 'react';\n\nexport default function RegistrationForCourses() {\n  return <div>RegistrationForCourses</div>;\n}\n"],"names":["RegistrationForCourses"],"sourceRoot":""}

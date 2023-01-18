@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkpatissier_client=self.webpackChunkpatissier_client||[]).push([[122],{122:function(e,i,n){n.r(i),n.d(i,{default:function(){return r}});n(2791);var t=n(3329);function r(){return(0,t.jsx)("div",{children:"RegistrationForCourses"})}}}]);
+//# sourceMappingURL=122.f6d05025.chunk.js.map

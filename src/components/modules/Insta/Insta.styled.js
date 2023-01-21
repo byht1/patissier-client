@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const InstaList = styled.ul`
+  display: flex;
+  gap: ${p => `${p.theme.space[16]}px`};
+`;
+
 export const SocialLink = styled.a`
   display: inline-flex;
   gap: ${p => `${p.theme.space[5]}px`};

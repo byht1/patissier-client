@@ -7,7 +7,6 @@ export const getReviews = async () => {
     const { data } = await server.get(UrlReviews.all);
     return data;
   } catch (error) {
-    console.error(error);
     throw error;
   }
 };

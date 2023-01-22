@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { InstaCard } from './InstaItem.styled';
 
 export const InstaItem = ({ post: { link, img, img2x, title } }) => {
@@ -9,4 +10,13 @@ export const InstaItem = ({ post: { link, img, img2x, title } }) => {
       </a>
     </InstaCard>
   );
+};
+
+InstaItem.propTypes = {
+  post: PropTypes.shape({
+    link: PropTypes.string.isRequired,
+    img: PropTypes.string.isRequired,
+    img2x: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }).isRequired,
 };

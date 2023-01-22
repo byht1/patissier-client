@@ -13,21 +13,21 @@ import { InstaItem } from './InstaItem';
 
 const instaPosts = [
   {
-    id: 1,
+    id: 'insta-1',
     title: 'link-1',
     link: 'https://www.instagram.com/p/CnEy6bTt9le/',
     img: image1,
     img2x: image1_2x,
   },
   {
-    id: 2,
+    id: 'insta-2',
     title: 'link-2',
     link: 'https://www.instagram.com/p/CnChOO6NqBV/',
     img: image2,
     img2x: image2_2x,
   },
   {
-    id: 3,
+    id: 'insta-3',
     title: 'link-3',
     link: 'https://www.instagram.com/p/CmlXQncNwEm/',
     img: image3,
@@ -37,7 +37,7 @@ const instaPosts = [
 
 export const Insta = () => {
   return (
-    <>
+    <Box as="section">
       <Container pt={114} pb={100}>
         <TitleH2 mb={40} color="at" className="visually-hidden">
           Наш інстаграмм
@@ -60,6 +60,6 @@ export const Insta = () => {
           ))}
         </InstaList>
       </Container>
-    </>
+    </Box>
   );
 };

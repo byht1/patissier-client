@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/patissier-client/static/css/main.61c06cd7.css",
-    "main.js": "/patissier-client/static/js/main.29c3d0cf.js",
-    "static/js/486.48738559.chunk.js": "/patissier-client/static/js/486.48738559.chunk.js",
+    "main.css": "/patissier-client/static/css/main.494646a6.css",
+    "main.js": "/patissier-client/static/js/main.381a63c2.js",
+    "static/js/782.94973397.chunk.js": "/patissier-client/static/js/782.94973397.chunk.js",
     "static/js/970.d05c301e.chunk.js": "/patissier-client/static/js/970.d05c301e.chunk.js",
     "static/js/526.24c107d8.chunk.js": "/patissier-client/static/js/526.24c107d8.chunk.js",
     "static/js/6.a735bd50.chunk.js": "/patissier-client/static/js/6.a735bd50.chunk.js",
@@ -11,10 +11,17 @@
     "static/js/106.f05ad3c7.chunk.js": "/patissier-client/static/js/106.f05ad3c7.chunk.js",
     "static/js/122.f6d05025.chunk.js": "/patissier-client/static/js/122.f6d05025.chunk.js",
     "static/js/346.bc266f38.chunk.js": "/patissier-client/static/js/346.bc266f38.chunk.js",
-    "static/js/270.2b328999.chunk.js": "/patissier-client/static/js/270.2b328999.chunk.js",
+    "static/js/378.df44e380.chunk.js": "/patissier-client/static/js/378.df44e380.chunk.js",
+    "static/media/link-2@2x.jpg": "/patissier-client/static/media/link-2@2x.9a79af89003009385779.jpg",
+    "static/media/link-3@2x.jpg": "/patissier-client/static/media/link-3@2x.5464a29bb84dc847c436.jpg",
     "static/media/marianna.svg": "/patissier-client/static/media/marianna.6b010a98d3694b48d32b.svg",
+    "static/media/link-1@2x.jpg": "/patissier-client/static/media/link-1@2x.349ecf6c10217c342181.jpg",
+    "static/media/link-2.jpg": "/patissier-client/static/media/link-2.6edb9175826c35894e64.jpg",
+    "static/media/link-3.jpg": "/patissier-client/static/media/link-3.a4445afc447abf9741aa.jpg",
     "static/media/marianna.eot": "/patissier-client/static/media/marianna.fb2d74796f5162918d27.eot",
     "static/media/marianna.ttf": "/patissier-client/static/media/marianna.af26289d937bce4f48dc.ttf",
+    "static/media/link-1.jpg": "/patissier-client/static/media/link-1.bb6339f6ea84c1af64d0.jpg",
+    "static/media/qr-code.svg": "/patissier-client/static/media/qr-code.a026cce6f23eca8cbca4fd6d4e3192f3.svg",
     "static/media/marianna.woff": "/patissier-client/static/media/marianna.e1196a120ac9958aafc2.woff",
     "static/media/review-3.png": "/patissier-client/static/media/review-3.cb0e4f0cfd72ba0289d8.png",
     "static/media/review-2.png": "/patissier-client/static/media/review-2.cd44d09931d008bac571.png",
@@ -23,9 +30,9 @@
     "static/media/courseImg.jpg": "/patissier-client/static/media/courseImg.c7e4206ea920512770f8.jpg",
     "static/media/review-1.png": "/patissier-client/static/media/review-1.7e02a21901a2389914d1.png",
     "index.html": "/patissier-client/index.html",
-    "main.61c06cd7.css.map": "/patissier-client/static/css/main.61c06cd7.css.map",
-    "main.29c3d0cf.js.map": "/patissier-client/static/js/main.29c3d0cf.js.map",
-    "486.48738559.chunk.js.map": "/patissier-client/static/js/486.48738559.chunk.js.map",
+    "main.494646a6.css.map": "/patissier-client/static/css/main.494646a6.css.map",
+    "main.381a63c2.js.map": "/patissier-client/static/js/main.381a63c2.js.map",
+    "782.94973397.chunk.js.map": "/patissier-client/static/js/782.94973397.chunk.js.map",
     "970.d05c301e.chunk.js.map": "/patissier-client/static/js/970.d05c301e.chunk.js.map",
     "526.24c107d8.chunk.js.map": "/patissier-client/static/js/526.24c107d8.chunk.js.map",
     "6.a735bd50.chunk.js.map": "/patissier-client/static/js/6.a735bd50.chunk.js.map",
@@ -34,10 +41,10 @@
     "106.f05ad3c7.chunk.js.map": "/patissier-client/static/js/106.f05ad3c7.chunk.js.map",
     "122.f6d05025.chunk.js.map": "/patissier-client/static/js/122.f6d05025.chunk.js.map",
     "346.bc266f38.chunk.js.map": "/patissier-client/static/js/346.bc266f38.chunk.js.map",
-    "270.2b328999.chunk.js.map": "/patissier-client/static/js/270.2b328999.chunk.js.map"
+    "378.df44e380.chunk.js.map": "/patissier-client/static/js/378.df44e380.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.61c06cd7.css",
-    "static/js/main.29c3d0cf.js"
+    "static/css/main.494646a6.css",
+    "static/js/main.381a63c2.js"
   ]
 }

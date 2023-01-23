@@ -16,13 +16,12 @@ export const Reviews = () => {
         const reviews = await getReviews();
         setReviewsList(reviews);
       } catch (error) {
-        console.log(error);
         setReviewsList(defaultReviewsList);
       }
     }
     getReviewsList();
   }, []);
-  console.log(reviewsList);
+  
   return (
     <>
       <Container pt={114} pb={100}>

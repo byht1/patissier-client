@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { Courses } from 'components/modules/Courses';
-import { Reviews } from 'components/modules/Reviews';
 import { Hero } from 'components/modules/hero/hero';
 import { Statistics } from 'components/modules/Statistics/Statistics';
+import { Courses } from 'components/modules/Courses';
+import { Reviews } from 'components/modules/Reviews';
+import { Insta } from 'components/modules/Insta';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Statistics />
       <Courses />
       <Reviews />
+      <Insta />
     </>
   );
 }

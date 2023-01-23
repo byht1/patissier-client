@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/patissier-client/static/css/main.494646a6.css",
-    "main.js": "/patissier-client/static/js/main.381a63c2.js",
-    "static/js/782.94973397.chunk.js": "/patissier-client/static/js/782.94973397.chunk.js",
+    "main.js": "/patissier-client/static/js/main.f15f5161.js",
+    "static/js/42.4fb532ab.chunk.js": "/patissier-client/static/js/42.4fb532ab.chunk.js",
     "static/js/970.d05c301e.chunk.js": "/patissier-client/static/js/970.d05c301e.chunk.js",
     "static/js/526.24c107d8.chunk.js": "/patissier-client/static/js/526.24c107d8.chunk.js",
     "static/js/6.a735bd50.chunk.js": "/patissier-client/static/js/6.a735bd50.chunk.js",
@@ -29,10 +29,15 @@
     "static/media/marianna.woff2": "/patissier-client/static/media/marianna.452ca86af04b35179812.woff2",
     "static/media/courseImg.jpg": "/patissier-client/static/media/courseImg.c7e4206ea920512770f8.jpg",
     "static/media/review-1.png": "/patissier-client/static/media/review-1.7e02a21901a2389914d1.png",
+    "static/media/hero.jpg": "/patissier-client/static/media/hero.9e41c7a00e950d8ae5d7.jpg",
+    "static/media/statistics2.svg": "/patissier-client/static/media/statistics2.8115796adbec278b33ba9a1eae55ab7c.svg",
+    "static/media/statistics4.svg": "/patissier-client/static/media/statistics4.8f751b25555008bf33dede4a8a6f2998.svg",
+    "static/media/statistics3.svg": "/patissier-client/static/media/statistics3.965f6e6582602a24e465a785e4af5607.svg",
+    "static/media/statistics1.svg": "/patissier-client/static/media/statistics1.3c532e7fa81e98b08ba4f39b8bb69689.svg",
     "index.html": "/patissier-client/index.html",
     "main.494646a6.css.map": "/patissier-client/static/css/main.494646a6.css.map",
-    "main.381a63c2.js.map": "/patissier-client/static/js/main.381a63c2.js.map",
-    "782.94973397.chunk.js.map": "/patissier-client/static/js/782.94973397.chunk.js.map",
+    "main.f15f5161.js.map": "/patissier-client/static/js/main.f15f5161.js.map",
+    "42.4fb532ab.chunk.js.map": "/patissier-client/static/js/42.4fb532ab.chunk.js.map",
     "970.d05c301e.chunk.js.map": "/patissier-client/static/js/970.d05c301e.chunk.js.map",
     "526.24c107d8.chunk.js.map": "/patissier-client/static/js/526.24c107d8.chunk.js.map",
     "6.a735bd50.chunk.js.map": "/patissier-client/static/js/6.a735bd50.chunk.js.map",
@@ -45,6 +50,6 @@
   },
   "entrypoints": [
     "static/css/main.494646a6.css",
-    "static/js/main.381a63c2.js"
+    "static/js/main.f15f5161.js"
   ]
 }

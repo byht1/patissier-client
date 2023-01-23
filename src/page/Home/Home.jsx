@@ -1,23 +1,14 @@
 import React from 'react';
-import { Button } from 'components/global/button';
-import { Text } from 'components/global/text';
+import { Courses } from 'components/modules/Courses';
+import { Reviews } from 'components/modules/Reviews';
 import { Insta } from 'components/modules/Insta';
+
 export default function Home() {
   return (
-    <div>
-      {/* <Button width={400}> 111111111111111</Button>
-      <Text width={500} mt="20px" textAlign="center">
-        22222222222
-      </Text> */}
-      {/* Це лише приклад назви можуть бути інші */}
-      {/* <Hero /> */}
-      {/* <Statistics /> */}
-      {/* <AboutUs /> */}
-      {/* <Catalog /> */}
-      {/* <Course /> */}
-      {/* <Reviews /> */}
-      {/* <Spam /> */}
+    <>
+      <Courses />
+      <Reviews />
       <Insta />
-    </div>
+    </>
   );
 }

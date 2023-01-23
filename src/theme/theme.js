@@ -9,6 +9,7 @@ export const theme = {
     t: 'var(--text)',
     wt: 'var(--white-text)',
     w: 'var(--white)',
+    b: 'var(--black)',
     overlay: 'var(--overlay)',
     good: 'var(--good)',
     error: 'var(--error)',
@@ -57,6 +58,7 @@ export const theme = {
     max: '100%',
     half: '50%',
     quarter: '25%',
+    socialIcon: '32px',
   },
   shadows: {
     s: 'var(--shadow)',

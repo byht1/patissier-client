@@ -8,8 +8,8 @@ import { Statistics } from 'components/modules/Statistics/Statistics';
 export default function Home() {
   return (
     <>
-      <Hero/>
-      <Statistics/>
+      <Hero />
+      <Statistics />
       <Courses />
       <Reviews />
     </>

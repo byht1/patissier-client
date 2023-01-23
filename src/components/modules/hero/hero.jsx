@@ -3,31 +3,27 @@ import { Button } from 'components/global/button';
 import { Box } from 'components/global/Box';
 import Image from 'img/hero/hero.jpg';
 
-import {
-    HeroImage, ImgBlock, HeroInfo, HeroContainer
-} from './hero.styled';
+import { HeroImage, ImgBlock, HeroInfo, HeroContainer } from './hero.styled';
 export const Hero = () => {
-return(
-     <HeroContainer>
-        <Box display="flex" height='654px' justifyContent='center'>
+  return (
+    <HeroContainer>
+      <Box display="flex" height="654px" justifyContent="center">
         <ImgBlock>
-            <HeroImage src={Image} alt="" loading="lazy" />
+          <HeroImage src={Image} alt="" loading="lazy" />
         </ImgBlock>
         <HeroInfo>
-            <TitleH1 mb={40}>
-                Твій ідеальний десерт
-            </TitleH1> 
-            <Text size={16} lh={24} color="t">
-                Замовляй вишукані десерти для свого свята!
-            </Text>
-            <Text size={16} lh={24} color="t">
-               Всі десерти створюються в ручну з якісних та свіжих продуктів
-            </Text>
-            <Button mt={60} p="16px 74px">Каталог</Button>
+          <TitleH1 mb={40}>Твій ідеальний десерт</TitleH1>
+          <Text size={16} lh={24} color="t">
+            Замовляй вишукані десерти для свого свята!
+          </Text>
+          <Text size={16} lh={24} color="t">
+            Всі десерти створюються в ручну з якісних та свіжих продуктів
+          </Text>
+          <Button mt={60} p="16px 74px">
+            Каталог
+          </Button>
         </HeroInfo>
-      
       </Box>
     </HeroContainer>
-      )
-    }
-
+  );
+};

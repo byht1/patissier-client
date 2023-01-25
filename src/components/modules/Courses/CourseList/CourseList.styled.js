@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
-export const CourseCard = styled.div`
+export const CourseInnerWrap = styled.ul`
+  display: flex;
+  gap: 60px;
+`;
+
+export const CourseItem = styled.div`
   width: 360px;
   padding: 24px;
 

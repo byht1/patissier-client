@@ -10,8 +10,3 @@ export const Button = styled(ButtonsGhost)`
   border-bottom: 1.5px solid ${p => p.theme.colors.aBg};
   border-radius: ${p => p.theme.radii.normal};
 `;
-
-export const CourseList = styled.ul`
-  display: flex;
-  gap: 60px;
-`;

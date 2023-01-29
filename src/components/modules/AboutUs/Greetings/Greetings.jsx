@@ -15,7 +15,7 @@ export const Greetings = () => {
         </TitleH2>
         <Box display="flex" alignItems="center">
           <ImgWrap>
-            <OwnerFoto src={Image} alt="fotovlasnyka" />
+            <OwnerFoto src={Image} alt="fotovlasnyka" loading="lazy" />
           </ImgWrap>
 
           <Box width={588} position="relative">

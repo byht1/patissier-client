@@ -56,7 +56,7 @@ export const WayToSuccess = () => {
           </WayList>
         </Box>
         <ImgWrap>
-          <WayFoto src={Image} alt="Pie"></WayFoto>
+          <WayFoto src={Image} alt="Pie" loading="lazy"></WayFoto>
         </ImgWrap>
       </Box>
     </Container>

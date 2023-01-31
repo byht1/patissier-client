@@ -1,0 +1,1 @@
+export { WayToSuccess } from './WayToSuccess';

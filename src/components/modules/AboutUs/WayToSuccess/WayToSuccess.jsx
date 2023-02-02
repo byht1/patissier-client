@@ -1,9 +1,14 @@
 import { Box } from 'components/global/Box';
 import { Container } from 'components/global/Container';
 import { WayItem } from './WayItem/WayItem';
-import { Icon, ImgWrap, WayFoto, WayList } from './WayToSuccess.styled';
+import {
+  Icon,
+  ImgWrap,
+  WayPhoto,
+  WayList,
+  WayText,
+} from './WayToSuccess.styled';
 
-import { Text } from 'components/global/text';
 import Image from 'img/aboutus/pie.jpg';
 import Icon01 from 'img/aboutus/way01.png';
 import Icon02 from 'img/aboutus/way02.png';
@@ -19,44 +24,44 @@ export const WayToSuccess = () => {
           <WayList>
             <WayItem>
               <Icon src={Icon01} alt="icon" />
-              <Text lh={24} size={16} width={450}>
+              <WayText>
                 Свій шлях я почала також з майстер-класу. З першого заняття я
                 закохалася в мистецтво створення кондитерських виробів.
-              </Text>
+              </WayText>
             </WayItem>
             <WayItem>
-              <Text lh={24} size={16} width={450}>
+              <WayText>
                 Вже за 3 місяці я повністю присвятила себе кондитерській справі
                 та незабаром відкрила свою кондитерську
-              </Text>
+              </WayText>
               <Icon src={Icon02} alt="icon" />
             </WayItem>
             <WayItem>
               <Icon src={Icon03} alt="icon" />
-              <Text lh={24} size={16} width={450}>
+              <WayText>
                 Під час карантину я зрозуміла, що майстер-класи потребують нових
                 форматів та люди хочуть навчатися онлайн. Так я відкрила онлайн
                 курси.
-              </Text>
+              </WayText>
             </WayItem>
             <WayItem>
-              <Text lh={24} size={16} width={450}>
+              <WayText>
                 Потім беру участь у кулінарному шоу Мастер-шеф та Пекельна
                 кухня. Паралельно продовжую навчатися та вести онлайн курси.
-              </Text>
+              </WayText>
               <Icon src={Icon04} alt="icon" />
             </WayItem>
             <WayItem>
               <Icon src={Icon05} alt="icon" />
-              <Text lh={24} size={16} width={450}>
+              <WayText>
                 Укладаю контракт на створення десертної карти для мережі
                 ресторанів “Мафія”
-              </Text>
+              </WayText>
             </WayItem>
           </WayList>
         </Box>
         <ImgWrap>
-          <WayFoto src={Image} alt="Pie" loading="lazy"></WayFoto>
+          <WayPhoto src={Image} alt="Pie" loading="lazy"></WayPhoto>
         </ImgWrap>
       </Box>
     </Container>

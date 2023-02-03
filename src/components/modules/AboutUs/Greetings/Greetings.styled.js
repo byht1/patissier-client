@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { TextBox } from 'components/global/text';
+import { NavLink } from 'react-router-dom';
 
 export const ImgWrap = styled.div`
   width: 552px;
@@ -9,18 +11,33 @@ export const ImgWrap = styled.div`
   overflow: hidden;
 `;
 
-export const OwnerFoto = styled.img`
+export const OwnerPhoto = styled.img`
   display: block;
   object-fit: cover;
   width: 100%;
   height: 101%;
 `;
 
-export const SignFoto = styled.img`
+export const SignPhoto = styled.img`
   position: absolute;
-  bottom: -30%;
+
+  bottom: ${p => (p.readmorelink ? '-15%' : '-30%')};
   right: -15%;
   display: block;
   width: 280px;
   height: 204px;
+`;
+
+export const GreetingsText = styled(TextBox)`
+  font-size: ${p => p.theme.fontSizes.normalMin};
+  line-height: ${p => p.theme.lineHeights.big};
+`;
+
+export const ReadMore = styled(NavLink)`
+  font-size: ${p => p.theme.fontSizes.normalMin};
+  line-height: ${p => p.theme.lineHeights.big};
+  color: ${p => p.theme.colors.at};
+  font-weight: ${p => p.theme.fontWeights.bold};
+  display: block;
+  margin-top: 16px;
 `;

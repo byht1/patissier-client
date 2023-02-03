@@ -2,15 +2,15 @@ import React from 'react';
 
 import { Greetings } from 'components/modules/AboutUs/Greetings';
 import { WayToSuccess } from 'components/modules/AboutUs/WayToSuccess';
-import { Stats } from 'components/modules/AboutUs/Stats';
+import { Statistics } from 'components/modules/Statistics/Statistics';
 import { Examples } from 'components/modules/AboutUs/Examples';
 
 export default function AboutUs() {
   return (
     <>
-      <Greetings />
+      <Greetings ReadMoreLink={false} />
       <WayToSuccess />
-      <Stats />
+      <Statistics />
       <Examples />
     </>
   );

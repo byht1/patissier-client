@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { TextBox } from 'components/global/text';
 
 export const WayList = styled.ul`
   display: flex;
@@ -15,7 +16,7 @@ export const ImgWrap = styled.div`
   overflow: hidden;
 `;
 
-export const WayFoto = styled.img`
+export const WayPhoto = styled.img`
   display: block;
   object-fit: cover;
   width: 100%;
@@ -26,4 +27,10 @@ export const Icon = styled.img`
   display: block;
   width: 72px;
   height: 72px;
+`;
+
+export const WayText = styled(TextBox)`
+  font-size: ${p => p.theme.fontSizes.normalMin};
+  line-height: ${p => p.theme.lineHeights.big};
+  width: 450px;
 `;

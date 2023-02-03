@@ -13,7 +13,7 @@ export const StatistItem = ({ src, number, text }) => {
         <Text weight={500} size={36} color="at" lh="body">
           {number}
         </Text>
-        <Text size={16} lh={24} color="t">
+        <Text size={16} lh={'normal'} color="t">
           {text}
         </Text>
       </StatisticsInfo>

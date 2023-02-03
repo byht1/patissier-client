@@ -13,10 +13,10 @@ export const Hero = () => {
         </ImgBlock>
         <HeroInfo>
           <TitleH1 mb={40}>Твій ідеальний десерт</TitleH1>
-          <Text size={16} lh={24} color="t">
+          <Text size={16} lh={'normal'} color="t">
             Замовляй вишукані десерти для свого свята!
           </Text>
-          <Text size={16} lh={24} color="t">
+          <Text size={16} lh={'normal'} color="t">
             Всі десерти створюються в ручну з якісних та свіжих продуктів
           </Text>
           <Button mt={60} p="16px 74px">

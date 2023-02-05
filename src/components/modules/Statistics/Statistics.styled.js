@@ -9,6 +9,7 @@ export const StatisticsInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 151px;
 `;
 export const StatisticsItem = styled.li`
   padding-right: 40px;

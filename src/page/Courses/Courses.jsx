@@ -1,5 +1,11 @@
 import React from 'react';
+import { Header } from 'components/modules/Header/Header';
 
 export default function Courses() {
-  return <div>Courses</div>;
+  return (
+    <>
+      <Header />
+      <div>Courses</div>
+    </>
+  );
 }

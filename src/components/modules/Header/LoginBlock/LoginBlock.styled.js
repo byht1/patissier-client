@@ -35,6 +35,7 @@ export const PhoneSVG = styled(PhoneSvg)`
   cursor: pointer;
   margin-top: 6px;
   width: ${({ width }) => width || '21px'};
+  height: ${({ height }) => height || '29px'};
   & path {
     fill: ${({ color }) => color || 'white'};
   }

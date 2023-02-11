@@ -10,6 +10,9 @@ import {
 } from './CallMe.styled';
 
 export function CallMe({ setShowCallMe }) {
+  const formInput = e => {
+    console.log(e.target);
+  };
   return (
     <Div>
       <ContextCover>
@@ -22,7 +25,7 @@ export function CallMe({ setShowCallMe }) {
           Залиште свої контактні данні і менеджер зв’яжеться з вами найближчим
           часом!
         </Span>
-        <Form>
+        <Form onInput={formInput}>
           <Label for="name">ПІБ</Label>
           <Input id="name" name="name" placeholder="Проскура Аліна" />
           <Label for="phone">Телефон</Label>

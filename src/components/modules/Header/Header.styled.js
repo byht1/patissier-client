@@ -6,7 +6,7 @@ export const Button = styled(ButtonsGhost)`
   display: flex;
   align-items: center;
   padding: 6px 24px;
-  justify-content: center;
+  justify-content: space-between;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;

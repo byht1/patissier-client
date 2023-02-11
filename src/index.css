@@ -68,9 +68,9 @@ img {
   height: auto;
 }
 
-svg {
-  fill: currentColor;
-}
+/* svg {
+  fill: currentColor; треба прибрати тому що перебиває стилі імпортованих свгшок
+} */
 
 button {
   display: inline-block;

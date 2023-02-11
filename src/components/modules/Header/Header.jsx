@@ -2,11 +2,12 @@ import { Box } from '@mui/system';
 import { Button, Logo, Link, Nav } from './Header.styled';
 import { Container } from 'components/global/Container';
 import LogoSvg from '../../../img/logo/Logo.svg';
+import { LoginBlock } from './LoginBlock/LoginBlock';
 
 export function Header() {
   return (
     <Container>
-      <Box display="flex" alignItems="center">
+      <Box display="flex" alignItems="center" justifyContent="space-between">
         <Nav>
           <Link href="http://localhost:3000/patissier-client">
             <Logo src={LogoSvg} />
@@ -27,6 +28,7 @@ export function Header() {
             <Button>Контакти</Button>
           </Link>
         </Nav>
+        <LoginBlock />
       </Box>
     </Container>
   );

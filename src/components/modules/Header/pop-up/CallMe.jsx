@@ -1,3 +1,4 @@
+import { Button } from 'components/global/button';
 import {
   Div,
   Form,
@@ -27,6 +28,14 @@ export function CallMe({ setShowCallMe }) {
           <Label for="phone">Телефон</Label>
           <Input id="phone" name="phone" placeholder="+38 050 555 55 55" />
         </Form>
+        <Button
+          onClick={() => {
+            setShowCallMe(false);
+          }}
+          p={'16px 40px'}
+        >
+          Відправити
+        </Button>
       </ContextCover>
     </Div>
   );

@@ -26,6 +26,7 @@ export const Button = styled(ButtonsGhost)`
 `;
 
 export const Div = styled.div`
+z-index: 2000;
   width: 100vw;
   height: 100vh;
   position: fixed;

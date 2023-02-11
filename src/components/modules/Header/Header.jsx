@@ -3,8 +3,11 @@ import { Button, Logo, Link, Nav } from './Header.styled';
 import { Container } from 'components/global/Container';
 import LogoSvg from '../../../img/logo/Logo.svg';
 import { LoginBlock } from './LoginBlock/LoginBlock';
+import { CallMe } from './pop-up/CallMe';
+import { useState } from 'react';
 
 export function Header() {
+  const [showCallMe, setShowCallMe] = useState(false);
   return (
     <Container>
       <Box display="flex" alignItems="center" justifyContent="space-between">
@@ -28,7 +31,8 @@ export function Header() {
             <Button>Контакти</Button>
           </Link>
         </Nav>
-        <LoginBlock />
+        <LoginBlock setShowCallMe={setShowCallMe} />
+        {showCallMe ? <CallMe setShowCallMe={setShowCallMe} /> : null}
       </Box>
     </Container>
   );

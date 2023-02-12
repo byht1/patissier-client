@@ -103,3 +103,14 @@ export const CloseSVG = styled(close)`
     fill: ${({ hoverColor }) => hoverColor || 'var(--accent-bg)'};
   }
 `;
+
+export const Text = styled.span`
+  font-family: 'Marianna';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 84px;
+  line-height: 100%;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: #ff852d;
+`;

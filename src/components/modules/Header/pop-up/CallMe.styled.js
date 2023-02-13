@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { ButtonsGhost } from 'components/global/button';
-import { ReactComponent as close } from '../../../../img/headerIcons/close.svg';
+import { ReactComponent as close } from '../../../../img/header/icons/close.svg';
 
 export const Button = styled(ButtonsGhost)`
   font-weight: 400;

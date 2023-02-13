@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { ButtonsGhost } from 'components/global/button';
-import { ReactComponent as PhoneSvg } from '../../../../img/headerIcons/phone.svg';
-import { ReactComponent as ShoppingCartSvg } from '../../../../img/headerIcons/shoppingCart.svg';
+import { ReactComponent as PhoneSvg } from '../../../../img/header/icons/phone.svg';
+import { ReactComponent as ShoppingCartSvg } from '../../../../img/header/icons/shoppingCart.svg';
 
 export const Button = styled(ButtonsGhost)`
   font-weight: 400;

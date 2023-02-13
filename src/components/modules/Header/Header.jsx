@@ -3,7 +3,7 @@ import { Button, Logo, Link, Nav } from './Header.styled';
 import { Container } from 'components/global/Container';
 import LogoSvg from '../../../img/logo/Logo.svg';
 import { LoginBlock } from './LoginBlock/LoginBlock';
-import { CallMe } from './pop-up/CallMe';
+import { CallMe } from './Pop-up/CallMe';
 import { useState } from 'react';
 
 export function Header() {

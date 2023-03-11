@@ -3,6 +3,7 @@ import { Container } from 'components/global/Container';
 import { Text, TitleH2 } from 'components/global/text';
 import { CourseItem } from './CourseItem';
 import { Button, CourseList } from './Courses.styled';
+// help comments
 
 export const Courses = () => {
   return (

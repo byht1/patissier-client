@@ -20,4 +20,3 @@ export const StatistItem = ({ src, number, text }) => {
     </StatisticsItem>
   );
 };
-// 98.5 %

@@ -8,7 +8,7 @@ import statistics4 from 'img/statistics/statistics4.svg';
 
 export const Statistics = () => {
   return (
-    <Container pb={100} pt={46}>
+    <Container pb={40} pt={40}>
       <StatisticsList>
         <StatistItem
           src={statistics1}

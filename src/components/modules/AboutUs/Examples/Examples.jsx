@@ -11,9 +11,11 @@ import Photo04 from 'img/aboutus/work04.png';
 
 export const Examples = () => {
   return (
-    <Container pt={100} pb={100}>
+    <Container pt={118} pb={100}>
       <Box display="flex" flexDirection="column" alignItems="center">
-        <TitleH2 mb={60}>Роботи наших студентів</TitleH2>
+        <TitleH2 color="at" mb={60}>
+          Роботи наших студентів
+        </TitleH2>
         <ExamplesList>
           <ExampleItem img={Photo01} />
           <ExampleItem img={Photo02} />

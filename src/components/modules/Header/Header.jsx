@@ -27,9 +27,6 @@ export function Header() {
           <Link href="http://localhost:3000/patissier-client/">
             <Button>Блог</Button>
           </Link>
-          <Link href="http://localhost:3000/patissier-client/">
-            <Button>Контакти</Button>
-          </Link>
         </Nav>
         <LoginBlock setShowCallMe={setShowCallMe} />
         {showCallMe ? <CallMe setShowCallMe={setShowCallMe} /> : null}

@@ -34,7 +34,7 @@ function App() {
           <Route path="current-courses" element={<CurrentCourses />} />
           <Route path="sing-up-courses" element={<RegistrationForCourses />} />
           <Route path="about-us" element={<AboutUs />} />
-          <Route path="sing-up" element={<SignUp />} />
+          <Route path="sign-up" element={<SignUp />} />
           <Route path="log-in" element={<LogIn />} />
           {/* <Route path="/user">
             <Route index element={<PersonalOffice />}/>

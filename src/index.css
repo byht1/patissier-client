@@ -1,5 +1,6 @@
 @import-normalize; /* bring in normalize.css styles */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
 
 @font-face {
   font-family: 'Marianna';
@@ -67,10 +68,6 @@ img {
   width: 100%;
   height: auto;
 }
-
-/* svg {
-  fill: currentColor; треба прибрати тому що перебиває стилі імпортованих свгшок
-} */
 
 button {
   display: inline-block;

@@ -8,9 +8,9 @@ import { Examples } from 'components/modules/AboutUs/Examples';
 export default function AboutUs() {
   return (
     <>
-      <Greetings ReadMoreLink={false} />
-      <WayToSuccess />
+      <Greetings ReadMoreLink={false} paddingBottom={154} />
       <Statistics />
+      <WayToSuccess />
       <Examples />
     </>
   );

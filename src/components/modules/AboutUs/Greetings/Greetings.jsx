@@ -12,20 +12,24 @@ import {
 import Image from 'img/aboutus/fotovlasnyka.jpg';
 import Signature from 'img/aboutus/signature.png';
 
-export const Greetings = ({ ReadMoreLink, paddingBottom = 100 }) => {
+export const Greetings = ({
+  ReadMoreLink,
+  paddingTop = 100,
+  paddingBottom = 100,
+}) => {
   return (
-    <Container pt={100} pb={paddingBottom}>
+    <Container pt={paddingTop} pb={paddingBottom}>
       <Box display="flex" flexDirection="column" alignItems="center">
         <TitleH2 color="at" mb={60}>
           Про нас
         </TitleH2>
-        <Box display="flex" alignItems="center">
+        <Box display="flex" alignItems={ReadMoreLink ? 'flex-start' : 'center'}>
           <ImgWrap>
             <OwnerPhoto src={Image} alt="fotovlasnyka" loading="lazy" />
           </ImgWrap>
 
           <Box width={588} position="relative">
-            <Text size={20} lh={'big'} weight={700} mb={24}>
+            <Text size={20} lh={'big'} weight={600} mb={24}>
               Вітаю!
             </Text>
             <GreetingsText mb={24}>

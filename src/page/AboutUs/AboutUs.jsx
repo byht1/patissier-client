@@ -12,7 +12,9 @@ export default function AboutUs() {
       <Header />
       <Greetings ReadMoreLink={false} />
       <WayToSuccess />
+      <Greetings ReadMoreLink={false} paddingBottom={154} />
       <Statistics />
+      <WayToSuccess />
       <Examples />
     </>
   );

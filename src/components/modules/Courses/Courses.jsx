@@ -6,13 +6,13 @@ import { Button, CourseList } from './Courses.styled';
 
 export const Courses = () => {
   return (
-    <Container pt={114} pb={100}>
+    <Container pt={100} pb={100}>
       <Box display="flex" flexDirection="column" alignItems="center">
         <TitleH2 mb={32} color="at">
           Курси та майстер-класи
         </TitleH2>
         <Text mb={30} color="t" lh="body" textAlign="center" width={272}>
-          Перегляньте найближчі по даті події, авторські курси та майстер-класи
+          Перегляньте найближчі події, авторські курси та майстер-класи
         </Text>
         <Button>Дивитись усі заходи</Button>
         <CourseList>

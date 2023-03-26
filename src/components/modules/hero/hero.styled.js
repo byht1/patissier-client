@@ -7,11 +7,10 @@ export const HeroImage = styled.img`
 
 export const ImgBlock = styled.div`
   width: 732px;
+  margin-bottom: 60px;
 `;
 
 export const HeroInfo = styled.div`
-  margin-top: 141px;
-  margin-bottom: 141px;
   margin-left: 0;
   width: 588px;
 `;
@@ -19,5 +18,4 @@ export const HeroInfo = styled.div`
 export const HeroContainer = styled.div`
   margin: 0 auto;
   padding-right: 15px;
-  margin-bottom: 46px;
 `;

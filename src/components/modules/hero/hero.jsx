@@ -12,15 +12,15 @@ export const Hero = () => {
           <HeroImage src={Image} alt="" loading="lazy" />
         </ImgBlock>
         <HeroInfo>
-          <TitleH1 mb={40}>Твій ідеальний десерт</TitleH1>
+          <TitleH1 mb={40} mt={137}>Ваш ідеальний десерт</TitleH1>
           <Text size={16} lh={'normal'} color="t">
-            Замовляй вишукані десерти для свого свята!
+          Замовляйте вишукані десерти для свого свята!
           </Text>
           <Text size={16} lh={'normal'} color="t">
-            Всі десерти створюються в ручну з якісних та свіжих продуктів
+Усі десерти створюються власноруч з якісних та свіжих продуктів
           </Text>
-          <Button mt={60} p="16px 74px">
-            Каталог
+          <Button mt={60} p="16px 70.5px">
+          Магазин
           </Button>
         </HeroInfo>
       </Box>

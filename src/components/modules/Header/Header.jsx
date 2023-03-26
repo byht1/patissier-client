@@ -3,9 +3,9 @@ import { Button, Logo, Nav, Link } from './Header.styled';
 import { Container } from 'components/global/Container';
 import LogoSvg from '../../../img/logo/Logo.svg';
 import { LoginBlock } from './LoginBlock/LoginBlock';
-import { CallMe } from './Pop-up/CallMe';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { CallMe } from './Pop-up2/CallMe2';
 
 export function Header() {
   const [showCallMe, setShowCallMe] = useState(false);

@@ -26,17 +26,16 @@ export const Button = styled(ButtonsGhost)`
 `;
 
 export const Div = styled.div`
-z-index: 2000;
+  z-index: 2000;
   width: 100vw;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
   background: rgba(3, 3, 5, 0.7);
-      display: flex;
-    justify-content: center;
-    align-items: center;
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Form = styled.div``;
@@ -99,7 +98,7 @@ export const CloseSVG = styled(close)`
   & path {
     fill: ${({ color }) => color || 'white'};
   }
-  &: hover path {
+  &:hover path {
     fill: ${({ hoverColor }) => hoverColor || 'var(--accent-bg)'};
   }
 `;

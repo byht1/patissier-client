@@ -20,7 +20,6 @@ export function Header() {
             }}
             src={LogoSvg}
           />
-
           <Button
             onClick={() => {
               navigate('/about-us');
@@ -28,7 +27,6 @@ export function Header() {
           >
             Про нас
           </Button>
-
           <Button
             onClick={() => {
               navigate('/store');
@@ -36,7 +34,6 @@ export function Header() {
           >
             Магазин
           </Button>
-
           <Button
             onClick={() => {
               navigate('/courses');
@@ -44,7 +41,6 @@ export function Header() {
           >
             Курси
           </Button>
-
           <Button
             onClick={() => {
               navigate('/');

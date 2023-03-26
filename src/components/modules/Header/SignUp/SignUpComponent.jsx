@@ -1,5 +1,6 @@
 import { Container } from 'components/global/Container';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import signUp from '../../../../img/header/images/signUp.jpg';
 import {
   ContentContainer,
@@ -12,10 +13,15 @@ import {
   PrivacyPolicy,
   CheckBoxDefaultIc,
   CheckBoxActiveIc,
+  Button,
+  SubmitBlock,
+  SubmitAlreadyHaveAccount,
+  LinkToLogin,
 } from './SignUp.styled';
 
 export function SignUpComponent(params) {
   const [privacyPolicy, setPrivacyPolicy] = useState(false);
+  const navigate = useNavigate();
   return (
     <Container>
       <ContentContainer>
@@ -40,21 +46,35 @@ export function SignUpComponent(params) {
               <Input type="password" />
             </Label>
             <PrivacyPolicy>
-              {!privacyPolicy ? (
-                <CheckBoxDefaultIc
-                  onClick={() => {
-                    setPrivacyPolicy(true);
-                  }}
-                />
-              ) : (
+              {privacyPolicy ? (
                 <CheckBoxActiveIc
                   onClick={() => {
                     setPrivacyPolicy(false);
                   }}
                 />
-              )}{' '}
+              ) : (
+                <CheckBoxDefaultIc
+                  onClick={() => {
+                    setPrivacyPolicy(true);
+                  }}
+                />
+              )}
               Погоджуюсь з правилами конфідеційності
             </PrivacyPolicy>
+            <SubmitBlock>
+              <Button>Зареєструватися</Button>
+              <SubmitAlreadyHaveAccount>
+                Вже маю аккаунт.
+                <LinkToLogin
+                  onClick={() => {
+                    navigate('/log-in');
+                  }}
+                >
+                  {' '}
+                  Увійти
+                </LinkToLogin>
+              </SubmitAlreadyHaveAccount>
+            </SubmitBlock>
           </Form>
         </RegistryBlockCover>
       </ContentContainer>

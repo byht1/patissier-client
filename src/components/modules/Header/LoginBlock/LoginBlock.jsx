@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Link } from '../Header.styled';
+import { useNavigate } from 'react-router-dom';
+
 import {
-  Button,
   Div,
   HeartIc,
   PhoneSVG,
@@ -16,15 +16,10 @@ import {
 
 export function LoginBlock({ setShowCallMe }) {
   const [showSearch, setShowSearch] = useState(false);
+  const navigate = useNavigate();
+
   return (
     <Div>
-      <Link href="http://localhost:3000/patissier-client/log-in">
-        <Button>Увійти</Button>
-      </Link>
-
-      <Link href="http://localhost:3000/patissier-client/sign-up">
-        <Button ml={'10px'}>Реєстрація</Button>
-      </Link>
       {!showSearch ? (
         <SearchIc
           onClick={() => {
@@ -49,7 +44,11 @@ export function LoginBlock({ setShowCallMe }) {
           setShowCallMe(true);
         }}
       />
-      <UserIc />
+      <UserIc
+        onClick={() => {
+          navigate('/log-in');
+        }}
+      />
     </Div>
   );
 }

@@ -19,7 +19,6 @@ export const Button = styled(ButtonsGhost)`
   border-bottom: 1px solid ${p => p.theme.colors.panelBg};
   &:focus,
   &:hover {
-    font-weight: 700;
     color: ${p => p.theme.colors.aBg};
     background-color: ${p => p.theme.colors.panelBg};
     border-bottom: 1px solid ${p => p.theme.colors.aBg};
@@ -31,6 +30,7 @@ export const Button = styled(ButtonsGhost)`
 export const Logo = styled.img`
   width: 166px;
   height: 66px;
+  cursor: pointer;
 `;
 
 export const Link = styled.a``;

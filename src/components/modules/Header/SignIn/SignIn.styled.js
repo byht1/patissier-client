@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
+import { ReactComponent as checkBoxDefaultSvg } from '../../../../img/header/icons/checkBoxDefault.svg';
+import { ReactComponent as checkBoxActiveSvg } from '../../../../img/header/icons/checkBoxActive.svg';
+
 export const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -36,6 +39,8 @@ export const Form = styled.form`
 export const Label = styled.label`
   margin-top: 40px;
 
+  position: relative;
+
   display: flex;
   flex-direction: column;
 `;
@@ -58,4 +63,102 @@ export const Input = styled.input`
   border: 1px solid #ff852d;
 
   outline: none;
+`;
+
+export const KeepOnline = styled.span`
+  display: flex;
+  margin-top: 40px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 2;
+
+  letter-spacing: -0.019em;
+
+  color: #ffffff;
+`;
+
+export const ForgotPassword = styled.a`
+  position: absolute;
+  top: 76px;
+  right: 0px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.71;
+
+  letter-spacing: -0.019em;
+
+  color: #b5b5b5;
+
+  &:focus,
+  &:hover {
+    color: #ff6b00;
+  }
+
+  cursor: pointer;
+`;
+
+export const CheckBoxDefaultIc = styled(checkBoxDefaultSvg)`
+  margin-left: 5px;
+  margin-right: 12px;
+  cursor: pointer;
+`;
+
+export const CheckBoxActiveIc = styled(checkBoxActiveSvg)`
+  margin-left: 5px;
+  margin-right: 12px;
+  cursor: pointer;
+`;
+
+export const Button = styled.button`
+  align-items: center;
+  margin-top: 60px;
+
+  width: 216px;
+  height: 52px;
+
+  background: #ff852d;
+  border-radius: 12px;
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+
+  color: #030305;
+
+  &:focus,
+  &:hover {
+    background: #ff6b00;
+  }
+`;
+
+export const SubmitBlock = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+`;
+
+export const LinkToSignUp = styled.a`
+  margin-left: 60px;
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #ff852d;
+
+  &:focus,
+  &:hover {
+    color: #ff6b00;
+  }
+
+  cursor: pointer;
 `;

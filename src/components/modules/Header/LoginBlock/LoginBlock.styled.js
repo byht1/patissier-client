@@ -135,7 +135,7 @@ export const SearchIc = styled(SearchSvg)`
 `;
 
 export const Search = styled.input`
-  margin-top: 8px;
+  margin-top: 6px;
 
   width: 324px;
   height: 40px;

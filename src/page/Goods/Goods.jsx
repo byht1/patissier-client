@@ -1,5 +1,11 @@
 import React from 'react';
+import { Header } from 'components/modules/Header/Header';
 
 export default function Goods() {
-  return <div>Goods</div>;
+  return (
+    <>
+      <Header />
+      <div>Goods</div>
+    </>
+  );
 }

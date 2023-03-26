@@ -18,7 +18,7 @@ import Icon05 from 'img/aboutus/way05.png';
 
 export const WayToSuccess = () => {
   return (
-    <Container pt={100} pb={100}>
+    <Container pt={160} pb={100}>
       <Box display="flex">
         <Box width={552}>
           <WayList>

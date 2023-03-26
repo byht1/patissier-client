@@ -8,3 +8,12 @@ const URL = 'https://patissier-server.onrender.com';
 export const server = axios.create({
   baseURL: URL,
 });
+
+export const token = {
+  set(token) {
+    server.defaults.headers.common.Authorization = `Bearer ${token}`;
+  },
+  unset() {
+    server.defaults.headers.common.Authorization = '';
+  },
+};

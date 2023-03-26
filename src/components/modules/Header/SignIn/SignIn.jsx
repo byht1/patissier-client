@@ -1,25 +1,25 @@
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import signIn from '../../../../img/header/images/signIn.jpg';
 import { Header } from '../Header';
-import { useState } from 'react';
 import {
-  SignInImg,
+  Button,
+  CheckBoxActiveIc,
+  CheckBoxDefaultIc,
   ContentContainer,
+  ForgotPassword,
   Form,
   Input,
-  Label,
-  RegistryBlockCover,
-  Title,
   KeepOnline,
-  CheckBoxDefaultIc,
-  CheckBoxActiveIc,
-  Button,
-  SubmitBlock,
+  Label,
   LinkToSignUp,
-  ForgotPassword,
+  RegistryBlockCover,
+  SignInImg,
+  SubmitBlock,
+  Title,
 } from './SignIn.styled';
 
 import { Container } from 'components/global/Container';
-import { useNavigate } from 'react-router-dom';
 
 export function SignIn(params) {
   const [keepOnline, setKeepOnline] = useState(false);

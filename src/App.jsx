@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
 import AppBar from 'page/AppBar'; // Header
+import React from 'react';
 
 const Home = lazy(() => import('page/Home')); // Головна сторінка
 const Goods = lazy(() => import('page/Goods')); // Tовари

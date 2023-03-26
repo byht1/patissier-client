@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import { ReactComponent as checkBoxDefaultSvg } from '../../../../img/header/icons/checkBoxDefault.svg';
 import { ReactComponent as checkBoxActiveSvg } from '../../../../img/header/icons/checkBoxActive.svg';
+import { ReactComponent as checkBoxDefaultSvg } from '../../../../img/header/icons/checkBoxDefault.svg';
 
 export const ContentContainer = styled.div`
   display: flex;

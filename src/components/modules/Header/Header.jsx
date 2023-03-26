@@ -1,5 +1,5 @@
 import { Box } from '@mui/system';
-import { Button, Logo, Nav } from './Header.styled';
+import { Button, Logo, Nav, Link } from './Header.styled';
 import { Container } from 'components/global/Container';
 import LogoSvg from '../../../img/logo/Logo.svg';
 import { LoginBlock } from './LoginBlock/LoginBlock';
@@ -20,34 +20,42 @@ export function Header() {
             }}
             src={LogoSvg}
           />
-          <Button
-            onClick={() => {
-              navigate('/about-us');
-            }}
-          >
-            Про нас
-          </Button>
-          <Button
-            onClick={() => {
-              navigate('/store');
-            }}
-          >
-            Магазин
-          </Button>
-          <Button
-            onClick={() => {
-              navigate('/courses');
-            }}
-          >
-            Курси
-          </Button>
-          <Button
-            onClick={() => {
-              navigate('/');
-            }}
-          >
-            Блог
-          </Button>
+          <Link>
+            <Button
+              onClick={() => {
+                navigate('/about-us');
+              }}
+            >
+              Про нас
+            </Button>
+          </Link>
+          <Link>
+            <Button
+              onClick={() => {
+                navigate('/store');
+              }}
+            >
+              Магазин
+            </Button>
+          </Link>
+          <Link>
+            <Button
+              onClick={() => {
+                navigate('/courses');
+              }}
+            >
+              Курси
+            </Button>
+          </Link>
+          <Link>
+            <Button
+              onClick={() => {
+                navigate('/');
+              }}
+            >
+              Блог
+            </Button>
+          </Link>
         </Nav>
         <LoginBlock setShowCallMe={setShowCallMe} />
         {showCallMe ? <CallMe setShowCallMe={setShowCallMe} /> : null}

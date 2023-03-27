@@ -1,34 +1,32 @@
-import React from 'react';
 import { Container } from 'components/global/Container';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useMutation } from '@tanstack/react-query';
+import { signUp } from 'api/auth';
+import { sigUpSchema } from 'components/schemas/auth/SignUp.schema';
+import signUpImg from 'img/header/images/signUp.jpg';
+import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { toast, ToastContainer } from 'react-toastify';
+import { register } from 'redux/auth';
 import {
+  Button,
+  CheckBoxActiveIc,
+  CheckBoxDefaultIc,
   ContentContainer,
   Form,
   Input,
   Label,
+  LinkToLogin,
+  PrivacyPolicy,
   RegistryBlockCover,
   SignUpImg,
-  Title,
-  PrivacyPolicy,
-  CheckBoxDefaultIc,
-  CheckBoxActiveIc,
-  Button,
-  SubmitBlock,
   SubmitAlreadyHaveAccount,
-  LinkToLogin,
+  SubmitBlock,
+  Title,
 } from './SignUp.styled';
-import { useDispatch } from 'react-redux';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { sigUpSchema } from 'components/schemas/auth/SignUp.schema';
-import signUpImg from 'img/header/images/signUp.jpg';
-import { useMutation } from '@tanstack/react-query';
-import { signUp } from 'api/auth';
-import { register } from 'redux/auth';
-import { FormContext } from 'components/global/FormContext';
-import { toast, ToastContainer } from 'react-toastify';
 
 export function SignUpComponent(params) {
   const [privacyPolicy, setPrivacyPolicy] = useState(false);
@@ -44,7 +42,7 @@ export function SignUpComponent(params) {
   const { reset, handleSubmit, register: registerField } = method;
 
   const { mutate: regUser, isLoading } = useMutation({
-    mutationKey: ['user'],
+    mutationKey: ['user1'],
     mutationFn: data => signUp(data),
     onSuccess: signData => {
       setError(null);
@@ -53,15 +51,11 @@ export function SignUpComponent(params) {
     },
     onError: error => {
       setError(error.response.data.message);
-      console.log(
-        '🚀 ~ file: SignUpComponent.jsx:65 ~ SignUpComponent ~ error.response.data.message:',
-        error.response.data.message
-      );
       toast.error(error.response.data.email, {
         hideProgressBar: true,
         autoClose: 5000,
       });
-      toast.error(error.response.data.name, {
+      toast.error(error.response.data.username, {
         hideProgressBar: true,
         autoClose: 5000,
       });
@@ -77,18 +71,19 @@ export function SignUpComponent(params) {
   });
 
   const onSubmit = data => {
-    console.log('🚀 ~ file: SignUpComponent.jsx:79 ~ onSubmit ~ data:', data);
     regUser(data);
   };
 
   return (
     <Container>
       <ToastContainer />
+      {/* TODO Змінити на лоадер */}
+      {isLoading && <h1 style={{ textAlign="center" }}>Loading ...</h1>} 
+      {error && <h1>There is the error {error}</h1>}
       <ContentContainer>
-        <Title>Зареєструвтися</Title>
+        <Title>Зареєструватись</Title>
         <RegistryBlockCover>
           <SignUpImg src={signUpImg} />
-          {/* <FormContext methods={method} submit={onSubmit}> */}
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Label>
               Email
@@ -123,8 +118,7 @@ export function SignUpComponent(params) {
               Погоджуюсь з правилами конфідеційності
             </PrivacyPolicy>
             <SubmitBlock>
-              <input type="submit" />
-              <Button type={'submit'}>Зареєструватися</Button>
+              <Button type="submit">Зареєструватись</Button>
               <SubmitAlreadyHaveAccount>
                 Вже маю аккаунт.
                 <LinkToLogin
@@ -138,7 +132,6 @@ export function SignUpComponent(params) {
               </SubmitAlreadyHaveAccount>
             </SubmitBlock>
           </Form>
-          {/* </FormContext> */}
         </RegistryBlockCover>
       </ContentContainer>
     </Container>

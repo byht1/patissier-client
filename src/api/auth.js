@@ -1,7 +1,7 @@
 import { server, token } from './basic';
 
 const UrlRegister = Object.freeze({
-  signUp: '/auth/sign-up',
+  signUp: '/auth/sing-up',
   logIn: '/auth/log-in',
   logOut: '/auth/logout',
   active: '/auth/active',
@@ -10,14 +10,33 @@ const UrlRegister = Object.freeze({
 });
 
 export const signUp = async body => {
+  const preparedUserData = {
+    username: body.name,
+    email: body.email,
+    password: body.password,
+  };
+
   try {
-    const { data } = await server.post(UrlRegister.signUp, body);
+    const { data } = await server.post(UrlRegister.signUp, preparedUserData);
 
     token.set(data.access_token);
     localStorage.setItem('token', data.token);
 
     return data;
   } catch (error) {
-    throw error;
+    throw error.message;
+  }
+};
+
+export const logIn = async body => {
+  try {
+    const { data } = await server.post(UrlRegister.logIn, body);
+
+    token.set(data.access_token);
+    localStorage.setItem('token', data.token);
+
+    return data;
+  } catch (error) {
+    throw error.message;
   }
 };

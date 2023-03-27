@@ -5,6 +5,8 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import AppBar from 'page/AppBar'; // Header
 import React from 'react';
 
+import { RestrictedRoute } from 'components/global/RestrictedRoute';
+
 const Home = lazy(() => import('page/Home')); // Головна сторінка
 const Goods = lazy(() => import('page/Goods')); // Tовари
 const SelectedProduct = lazy(() => import('page/SelectedProduct')); // Обраний товар
@@ -35,8 +37,21 @@ function App() {
           <Route path="current-courses" element={<CurrentCourses />} />
           <Route path="sing-up-courses" element={<RegistrationForCourses />} />
           <Route path="about-us" element={<AboutUs />} />
-          <Route path="sign-up" element={<SignUp />} />
-          <Route path="log-in" element={<LogIn />} />
+
+          {/* Публічний шлях */}
+          <Route
+            path="sign-up"
+            element={
+              <RestrictedRoute component={SignUp} redirectTo="/" />
+            } /*змінити на особистий кабінет */
+          />
+          <Route
+            path="log-in"
+            element={
+              <RestrictedRoute component={LogIn} redirectTo="/" />
+            } /*змінити на особистий кабінет */
+          />
+
           {/* <Route path="/user">
             <Route index element={<PersonalOffice />}/>
             <Route path="admin" element={<Admin />} />

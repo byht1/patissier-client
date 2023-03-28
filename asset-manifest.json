@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/patissier-client/static/css/main.784a97a2.css",
-    "main.js": "/patissier-client/static/js/main.181fc1b1.js",
-    "static/js/817.71dcee21.chunk.js": "/patissier-client/static/js/817.71dcee21.chunk.js",
+    "main.js": "/patissier-client/static/js/main.739b6dbf.js",
+    "static/js/817.1db8b1a4.chunk.js": "/patissier-client/static/js/817.1db8b1a4.chunk.js",
     "static/js/970.7cf55c8d.chunk.js": "/patissier-client/static/js/970.7cf55c8d.chunk.js",
     "static/js/526.24c107d8.chunk.js": "/patissier-client/static/js/526.24c107d8.chunk.js",
     "static/js/6.a735bd50.chunk.js": "/patissier-client/static/js/6.a735bd50.chunk.js",
@@ -60,8 +60,8 @@
     "static/media/closeX.svg": "/patissier-client/static/media/closeX.341101c3d05ccb1ac70c5d270be993fe.svg",
     "static/media/close.svg": "/patissier-client/static/media/close.444a2b2db7e93c31817676d59925f918.svg",
     "main.784a97a2.css.map": "/patissier-client/static/css/main.784a97a2.css.map",
-    "main.181fc1b1.js.map": "/patissier-client/static/js/main.181fc1b1.js.map",
-    "817.71dcee21.chunk.js.map": "/patissier-client/static/js/817.71dcee21.chunk.js.map",
+    "main.739b6dbf.js.map": "/patissier-client/static/js/main.739b6dbf.js.map",
+    "817.1db8b1a4.chunk.js.map": "/patissier-client/static/js/817.1db8b1a4.chunk.js.map",
     "970.7cf55c8d.chunk.js.map": "/patissier-client/static/js/970.7cf55c8d.chunk.js.map",
     "526.24c107d8.chunk.js.map": "/patissier-client/static/js/526.24c107d8.chunk.js.map",
     "6.a735bd50.chunk.js.map": "/patissier-client/static/js/6.a735bd50.chunk.js.map",
@@ -80,6 +80,6 @@
   },
   "entrypoints": [
     "static/css/main.784a97a2.css",
-    "static/js/main.181fc1b1.js"
+    "static/js/main.739b6dbf.js"
   ]
 }

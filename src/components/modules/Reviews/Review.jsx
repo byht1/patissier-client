@@ -7,7 +7,7 @@ import { ReviewsList } from './Reviews.styled';
 import { ReviewItem } from './ReviewsItem';
 import { defaultReviewsList } from './defaultReviews';
 
-export const Reviews = () => {
+export const Reviews = ({ title }) => {
   const [reviewsList, setReviewsList] = useState([]);
 
   useEffect(() => {
@@ -21,13 +21,13 @@ export const Reviews = () => {
     }
     getReviewsList();
   }, []);
-  
+
   return (
     <>
       <Container pt={114} pb={100}>
         <Box display="flex" flexDirection="column" alignItems="center">
           <TitleH2 mb={75} color="at">
-            Відгуки
+            {title}
           </TitleH2>
           <ReviewsList>
             {reviewsList.map(reviewItem => (

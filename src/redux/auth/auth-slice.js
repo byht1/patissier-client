@@ -20,7 +20,7 @@ export const authSlice = createSlice({
       state.isLogin = true;
       state.token = payload.access_token;
     },
-    logout(state) {
+    logOut(state) {
       state.user = {
         username: null,
         email: null,
@@ -41,4 +41,4 @@ export const authSlice = createSlice({
   },
 });
 
-export const { register, logout, updateUserInfo } = authSlice.actions;
+export const { register, logOut, updateUserInfo } = authSlice.actions;

@@ -10,6 +10,7 @@ import signUpImg from 'img/header/images/signUp.jpg';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { register } from 'redux/auth';
 import {
   Button,
@@ -78,8 +79,9 @@ export function SignUpComponent(params) {
     <Container>
       <ToastContainer />
       {/* TODO Змінити на лоадер */}
-      {isLoading && <h1 style={{ textAlign="center" }}>Loading ...</h1>} 
+      {isLoading && <h1 style={{ textAlign: 'center' }}>Loading ...</h1>}
       {error && <h1>There is the error {error}</h1>}
+
       <ContentContainer>
         <Title>Зареєструватись</Title>
         <RegistryBlockCover>

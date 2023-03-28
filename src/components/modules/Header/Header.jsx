@@ -7,9 +7,29 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CallMe } from './Pop-up/CallMe';
 
+import { useMutation } from '@tanstack/react-query';
+import { useDispatch } from 'react-redux';
+import { logOutUser } from 'api/auth';
+import { logOut } from 'redux/auth';
+
 export function Header() {
   const [showCallMe, setShowCallMe] = useState(false);
   const navigate = useNavigate();
+
+  const dispatch = useDispatch();
+  const { mutate: logOutUserFn } = useMutation({
+    mutationKey: ['user'],
+    mutationFn: () => logOutUser(),
+    onSuccess: () => dispatch(logOut()),
+    onError: error => {
+      if (error.response.data.message === 'Invalid token') {
+        dispatch(logOut());
+      }
+    },
+    staleTime: Infinity,
+    refetchOnWindowFocus: false,
+  });
+
   return (
     <Container>
       <Box display="flex" alignItems="center" justifyContent="space-between">
@@ -54,6 +74,16 @@ export function Header() {
               }}
             >
               Блог
+            </Button>
+          </Link>
+          {/*Temporary LOGOUT */}
+          <Link>
+            <Button
+              onClick={() => {
+                logOutUserFn();
+              }}
+            >
+              LogOut
             </Button>
           </Link>
         </Nav>

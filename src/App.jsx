@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Navigate, Route, Routes } from 'react-router-dom';
+import { SelectedProductList } from 'components/modules/SelectedProduct/SelectedProductList';
 
 import AppBar from 'page/AppBar'; // Header
 
@@ -27,7 +28,14 @@ function App() {
         <Route path="/" element={<AppBar />}>
           <Route index element={<Home />} />
           <Route path="store" element={<Goods />} />
-          <Route path="select-product" element={<SelectedProduct />} />
+          <Route path="select-product" element={<SelectedProduct />}>
+            <Route path="all" element={<SelectedProductList />} />
+            <Route path="cakes" element={<SelectedProductList />} />
+            <Route path="casseroles" element={<SelectedProductList />} />
+            <Route path="biscuits" element={<SelectedProductList />} />
+            <Route path="buns" element={<SelectedProductList />} />
+            <Route path="pies" element={<SelectedProductList />} />
+          </Route>
           <Route path="basket" element={<Basket />} />
           <Route path="courses" element={<Courses />} />
           <Route path="master-classes" element={<MasterClasses />} />

@@ -29,7 +29,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="store" element={<Goods />} />
           <Route path="select-product" element={<SelectedProduct />}>
-            <Route path="all" element={<SelectedProductList />} />
+            <Route index element={<SelectedProductList />} />
             <Route path="cakes" element={<SelectedProductList />} />
             <Route path="casseroles" element={<SelectedProductList />} />
             <Route path="biscuits" element={<SelectedProductList />} />

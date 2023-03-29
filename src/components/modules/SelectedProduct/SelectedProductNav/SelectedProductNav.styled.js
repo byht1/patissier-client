@@ -1,0 +1,25 @@
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
+
+export const NavButton = styled(NavLink)`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: ${p => p.theme.lineHeights.big};
+  width: 180px;
+  height: 58px;
+  background-color: ${p => p.theme.colors.btnBg};
+  color: ${p => p.theme.colors.wt};
+  border-radius: 12px;
+  &:hover,
+  &:focus {
+    border-bottom: 1.5px solid ${p => p.theme.colors.at};
+    color: ${p => p.theme.colors.at};
+    font-weight: 700;
+  }
+  &.active {
+    border-bottom: 1.5px solid ${p => p.theme.colors.at};
+    color: ${p => p.theme.colors.at};
+    font-weight: 700;
+  }
+`;

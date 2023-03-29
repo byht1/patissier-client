@@ -5,7 +5,6 @@ export const ContainerBox = styled.div`
   ${p => p.pb && `padding-bottom: ${p.pb}px`};
   padding-left: 15px;
   padding-right: 15px;
-
   margin: 0 auto;
   width: 100%;
 

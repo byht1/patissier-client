@@ -16,7 +16,7 @@ export default function Home() {
       <Statistics />
       <Greetings ReadMoreLink={true} />
       <Courses />
-      <Reviews />
+      <Reviews title={'Відгуки'} />
       <Insta />
     </>
   );

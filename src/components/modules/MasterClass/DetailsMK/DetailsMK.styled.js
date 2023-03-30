@@ -1,34 +1,9 @@
 import styled from 'styled-components';
+import { ButtonsGhost, Button } from 'components/global/button';
 
-import { ButtonsGhost } from 'components/global/button';
 
 
-export const ImageWrap = styled.div`
-width: 570px;
-height: 669px;
-margin-right: 60px;
-`;
-export const MKImage = styled.img`
-display: block;
-width: 100%;
-object-fit: cover;
-border-radius: 12px;
-`;
-export const TextWrap = styled.div`
- display: flex;
- flex-direction: column;
- justify-content: space-between;
-`;
-export const BakeryList = styled.ul`
-  
-`;
-export const DrinkList = styled.ul`
-  
-`;
-export const BonusList = styled.ul`
-  
-`;
-export const Button = styled(ButtonsGhost)`
+export const Buttons = styled(ButtonsGhost)`
 padding: 18px 56px;
 border: ${p => p.theme.borders.none};
 color: ${p => p.theme.colors.wt};
@@ -40,6 +15,10 @@ background-color: ${p => p.theme.colors.btnBg};
   background-color: ${p => p.theme.colors.btnBg};
   color: ${p => p.theme.colors.aBg};
 }
+`;
+export const ButtonPay = styled(Button)`
+padding: 18px 56.5px;
+
 `;
 export const ButtonWrap = styled.div`
 display: flex;
@@ -80,3 +59,20 @@ border-radius: 12px;
 background-color: ${p => p.theme.colors.bg};
 box-shadow: ${p => p.theme.shadows.s};
 `;
+export const DetailsAboutPrice = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 20px;
+width: 588px;
+height: 232px;
+border-radius: 12px;
+background-color: ${p => p.theme.colors.bg};
+box-shadow: ${p => p.theme.shadows.s};
+`;
+export const ProgramList = styled.ul`
+display: flex;
+flex-direction: column;
+gap: 12px;
+align-items: center;
+`

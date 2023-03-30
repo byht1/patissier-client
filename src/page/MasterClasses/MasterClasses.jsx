@@ -24,7 +24,7 @@ export default function MasterClasses() {
       
         <MainMK bakeryList={dataBakery} drinkList={dataDrink} bonusList={dataBonus}/>
         <DetailsMK stageList={dataProgramMK}/>
-        <Reviews />
+        <Reviews title={'Що говорять учні?'}/>
       </Box>
     </Container>
     </>

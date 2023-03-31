@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { TextBox } from 'components/global/text';
 import { NavLink } from 'react-router-dom';
-import Vector from 'img/aboutus/Vector.png';
+import Vector from 'img/arrow/arrow_forward.svg';
 
 export const ImgWrap = styled.div`
   width: 552px;
@@ -39,17 +39,24 @@ export const ReadMore = styled(NavLink)`
   line-height: ${p => p.theme.lineHeights.big};
   color: ${p => p.theme.colors.at};
   font-weight: ${p => p.theme.fontWeights.bold};
-  display: block;
+  display: inline-block;
   margin-top: 42px;
 
   &::after {
     content: '';
     display: inline-block;
+    opacity: 0;
     margin-left: 10px;
     background-image: url(${Vector});
     background-repeat: no-repeat;
     background-size: cover;
     width: 33px;
     height: 13px;
+
+    transition: opacity 250ms linear;
+  }
+
+  &:hover::after {
+    opacity: 1;
   }
 `;

@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/patissier-client/static/css/main.784a97a2.css",
-    "main.js": "/patissier-client/static/js/main.bd7ace1f.js",
+    "main.js": "/patissier-client/static/js/main.ec719937.js",
     "static/js/817.ecd72fad.chunk.js": "/patissier-client/static/js/817.ecd72fad.chunk.js",
     "static/js/970.7cf55c8d.chunk.js": "/patissier-client/static/js/970.7cf55c8d.chunk.js",
     "static/js/526.24c107d8.chunk.js": "/patissier-client/static/js/526.24c107d8.chunk.js",
@@ -10,14 +10,14 @@
     "static/js/679.1456b5bf.chunk.js": "/patissier-client/static/js/679.1456b5bf.chunk.js",
     "static/js/106.f05ad3c7.chunk.js": "/patissier-client/static/js/106.f05ad3c7.chunk.js",
     "static/js/122.f6d05025.chunk.js": "/patissier-client/static/js/122.f6d05025.chunk.js",
-    "static/js/557.77e6593b.chunk.js": "/patissier-client/static/js/557.77e6593b.chunk.js",
+    "static/js/557.f5f2f3ed.chunk.js": "/patissier-client/static/js/557.f5f2f3ed.chunk.js",
     "static/js/229.9a163665.chunk.js": "/patissier-client/static/js/229.9a163665.chunk.js",
     "static/js/782.6c9c1dda.chunk.js": "/patissier-client/static/js/782.6c9c1dda.chunk.js",
     "static/js/819.7e9c60bd.chunk.js": "/patissier-client/static/js/819.7e9c60bd.chunk.js",
     "static/js/407.ba9ecfed.chunk.js": "/patissier-client/static/js/407.ba9ecfed.chunk.js",
     "static/js/273.69b6298c.chunk.js": "/patissier-client/static/js/273.69b6298c.chunk.js",
     "static/js/917.b935695f.chunk.js": "/patissier-client/static/js/917.b935695f.chunk.js",
-    "static/js/94.74d0df40.chunk.js": "/patissier-client/static/js/94.74d0df40.chunk.js",
+    "static/js/94.4333c8bb.chunk.js": "/patissier-client/static/js/94.4333c8bb.chunk.js",
     "static/media/signUp.jpg": "/patissier-client/static/media/signUp.628940800de0cb55f3da.jpg",
     "static/media/signIn.jpg": "/patissier-client/static/media/signIn.28f88132291f199ee88e.jpg",
     "static/media/link-2@2x.jpg": "/patissier-client/static/media/link-2@2x.9a79af89003009385779.jpg",
@@ -61,7 +61,7 @@
     "static/media/close.svg": "/patissier-client/static/media/close.444a2b2db7e93c31817676d59925f918.svg",
     "static/media/arrow_forward.svg": "/patissier-client/static/media/arrow_forward.69ce47525667a7bab214384991e08e00.svg",
     "main.784a97a2.css.map": "/patissier-client/static/css/main.784a97a2.css.map",
-    "main.bd7ace1f.js.map": "/patissier-client/static/js/main.bd7ace1f.js.map",
+    "main.ec719937.js.map": "/patissier-client/static/js/main.ec719937.js.map",
     "817.ecd72fad.chunk.js.map": "/patissier-client/static/js/817.ecd72fad.chunk.js.map",
     "970.7cf55c8d.chunk.js.map": "/patissier-client/static/js/970.7cf55c8d.chunk.js.map",
     "526.24c107d8.chunk.js.map": "/patissier-client/static/js/526.24c107d8.chunk.js.map",
@@ -70,17 +70,17 @@
     "679.1456b5bf.chunk.js.map": "/patissier-client/static/js/679.1456b5bf.chunk.js.map",
     "106.f05ad3c7.chunk.js.map": "/patissier-client/static/js/106.f05ad3c7.chunk.js.map",
     "122.f6d05025.chunk.js.map": "/patissier-client/static/js/122.f6d05025.chunk.js.map",
-    "557.77e6593b.chunk.js.map": "/patissier-client/static/js/557.77e6593b.chunk.js.map",
+    "557.f5f2f3ed.chunk.js.map": "/patissier-client/static/js/557.f5f2f3ed.chunk.js.map",
     "229.9a163665.chunk.js.map": "/patissier-client/static/js/229.9a163665.chunk.js.map",
     "782.6c9c1dda.chunk.js.map": "/patissier-client/static/js/782.6c9c1dda.chunk.js.map",
     "819.7e9c60bd.chunk.js.map": "/patissier-client/static/js/819.7e9c60bd.chunk.js.map",
     "407.ba9ecfed.chunk.js.map": "/patissier-client/static/js/407.ba9ecfed.chunk.js.map",
     "273.69b6298c.chunk.js.map": "/patissier-client/static/js/273.69b6298c.chunk.js.map",
     "917.b935695f.chunk.js.map": "/patissier-client/static/js/917.b935695f.chunk.js.map",
-    "94.74d0df40.chunk.js.map": "/patissier-client/static/js/94.74d0df40.chunk.js.map"
+    "94.4333c8bb.chunk.js.map": "/patissier-client/static/js/94.4333c8bb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.784a97a2.css",
-    "static/js/main.bd7ace1f.js"
+    "static/js/main.ec719937.js"
   ]
 }

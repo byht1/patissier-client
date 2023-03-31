@@ -59,4 +59,8 @@ export const ReadMore = styled(NavLink)`
   &:hover::after {
     opacity: 1;
   }
+
+  &:focus::after {
+    opacity: 1;
+  }
 `;

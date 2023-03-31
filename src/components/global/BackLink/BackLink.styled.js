@@ -14,6 +14,10 @@ export const BackLink = styled(NavLink)`
   &:hover {
     color: ${p => p.theme.colors.at};
   }
+
+  &:focus {
+    color: ${p => p.theme.colors.at};
+  }
 `;
 
 export const Svg = styled.svg`

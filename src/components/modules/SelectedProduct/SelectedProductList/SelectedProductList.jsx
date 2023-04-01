@@ -1,23 +1,14 @@
+import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getAllProducts, getProductsByCategory } from 'api/products';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { ProductList } from './SelectedProduct.styled';
+import { SelectedProductItem } from '../SelectedProductItem';
+
 export const SelectedProductList = () => {
   const location = useLocation();
   const pathname = location.pathname.split('/')[2];
   const [productList, setProductList] = useState([]);
 
-  // useEffect(() => {
-  //   async function getProductsList() {
-  //     try {
-  //       const products = await getAllProducts();
-  //       setProductList(products);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   }
-  //   getReviewsList();
-  // }, []);
   let categoryName = '';
 
   switch (pathname) {
@@ -42,20 +33,27 @@ export const SelectedProductList = () => {
   console.log(categoryName);
   useEffect(() => {
     async function getProductsList() {
-      // console.log(categoryName);
-      // const categoryNamed = 'Торт';
       try {
         if (categoryName) {
-          const products = await getProductsByCategory(categoryName);
-          return products;
+          const result = await getProductsByCategory(categoryName);
+          setProductList(result.products);
         }
-        const products = await getAllProducts();
-        setProductList(products);
+        const result = await getAllProducts();
+        setProductList(result.products);
       } catch (error) {
         console.log(error);
       }
     }
     getProductsList();
   }, [categoryName]);
-  return <div>LIST</div>;
+  console.log(productList);
+  return (
+    <div>
+      <ProductList>
+        {productList.map(item => (
+          <SelectedProductItem product={item} />
+        ))}
+      </ProductList>
+    </div>
+  );
 };

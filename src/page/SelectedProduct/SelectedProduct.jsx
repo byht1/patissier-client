@@ -3,7 +3,6 @@ import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { SelectedProductNav } from 'components/modules/SelectedProduct/SelectedProductNav';
 import { Container } from 'components/global/Container';
-import { Box } from 'components/global/Box';
 import { TitleH1 } from 'components/global/text';
 import { Text } from 'components/global/text';
 
@@ -18,9 +17,7 @@ export default function SelectedProduct() {
           Замовляйте вишукані десерти для свого свята! <br />В наявності та на
           замовлення
         </Text>
-        <Box display="flex" flexDirection="column" alignItems="center">
-          <SelectedProductNav />
-        </Box>
+        <SelectedProductNav />
         <Suspense>
           <Outlet />
         </Suspense>

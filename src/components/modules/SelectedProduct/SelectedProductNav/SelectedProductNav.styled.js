@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
+export const ProductNav = styled.div`
+  display: block;
+  justify-content: space-between;
+`;
+
 export const NavButton = styled(NavLink)`
   display: inline-flex;
   align-items: center;

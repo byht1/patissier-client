@@ -44,8 +44,7 @@ export const PhoneSVG = styled(PhoneSvg)`
   margin-left: 12px;
   cursor: pointer;
   margin-top: 6px;
-  /* width: ${({ width }) => width || '28px'};
-  height: ${({ height }) => height || '35px'}; */
+
   & path {
     fill: ${({ color }) => color || 'none'};
   }
@@ -148,7 +147,7 @@ export const Search = styled.input`
   font-size: 14px;
   line-height: 1.3;
 
-  background: #ffffff;
+  background: ${p => p.theme.colors.w};
   border-radius: 26px;
 
   outline: none;

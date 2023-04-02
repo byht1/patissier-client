@@ -1,61 +1,33 @@
 import { Box } from '@mui/system';
-import { Button, Logo, Nav, Link } from './Header.styled';
+import { Button, Logo, Nav, NavLinkStyled } from './Header.styled';
 import { Container } from 'components/global/Container';
 import LogoSvg from '../../../img/logo/Logo.svg';
 import { LoginBlock } from './LoginBlock/LoginBlock';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { CallMe } from './Pop-up/CallMe';
+import { Link } from 'react-router-dom';
 
 export function Header() {
   const [showCallMe, setShowCallMe] = useState(false);
-  const navigate = useNavigate();
   return (
     <Container>
       <Box display="flex" alignItems="center" justifyContent="space-between">
         <Nav>
-          <Logo
-            onClick={() => {
-              navigate('/');
-            }}
-            src={LogoSvg}
-          />
-          <Link>
-            <Button
-              onClick={() => {
-                navigate('/about-us');
-              }}
-            >
-              Про нас
-            </Button>
+          <Link to={'/'}>
+            <Logo src={LogoSvg} />
           </Link>
-          <Link>
-            <Button
-              onClick={() => {
-                navigate('/store');
-              }}
-            >
-              Магазин
-            </Button>
-          </Link>
-          <Link>
-            <Button
-              onClick={() => {
-                navigate('/courses');
-              }}
-            >
-              Курси
-            </Button>
-          </Link>
-          <Link>
-            <Button
-              onClick={() => {
-                navigate('/');
-              }}
-            >
-              Блог
-            </Button>
-          </Link>
+          <NavLinkStyled to={'/about-us'}>
+            <Button>Про нас</Button>
+          </NavLinkStyled>
+          <NavLinkStyled to={'/store'}>
+            <Button>Магазин</Button>
+          </NavLinkStyled>
+          <NavLinkStyled to={'/courses'}>
+            <Button>Курси</Button>
+          </NavLinkStyled>
+          <NavLinkStyled to={'/blog'}>
+            <Button>Блог</Button>
+          </NavLinkStyled>
         </Nav>
         <LoginBlock setShowCallMe={setShowCallMe} />
         {showCallMe ? <CallMe setShowCallMe={setShowCallMe} /> : null}

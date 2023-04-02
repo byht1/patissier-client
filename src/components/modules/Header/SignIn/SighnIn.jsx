@@ -1,22 +1,7 @@
 import signIn from '../../../../img/header/images/signIn.jpg';
 import { Header } from '../Header';
 import { useState } from 'react';
-import {
-  SignInImg,
-  ContentContainer,
-  Form,
-  Input,
-  Label,
-  RegistryBlockCover,
-  Title,
-  KeepOnline,
-  CheckBoxDefaultIc,
-  CheckBoxActiveIc,
-  Button,
-  SubmitBlock,
-  LinkToSignUp,
-  ForgotPassword,
-} from './SignIn.styled';
+import { SignInImg, ContentContainer, Form, Input, Label, RegistryBlockCover, Title, KeepOnline, CheckBoxDefaultIc, CheckBoxActiveIc, Button, SubmitBlock, LinkToSignUp, ForgotPassword, LoginIconsBox, GoogleIc, AppleIc, FacebookIc } from './SignIn.styled';
 
 import { Container } from 'components/global/Container';
 import { useNavigate } from 'react-router-dom';
@@ -33,6 +18,11 @@ export function SignIn(params) {
           <RegistryBlockCover>
             <SignInImg src={signIn} />
             <Form action="">
+              <LoginIconsBox>
+                <GoogleIc />
+                <AppleIc />
+                <FacebookIc />
+              </LoginIconsBox>
               <Label>
                 Email
                 <Input type="email" />

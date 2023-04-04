@@ -6,7 +6,11 @@ export const SocialNetworks = () => {
   return (
     <>
       <IconsWrap>
-        <SocialIcon href="#" target="_black" rel="noreferrer noopener nofollow">
+        <SocialIcon
+          href="https://www.facebook.com/"
+          target="_black"
+          rel="noreferrer noopener nofollow"
+        >
           <BsFacebook size="32" />
         </SocialIcon>
         <InstaIcon
@@ -16,7 +20,11 @@ export const SocialNetworks = () => {
         >
           <FaInstagram size="20" />
         </InstaIcon>
-        <SocialIcon href="#" target="_black" rel="noreferrer noopener nofollow">
+        <SocialIcon
+          href="https://www.youtube.com/"
+          target="_black"
+          rel="noreferrer noopener nofollow"
+        >
           <BsYoutube size="32" />
         </SocialIcon>
       </IconsWrap>

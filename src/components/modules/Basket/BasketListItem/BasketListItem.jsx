@@ -69,7 +69,7 @@ export const BasketListItem = () => {
                 <use xlinkHref={DelIcon + '#icon-del'} />
               </Svg>
             </DelBtn>
-            <TotalPrice>48,50</TotalPrice>
+            <TotalPrice>48,50 грн</TotalPrice>
           </Box>
         </ItemInfoWrap>
       </ItemWrap>

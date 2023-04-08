@@ -6,6 +6,7 @@ import { ReactComponent as HeartSvg } from '../../../../img/header/icons/Heart, 
 import { ReactComponent as UserSvg } from '../../../../img/header/icons/user-logout.svg';
 import { ReactComponent as SearchSvg } from '../../../../img/header/icons/search-loupe.svg';
 import { ReactComponent as closeXSvg } from '../../../../img/header/icons/closeX.svg';
+import { NavLink } from 'react-router-dom';
 
 export const Button = styled(ButtonsGhost)`
   font-weight: 400;
@@ -186,5 +187,22 @@ export const SearchIcInput = styled(SearchSvg)`
   }
   & circle {
     stroke: ${({ color }) => color || 'black'};
+  }
+`;
+
+export const NavigateLinkStyled = styled(NavLink)`
+  &.active {
+    color: red;
+    svg {
+      path {
+        fill: none;
+      }
+      path {
+        stroke: ${p => p.theme.colors.aBg};
+      }
+      circle {
+        stroke: ${p => p.theme.colors.aBg};
+      }
+    }
   }
 `;

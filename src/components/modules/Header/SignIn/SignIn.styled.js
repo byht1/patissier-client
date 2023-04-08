@@ -5,6 +5,7 @@ import { ReactComponent as checkBoxActiveSvg } from '../../../../img/header/icon
 import { ReactComponent as AppleSvg } from '../../../../img/header/icons/Apple.svg';
 import { ReactComponent as FacebookSvg } from '../../../../img/header/icons/Facebook.svg';
 import { ReactComponent as GoogleSvg } from '../../../../img/header/icons/Google.svg';
+import { Link } from 'react-router-dom';
 
 export const ContentContainer = styled.div`
   display: flex;
@@ -46,12 +47,14 @@ export const Label = styled.label`
 
   display: flex;
   flex-direction: column;
+
+  font-weight: 700;
 `;
 
 export const Input = styled.input`
   margin-top: 8px;
 
-  width: 528px;
+  width: 486px;
   height: 44px;
   padding: 12px 14px;
   border-radius: 12px;
@@ -83,7 +86,7 @@ export const KeepOnline = styled.span`
   color: ${p => p.theme.colors.wt};
 `;
 
-export const ForgotPassword = styled.a`
+export const ForgotPassword = styled(Link)`
   position: absolute;
   top: 76px;
   right: 0px;

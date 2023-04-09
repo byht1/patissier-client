@@ -7,6 +7,7 @@ export const ProductItem = styled.li`
 `;
 
 export const ImageWrap = styled.div`
+  position: relative;
   height: 340px;
   border-radius: 12px;
 `;
@@ -21,4 +22,18 @@ export const ProductImg = styled.img`
 
 export const ProductPrice = styled.span`
   font-weight: 600;
+`;
+
+export const AddToFavBtn = styled('button')`
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: ${p => p.theme.colors.bg};
+  backdrop-filter: blur(2px);
+  border-radius: ${p => p.theme.radii.round};
 `;

@@ -6,12 +6,14 @@ import {
   ImageWrap,
   ProductImg,
   ProductPrice,
+  AddToFavBtn,
 } from './SelectedProductItem.styled';
 
 export const SelectedProductItem = ({ product }) => {
   return (
     <ProductItem key={product._id}>
       <ImageWrap>
+        <AddToFavBtn></AddToFavBtn>
         <ProductImg src={product.picture} alt="Фото десерту" />
       </ImageWrap>
       <Box p={21}>

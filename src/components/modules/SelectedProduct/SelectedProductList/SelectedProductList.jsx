@@ -15,19 +15,19 @@
 
 //   switch (pathname) {
 //     case 'cakes':
-//       categoryName = 'Торт';
+//       categoryName = 'Торти';
 //       break;
 //     case 'casseroles':
-//       categoryName = '?????Запіканки';
+//       categoryName = 'Тістечка';
 //       break;
 //     case 'biscuits':
 //       categoryName = 'Печиво';
 //       break;
 //     case 'buns':
-//       categoryName = 'Булка';
+//       categoryName = 'Випічка';
 //       break;
 //     case 'pies':
-//       categoryName = 'Пиріг';
+//       categoryName = 'Пироги';
 //       break;
 //     default:
 //       break;
@@ -74,6 +74,48 @@ import { ProductList } from './SelectedProduct.styled';
 import React from 'react';
 
 export const SelectedProductList = () => {
+  const location = useLocation();
+  const pathname = location.pathname.split('/')[2];
+  // const getCategoryName = pathname => {
+  //   switch (pathname) {
+  //     case 'cakes':
+  //       return 'Торти';
+  //     case 'casseroles':
+  //       return 'Тістечка';
+  //     case 'biscuits':
+  //       return 'Печиво';
+  //     case 'buns':
+  //       return 'Випічка';
+  //     case 'pies':
+  //       return 'Пироги';
+  //     default:
+  //       return '';
+  //   }
+  // };
+
+  // let categoryName = getCategoryName(pathname);
+  let categoryName = '';
+  switch (pathname) {
+    case 'cakes':
+      categoryName = 'Торт';
+      break;
+    case 'casseroles':
+      categoryName = 'Тістечка';
+      break;
+    case 'biscuits':
+      categoryName = 'Печиво';
+      break;
+    case 'buns':
+      categoryName = 'Випічка';
+      break;
+    case 'pies':
+      categoryName = 'Пироги';
+      break;
+    default:
+      categoryName = '';
+      break;
+  }
+  console.log(categoryName);
   const {
     data,
     error,
@@ -83,11 +125,36 @@ export const SelectedProductList = () => {
     isFetchingNextPage,
     status,
   } = useInfiniteQuery(
-    ['products'],
-    ({ pageParam = 1 }) => getAllProducts({ page: pageParam }),
+    ['products', pathname],
+    ({ pageParam = 1 }) => {
+      console.log(pathname);
+      // return getAllProducts({ page: pageParam });
+      if (!pathname) {
+        return getAllProducts({ page: pageParam });
+
+        // console.log(categoryName);
+        // return getProductsByCategory({
+        //   category: categoryName,
+        //   page: pageParam,
+        // });
+        // } else {
+        //   return getAllProducts({ page: pageParam });
+        //   console.log(categoryName);
+
+        // return getProductsByCategory({
+        //   category: 'Торт',
+        //   page: pageParam,
+        // });
+      } else {
+        return getProductsByCategory({
+          category: categoryName,
+          page: pageParam,
+        });
+      }
+    },
     {
       getNextPageParam: (lastPage, allPages) => {
-        console.log(allPages.length + 1);
+        if (lastPage.length === 0) return undefined;
         return allPages.length + 1;
       },
     }

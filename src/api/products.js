@@ -16,7 +16,7 @@ export const getAllProducts = async ({ page = 1, limit = 3 }) => {
   }
 };
 
-export const getProductsByCategory = async (category, page) => {
+export const getProductsByCategory = async ({ category, page = 1 }) => {
   try {
     const { data } = await server.get(
       UrlProducts.all + `?page=${page}&limit=3&category=${category}`

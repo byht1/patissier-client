@@ -131,23 +131,9 @@ export const SelectedProductList = () => {
       // return getAllProducts({ page: pageParam });
       if (!pathname) {
         return getAllProducts({ page: pageParam });
-
-        // console.log(categoryName);
-        // return getProductsByCategory({
-        //   category: categoryName,
-        //   page: pageParam,
-        // });
-        // } else {
-        //   return getAllProducts({ page: pageParam });
-        //   console.log(categoryName);
-
-        // return getProductsByCategory({
-        //   category: 'Торт',
-        //   page: pageParam,
-        // });
       } else {
         return getProductsByCategory({
-          category: 'Торт',
+          category: categoryName,
           page: pageParam,
         });
       }

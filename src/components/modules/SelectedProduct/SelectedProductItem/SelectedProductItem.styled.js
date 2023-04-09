@@ -7,6 +7,7 @@ export const ProductItem = styled.li`
 `;
 
 export const ImageWrap = styled.div`
+  background-color: var(--background);
   position: relative;
   height: 340px;
   border-radius: 12px;
@@ -33,7 +34,7 @@ export const AddToFavBtn = styled('button')`
   justify-content: center;
   width: 40px;
   height: 40px;
-  background-color: ${p => p.theme.colors.bg};
+  background-color: #262524;
   backdrop-filter: blur(2px);
   border-radius: ${p => p.theme.radii.round};
 `;

@@ -1,3 +1,6 @@
+import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
+import { useTheme } from 'styled-components';
+
 import { Box } from 'components/global/Box';
 import { TitleH2, Text } from 'components/global/text';
 import { ButtonsGhost } from 'components/global/button';
@@ -10,10 +13,13 @@ import {
 } from './SelectedProductItem.styled';
 
 export const SelectedProductItem = ({ product }) => {
+  const theme = useTheme();
   return (
     <ProductItem key={product._id}>
       <ImageWrap>
-        <AddToFavBtn></AddToFavBtn>
+        <AddToFavBtn>
+          <AiOutlineHeart size={'24px'} color={theme.colors.w} />
+        </AddToFavBtn>
         <ProductImg src={product.picture} alt="Фото десерту" />
       </ImageWrap>
       <Box p={21}>

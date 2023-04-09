@@ -147,7 +147,7 @@ export const SelectedProductList = () => {
         // });
       } else {
         return getProductsByCategory({
-          category: categoryName,
+          category: 'Торт',
           page: pageParam,
         });
       }

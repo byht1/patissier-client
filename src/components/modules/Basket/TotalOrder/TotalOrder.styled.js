@@ -4,6 +4,11 @@ import { NavLink } from 'react-router-dom';
 import Arrow from 'img/basket/arrow.svg';
 
 export const OrderWrap = styled.div`
+  position: sticky;
+  top: 60px;
+  align-self: flex-start;
+  margin-top: 60px;
+
   width: 342px;
   display: flex;
   padding: 32px 24px;

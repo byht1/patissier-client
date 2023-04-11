@@ -16,19 +16,18 @@ import {
   TotalPrice,
 } from './BasketListItem.styled';
 
-import Image from 'img/basket/tart.png';
 import DelIcon from 'img/basket/icons.svg';
 import { Box } from 'components/global/Box';
 
-export const BasketListItem = () => {
+export const BasketListItem = ({ item: { name, price, photoUrl } }) => {
   return (
     <>
       <ItemWrap>
         <ImgWrap>
-          <ItemPhoto src={Image} alt="product foto" loading="lazy" />
+          <ItemPhoto src={photoUrl} alt="product foto" loading="lazy" />
         </ImgWrap>
         <ItemInfoWrap>
-          <ProductTitle>Тарт з ганашем</ProductTitle>
+          <ProductTitle>{name}</ProductTitle>
           <Box
             display="flex"
             justifyContent="space-between"
@@ -37,7 +36,7 @@ export const BasketListItem = () => {
           >
             <Text>Ціна</Text>
             <PriceWrap>
-              <PriceValue>48,50</PriceValue>
+              <PriceValue>{price}</PriceValue>
             </PriceWrap>
           </Box>
           <Box
@@ -69,7 +68,7 @@ export const BasketListItem = () => {
                 <use xlinkHref={DelIcon + '#icon-del'} />
               </Svg>
             </DelBtn>
-            <TotalPrice>48,50 грн</TotalPrice>
+            <TotalPrice>{price} грн</TotalPrice>
           </Box>
         </ItemInfoWrap>
       </ItemWrap>

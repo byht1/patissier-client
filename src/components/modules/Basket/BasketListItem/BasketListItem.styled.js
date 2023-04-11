@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 
-export const ItemWrap = styled.div`
+export const ItemWrap = styled.li`
   display: flex;
   width: 798px;
   padding-top: 60px;
   padding-bottom: 60px;
+
+  &:not(:first-child) {
+    border-top: 1px solid #5c5c5d;
+  }
 `;
 
 export const ImgWrap = styled.div`

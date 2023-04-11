@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { ButtonsGhost } from 'components/global/button';
 import { NavLink } from 'react-router-dom';
 
-export const Button = styled(ButtonsGhost)`
+export const NavLinkStyled = styled(NavLink)`
+  color: ${p => p.theme.colors.w};
   height: 36px;
   display: flex;
   align-items: center;
@@ -26,10 +26,6 @@ export const Button = styled(ButtonsGhost)`
   }
   &:not(:last-child) {
   }
-`;
-
-export const NavLinkStyled = styled(NavLink)`
-  color: ${p => p.theme.colors.w};
   &.active {
     color: orange;
     color: ${p => p.theme.colors.aBg};

@@ -97,7 +97,7 @@ export const SelectedProductList = () => {
   let categoryName = '';
   switch (pathname) {
     case 'cakes':
-      categoryName = 'Торт';
+      categoryName = 'Торти';
       break;
     case 'casseroles':
       categoryName = 'Тістечка';
@@ -127,8 +127,7 @@ export const SelectedProductList = () => {
   } = useInfiniteQuery(
     ['products', pathname],
     ({ pageParam = 1 }) => {
-      console.log(pathname);
-      // return getAllProducts({ page: pageParam });
+      console.log(isFetching);
       if (!pathname) {
         return getAllProducts({ page: pageParam });
       } else {
@@ -173,7 +172,7 @@ export const SelectedProductList = () => {
           : hasNextPage
           ? 'Load More'
           : 'Nothing more to load'}
-      </button>{' '}
+      </button>
       <div>{isFetching && !isFetchingNextPage ? 'Fetching...' : null}</div>
     </Box>
   );

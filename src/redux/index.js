@@ -11,6 +11,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { authSlice } from './auth';
+import { productsReducer } from './products';
 
 const middleware = [
   ...getDefaultMiddleware({
@@ -26,9 +27,16 @@ const authPersistConfig = {
   whitelist: ['token'],
 };
 
+const productsPersistConfig = {
+  key: 'noticproductses',
+  storage,
+  whitelist: ['favoriteProducts'],
+};
+
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authSlice.reducer),
+    notices: persistReducer(productsPersistConfig, productsReducer),
   },
   middleware,
   devTools: process.env.NODE_ENV === 'development',

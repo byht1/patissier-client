@@ -1,8 +1,10 @@
 import styled from 'styled-components';
+
 export const ImageWrap = styled.div`
-width: 570px;
-height: 669px;
+width: 552px;
+height: 472px;
 margin-right: 60px;
+overflow: hidden;
 `;
 export const MKImage = styled.img`
 display: block;
@@ -13,7 +15,10 @@ border-radius: 12px;
 export const TextWrap = styled.div`
  display: flex;
  flex-direction: column;
- justify-content: space-between;
+ gap: 20px;
+ width: 588px;
+ padding-right: 78px;
+
 `;
 export const BakeryList = styled.ul`
   

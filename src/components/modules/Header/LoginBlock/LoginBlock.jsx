@@ -12,6 +12,7 @@ import {
   CloseXIc,
   Label,
   SearchIcInput,
+  NavigateLinkStyled,
 } from './LoginBlock.styled';
 
 export function LoginBlock({ setShowCallMe }) {
@@ -38,17 +39,21 @@ export function LoginBlock({ setShowCallMe }) {
         </Label>
       )}
       <HeartIc />
-      <ShoppingCartSVG />
+      <NavigateLinkStyled to={'/basket'}>
+        <ShoppingCartSVG />
+      </NavigateLinkStyled>
       <PhoneSVG
         onClick={() => {
           setShowCallMe(true);
         }}
       />
-      <UserIc
-        onClick={() => {
-          navigate('/log-in');
-        }}
-      />
+      <NavigateLinkStyled to={'/log-in'}>
+        <UserIc
+          onClick={() => {
+            navigate('/log-in');
+          }}
+        />
+      </NavigateLinkStyled>
     </Div>
   );
 }

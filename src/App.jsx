@@ -17,7 +17,9 @@ const RegistrationForCourses = lazy(() =>
 ); // Запис на курс
 const AboutUs = lazy(() => import('page/AboutUs')); // Про нас
 const SignUp = lazy(() => import('page/SignUp')); // регістрація на сайті
-const LogIn = lazy(() => import('page/LogIn'));
+const LogIn = lazy(() => import('page/LogIn')); // Вхід в
+const PasswordRecovery = lazy(() => import('page/PasswordRecovery'));
+const SetNewPassword = lazy(() => import('page/SetNewPassword'));
 
 const queryClient = new QueryClient();
 
@@ -44,11 +46,11 @@ function App() {
           <Route path="about-us" element={<AboutUs />} />
           <Route path="sign-up" element={<SignUp />} />
           <Route path="log-in" element={<LogIn />} />
+          <Route path="password-recovery" element={<PasswordRecovery />} />
+          <Route path="set-new-password" element={<SetNewPassword />} />
           {/* <Route path="/user">
             <Route index element={<PersonalOffice />}/>
             <Route path="admin" element={<Admin />} />
-            <Route path="forgotten" element={<ForgottenPassword />} />
-            <Route path="new-password" element={<NewPassword />} />
           </Route> */}
           <Route path="*" element={<Navigate to="/" />} />
         </Route>

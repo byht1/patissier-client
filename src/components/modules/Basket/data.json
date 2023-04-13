@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Десерт “Тірамісу”",
+    "price": 19.99,
+    "photoUrl": "https://img.iamcook.ru/2022/upl/recipes/cat/u-928e51b43f6fbe67ee4a1934b96770f9.JPG"
+  },
+  {
+    "id": 2,
+    "name": "Тарт з ганашем",
+    "price": 29.99,
+    "photoUrl": "https://img.iamcook.ru/2022/upl/recipes/cat/u-928e51b43f6fbe67ee4a1934b96770f9.JPG"
+  },
+  {
+    "id": 3,
+    "name": "Круасан масляний",
+    "price": 39.99,
+    "photoUrl": "https://img.iamcook.ru/2022/upl/recipes/cat/u-928e51b43f6fbe67ee4a1934b96770f9.JPG"
+  },
+  {
+    "id": 4,
+    "name": "Десерт “Тірамісу”",
+    "price": 19.99,
+    "photoUrl": "https://img.iamcook.ru/2022/upl/recipes/cat/u-928e51b43f6fbe67ee4a1934b96770f9.JPG"
+  },
+  {
+    "id": 5,
+    "name": "Тарт з ганашем",
+    "price": 29.99,
+    "photoUrl": "https://img.iamcook.ru/2022/upl/recipes/cat/u-928e51b43f6fbe67ee4a1934b96770f9.JPG"
+  },
+  {
+    "id": 6,
+    "name": "Круасан масляний",
+    "price": 39.99,
+    "photoUrl": "https://img.iamcook.ru/2022/upl/recipes/cat/u-928e51b43f6fbe67ee4a1934b96770f9.JPG"
+  }
+]

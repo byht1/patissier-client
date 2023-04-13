@@ -2,7 +2,7 @@ import React from "react";
 import { SwiperSlide, Swiper } from 'swiper/react';
 import { Slide, SlideContent } from "./Swiper.styled";
 import { Container} from 'components/global/Container';
-// import { Box } from 'components/global/Box';
+
 
 import './styles.css'
 import 'swiper/css';
@@ -16,7 +16,7 @@ import { Pagination } from "swiper";
 export const Slider = () => {
   return (
     <Container> 
-        {/* <Box display="flex"> */}
+      
         <Swiper
         spaceBetween={30}
         slidesPerView={4}
@@ -29,7 +29,8 @@ export const Slider = () => {
            
                 <SwiperSlide>
                     <Slide>
-                        <SlideContent>Slide 1</SlideContent></Slide>
+                        <SlideContent>Slide 1</SlideContent>
+                    </Slide>
                 </SwiperSlide>
             
             
@@ -67,7 +68,7 @@ export const Slider = () => {
             
                
         </Swiper>
-        {/* </Box> */}
-    </Container>
+    
+     </Container> 
   );
 };

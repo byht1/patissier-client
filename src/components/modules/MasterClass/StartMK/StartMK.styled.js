@@ -21,3 +21,8 @@ display: flex;
 gap: 24px;
 margin-bottom: 60px;
 `;
+export const SwiperWrap = styled.div`
+position: relative;
+// padding: 50px 0;
+// box-shadow: 0px 0px 209px -30px rgba(199, 103, 56, 0.2);
+`;

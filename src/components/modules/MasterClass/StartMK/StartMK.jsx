@@ -1,13 +1,15 @@
 import { TitleH3 } from 'components/global/text';
 import { Box } from 'components/global/Box';
+import { Container} from 'components/global/Container';
 import { Slider } from 'components/modules/Swiper/Swiper';
 // import { ProgramItem } from './ProgramItem';
 // import {  ButtonPay, ImageBlock, DetailsImage, ProgramList, Block, DetailsBlock, DetailsAbout, DetailsAboutPrice } from './DetailsMK.styled';
-import {Buttons, ButtonWrap } from './StartMK.styled'
+import {Buttons, ButtonWrap, SwiperWrap } from './StartMK.styled';
 // import Image from 'img/mk/detailsImg.jpg';
 
 export const StartMK = () =>{
     return(
+        <Container>
         <Box mt={200} display="flex" justifyContent="center" flexDirection="column" alignItems="center">
             <TitleH3 color="at" mb={60} alignItems='center'>Старт навчання</TitleH3>
             <ButtonWrap>
@@ -15,7 +17,10 @@ export const StartMK = () =>{
                 <Buttons>Онлайн</Buttons>
                 <Buttons>Офлайн</Buttons>
             </ButtonWrap>
-            <Slider/>
+            <SwiperWrap>
+                <Slider/>
+            </SwiperWrap>
+            
             {/* <DetailsBlock>
                 <Block>
                     <DetailsAbout>
@@ -45,5 +50,6 @@ export const StartMK = () =>{
             </DetailsBlock> */}
 
         </Box>
+    </Container>
     )
 }

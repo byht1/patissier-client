@@ -1,4 +1,3 @@
-import { Header } from 'components/modules/Header/Header';
 import React from 'react';
 
 import { BackLinkRef } from 'components/global/BackLink/BackLink';

@@ -5,9 +5,7 @@ export const InstaItem = ({ post: { img, img2x, title } }) => {
   console.log(img, img2x);
   return (
     <InstaCard>
-      <div>
-        <img srcSet={`${img} 1x,${img2x} 2x`} src={img} alt={title} />
-      </div>
+      <img srcSet={`${img} 1x,${img2x} 2x`} src={img} alt={title} />
     </InstaCard>
   );
 };

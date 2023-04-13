@@ -1,10 +1,7 @@
 import styled from 'styled-components';
 
-import { ReactComponent as checkBoxDefaultSvg } from '../../../../img/header/icons/checkBoxDefault.svg';
-import { ReactComponent as checkBoxActiveSvg } from '../../../../img/header/icons/checkBoxActive.svg';
-import { ReactComponent as AppleSvg } from '../../../../img/header/icons/Apple.svg';
-import { ReactComponent as FacebookSvg } from '../../../../img/header/icons/Facebook.svg';
-import { ReactComponent as GoogleSvg } from '../../../../img/header/icons/Google.svg';
+import { ReactComponent as EyeHiddenSvg } from '../../../../img/header/icons/EyeHidden.svg';
+import { ReactComponent as EyeSvg } from '../../../../img/header/icons/Eye.svg';
 
 export const ContentContainer = styled.div`
   display: flex;
@@ -24,7 +21,12 @@ export const Title = styled.h2`
   color: ${p => p.theme.colors.aBg};
 `;
 
-export const RegistryBlockCover = styled.div`
+export const SignInImg = styled.img`
+  display: block;
+  width: 552px;
+`;
+
+export const Cover = styled.div`
   display: flex;
 `;
 
@@ -35,7 +37,10 @@ export const Form = styled.form`
 `;
 
 export const Label = styled.label`
+  font-weight: 700;
   margin-top: 40px;
+
+  position: relative;
 
   display: flex;
   flex-direction: column;
@@ -61,38 +66,6 @@ export const Input = styled.input`
   border: 1px solid ${p => p.theme.colors.aBg};
 
   outline: none;
-`;
-
-export const SignUpImg = styled.img`
-  display: block;
-  width: 552px;
-`;
-
-export const PrivacyPolicy = styled.span`
-  display: flex;
-  margin-top: 40px;
-
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 2;
-
-  letter-spacing: -0.019em;
-
-  color: ${p => p.theme.colors.w};
-`;
-
-export const CheckBoxDefaultIc = styled(checkBoxDefaultSvg)`
-  margin-left: 5px;
-  margin-right: 12px;
-  cursor: pointer;
-`;
-
-export const CheckBoxActiveIc = styled(checkBoxActiveSvg)`
-  margin-left: 5px;
-  margin-right: 12px;
-  cursor: pointer;
 `;
 
 export const Button = styled.button`
@@ -125,23 +98,23 @@ export const SubmitBlock = styled.div`
   align-items: baseline;
 `;
 
-export const SubmitAlreadyHaveAccount = styled.span`
+export const Box = styled.div`
   display: flex;
-  flex-direction: row;
+`;
 
-  margin-left: 60px;
-
+export const Hint = styled.p`
+  width: 486px;
   font-family: 'Montserrat';
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 16px;
   line-height: 1.25;
 
   color: ${p => p.theme.colors.t};
 `;
 
-export const LinkToLogin = styled.a`
-  margin-left: 6px;
+export const ResendLink = styled.span`
+  margin-left: 40px;
 
   font-family: 'Montserrat';
   font-style: normal;
@@ -158,36 +131,57 @@ export const LinkToLogin = styled.a`
   cursor: pointer;
 `;
 
-export const LoginIconsBox = styled.div`
-  display: flex;
+export const PasswordStrictParameters = styled.ul`
+  list-style-type: disc;
+  margin-top: 40px;
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+
+  color: #edf0f3;
 `;
 
-export const AppleIc = styled(AppleSvg)`
-  margin-right: 12px;
-  cursor: pointer;
-  &:hover {
-    path {
-      fill: ${p => p.theme.colors.aBg};
-    }
+export const Parameter = styled.li`
+  margin-left: 32px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  &:first-child {
+    margin-top: 14px;
   }
 `;
 
-export const GoogleIc = styled(GoogleSvg)`
-  margin-right: 12px;
+export const ParameterContent = styled.span``;
+
+export const EyeHiddenIc = styled(EyeHiddenSvg)`
+  z-index: 3333;
+  position: absolute;
+  top: 39px;
+  right: 14px;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
-  &:hover {
-    path {
-      fill: ${p => p.theme.colors.aBg};
-    }
+
+  & path {
+    stroke: ${p => p.theme.colors.t};
   }
 `;
 
-export const FacebookIc = styled(FacebookSvg)`
-  margin-right: 12px;
+export const EyeIc = styled(EyeSvg)`
+  z-index: 3333;
+  position: absolute;
+  top: 39px;
+  right: 14px;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
-  &:hover {
-    path {
-      fill: ${p => p.theme.colors.aBg};
-    }
+
+  & path {
+    stroke: ${p => p.theme.colors.t};
   }
 `;

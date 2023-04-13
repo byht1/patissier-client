@@ -26,7 +26,7 @@ export default function MasterClasses() {
         <ConsistsMK aboutList={dataConsists}/>
         <DetailsMK stageList={dataProgramMK}/>
         <StartMK/>
-        <Reviews title={'Що говорять учні?'}/>
+        <Reviews title={'Відгуки'}/>
       </Box>
     </Container>
     </>

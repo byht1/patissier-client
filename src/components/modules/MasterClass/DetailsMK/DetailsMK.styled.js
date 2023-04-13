@@ -30,7 +30,7 @@ display: flex;
 `;
 export const ImageBlock = styled.div`
 width: 588px;
-height: 488px;
+height: 512px;
 overflow: hidden;
 box-shadow: ${p => p.theme.shadows.s};
 
@@ -45,16 +45,17 @@ border-radius: 12px;
 export const Block = styled.div`
 display: flex;
 flex-direction: column;
-justify-content: space-between;
+gap: 24px;
+// justify-content: space-between;
 margin-right: 24px;
 `;
 export const DetailsAbout = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-padding: 42px 134px;
+padding: 40px 60px;
 width: 588px;
-height: 232px;
+height: 216px;
 border-radius: 12px;
 background-color: ${p => p.theme.colors.bg};
 box-shadow: ${p => p.theme.shadows.s};
@@ -63,9 +64,9 @@ export const DetailsAboutPrice = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-padding: 20px;
+padding: 40px 20px;
 width: 588px;
-height: 232px;
+height: 272px;
 border-radius: 12px;
 background-color: ${p => p.theme.colors.bg};
 box-shadow: ${p => p.theme.shadows.s};

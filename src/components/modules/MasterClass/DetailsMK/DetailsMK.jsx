@@ -17,10 +17,11 @@ export const DetailsMK = ({stageList}) =>{
                     <DetailsAbout>
                         <TitleH4 color="at" mb={20}>Програма</TitleH4>
                         <ProgramList>
-                        {stageList.map(({stage}) =>{
+                        {stageList.map(({stage, name}) =>{
                             return(
                             <ProgramItem
                             stage={stage}
+                            name={name}
                             />
                             )
                         })}

@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-import { ButtonsGhost } from 'components/global/button';
+import { NavLink } from 'react-router-dom';
 
-export const Button = styled(ButtonsGhost)`
+export const NavLinkStyled = styled(NavLink)`
+  color: ${p => p.theme.colors.w};
   height: 36px;
   display: flex;
   align-items: center;
@@ -15,7 +16,7 @@ export const Button = styled(ButtonsGhost)`
   border: none;
   border-bottom: none;
   border-radius: none;
-  color: ${p => p.theme.colors.w};
+  color: inherit;
   border-bottom: 1px solid ${p => p.theme.colors.panelBg};
   &:focus,
   &:hover {
@@ -25,17 +26,22 @@ export const Button = styled(ButtonsGhost)`
   }
   &:not(:last-child) {
   }
+  &.active {
+    color: orange;
+    color: ${p => p.theme.colors.aBg};
+    background-color: ${p => p.theme.colors.panelBg};
+    border-bottom: 1px solid ${p => p.theme.colors.aBg};
+    border-radius: 8px;
+  }
+`;
+
+export const Nav = styled.nav`
+  display: flex;
+  align-items: center;
 `;
 
 export const Logo = styled.img`
   width: 166px;
   height: 66px;
   cursor: pointer;
-`;
-
-export const Link = styled.a``;
-
-export const Nav = styled.nav`
-  display: flex;
-  align-items: center;
 `;

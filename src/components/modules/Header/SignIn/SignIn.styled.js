@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 import { ReactComponent as checkBoxDefaultSvg } from '../../../../img/header/icons/checkBoxDefault.svg';
 import { ReactComponent as checkBoxActiveSvg } from '../../../../img/header/icons/checkBoxActive.svg';
+import { ReactComponent as AppleSvg } from '../../../../img/header/icons/Apple.svg';
+import { ReactComponent as FacebookSvg } from '../../../../img/header/icons/Facebook.svg';
+import { ReactComponent as GoogleSvg } from '../../../../img/header/icons/Google.svg';
+import { Link } from 'react-router-dom';
 
 export const ContentContainer = styled.div`
   display: flex;
@@ -18,7 +22,7 @@ export const Title = styled.h2`
   letter-spacing: 0.04em;
   margin: 60px 0px;
 
-  color: #ff852d;
+  color: ${p => p.theme.colors.aBg};
 `;
 
 export const SignInImg = styled.img`
@@ -43,12 +47,14 @@ export const Label = styled.label`
 
   display: flex;
   flex-direction: column;
+
+  font-weight: 700;
 `;
 
 export const Input = styled.input`
   margin-top: 8px;
 
-  width: 528px;
+  width: 486px;
   height: 44px;
   padding: 12px 14px;
   border-radius: 12px;
@@ -60,7 +66,7 @@ export const Input = styled.input`
   line-height: 1.3;
 
   color: #070a23;
-  border: 1px solid #ff852d;
+  border: 1px solid ${p => p.theme.colors.aBg};
 
   outline: none;
 `;
@@ -77,10 +83,10 @@ export const KeepOnline = styled.span`
 
   letter-spacing: -0.019em;
 
-  color: #ffffff;
+  color: ${p => p.theme.colors.wt};
 `;
 
-export const ForgotPassword = styled.a`
+export const ForgotPassword = styled(Link)`
   position: absolute;
   top: 76px;
   right: 0px;
@@ -93,11 +99,11 @@ export const ForgotPassword = styled.a`
 
   letter-spacing: -0.019em;
 
-  color: #b5b5b5;
+  color: ${p => p.theme.colors.t};
 
   &:focus,
   &:hover {
-    color: #ff6b00;
+    color: ${p => p.theme.colors.ah};
   }
 
   cursor: pointer;
@@ -122,7 +128,7 @@ export const Button = styled.button`
   width: 216px;
   height: 52px;
 
-  background: #ff852d;
+  background: ${p => p.theme.colors.aBg};
   border-radius: 12px;
 
   font-family: 'Montserrat';
@@ -131,11 +137,11 @@ export const Button = styled.button`
   font-size: 16px;
   line-height: 1.25;
 
-  color: #030305;
+  color: ${p => p.theme.colors.bg};
 
   &:focus,
   &:hover {
-    background: #ff6b00;
+    background: ${p => p.theme.colors.ah};
   }
 `;
 
@@ -153,12 +159,46 @@ export const LinkToSignUp = styled.a`
   font-weight: 700;
   font-size: 16px;
   line-height: 1.25;
-  color: #ff852d;
+  color: ${p => p.theme.colors.aBg};
 
   &:focus,
   &:hover {
-    color: #ff6b00;
+    color: ${p => p.theme.colors.ah};
   }
 
   cursor: pointer;
+`;
+
+export const LoginIconsBox = styled.div`
+  display: flex;
+`;
+
+export const AppleIc = styled(AppleSvg)`
+  margin-right: 12px;
+  cursor: pointer;
+  &:hover {
+    path {
+      fill: ${p => p.theme.colors.aBg};
+    }
+  }
+`;
+
+export const GoogleIc = styled(GoogleSvg)`
+  margin-right: 12px;
+  cursor: pointer;
+  &:hover {
+    path {
+      fill: ${p => p.theme.colors.aBg};
+    }
+  }
+`;
+
+export const FacebookIc = styled(FacebookSvg)`
+  margin-right: 12px;
+  cursor: pointer;
+  &:hover {
+    path {
+      fill: ${p => p.theme.colors.aBg};
+    }
+  }
 `;

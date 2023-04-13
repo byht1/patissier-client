@@ -1,5 +1,4 @@
 import signIn from '../../../../img/header/images/signIn.jpg';
-import { Header } from '../Header';
 import { useState } from 'react';
 import {
   SignInImg,
@@ -16,6 +15,10 @@ import {
   SubmitBlock,
   LinkToSignUp,
   ForgotPassword,
+  LoginIconsBox,
+  GoogleIc,
+  AppleIc,
+  FacebookIc,
 } from './SignIn.styled';
 
 import { Container } from 'components/global/Container';
@@ -26,13 +29,17 @@ export function SignIn(params) {
   const navigate = useNavigate();
   return (
     <>
-      <Header />
       <Container>
         <ContentContainer>
           <Title>Увійти в кабінет</Title>
           <RegistryBlockCover>
             <SignInImg src={signIn} />
             <Form action="">
+              <LoginIconsBox>
+                <GoogleIc />
+                <AppleIc />
+                <FacebookIc />
+              </LoginIconsBox>
               <Label>
                 Email
                 <Input type="email" />
@@ -40,7 +47,9 @@ export function SignIn(params) {
               <Label>
                 Пароль
                 <Input type="password" />
-                <ForgotPassword>Я забув свій пароль</ForgotPassword>
+                <ForgotPassword to="/password-recovery">
+                  Я забув свій пароль
+                </ForgotPassword>
               </Label>
 
               <KeepOnline>

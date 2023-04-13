@@ -1,0 +1,16 @@
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="icon-del" viewBox="0 0 24 24">
+<path d="M16 6.5V4.25C16 3.55964 15.4404 3 14.75 3H9.25C8.55964 3 8 3.55964 8 4.25V6.5"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.7405 6.5L17.7849 18.9226C17.6948 20.0948 16.7173 21 15.5416 21H8.45869C7.28298 21 6.3055 20.0948 6.21534 18.9226L5.25977 6.5"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20 6.5H4"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 11.6875V15.6875"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+<symbol id="icon-arrow" viewBox="0 0 24 24">
+<path d="M8 10L12 14L16 10" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+</defs>
+</svg>
+
+
+

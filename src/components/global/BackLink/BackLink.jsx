@@ -17,7 +17,7 @@ export const BackLinkRef = () => {
           viewBox="0 0 34 14"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path d="M34 7L1 7M1 7L7.5 13.5M1 7L7.5 0.499998" stroke="#B5B5B5" />
+          <path d="M34 7L1 7M1 7L7.5 13.5M1 7L7.5 0.499998" />
         </Svg>
         назад
       </BackLink>

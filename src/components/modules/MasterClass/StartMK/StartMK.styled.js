@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { ButtonsGhost } from 'components/global/button';
 
 export const Buttons = styled(ButtonsGhost)`
-padding: 18px 56px;
+width: 180px;
+height: 58px;
 border: ${p => p.theme.borders.none};
 color: ${p => p.theme.colors.wt};
 background-color: ${p => p.theme.colors.btnBg};

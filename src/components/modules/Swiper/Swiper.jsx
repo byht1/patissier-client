@@ -1,6 +1,6 @@
 import React from "react";
 import { SwiperSlide, Swiper } from 'swiper/react';
-import { Slide } from "./Swiper.styled";
+import { Slide, SlideContent } from "./Swiper.styled";
 import { Container} from 'components/global/Container';
 // import { Box } from 'components/global/Box';
 
@@ -26,30 +26,45 @@ export const Slider = () => {
           modules={[Pagination]}
           className="mySwiper"
         >
+           
                 <SwiperSlide>
-                    <Slide>Slide 1</Slide>
+                    <Slide>
+                        <SlideContent>Slide 1</SlideContent></Slide>
                 </SwiperSlide>
+            
+            
                 <SwiperSlide>
-                    <Slide>Slide 2</Slide>
+                    <Slide>
+                        <SlideContent>Slide 2</SlideContent></Slide>
                 </SwiperSlide>
+           
+            
                 <SwiperSlide>
-                    <Slide>Slide 3</Slide>
+                    <Slide>
+                        <SlideContent>Slide 3</SlideContent></Slide>
                 </SwiperSlide>
+          
                 <SwiperSlide>
-                    <Slide>Slide 4</Slide>
+                    <Slide>
+                        <SlideContent>Slide 4</SlideContent></Slide>
                 </SwiperSlide>
+         
                 <SwiperSlide>
-                    <Slide>Slide 5</Slide>
+                    <Slide>
+                        <SlideContent>Slide 5</SlideContent></Slide>
                 </SwiperSlide>
+          
                 <SwiperSlide>
-                    <Slide>Slide 6</Slide>
+                    <Slide>
+                        <SlideContent>Slide 6</SlideContent></Slide>
                 </SwiperSlide>
+          
                 <SwiperSlide>
-                    <Slide>Slide 7</Slide>
+                    <Slide>
+                        <SlideContent>Slide 7</SlideContent></Slide>
                 </SwiperSlide>
-                <SwiperSlide>
-                    <Slide>Slide 8</Slide>
-                </SwiperSlide>
+         
+            
                
         </Swiper>
         {/* </Box> */}

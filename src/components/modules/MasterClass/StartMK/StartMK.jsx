@@ -1,18 +1,22 @@
-import { TitleH3, TitleH4, Text  } from 'components/global/text';
+import { TitleH3 } from 'components/global/text';
 import { Box } from 'components/global/Box';
-import { ProgramItem } from './ProgramItem';
-import { Buttons, ButtonPay, ButtonWrap, ImageBlock, DetailsImage, ProgramList, Block, DetailsBlock, DetailsAbout, DetailsAboutPrice } from './DetailsMK.styled';
-import Image from 'img/mk/detailsImg.jpg';
+import { Slider } from 'components/modules/Swiper/Swiper';
+// import { ProgramItem } from './ProgramItem';
+// import {  ButtonPay, ImageBlock, DetailsImage, ProgramList, Block, DetailsBlock, DetailsAbout, DetailsAboutPrice } from './DetailsMK.styled';
+import {Buttons, ButtonWrap } from './StartMK.styled'
+// import Image from 'img/mk/detailsImg.jpg';
 
-export const DetailsMK = ({stageList}) =>{
+export const StartMK = () =>{
     return(
         <Box mt={200} display="flex" justifyContent="center" flexDirection="column" alignItems="center">
-            <TitleH3 color="at" mb={60} alignItems='center'>Деталі навчання</TitleH3>
+            <TitleH3 color="at" mb={60} alignItems='center'>Старт навчання</TitleH3>
             <ButtonWrap>
+                <Buttons>Всі пропозиції</Buttons>
                 <Buttons>Онлайн</Buttons>
                 <Buttons>Офлайн</Buttons>
             </ButtonWrap>
-            <DetailsBlock>
+            <Slider/>
+            {/* <DetailsBlock>
                 <Block>
                     <DetailsAbout>
                         <TitleH4 color="at" mb={20}>Програма</TitleH4>
@@ -38,7 +42,7 @@ export const DetailsMK = ({stageList}) =>{
                 </ImageBlock>
                
                 
-            </DetailsBlock>
+            </DetailsBlock> */}
 
         </Box>
     )

@@ -65,7 +65,11 @@
 
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { getAllProducts, getProductsByCategory } from 'api/products';
+import {
+  getAllProducts,
+  getProductsByCategory,
+  addProductToFavorite,
+} from 'api/products';
 import { Box } from 'components/global/Box';
 import { useInfiniteQuery } from '@tanstack/react-query';
 
@@ -129,6 +133,7 @@ export const SelectedProductList = () => {
     ({ pageParam = 1 }) => {
       console.log(isFetching);
       if (!pathname) {
+        addProductToFavorite('6421e4f255b089d4969ee5b0');
         return getAllProducts({ page: pageParam });
       } else {
         return getProductsByCategory({

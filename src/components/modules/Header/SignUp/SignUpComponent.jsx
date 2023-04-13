@@ -1,6 +1,7 @@
 import { Container } from 'components/global/Container';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+<<<<<<< HEAD
 
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useMutation } from '@tanstack/react-query';
@@ -28,6 +29,10 @@ import {
   SubmitBlock,
   Title,
 } from './SignUp.styled';
+=======
+import signUp from '../../../../img/header/images/signUp.jpg';
+import { ContentContainer, Form, Input, Label, RegistryBlockCover, SignUpImg, Title, PrivacyPolicy, CheckBoxDefaultIc, CheckBoxActiveIc, Button, SubmitBlock, SubmitAlreadyHaveAccount, LinkToLogin, LoginIconsBox, GoogleIc, AppleIc, FacebookIc } from './SignUp.styled';
+>>>>>>> Header
 
 export function SignUpComponent(params) {
   const [privacyPolicy, setPrivacyPolicy] = useState(false);
@@ -85,8 +90,18 @@ export function SignUpComponent(params) {
       <ContentContainer>
         <Title>Зареєструватись</Title>
         <RegistryBlockCover>
+<<<<<<< HEAD
           <SignUpImg src={signUpImg} />
           <Form onSubmit={handleSubmit(onSubmit)}>
+=======
+          <SignUpImg src={signUp} />
+          <Form action="">
+            <LoginIconsBox>
+              <GoogleIc />
+              <AppleIc />
+              <FacebookIc />
+            </LoginIconsBox>
+>>>>>>> Header
             <Label>
               Email
               <Input type="email" {...registerField('email')} />
@@ -128,7 +143,6 @@ export function SignUpComponent(params) {
                     navigate('/log-in');
                   }}
                 >
-                  {' '}
                   Увійти
                 </LinkToLogin>
               </SubmitAlreadyHaveAccount>

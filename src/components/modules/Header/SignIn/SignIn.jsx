@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import signIn from '../../../../img/header/images/signIn.jpg';
+<<<<<<< HEAD:src/components/modules/Header/SignIn/SignIn.jsx
 import { Header } from '../Header';
+=======
+import { useState } from 'react';
+>>>>>>> Header:src/components/modules/Header/SignIn/SighnIn.jsx
 import {
   Button,
   CheckBoxActiveIc,
@@ -13,10 +17,18 @@ import {
   KeepOnline,
   Label,
   LinkToSignUp,
+<<<<<<< HEAD:src/components/modules/Header/SignIn/SignIn.jsx
   RegistryBlockCover,
   SignInImg,
   SubmitBlock,
   Title,
+=======
+  ForgotPassword,
+  LoginIconsBox,
+  GoogleIc,
+  AppleIc,
+  FacebookIc,
+>>>>>>> Header:src/components/modules/Header/SignIn/SighnIn.jsx
 } from './SignIn.styled';
 
 import { Container } from 'components/global/Container';
@@ -66,7 +78,6 @@ export function SignIn(params) {
 
   return (
     <>
-      <Header />
       <Container>
         {/* TODO Змінити на лоадер */}
         {isLoading && <h1 style={{ textAlign: 'center' }}>Loading ...</h1>}
@@ -76,15 +87,31 @@ export function SignIn(params) {
           <Title>Увійти в кабінет</Title>
           <RegistryBlockCover>
             <SignInImg src={signIn} />
+<<<<<<< HEAD:src/components/modules/Header/SignIn/SignIn.jsx
             <Form onSubmit={handleSubmit(onSubmit)}>
+=======
+            <Form action="">
+              <LoginIconsBox>
+                <GoogleIc />
+                <AppleIc />
+                <FacebookIc />
+              </LoginIconsBox>
+>>>>>>> Header:src/components/modules/Header/SignIn/SighnIn.jsx
               <Label>
                 Email
                 <Input type="text" {...registerField('login')} />
               </Label>
               <Label>
                 Пароль
+<<<<<<< HEAD:src/components/modules/Header/SignIn/SignIn.jsx
                 <Input type="password" {...registerField('password')} />
                 <ForgotPassword>Я забув свій пароль</ForgotPassword>
+=======
+                <Input type="password" />
+                <ForgotPassword to="/password-recovery">
+                  Я забув свій пароль
+                </ForgotPassword>
+>>>>>>> Header:src/components/modules/Header/SignIn/SighnIn.jsx
               </Label>
 
               <KeepOnline>

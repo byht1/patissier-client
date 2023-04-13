@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { TextBox } from 'components/global/text';
 import { NavLink } from 'react-router-dom';
+import Vector from 'img/arrow/arrow_forward.svg';
 
 export const ImgWrap = styled.div`
   width: 552px;
@@ -21,8 +22,8 @@ export const OwnerPhoto = styled.img`
 export const SignPhoto = styled.img`
   position: absolute;
 
-  bottom: ${p => (p.readmorelink ? '-15%' : '-30%')};
-  right: -15%;
+  bottom: ${p => (p.readmorelink ? '-5%' : '-30%')};
+  right: -10%;
   display: block;
   width: 280px;
   height: 204px;
@@ -38,6 +39,28 @@ export const ReadMore = styled(NavLink)`
   line-height: ${p => p.theme.lineHeights.big};
   color: ${p => p.theme.colors.at};
   font-weight: ${p => p.theme.fontWeights.bold};
-  display: block;
-  margin-top: 16px;
+  display: inline-block;
+  margin-top: 42px;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    opacity: 0;
+    margin-left: 10px;
+    background-image: url(${Vector});
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 33px;
+    height: 13px;
+
+    transition: opacity 250ms linear;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+
+  &:focus::after {
+    opacity: 1;
+  }
 `;

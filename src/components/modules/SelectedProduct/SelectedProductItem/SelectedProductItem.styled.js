@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 
 export const ProductItem = styled.li`
-  background-color: var(--background);
+  border: 1px solid var(--background);
   width: 360px;
   border-radius: 12px;
+  &:hover,
+  &:focus {
+    border: 1px solid var(--accent-bg);
+  }
 `;
 
 export const ImageWrap = styled.div`
@@ -17,7 +21,7 @@ export const ProductImg = styled.img`
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   object-fit: cover;
-  width: 360px;
+  width: 357px;
   height: 340px;
 `;
 

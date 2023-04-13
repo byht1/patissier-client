@@ -22,7 +22,6 @@ export const getProductsByCategory = async ({ category, page = 1 }) => {
       UrlProducts.all + `?page=${page}&limit=3&category=${category}`
     );
     const { products } = data;
-    console.log(products);
     return products;
   } catch (error) {
     throw error;
@@ -30,9 +29,19 @@ export const getProductsByCategory = async ({ category, page = 1 }) => {
 };
 
 export const addProductToFavorite = async productID => {
+  try {
+    const { data } = await server.get(
+      UrlProducts.all + `/add-favorite/${productID}`
+    );
+    const { favorites } = data;
+    console.log(favorites);
+    return favorites;
+  } catch (error) {
+    throw error;
+  }
   // try {
   //   const { data } = await server.get(
-  //     UrlProducts.all + `/add-favorite/${productID}`
+  //     'https://patissier-server.onrender.com/store/product/add-favorite/6421e50e55b089d4969ee5b4'
   //   );
   //   const { favorites } = data;
   //   console.log(favorites);
@@ -40,9 +49,23 @@ export const addProductToFavorite = async productID => {
   // } catch (error) {
   //   throw error;
   // }
+};
+
+export const getFavoriteProducts = async () => {
+  try {
+    const { data } = await server.get(UrlProducts.all + `/user-favorite`);
+    const { favorites } = data;
+    console.log(favorites);
+    return favorites;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const deleteProductFromFavorite = async productID => {
   try {
     const { data } = await server.get(
-      'https://patissier-server.onrender.com/store/product/add-favorite/6421e50e55b089d4969ee5b4'
+      UrlProducts.all + `/favorite/${productID}`
     );
     const { favorites } = data;
     console.log(favorites);
@@ -52,4 +75,12 @@ export const addProductToFavorite = async productID => {
   }
 };
 
-export const getFavoriteProducts = async () => {};
+export const getProductCountByCategory = async () => {
+  try {
+    const { data } = await server.get(UrlProducts.all + `/category-records`);
+    console.log(data);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};

@@ -1,103 +1,22 @@
-// import { useState, useEffect } from 'react';
-// import { useLocation } from 'react-router-dom';
-// import { getAllProducts, getProductsByCategory } from 'api/products';
-// import { Box } from 'components/global/Box';
-
-// import { SelectedProductItem } from '../SelectedProductItem';
-// import { ProductList } from './SelectedProduct.styled';
-
-// export const SelectedProductList = () => {
-//   const location = useLocation();
-//   const pathname = location.pathname.split('/')[2];
-//   const [productList, setProductList] = useState([]);
-
-//   let categoryName = '';
-
-//   switch (pathname) {
-//     case 'cakes':
-//       categoryName = 'Торти';
-//       break;
-//     case 'casseroles':
-//       categoryName = 'Тістечка';
-//       break;
-//     case 'biscuits':
-//       categoryName = 'Печиво';
-//       break;
-//     case 'buns':
-//       categoryName = 'Випічка';
-//       break;
-//     case 'pies':
-//       categoryName = 'Пироги';
-//       break;
-//     default:
-//       break;
-//   }
-//   console.log(categoryName);
-//   useEffect(() => {
-//     async function getProductsList() {
-//       try {
-//         if (categoryName) {
-//           const result = await getProductsByCategory(categoryName, 1, 3);
-//           setProductList(result);
-//         } else {
-//           const result = await getAllProducts(1, 3);
-//           setProductList(result);
-//         }
-//       } catch (error) {
-//         console.log(error);
-//       }
-//     }
-//     getProductsList();
-//   }, [categoryName]);
-//   console.log(productList);
-
-//   return (
-//     <Box mt={70}>
-//       <ProductList>
-//         {productList.map(item => (
-//           <SelectedProductItem product={item} key={item._id} />
-//         ))}
-//       </ProductList>
-//       <button>Load more</button>
-//     </Box>
-//   );
-// };
-
-import { useState, useEffect } from 'react';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
+import { useInfiniteQuery } from '@tanstack/react-query';
+
+import { AiOutlineReload } from 'react-icons/ai';
 import {
   getAllProducts,
   getProductsByCategory,
   addProductToFavorite,
 } from 'api/products';
 import { Box } from 'components/global/Box';
-import { useInfiniteQuery } from '@tanstack/react-query';
 
 import { SelectedProductItem } from '../SelectedProductItem';
-import { ProductList } from './SelectedProduct.styled';
-import React from 'react';
+import { ProductList, LoadMoreButton } from './SelectedProductList.styled';
 
 export const SelectedProductList = () => {
   const location = useLocation();
   const pathname = location.pathname.split('/')[2];
-  // const getCategoryName = pathname => {
-  //   switch (pathname) {
-  //     case 'cakes':
-  //       return 'Торти';
-  //     case 'casseroles':
-  //       return 'Тістечка';
-  //     case 'biscuits':
-  //       return 'Печиво';
-  //     case 'buns':
-  //       return 'Випічка';
-  //     case 'pies':
-  //       return 'Пироги';
-  //     default:
-  //       return '';
-  //   }
-  // };
 
-  // let categoryName = getCategoryName(pathname);
   let categoryName = '';
   switch (pathname) {
     case 'cakes':
@@ -119,7 +38,6 @@ export const SelectedProductList = () => {
       categoryName = '';
       break;
   }
-  console.log(categoryName);
   const {
     data,
     error,
@@ -131,7 +49,6 @@ export const SelectedProductList = () => {
   } = useInfiniteQuery(
     ['products', pathname],
     ({ pageParam = 1 }) => {
-      console.log(isFetching);
       if (!pathname) {
         addProductToFavorite('6421e4f255b089d4969ee5b0');
         return getAllProducts({ page: pageParam });
@@ -158,7 +75,6 @@ export const SelectedProductList = () => {
     <Box mt={70}>
       <ProductList>
         {data.pages.map((group, i) => {
-          console.log(group);
           return (
             <React.Fragment key={i}>
               {group.map(product => (
@@ -168,17 +84,24 @@ export const SelectedProductList = () => {
           );
         })}
       </ProductList>
-      <button
-        onClick={() => fetchNextPage()}
-        disabled={!hasNextPage || isFetchingNextPage}
-      >
-        {isFetchingNextPage
-          ? 'Loading more...'
-          : hasNextPage
-          ? 'Load More'
-          : 'Nothing more to load'}
-      </button>
-      <div>{isFetching && !isFetchingNextPage ? 'Fetching...' : null}</div>
+      {data.pages[0].length > 2 && (
+        <LoadMoreButton
+          onClick={() => fetchNextPage()}
+          disabled={!hasNextPage || isFetchingNextPage}
+        >
+          {isFetchingNextPage ? (
+            'Заватаження...'
+          ) : hasNextPage ? (
+            <>
+              Показати ще <AiOutlineReload size={25} />
+            </>
+          ) : (
+            'Позицій більше немає'
+          )}
+        </LoadMoreButton>
+      )}
+
+      <div>{isFetching && !isFetchingNextPage ? 'Завантаження...' : null}</div>
     </Box>
   );
 };

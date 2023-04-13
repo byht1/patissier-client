@@ -5,6 +5,7 @@ import { Container } from 'components/global/Container';
 import { TitleH1, Text } from 'components/global/text';
 
 import { SelectedProductNav } from 'components/modules/SelectedProduct/SelectedProductNav';
+import { SelectedProductFilters } from 'components/modules/SelectedProduct/SelectedProductFilters';
 
 export default function SelectedProduct() {
   return (
@@ -17,6 +18,7 @@ export default function SelectedProduct() {
         замовлення
       </Text>
       <SelectedProductNav />
+      <SelectedProductFilters />
       <Suspense>
         <Outlet />
       </Suspense>

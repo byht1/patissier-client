@@ -3,6 +3,7 @@ import { Box } from 'components/global/Box';
 import { TitleH2, Text } from 'components/global/text';
 
 import {
+  GreetingsSection,
   ImgWrap,
   OwnerPhoto,
   SignPhoto,
@@ -14,16 +15,16 @@ import Signature from 'img/aboutus/signature.png';
 
 export const Greetings = ({
   ReadMoreLink,
-  paddingTop = 100,
-  paddingBottom = 100,
+  paddingTop = '100px',
+  paddingBottom = '100px',
 }) => {
   return (
-    <Container pt={paddingTop} pb={paddingBottom}>
-      <Box display="flex" flexDirection="column" alignItems="center">
+    <Container>
+      <GreetingsSection pt={paddingTop} pb={paddingBottom}>
         <TitleH2 color="at" mb={60}>
           Про нас
         </TitleH2>
-        <Box display="flex" alignItems={ReadMoreLink ? 'flex-start' : 'center'}>
+        <Box display="flex" alignItems={'flex-start'}>
           <ImgWrap>
             <OwnerPhoto src={Image} alt="fotovlasnyka" loading="lazy" />
           </ImgWrap>
@@ -56,7 +57,7 @@ export const Greetings = ({
             />
           </Box>
         </Box>
-      </Box>
+      </GreetingsSection>
     </Container>
   );
 };

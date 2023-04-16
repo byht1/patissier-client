@@ -1,1 +1,0 @@
-export { SelectedProductNav } from './SelectedProductNav';

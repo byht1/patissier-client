@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ProductList = styled.ul`
+export const ProductListWrap = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 60px;

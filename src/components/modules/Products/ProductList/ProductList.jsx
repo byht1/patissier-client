@@ -1,43 +1,19 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { useInfiniteQuery } from '@tanstack/react-query';
-
 import { AiOutlineReload } from 'react-icons/ai';
-import {
-  getAllProducts,
-  getProductsByCategory,
-  addProductToFavorite,
-} from 'api/products';
+
+import { getAllProducts, getProductsByCategory } from 'api/products';
 import { Box } from 'components/global/Box';
+import { getProductCategory } from '../helpers/getProductCategory';
+import { ProductItem } from '../ProductItem';
 
-import { SelectedProductItem } from '../SelectedProductItem';
-import { ProductList, LoadMoreButton } from './SelectedProductList.styled';
+import { ProductListWrap, LoadMoreButton } from './ProductList.styled';
 
-export const SelectedProductList = () => {
+export const ProductList = () => {
   const location = useLocation();
   const pathname = location.pathname.split('/')[2];
 
-  let categoryName = '';
-  switch (pathname) {
-    case 'cakes':
-      categoryName = 'Торти';
-      break;
-    case 'casseroles':
-      categoryName = 'Тістечка';
-      break;
-    case 'biscuits':
-      categoryName = 'Печиво';
-      break;
-    case 'buns':
-      categoryName = 'Випічка';
-      break;
-    case 'pies':
-      categoryName = 'Пироги';
-      break;
-    default:
-      categoryName = '';
-      break;
-  }
   const {
     data,
     error,
@@ -50,11 +26,10 @@ export const SelectedProductList = () => {
     ['products', pathname],
     ({ pageParam = 1 }) => {
       if (!pathname) {
-        addProductToFavorite('6421e4f255b089d4969ee5b0');
         return getAllProducts({ page: pageParam });
       } else {
         return getProductsByCategory({
-          category: categoryName,
+          category: getProductCategory(pathname),
           page: pageParam,
         });
       }
@@ -73,17 +48,17 @@ export const SelectedProductList = () => {
     <p>Error: {error.message}</p>
   ) : (
     <Box>
-      <ProductList>
+      <ProductListWrap>
         {data.pages.map((group, i) => {
           return (
             <React.Fragment key={i}>
               {group.map(product => (
-                <SelectedProductItem product={product} key={product._id} />
+                <ProductItem product={product} key={product._id} />
               ))}
             </React.Fragment>
           );
         })}
-      </ProductList>
+      </ProductListWrap>
       {data.pages[0].length > 2 && (
         <LoadMoreButton
           onClick={() => fetchNextPage()}

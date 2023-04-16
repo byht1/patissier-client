@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ProductItem = styled.li`
+export const ProductWrap = styled.li`
   border: 1px solid var(--background);
   width: 360px;
   border-radius: 12px;

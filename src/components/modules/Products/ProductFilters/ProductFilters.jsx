@@ -3,16 +3,13 @@ import { useState, useEffect } from 'react';
 import { getProductCountByCategory } from 'api/products';
 import { Box } from 'components/global/Box';
 
+import { getProductCount } from '../helpers/getProductCount';
 import FilterIcon from '../../../../img/products/filter.svg';
 import SortIcon from '../../../../img/products/sort.svg';
 
-import {
-  FilterButton,
-  Filter,
-  FilterWrap,
-} from './SelectedProductFilters.styled';
+import { FilterButton, Filter, FilterWrap } from './ProductFilters.styled';
 
-export const SelectedProductFilters = () => {
+export const ProductFilters = () => {
   const location = useLocation();
   const pathname = location.pathname.split('/')[2];
   const [productsCountArray, setProductsCountArray] = useState([]);
@@ -29,45 +26,6 @@ export const SelectedProductFilters = () => {
     getProductCount();
   }, []);
 
-  let categoryName = '';
-  switch (pathname) {
-    case 'cakes':
-      categoryName = 'Торти';
-      break;
-    case 'casseroles':
-      categoryName = 'Тістечка';
-      break;
-    case 'biscuits':
-      categoryName = 'Печиво';
-      break;
-    case 'buns':
-      categoryName = 'Випічка';
-      break;
-    case 'pies':
-      categoryName = 'Пироги';
-      break;
-    default:
-      categoryName = '';
-      break;
-  }
-
-  let productCount = 0;
-  if (!pathname && productsCountArray.length > 0) {
-    productCount = productsCountArray.reduce((total, el) => {
-      return total + el.count;
-    }, 0);
-  } else {
-    console.log(categoryName);
-    if (productsCountArray.length > 0) {
-      console.log(productsCountArray);
-
-      const currentCategory = productsCountArray.find(
-        el => el._id === categoryName
-      );
-      productCount = currentCategory.count;
-    }
-  }
-  console.log(productCount);
   return (
     <Box
       mb={60}
@@ -78,7 +36,7 @@ export const SelectedProductFilters = () => {
     >
       <p>
         всього
-        <span> {productCount} </span>
+        <span> {getProductCount(pathname, productsCountArray)} </span>
         варіантів
       </p>
       <FilterWrap>

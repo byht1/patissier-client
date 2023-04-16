@@ -1,29 +1,26 @@
+import { useState } from 'react';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 import { useTheme } from 'styled-components';
-import { useState } from 'react';
+
 import { Box } from 'components/global/Box';
 import { TitleH2, Text } from 'components/global/text';
 import { ButtonsGhost } from 'components/global/button';
+
 import {
-  ProductItem,
+  ProductWrap,
   ImageWrap,
   ProductImg,
   ProductPrice,
   AddToFavBtn,
-} from './SelectedProductItem.styled';
+} from './ProductItem.styled';
 
-export const SelectedProductItem = ({ product }) => {
+export const ProductItem = ({ product }) => {
   const theme = useTheme();
   const [isHovered, setIsHovered] = useState(false);
+  const { _id, picture, title, description, price } = product;
   return (
-    <ProductItem key={product._id}>
+    <ProductWrap key={_id}>
       <ImageWrap>
-        {/* <AddToFavBtn>
-          <AiOutlineHeart size={'24px'} color={theme.colors.w} />
-        </AddToFavBtn> */}
-        {/* <AddToFavBtn>
-          <AiFillHeart size={'24px'} fill="red" />
-        </AddToFavBtn> */}
         <AddToFavBtn
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
@@ -34,14 +31,14 @@ export const SelectedProductItem = ({ product }) => {
             <AiOutlineHeart size={'24px'} color={theme.colors.w} />
           )}
         </AddToFavBtn>
-        <ProductImg src={product.picture} alt="Фото десерту" />
+        <ProductImg src={picture} alt="Фото десерту" />
       </ImageWrap>
       <Box p={21}>
         <TitleH2 size={20} mb={12} weight={600} family="montserrat">
-          {product.title}
+          {title}
         </TitleH2>
         <Text color="t" lh="big">
-          {product.description}
+          {description}
         </Text>
         <Box
           mt={27}
@@ -50,11 +47,11 @@ export const SelectedProductItem = ({ product }) => {
           alignItems="center"
         >
           <Text size={20}>
-            <ProductPrice>{product.price + ',00'}</ProductPrice> грн/шт
+            <ProductPrice>{price + ',00'}</ProductPrice> грн/шт
           </Text>
           <ButtonsGhost width={152}>Купити</ButtonsGhost>
         </Box>
       </Box>
-    </ProductItem>
+    </ProductWrap>
   );
 };

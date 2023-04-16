@@ -1,6 +1,7 @@
-import { NavButton, ProductNav } from './SelectedProductNav.styled';
 import { Box } from 'components/global/Box';
-export const SelectedProductNav = () => {
+import { NavButton } from './ProductNav.styled';
+
+export const ProductNav = () => {
   return (
     <Box
       display="flex"
@@ -12,9 +13,9 @@ export const SelectedProductNav = () => {
         Всі позиції
       </NavButton>
       <NavButton to="cakes">Торти</NavButton>
-      <NavButton to="casseroles">Тістечка</NavButton>
-      <NavButton to="biscuits">Печиво</NavButton>
-      <NavButton to="buns">Випічка</NavButton>
+      <NavButton to="pastries">Тістечка</NavButton>
+      <NavButton to="cookies">Печиво</NavButton>
+      <NavButton to="bakering">Випічка</NavButton>
       <NavButton to="pies">Пироги</NavButton>
     </Box>
   );

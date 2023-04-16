@@ -5,10 +5,10 @@ import { Container } from 'components/global/Container';
 import { TitleH1, Text } from 'components/global/text';
 import { Box } from 'components/global/Box';
 
-import { SelectedProductNav } from 'components/modules/SelectedProduct/SelectedProductNav';
-import { SelectedProductFilters } from 'components/modules/SelectedProduct/SelectedProductFilters';
+import { ProductNav } from 'components/modules/Products/ProductNav';
+import { ProductFilters } from 'components/modules/Products/ProductFilters';
 
-export default function SelectedProduct() {
+export default function Products() {
   return (
     <Box as="section">
       <Container pt={114} pb={100}>
@@ -19,8 +19,8 @@ export default function SelectedProduct() {
           Замовляйте вишукані десерти для свого свята! <br />В наявності та на
           замовлення
         </Text>
-        <SelectedProductNav />
-        <SelectedProductFilters />
+        <ProductNav />
+        <ProductFilters />
         <Suspense>
           <Outlet />
         </Suspense>

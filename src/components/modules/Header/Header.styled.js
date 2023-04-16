@@ -45,3 +45,6 @@ export const Logo = styled.img`
   height: 66px;
   cursor: pointer;
 `;
+
+export const NavList = styled.ul``;
+export const ListItem = styled.li``;

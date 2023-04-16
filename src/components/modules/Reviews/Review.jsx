@@ -23,7 +23,7 @@ export const Reviews = ({ title }) => {
   }, []);
 
   return (
-    <>
+    <Box as="section">
       <Container pt={114} pb={100}>
         <Box display="flex" flexDirection="column" alignItems="center">
           <TitleH2 mb={75} color="at">
@@ -36,6 +36,6 @@ export const Reviews = ({ title }) => {
           </ReviewsList>
         </Box>
       </Container>
-    </>
+    </Box>
   );
 };

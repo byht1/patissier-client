@@ -2,7 +2,15 @@ import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getProductCountByCategory } from 'api/products';
 import { Box } from 'components/global/Box';
-import { FilterButton } from './SelectedProductFilters.styled';
+
+import FilterIcon from '../../../../img/products/filter.svg';
+import SortIcon from '../../../../img/products/sort.svg';
+
+import {
+  FilterButton,
+  Filter,
+  FilterWrap,
+} from './SelectedProductFilters.styled';
 
 export const SelectedProductFilters = () => {
   const location = useLocation();
@@ -73,10 +81,14 @@ export const SelectedProductFilters = () => {
         <span> {productCount} </span>
         варіантів
       </p>
-      <div>
-        <FilterButton></FilterButton>
-        <FilterButton></FilterButton>
-      </div>
+      <FilterWrap>
+        <FilterButton>
+          <Filter src={FilterIcon}></Filter>
+        </FilterButton>
+        <FilterButton>
+          <Filter src={SortIcon}></Filter>
+        </FilterButton>
+      </FilterWrap>
     </Box>
   );
 };

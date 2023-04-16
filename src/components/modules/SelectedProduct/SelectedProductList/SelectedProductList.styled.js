@@ -21,4 +21,8 @@ export const LoadMoreButton = styled.button`
   padding: 10px;
   background-color: transparent;
   color: var(--accent-bg);
+  &:hover,
+  &:focus {
+    color: var(--accent-hover);
+  }
 `;

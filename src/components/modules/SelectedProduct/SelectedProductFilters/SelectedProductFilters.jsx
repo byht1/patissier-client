@@ -1,6 +1,9 @@
 import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getProductCountByCategory } from 'api/products';
+import { Box } from 'components/global/Box';
+import { FilterButton } from './SelectedProductFilters.styled';
+
 export const SelectedProductFilters = () => {
   const location = useLocation();
   const pathname = location.pathname.split('/')[2];
@@ -17,7 +20,7 @@ export const SelectedProductFilters = () => {
     }
     getProductCount();
   }, []);
-  console.log(productsCountArray);
+
   let categoryName = '';
   switch (pathname) {
     case 'cakes':
@@ -39,6 +42,7 @@ export const SelectedProductFilters = () => {
       categoryName = '';
       break;
   }
+
   let productCount = 0;
   if (!pathname && productsCountArray.length > 0) {
     productCount = productsCountArray.reduce((total, el) => {
@@ -57,12 +61,22 @@ export const SelectedProductFilters = () => {
   }
   console.log(productCount);
   return (
-    <div>
+    <Box
+      mb={60}
+      display="flex"
+      justifyContent="space-between"
+      alignItems="center"
+      color="t"
+    >
       <p>
         всього
         <span> {productCount} </span>
         варіантів
       </p>
-    </div>
+      <div>
+        <FilterButton></FilterButton>
+        <FilterButton></FilterButton>
+      </div>
+    </Box>
   );
 };

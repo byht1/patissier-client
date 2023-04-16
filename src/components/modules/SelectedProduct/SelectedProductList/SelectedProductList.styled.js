@@ -9,8 +9,6 @@ export const ProductList = styled.ul`
 `;
 
 export const LoadMoreButton = styled.button`
-  /* display: flex;
-  align-items: center; */
   display: flex;
   width: 165px;
   align-items: center;

@@ -72,7 +72,7 @@ export const SelectedProductList = () => {
   ) : status === 'error' ? (
     <p>Error: {error.message}</p>
   ) : (
-    <Box mt={70}>
+    <Box>
       <ProductList>
         {data.pages.map((group, i) => {
           return (

@@ -1,73 +1,68 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import signIn from '../../../../img/header/images/signIn.jpg';
-<<<<<<< HEAD:src/components/modules/Header/SignIn/SignIn.jsx
-import { Header } from '../Header';
-=======
-import { useState } from 'react';
->>>>>>> Header:src/components/modules/Header/SignIn/SighnIn.jsx
+import signIn from 'img/header/images/signIn.jpg';
 import {
+  AppleIc,
   Button,
   CheckBoxActiveIc,
   CheckBoxDefaultIc,
   ContentContainer,
+  FacebookIc,
   ForgotPassword,
   Form,
+  FormWrapper,
+  GoogleIc,
   Input,
   KeepOnline,
   Label,
   LinkToSignUp,
-<<<<<<< HEAD:src/components/modules/Header/SignIn/SignIn.jsx
+  LoginIconsBox,
   RegistryBlockCover,
   SignInImg,
   SubmitBlock,
   Title,
-=======
-  ForgotPassword,
-  LoginIconsBox,
-  GoogleIc,
-  AppleIc,
-  FacebookIc,
->>>>>>> Header:src/components/modules/Header/SignIn/SighnIn.jsx
 } from './SignIn.styled';
 
 import { Container } from 'components/global/Container';
 
+import { useMutation } from '@tanstack/react-query';
+import { logIn } from 'api/auth';
+import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { logIn } from 'api/auth';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { useMutation } from '@tanstack/react-query';
-import { useDispatch } from 'react-redux';
-import { useForm } from 'react-hook-form';
-import { loginSchema } from 'components/schemas/auth/LoginSchema';
 import { register } from 'redux/auth';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { signInSchema } from 'components/modules/Header/SignIn/signIn.schema';
+import { FormInput } from 'components/global/FormInput/FormInput';
+import { FormContext } from 'components/global/FormContext';
+import { Box } from 'components/global/Box';
 
 export function SignIn(params) {
   const [keepOnline, setKeepOnline] = useState(false);
-  const navigate = useNavigate();
+  const [err, setErr] = useState(null);
 
-  const [error, setError] = useState(null);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const method = useForm({
-    // resolver: yupResolver(loginSchema),
+  const methods = useForm({
+    resolver: yupResolver(signInSchema),
     mode: 'onTouched',
   });
 
-  const { reset, handleSubmit, register: registerField } = method;
+  const { reset, handleSubmit } = methods;
 
   const { mutate: logUser, isLoading } = useMutation({
     mutationKey: ['user'],
     mutationFn: data => logIn(data),
     onSuccess: logData => {
-      setError(null);
+      setErr(null);
       dispatch(register(logData));
       reset();
     },
 
     onError: error => {
-      setError(error.response.data.message);
+      setErr(error.response.data.message);
       toast.error(error.response.data.message, { hideProgressBar: true });
     },
   });
@@ -79,68 +74,77 @@ export function SignIn(params) {
   return (
     <>
       <Container>
+        <ToastContainer />
+
         {/* TODO Змінити на лоадер */}
         {isLoading && <h1 style={{ textAlign: 'center' }}>Loading ...</h1>}
-        {error && <h1>There is the error {error}</h1>}
+        {err && <h1>There is the error {err}</h1>}
 
         <ContentContainer>
           <Title>Увійти в кабінет</Title>
           <RegistryBlockCover>
             <SignInImg src={signIn} />
-<<<<<<< HEAD:src/components/modules/Header/SignIn/SignIn.jsx
-            <Form onSubmit={handleSubmit(onSubmit)}>
-=======
-            <Form action="">
-              <LoginIconsBox>
-                <GoogleIc />
-                <AppleIc />
-                <FacebookIc />
-              </LoginIconsBox>
->>>>>>> Header:src/components/modules/Header/SignIn/SighnIn.jsx
-              <Label>
-                Email
-                <Input type="text" {...registerField('login')} />
-              </Label>
-              <Label>
-                Пароль
-<<<<<<< HEAD:src/components/modules/Header/SignIn/SignIn.jsx
-                <Input type="password" {...registerField('password')} />
-                <ForgotPassword>Я забув свій пароль</ForgotPassword>
-=======
-                <Input type="password" />
-                <ForgotPassword to="/password-recovery">
-                  Я забув свій пароль
-                </ForgotPassword>
->>>>>>> Header:src/components/modules/Header/SignIn/SighnIn.jsx
-              </Label>
+            <FormWrapper>
+              <FormContext methods={methods} onSubmit={handleSubmit(onSubmit)}>
+                <LoginIconsBox>
+                  <GoogleIc />
+                  <AppleIc />
+                  <FacebookIc />
+                </LoginIconsBox>
 
-              <KeepOnline>
-                {keepOnline ? (
-                  <CheckBoxActiveIc
+                <FormInput
+                  label="Email"
+                  name="login"
+                  type="email"
+                  placeholder="email"
+                  mt={40}
+                />
+
+                <FormInput
+                  label="Password"
+                  name="password"
+                  type="password"
+                  placeholder="password"
+                  mt={40}
+                  mb={8}
+                  showhide={true}
+                />
+
+                <Box display="flex" justifyContent="right">
+                  <ForgotPassword to="/password-recovery">
+                    Я забув свій пароль
+                  </ForgotPassword>
+                </Box>
+
+                <KeepOnline>
+                  {keepOnline ? (
+                    <CheckBoxActiveIc
+                      onClick={() => {
+                        setKeepOnline(false);
+                      }}
+                    />
+                  ) : (
+                    <CheckBoxDefaultIc
+                      onClick={() => {
+                        setKeepOnline(true);
+                      }}
+                    />
+                  )}
+                  Залишатися в мережі
+                </KeepOnline>
+
+                <SubmitBlock>
+                  <Button type="submit">Увійти</Button>
+                  <LinkToSignUp
                     onClick={() => {
-                      setKeepOnline(false);
+                      navigate('/sign-up');
                     }}
-                  />
-                ) : (
-                  <CheckBoxDefaultIc
-                    onClick={() => {
-                      setKeepOnline(true);
-                    }}
-                  />
-                )}
-                Залишатися в мережі
-              </KeepOnline>
-              <SubmitBlock>
-                <Button type="submit">Увійти</Button>
-                <LinkToSignUp
-                  onClick={() => {
-                    navigate('/sign-up');
-                  }}
-                >
-                  Зареєструватися
-                </LinkToSignUp>
-              </SubmitBlock>
-            </Form>
+                  >
+                    Зареєструватися
+                  </LinkToSignUp>
+                </SubmitBlock>
+              </FormContext>
+            </FormWrapper>
           </RegistryBlockCover>
         </ContentContainer>
       </Container>

@@ -1,11 +1,12 @@
-import { lazy } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
 import AppBar from 'page/AppBar'; // Header
 import React from 'react';
 
 import { RestrictedRoute } from 'components/global/RestrictedRoute';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Home = lazy(() => import('page/Home')); // Головна сторінка
 const Goods = lazy(() => import('page/Goods')); // Tовари

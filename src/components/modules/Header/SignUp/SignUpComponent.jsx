@@ -1,12 +1,11 @@
 import { Container } from 'components/global/Container';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-<<<<<<< HEAD
 
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useMutation } from '@tanstack/react-query';
 import { signUp } from 'api/auth';
-import { sigUpSchema } from 'components/schemas/auth/SignUp.schema';
+import { sigUpSchema } from 'components/modules/Header/SignUp/signUp.schema';
 import signUpImg from 'img/header/images/signUp.jpg';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
@@ -14,14 +13,18 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { register } from 'redux/auth';
 import {
+  AppleIc,
   Button,
   CheckBoxActiveIc,
   CheckBoxDefaultIc,
   ContentContainer,
+  FacebookIc,
   Form,
+  GoogleIc,
   Input,
   Label,
   LinkToLogin,
+  LoginIconsBox,
   PrivacyPolicy,
   RegistryBlockCover,
   SignUpImg,
@@ -29,10 +32,6 @@ import {
   SubmitBlock,
   Title,
 } from './SignUp.styled';
-=======
-import signUp from '../../../../img/header/images/signUp.jpg';
-import { ContentContainer, Form, Input, Label, RegistryBlockCover, SignUpImg, Title, PrivacyPolicy, CheckBoxDefaultIc, CheckBoxActiveIc, Button, SubmitBlock, SubmitAlreadyHaveAccount, LinkToLogin, LoginIconsBox, GoogleIc, AppleIc, FacebookIc } from './SignUp.styled';
->>>>>>> Header
 
 export function SignUpComponent(params) {
   const [privacyPolicy, setPrivacyPolicy] = useState(false);
@@ -90,18 +89,14 @@ export function SignUpComponent(params) {
       <ContentContainer>
         <Title>Зареєструватись</Title>
         <RegistryBlockCover>
-<<<<<<< HEAD
           <SignUpImg src={signUpImg} />
           <Form onSubmit={handleSubmit(onSubmit)}>
-=======
-          <SignUpImg src={signUp} />
-          <Form action="">
             <LoginIconsBox>
               <GoogleIc />
               <AppleIc />
               <FacebookIc />
             </LoginIconsBox>
->>>>>>> Header
+
             <Label>
               Email
               <Input type="email" {...registerField('email')} />
@@ -135,7 +130,9 @@ export function SignUpComponent(params) {
               Погоджуюсь з правилами конфідеційності
             </PrivacyPolicy>
             <SubmitBlock>
-              <Button type="submit">Зареєструватись</Button>
+              <Button type="submit" disabled={!privacyPolicy}>
+                Зареєструватись
+              </Button>
               <SubmitAlreadyHaveAccount>
                 Вже маю аккаунт.
                 <LinkToLogin

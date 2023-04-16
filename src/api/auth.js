@@ -1,12 +1,12 @@
 import { server, token } from './basic';
 
-const UrlRegister = Object.freeze({
+const UrlAuth = Object.freeze({
   signUp: '/auth/sing-up',
   logIn: '/auth/log-in',
   logOut: '/auth/logout',
-  active: '/auth/active',
-  newPass: '/auth/new-password',
-  forgottenPass: '/auth/forgotten-password',
+  // active: '/auth/active',
+  // newPass: '/auth/new-password',
+  // forgottenPass: '/auth/forgotten-password',
 });
 
 export const signUp = async body => {
@@ -17,7 +17,7 @@ export const signUp = async body => {
   };
 
   try {
-    const { data } = await server.post(UrlRegister.signUp, preparedUserData);
+    const { data } = await server.post(UrlAuth.signUp, preparedUserData);
 
     token.set(data.token);
     localStorage.setItem('token', data.token);
@@ -29,10 +29,8 @@ export const signUp = async body => {
 };
 
 export const logIn = async body => {
-  console.log('🚀 ~ file: auth.js:32 ~ logIn ~ body:', body);
-
   try {
-    const { data } = await server.post(UrlRegister.logIn, body);
+    const { data } = await server.post(UrlAuth.logIn, body);
 
     token.set(data.token);
     localStorage.setItem('token', data.token);
@@ -47,8 +45,8 @@ export const logOutUser = async () => {
   const body = { token: localStorage.getItem('token') };
 
   try {
-    await server.get(UrlRegister.logOut, body);
-    // token.unset();
+    await server.get(UrlAuth.logOut, body);
+    token.unset();
     localStorage.removeItem('token');
   } catch (error) {
     throw error.message;

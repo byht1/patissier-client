@@ -1,13 +1,10 @@
 import styled from 'styled-components';
 
-import { ReactComponent as checkBoxActiveSvg } from '../../../../img/header/icons/checkBoxActive.svg';
-<<<<<<< HEAD
-import { ReactComponent as checkBoxDefaultSvg } from '../../../../img/header/icons/checkBoxDefault.svg';
-=======
-import { ReactComponent as AppleSvg } from '../../../../img/header/icons/Apple.svg';
-import { ReactComponent as FacebookSvg } from '../../../../img/header/icons/Facebook.svg';
-import { ReactComponent as GoogleSvg } from '../../../../img/header/icons/Google.svg';
->>>>>>> Header
+import { ReactComponent as checkBoxActiveSvg } from 'img/header/icons/checkBoxActive.svg';
+import { ReactComponent as AppleSvg } from 'img/header/icons/Apple.svg';
+import { ReactComponent as FacebookSvg } from 'img/header/icons/Facebook.svg';
+import { ReactComponent as GoogleSvg } from 'img/header/icons/Google.svg';
+import { ReactComponent as checkBoxDefaultSvg } from 'img/header/icons/checkBoxDefault.svg';
 
 export const ContentContainer = styled.div`
   display: flex;
@@ -119,6 +116,11 @@ export const Button = styled.button`
   &:focus,
   &:hover {
     background: ${p => p.theme.colors.ah};
+  }
+
+  &:disabled {
+    background: #f9f9f9;
+    cursor: not-allowed;
   }
 `;
 

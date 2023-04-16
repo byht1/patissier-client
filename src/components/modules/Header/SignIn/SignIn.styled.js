@@ -1,14 +1,11 @@
 import styled from 'styled-components';
 
-import { ReactComponent as checkBoxActiveSvg } from '../../../../img/header/icons/checkBoxActive.svg';
-<<<<<<< HEAD
-import { ReactComponent as checkBoxDefaultSvg } from '../../../../img/header/icons/checkBoxDefault.svg';
-=======
+import { Link } from 'react-router-dom';
 import { ReactComponent as AppleSvg } from '../../../../img/header/icons/Apple.svg';
 import { ReactComponent as FacebookSvg } from '../../../../img/header/icons/Facebook.svg';
 import { ReactComponent as GoogleSvg } from '../../../../img/header/icons/Google.svg';
-import { Link } from 'react-router-dom';
->>>>>>> Header
+import { ReactComponent as checkBoxActiveSvg } from '../../../../img/header/icons/checkBoxActive.svg';
+import { ReactComponent as checkBoxDefaultSvg } from '../../../../img/header/icons/checkBoxDefault.svg';
 
 export const ContentContainer = styled.div`
   display: flex;
@@ -37,7 +34,7 @@ export const RegistryBlockCover = styled.div`
   display: flex;
 `;
 
-export const Form = styled.form`
+export const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 60px;
@@ -90,9 +87,11 @@ export const KeepOnline = styled.span`
 `;
 
 export const ForgotPassword = styled(Link)`
-  position: absolute;
+  /* position: absolute;
   top: 76px;
-  right: 0px;
+  right: 0px; */
+  display: inline-block;
+  text-align: right;
 
   font-family: 'Roboto';
   font-style: normal;

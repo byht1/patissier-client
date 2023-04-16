@@ -17,3 +17,29 @@ export const token = {
     server.defaults.headers.common.Authorization = '';
   },
 };
+
+// server.interceptors.response.use(
+//   response => response,
+//   async error => {
+//     if (error.response.status === 403) {
+//       const refreshToken = localStorage.getItem('refreshToken');
+
+//       if (!refreshToken) return Promise.reject(error);
+
+//       try {
+//         const { data } = await server.post('/auth/refresh', {
+//           refresh_token: refreshToken,
+//         });
+
+//         token.set(data);
+//         error.config.headers.common.authorization = `Bearer ${data}`;
+
+//         return server(error.config);
+//       } catch (error) {
+//         return Promise.reject(error);
+//       }
+//     }
+
+//     return Promise.reject(error);
+//   }
+// );

@@ -46,5 +46,8 @@ export const Logo = styled.img`
   cursor: pointer;
 `;
 
-export const NavList = styled.ul``;
+export const NavList = styled.ul`
+  display: flex;
+  align-items: center;
+`;
 export const ListItem = styled.li``;

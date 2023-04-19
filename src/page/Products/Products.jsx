@@ -6,7 +6,7 @@ import { TitleH1, Text } from 'components/global/text';
 import { Box } from 'components/global/Box';
 
 import { ProductNav } from 'components/modules/Products/ProductNav';
-import { ProductFilters } from 'components/modules/Products/ProductFilters';
+import { ProductFiltersAndSorting } from 'components/modules/Products/ProductFiltersAndSorting';
 
 export default function Products() {
   return (
@@ -20,7 +20,7 @@ export default function Products() {
           замовлення
         </Text>
         <ProductNav />
-        <ProductFilters />
+        <ProductFiltersAndSorting />
         <Suspense>
           <Outlet />
         </Suspense>

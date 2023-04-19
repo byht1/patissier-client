@@ -6,10 +6,15 @@ import { Box } from 'components/global/Box';
 import { getProductCount } from '../helpers/getProductCount';
 import FilterIcon from '../../../../img/products/filter.svg';
 import SortIcon from '../../../../img/products/sort.svg';
+import { Sorting } from './Sorting/Sorting';
+import {
+  FilterButton,
+  Filter,
+  FilterWrap,
+} from './ProductFiltersAndSorting.styled';
+import { Filters } from './Filters/Filters';
 
-import { FilterButton, Filter, FilterWrap } from './ProductFilters.styled';
-
-export const ProductFilters = () => {
+export const ProductFiltersAndSorting = () => {
   const location = useLocation();
   const pathname = location.pathname.split('/')[2];
   const [productsCountArray, setProductsCountArray] = useState([]);
@@ -47,6 +52,8 @@ export const ProductFilters = () => {
           <Filter src={SortIcon}></Filter>
         </FilterButton>
       </FilterWrap>
+      <Sorting></Sorting>
+      <Filters></Filters>
     </Box>
   );
 };

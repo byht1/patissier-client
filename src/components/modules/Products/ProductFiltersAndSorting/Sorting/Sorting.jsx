@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import { Box } from 'components/global/Box';
+// import { useState } from 'react';
+// import { Box } from 'components/global/Box';
 
-import {
-  SortingIcon,
-  Wrap,
-  SortingList,
-  SortingItem,
-  SortingBtn,
-} from './Sorting.styled';
-import { sortingParams } from './sortingParams';
+// import {
+//   SortingIcon,
+//   Wrap,
+//   SortingList,
+//   SortingItem,
+//   SortingBtn,
+// } from './Sorting.styled';
+// import { sortingParams } from './sortingParams';
 
 export const Sorting = () => {
   // const [selectedItem, setSelectedItem] = useState(sortingParams[0]);

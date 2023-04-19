@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { ReactComponent as SortIcon } from '../../../../../img/products/sort.svg';
-import { FilterButton } from '../ProductFiltersAndSorting.styled';
 
 export const SortingIcon = styled(SortIcon)`
   background-color: var(--button-bg);

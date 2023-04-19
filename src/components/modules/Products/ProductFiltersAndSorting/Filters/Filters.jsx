@@ -1,44 +1,44 @@
-import React from 'react';
-import 'sanitize.css';
-import Slider from '@material-ui/core/Slider';
-import { makeStyles } from '@material-ui/core/styles';
+// import React from 'react';
+// import 'sanitize.css';
+// import Slider from '@material-ui/core/Slider';
+// import { makeStyles } from '@material-ui/core/styles';
 
-// docs:
-// - https://material-ui.com/api/slider/#css
-// - https://material-ui.com/styles/advanced/#makestyles-withstyles-styled
-const useStyles = makeStyles(
-  {
-    track: {
-      color: '#8f23b3',
-      height: '3px',
-      borderRadius: '3px',
-    },
-    rail: {
-      opacity: 1,
-      backgroundColor: '#e6e9ea',
-      height: '3px',
-      borderRadius: '3px',
-    },
-    thumb: {
-      color: 'white',
-      width: '1rem',
-      height: '1rem',
-      marginTop: '-6px',
-      border: '2px solid #8f23b3',
-      boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.09)',
-      '&$focusVisible,&:hover': {
-        boxShadow: '0 0 0 8px rgba(155, 38, 182, 0.2)',
-      },
-      '&$active': {
-        boxShadow: '0 0 0 14px rgba(155, 38, 182, 0.2)',
-      },
-    },
-    // don't remove the following lines
-    focusVisible: {},
-    active: {},
-  },
-  { name: 'MuiSlider' }
-);
+// // docs:
+// // - https://material-ui.com/api/slider/#css
+// // - https://material-ui.com/styles/advanced/#makestyles-withstyles-styled
+// const useStyles = makeStyles(
+//   {
+//     track: {
+//       color: '#8f23b3',
+//       height: '3px',
+//       borderRadius: '3px',
+//     },
+//     rail: {
+//       opacity: 1,
+//       backgroundColor: '#e6e9ea',
+//       height: '3px',
+//       borderRadius: '3px',
+//     },
+//     thumb: {
+//       color: 'white',
+//       width: '1rem',
+//       height: '1rem',
+//       marginTop: '-6px',
+//       border: '2px solid #8f23b3',
+//       boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.09)',
+//       '&$focusVisible,&:hover': {
+//         boxShadow: '0 0 0 8px rgba(155, 38, 182, 0.2)',
+//       },
+//       '&$active': {
+//         boxShadow: '0 0 0 14px rgba(155, 38, 182, 0.2)',
+//       },
+//     },
+//     // don't remove the following lines
+//     focusVisible: {},
+//     active: {},
+//   },
+//   { name: 'MuiSlider' }
+// );
 
 export const Filters = () => {
   // const [val, setVal] = React.useState({ min: 0, max: 100 });

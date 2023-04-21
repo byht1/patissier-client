@@ -2,6 +2,7 @@ import { Box } from 'components/global/Box';
 import { Container } from 'components/global/Container';
 import { WayItem } from './WayItem/WayItem';
 import {
+  SuccessSection,
   Icon,
   ImgWrap,
   WayPhoto,
@@ -18,8 +19,8 @@ import Icon05 from 'img/aboutus/way05.png';
 
 export const WayToSuccess = () => {
   return (
-    <Container pt={200} pb={100}>
-      <Box display="flex">
+    <Container>
+      <SuccessSection>
         <Box width={552}>
           <WayList>
             <WayItem>
@@ -64,7 +65,7 @@ export const WayToSuccess = () => {
         <ImgWrap>
           <WayPhoto src={Image} alt="Pie" loading="lazy"></WayPhoto>
         </ImgWrap>
-      </Box>
+      </SuccessSection>
     </Container>
   );
 };

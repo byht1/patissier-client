@@ -48,8 +48,51 @@ export const OrderAmount = styled.span`
 // sertificate
 
 export const SertWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   padding-bottom: 40px;
   border-bottom: 1px solid #5c5c5d;
+`;
+
+export const FormWrap = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+`;
+
+export const Input = styled.input`
+  width: 100%;
+  background-color: #101011;
+  padding: 14px 16px;
+  border-radius: 12px;
+  outline: none;
+  border: 1px solid transparent;
+  color: ${p => p.theme.colors.t};
+  font-size: ${p => p.theme.fontSizes.min};
+  line-height: ${p => p.theme.lineHeights.body};
+  transition: var(--transition-border-color);
+
+  &::placeholder {
+    font-size: ${p => p.theme.fontSizes.min};
+    line-height: ${p => p.theme.lineHeights.body};
+    color: ${p => p.theme.colors.t};
+  }
+
+  &:hover {
+    border: 1px solid ${p => p.theme.colors.aBg};
+  }
+
+  &:focus {
+    border: 1px solid ${p => p.theme.colors.aBg};
+    background-color: white;
+    color: #070a23;
+
+    &::placeholder {
+      color: #717171;
+    }
+  }
 `;
 
 export const SertBtn = styled.button`

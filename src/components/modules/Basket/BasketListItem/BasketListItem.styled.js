@@ -22,7 +22,6 @@ export const ImgWrap = styled.div`
 
 export const ItemPhoto = styled.img`
   display: block;
-  object-fit: cover;
   width: 100%;
 `;
 

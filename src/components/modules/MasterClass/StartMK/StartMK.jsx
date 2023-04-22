@@ -9,8 +9,8 @@ import dataStartMK from './data-start';
 
 export const StartMK = () =>{
     return(
-        <Container>
-        <Box mt={200} mb={86} display="flex" justifyContent="center" flexDirection="column" alignItems="center">
+        <Container pt={100} pb={86}>
+        <Box display="flex" justifyContent="center" flexDirection="column" alignItems="center">
             <TitleH3 color="at" mb={60} alignItems='center'>Старт навчання</TitleH3>
             <ButtonWrap>
                 <Buttons>Всі пропозиції</Buttons>

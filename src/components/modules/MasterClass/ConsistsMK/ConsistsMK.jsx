@@ -7,13 +7,14 @@ import {ConsistsList} from './Consists.styled';
 
 export const ConsistsMK = ({aboutList}) =>{
     return(
-        <Container>
-        <Box mt={200} display="flex" justifyContent="center" flexDirection="column" alignItems="center">
+        <Container pt={100} pb={100}>
+        <Box display="flex" justifyContent="center" flexDirection="column" alignItems="center">
             <TitleH3 color="at" mb={60} alignItems='center'>Що містить майстер клас?</TitleH3>
             <ConsistsList>
-            {aboutList.map(({ title, text}) =>{
+            {aboutList.map(({ title, text, id}) =>{
                     return(
                     <ConsistsItem
+                            key={id}
                             title={title}
                             text={text}
                     

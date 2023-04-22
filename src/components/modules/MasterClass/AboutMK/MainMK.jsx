@@ -1,4 +1,4 @@
-
+import { Container } from 'components/global/Container';
 import { Box } from 'components/global/Box';
 import { TitleH2, TitleH4, Text  } from 'components/global/text';
 import {ImageWrap, MKImage, TextWrap} from './MainMK.styled';
@@ -6,7 +6,8 @@ import Image from 'img/mk/main.jpg';
 
 export const MainMK = () => {
   return (
-    <Box display="flex" flexDirection='column' alignItems='center'>
+    <Container pt={58} pb={100}>
+      <Box display="flex" flexDirection='column' alignItems='center'>
        <TitleH2 mb={52} color="at">
        Різдвяний штолен
         </TitleH2>
@@ -40,6 +41,8 @@ export const MainMK = () => {
             </TextWrap>
         </Box>
     </Box>
+    </Container>
+    
    
   );
 };

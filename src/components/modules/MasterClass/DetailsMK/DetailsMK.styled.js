@@ -8,7 +8,9 @@ padding: 18px 56px;
 border: ${p => p.theme.borders.none};
 color: ${p => p.theme.colors.wt};
 background-color: ${p => p.theme.colors.btnBg};
- 
+border-bottom: 1.5px solid transparent;
+transition: var(--transition-bg), var(--transition-color), var(--transition-border-color);
+
 &:hover,
 &:focus{
   border-bottom: 1.5px solid ${p => p.theme.colors.aBg};
@@ -46,7 +48,7 @@ export const Block = styled.div`
 display: flex;
 flex-direction: column;
 gap: 24px;
-// justify-content: space-between;
+
 margin-right: 24px;
 `;
 export const DetailsAbout = styled.div`

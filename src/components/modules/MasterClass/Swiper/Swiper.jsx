@@ -1,7 +1,6 @@
 import React from "react";
-// import { TitleH4 } from 'components/global/text';
 import { Swiper, SwiperSlide } from 'swiper/react';
-// import { Slide, SlideContent } from "./Swiper.styled";
+
 import { Container} from 'components/global/Container';
 import {SwiperSlides} from './SwiperSlide';
 
@@ -27,10 +26,14 @@ export const Slider = ({startList}) => {
           modules={[Pagination]}
           className="mySwiper"
         >
-               {startList.map(({ date, time, isOnline }) =>{
+               {startList.map(({ date, time, isOnline, id }) =>{
                     return(
                         <SwiperSlide>
-                            <SwiperSlides date = {date} time={time} isOnline={isOnline}/>
+                            <SwiperSlides 
+                              key={id}
+                              date = {date} 
+                              time={time} 
+                              isOnline={isOnline}/>
                         </SwiperSlide>
                     )
                 })}

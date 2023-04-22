@@ -7,7 +7,9 @@ height: 58px;
 border: ${p => p.theme.borders.none};
 color: ${p => p.theme.colors.wt};
 background-color: ${p => p.theme.colors.btnBg};
- 
+border-bottom: 1.5px solid transparent;
+transition: var(--transition-bg), var(--transition-color), var(--transition-border-color);
+
 &:hover,
 &:focus{
   border-bottom: 1.5px solid ${p => p.theme.colors.aBg};

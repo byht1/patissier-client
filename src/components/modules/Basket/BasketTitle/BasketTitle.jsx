@@ -9,8 +9,8 @@ import { Text } from './BasketTitle.styled';
 export const BasketTitle = () => {
   return (
     <>
-      <Container pt={60}>
-        <Box display="flex" flexDirection="column" alignItems="center">
+      <Container>
+        <Box display="flex" flexDirection="column" alignItems="center" pt={60}>
           <TitleH2 color="at" mb={60}>
             Корзина
           </TitleH2>

@@ -2,12 +2,12 @@ import { Box } from 'components/global/Box';
 import { Container } from 'components/global/Container';
 import { TitleH2, TitleH4 } from 'components/global/text';
 import { FaInstagram } from 'react-icons/fa';
-import image1 from '../../../img/Insta/link-1.jpg';
-import image2 from '../../../img/Insta/link-2.jpg';
-import image3 from '../../../img/Insta/link-3.jpg';
-import image1_2x from '../../../img/Insta/link-1@2x.jpg';
-import image2_2x from '../../../img/Insta/link-2@2x.jpg';
-import image3_2x from '../../../img/Insta/link-3@2x.jpg';
+import image1 from 'img/Insta/insta-1.jpg';
+import image2 from 'img/Insta/insta-2.jpg';
+import image3 from 'img/Insta/insta-3.jpg';
+import image1_2x from 'img/Insta/insta-1@2x.jpg';
+import image2_2x from 'img/Insta/insta-2@2x.jpg';
+import image3_2x from 'img/Insta/insta-3@2x.jpg';
 import { SocialLink, SocialIcon, InstaList } from './Insta.styled';
 import { InstaItem } from './InstaItem';
 
@@ -15,21 +15,18 @@ const instaPosts = [
   {
     id: 'insta-1',
     title: 'link-1',
-    link: 'https://www.instagram.com/p/CnEy6bTt9le/',
     img: image1,
     img2x: image1_2x,
   },
   {
     id: 'insta-2',
     title: 'link-2',
-    link: 'https://www.instagram.com/p/CnChOO6NqBV/',
     img: image2,
     img2x: image2_2x,
   },
   {
     id: 'insta-3',
     title: 'link-3',
-    link: 'https://www.instagram.com/p/CmlXQncNwEm/',
     img: image3,
     img2x: image3_2x,
   },
@@ -37,8 +34,8 @@ const instaPosts = [
 
 export const Insta = () => {
   return (
-    <Box as="section">
-      <Container pt={114} pb={100}>
+    <Box as="section" pt={114} pb={100}>
+      <Container>
         <TitleH2 mb={40} color="at" className="visually-hidden">
           Наш інстаграмм
         </TitleH2>

@@ -15,7 +15,7 @@ export default function Home() {
       <Header />
       <Hero />
       <Statistics />
-      <Greetings ReadMoreLink={true} paddingTop={200} />
+      <Greetings ReadMoreLink={true} />
       <Courses />
       <Reviews title={'Відгуки'} />
       <Insta />

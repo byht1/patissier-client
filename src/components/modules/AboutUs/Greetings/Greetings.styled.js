@@ -3,6 +3,14 @@ import { TextBox } from 'components/global/text';
 import { NavLink } from 'react-router-dom';
 import Vector from 'img/arrow/arrow_forward.svg';
 
+export const GreetingsSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: ${p => p.pt};
+  padding-bottom: ${p => p.pb};
+`;
+
 export const ImgWrap = styled.div`
   width: 552px;
   height: 424px;
@@ -22,8 +30,8 @@ export const OwnerPhoto = styled.img`
 export const SignPhoto = styled.img`
   position: absolute;
 
-  bottom: ${p => (p.readmorelink ? '-5%' : '-30%')};
-  right: -10%;
+  bottom: ${p => (p.readmorelink ? '-20%' : '-50%')};
+  right: -2%;
   display: block;
   width: 280px;
   height: 204px;

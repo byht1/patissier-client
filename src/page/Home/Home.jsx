@@ -6,6 +6,7 @@ import { Greetings } from 'components/modules/AboutUs/Greetings';
 import { Courses } from 'components/modules/Courses';
 import { Reviews } from 'components/modules/Reviews';
 import { Insta } from 'components/modules/Insta';
+import { Footer } from 'components/modules/Footer';
 import { Header } from 'components/modules/Header/Header';
 
 export default function Home() {
@@ -14,10 +15,11 @@ export default function Home() {
       <Header />
       <Hero />
       <Statistics />
-      <Greetings ReadMoreLink={true} paddingTop={200} />
+      <Greetings ReadMoreLink={true} />
       <Courses />
       <Reviews title={'Відгуки'} />
       <Insta />
+      <Footer />
     </>
   );
 }

@@ -1,6 +1,6 @@
+import signIn from 'img/header/images/signIn.jpg';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import signIn from 'img/header/images/signIn.jpg';
 import {
   AppleIc,
   Button,
@@ -9,34 +9,31 @@ import {
   ContentContainer,
   FacebookIc,
   ForgotPassword,
-  Form,
   FormWrapper,
   GoogleIc,
-  Input,
   KeepOnline,
-  Label,
   LinkToSignUp,
   LoginIconsBox,
   RegistryBlockCover,
   SignInImg,
   SubmitBlock,
-  Title,
+  Title
 } from './SignIn.styled';
 
 import { Container } from 'components/global/Container';
 
+import { yupResolver } from '@hookform/resolvers/yup';
 import { useMutation } from '@tanstack/react-query';
 import { logIn } from 'api/auth';
+import { Box } from 'components/global/Box';
+import { FormContext } from 'components/global/FormContext';
+import { FormInput } from 'components/global/FormInput/FormInput';
+import { signInSchema } from 'components/modules/Header/SignIn/signIn.schema';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { register } from 'redux/auth';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { signInSchema } from 'components/modules/Header/SignIn/signIn.schema';
-import { FormInput } from 'components/global/FormInput/FormInput';
-import { FormContext } from 'components/global/FormContext';
-import { Box } from 'components/global/Box';
 
 export function SignIn(params) {
   const [keepOnline, setKeepOnline] = useState(false);

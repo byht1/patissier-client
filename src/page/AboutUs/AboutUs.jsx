@@ -9,7 +9,11 @@ export default function AboutUs() {
   return (
     <>
       <BackLinkRef />
-      <Greetings ReadMoreLink={false} paddingTop={60} paddingBottom={200} />
+      <Greetings
+        ReadMoreLink={false}
+        paddingTop={'60px'}
+        paddingBottom={'200px'}
+      />
       <Statistics />
       <WayToSuccess />
       <Examples />

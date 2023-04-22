@@ -1,6 +1,13 @@
 import styled from 'styled-components';
 import { TextBox } from 'components/global/text';
 
+export const SuccessSection = styled.section`
+  display: flex;
+  padding-top: 200px;
+  padding-bottom: 100px;
+  gap: 60px;
+`;
+
 export const WayList = styled.ul`
   display: flex;
   flex-direction: column;
@@ -10,7 +17,6 @@ export const WayList = styled.ul`
 export const ImgWrap = styled.div`
   width: 588px;
   height: 600px;
-  margin-left: 60px;
   box-shadow: 0px -10px 246px -76px rgba(199, 103, 56, 0.37);
   border-radius: ${p => p.theme.radii.normal};
   overflow: hidden;

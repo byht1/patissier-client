@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/679.1456b5bf.chunk.js","mappings":"4LAEe,SAASA,IACtB,OAAO,0CACT,C","sources":["page/MasterClasses/MasterClasses.jsx"],"sourcesContent":["import React from 'react';\n\nexport default function MasterClasses() {\n  return <div>MasterClasses</div>;\n}\n"],"names":["MasterClasses"],"sourceRoot":""}

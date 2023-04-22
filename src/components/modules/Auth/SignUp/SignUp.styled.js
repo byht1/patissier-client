@@ -28,6 +28,12 @@ export const RegistryBlockCover = styled.div`
   display: flex;
 `;
 
+export const FormWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 60px;
+`;
+
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
@@ -134,7 +140,7 @@ export const SubmitAlreadyHaveAccount = styled.span`
   display: flex;
   flex-direction: row;
 
-  margin-left: 60px;
+  margin-left: auto;
 
   font-family: 'Montserrat';
   font-style: normal;

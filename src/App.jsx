@@ -21,8 +21,8 @@ const RegistrationForCourses = lazy(() =>
 const AboutUs = lazy(() => import('page/AboutUs')); // Про нас
 const SignUp = lazy(() => import('page/SignUp')); // регістрація на сайті
 const LogIn = lazy(() => import('page/LogIn')); // Вхід в
-const PasswordRecovery = lazy(() => import('page/PasswordRecovery'));
-const SetNewPassword = lazy(() => import('page/SetNewPassword'));
+// const PasswordRecovery = lazy(() => import('page/PasswordRecovery'));
+// const SetNewPassword = lazy(() => import('page/SetNewPassword'));
 
 const queryClient = new QueryClient();
 

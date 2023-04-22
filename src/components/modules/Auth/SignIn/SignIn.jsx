@@ -17,7 +17,7 @@ import {
   RegistryBlockCover,
   SignInImg,
   SubmitBlock,
-  Title
+  Title,
 } from './SignIn.styled';
 
 import { Container } from 'components/global/Container';
@@ -28,14 +28,14 @@ import { logIn } from 'api/auth';
 import { Box } from 'components/global/Box';
 import { FormContext } from 'components/global/FormContext';
 import { FormInput } from 'components/global/FormInput/FormInput';
-import { signInSchema } from 'components/modules/Header/SignIn/signIn.schema';
+import { signInSchema } from 'components/modules/Auth/SignIn/signIn.schema';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { register } from 'redux/auth';
 
-export function SignIn(params) {
+export function SignIn() {
   const [keepOnline, setKeepOnline] = useState(false);
   const [err, setErr] = useState(null);
 
@@ -60,7 +60,10 @@ export function SignIn(params) {
 
     onError: error => {
       setErr(error.response.data.message);
-      toast.error(error.response.data.message, { hideProgressBar: true });
+      toast.error(error.response.data.message, {
+        hideProgressBar: true,
+        autoClose: 5000,
+      });
     },
   });
 
@@ -82,7 +85,7 @@ export function SignIn(params) {
           <RegistryBlockCover>
             <SignInImg src={signIn} />
             <FormWrapper>
-              <FormContext methods={methods} onSubmit={handleSubmit(onSubmit)}>
+              <FormContext methods={methods} submit={handleSubmit(onSubmit)}>
                 <LoginIconsBox>
                   <GoogleIc />
                   <AppleIc />

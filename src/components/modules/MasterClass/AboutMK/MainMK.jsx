@@ -1,6 +1,6 @@
 import { Container } from 'components/global/Container';
 import { Box } from 'components/global/Box';
-import { TitleH2, TitleH4, Text  } from 'components/global/text';
+import { TitleH1, TitleH4, Text  } from 'components/global/text';
 import {ImageWrap, MKImage, TextWrap, MKSection} from './MainMK.styled';
 import Image from 'img/mk/main.jpg';
 
@@ -8,9 +8,9 @@ export const MainMK = () => {
   return (
     <Container pt={58} pb={100}>
       <MKSection>
-       <TitleH2 mb={52} color="at">
+       <TitleH1 size={84} mb={52} color="at">
        Різдвяний штолен
-        </TitleH2>
+        </TitleH1>
         <Text color="t" mb={56} width={558} textAlign="center" lh='big'>Пройдіть майстер-клас та навчіться готувати неймовірно смачний різдвяний штолен</Text>
           
           <Box display="flex">

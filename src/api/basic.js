@@ -4,6 +4,7 @@ import axios from 'axios';
 // Первий запит може йти довго так як server безкоштовний і він "засинає"
 
 const URL = 'https://patissier-server.onrender.com';
+// const URL = 'http://localhost:5000';
 
 export const server = axios.create({
   baseURL: URL,

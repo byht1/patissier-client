@@ -1,13 +1,15 @@
 import { server } from './basic';
+import { sortProductsMethod } from 'components/modules/Products/helpers/sortProductsMethod';
 
 const UrlProducts = Object.freeze({
   all: '/store/product',
 });
 
-export const getAllProducts = async ({ page = 1, limit = 3 }) => {
+export const getAllProducts = async ({ page = 1, limit = 9, sortMethod }) => {
   try {
     const { data } = await server.get(
-      UrlProducts.all + `?page=${page}&limit=${limit}`
+      UrlProducts.all +
+        `?page=${page}&limit=${limit}&sort=${sortProductsMethod(sortMethod)}`
     );
     const { products } = data;
     return products;
@@ -16,10 +18,11 @@ export const getAllProducts = async ({ page = 1, limit = 3 }) => {
   }
 };
 
-export const getProductsByCategory = async ({ category, page = 1 }) => {
+export const getProductsByCategory = async ({ category, page = 1, sort }) => {
   try {
     const { data } = await server.get(
-      UrlProducts.all + `?page=${page}&limit=3&category=${category}`
+      UrlProducts.all +
+        `?page=${page}&limit=3&category=${category}&sort=${sort}`
     );
     const { products } = data;
     return products;

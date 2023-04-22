@@ -20,7 +20,7 @@ export default function Products() {
           замовлення
         </Text>
         <ProductNav />
-        <ProductFiltersAndSorting />
+        {/* <ProductFiltersAndSorting /> */}
         <Suspense>
           <Outlet />
         </Suspense>

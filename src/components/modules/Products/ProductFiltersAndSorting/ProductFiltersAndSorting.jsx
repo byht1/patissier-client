@@ -14,11 +14,11 @@ import {
 } from './ProductFiltersAndSorting.styled';
 import { Filters } from './Filters/Filters';
 
-export const ProductFiltersAndSorting = () => {
+export const ProductFiltersAndSorting = ({ applySortMethod, sortMethod }) => {
   const location = useLocation();
   const pathname = location.pathname.split('/')[2];
   const [productsCountArray, setProductsCountArray] = useState([]);
-
+  // const [sortMethod, setSortMethod] = useState(sortingParams[0]);
   useEffect(() => {
     async function getProductCount() {
       try {
@@ -52,7 +52,10 @@ export const ProductFiltersAndSorting = () => {
           <Filter src={SortIcon}></Filter>
         </FilterButton>
       </FilterWrap>
-      <Sorting></Sorting>
+      <Sorting
+        applySortMethod={applySortMethod}
+        sortMethod={sortMethod}
+      ></Sorting>
       <Filters></Filters>
     </Box>
   );

@@ -1,14 +1,13 @@
 import { TitleH3, TitleH4, Text  } from 'components/global/text';
-import { Box } from 'components/global/Box';
 import { Container} from 'components/global/Container';
 import { ProgramItem } from './ProgramItem';
-import { Buttons, ButtonPay, ButtonWrap, ImageBlock, DetailsImage, ProgramList, Block, DetailsBlock, DetailsAbout, DetailsAboutPrice } from './DetailsMK.styled';
+import { Buttons, DetailsSection, ButtonPay, ButtonWrap, ImageBlock, DetailsImage, ProgramList, Block, DetailsBlock, DetailsAbout, DetailsAboutPrice } from './DetailsMK.styled';
 import Image from 'img/mk/detailsImg.jpg';
 
 export const DetailsMK = ({stageList}) =>{
     return(
         <Container pt={100} pb={100}>
-            <Box display="flex" justifyContent="center" flexDirection="column" alignItems="center">
+            <DetailsSection>
                 <TitleH3 color="at" mb={60} alignItems='center'>Деталі навчання</TitleH3>
                 <ButtonWrap>
                     <Buttons>Онлайн</Buttons>
@@ -43,7 +42,7 @@ export const DetailsMK = ({stageList}) =>{
                     
                 </DetailsBlock>
 
-            </Box>
+            </DetailsSection>
         </Container>
     
     )

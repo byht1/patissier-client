@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 import { ButtonsGhost, Button } from 'components/global/button';
 
-
+export const DetailsSection = styled.section`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+`
 
 export const Buttons = styled(ButtonsGhost)`
 padding: 18px 56px;

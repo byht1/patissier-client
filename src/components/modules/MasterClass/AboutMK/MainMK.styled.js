@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const MKSection = styled.section`
+display: flex;
+flex-direction: column;
+align-items: center;
+`
 export const ImageWrap = styled.div`
 width: 552px;
 height: 472px;

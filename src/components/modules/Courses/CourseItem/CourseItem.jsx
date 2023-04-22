@@ -50,7 +50,7 @@ export const CourseItem = () => {
       </InfoList>
       <CardFooter>
         <Text weight={600} size={20} lh="big">
-          10 000грн.
+          10 000 грн
         </Text>
         <ToDetailsLink to={`/${navigationPath}`}>Детальніше</ToDetailsLink>
       </CardFooter>

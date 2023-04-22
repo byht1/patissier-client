@@ -5,8 +5,8 @@ import ArrowRight from 'img/arrow/arrow_forward.svg';
 
 export const ReadMore = styled(NavLink)`
   display: inline-block;
-  ${p => marginProps(p)};
   margin-bottom: 24px;
+  ${p => marginProps(p)};
   padding: 12px 0;
 
   font-size: ${p => p.theme.fontSizes.normalMin};

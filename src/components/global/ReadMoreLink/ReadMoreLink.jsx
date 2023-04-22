@@ -14,7 +14,6 @@ ReadMoreLink.propTypes = {
   mr: marginType,
   m: PropTypes.string,
   children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
     PropTypes.string,
   ]).isRequired,

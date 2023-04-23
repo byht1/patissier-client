@@ -12,7 +12,6 @@ import {
 export const Sorting = ({ applySortMethod, sortMethod }) => {
   const handleSortChange = event => {
     const method = event.target.value;
-    console.log(method);
     applySortMethod(method);
   };
 

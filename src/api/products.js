@@ -5,24 +5,40 @@ const UrlProducts = Object.freeze({
   all: '/store/product',
 });
 
-export const getAllProducts = async ({ page = 1, limit = 9, sortMethod }) => {
+export const getAllProducts = async ({ page = 1, limit = 3, sortMethod }) => {
   try {
     const { data } = await server.get(
       UrlProducts.all +
         `?page=${page}&limit=${limit}&sort=${sortProductsMethod(sortMethod)}`
     );
     const { products } = data;
+    console.log(sortMethod);
+    console.log(
+      `?page=${page}&limit=${limit}&sort=${sortProductsMethod(sortMethod)}`
+    );
     return products;
   } catch (error) {
     throw error;
   }
 };
 
-export const getProductsByCategory = async ({ category, page = 1, sort }) => {
+export const getProductsByCategory = async ({
+  category,
+  page = 1,
+  limit = 3,
+  sortMethod,
+}) => {
+  console.log(
+    `?page=${page}&limit=${limit}&category=${category}&sort=${sortProductsMethod(
+      sortMethod
+    )}`
+  );
   try {
     const { data } = await server.get(
       UrlProducts.all +
-        `?page=${page}&limit=3&category=${category}&sort=${sort}`
+        `?page=${page}&limit=${limit}&category=${category}&sort=${sortProductsMethod(
+          sortMethod
+        )}`
     );
     const { products } = data;
     return products;

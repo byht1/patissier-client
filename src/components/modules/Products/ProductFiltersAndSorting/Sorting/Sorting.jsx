@@ -1,4 +1,3 @@
-import { Box } from 'components/global/Box';
 import { sortingParams } from './sortingParams';
 
 import {

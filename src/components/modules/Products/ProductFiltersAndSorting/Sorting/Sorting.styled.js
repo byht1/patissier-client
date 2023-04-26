@@ -39,6 +39,7 @@ export const SortingItem = styled.li`
 
 export const SortingBtn = styled.button`
   font-weight: ${({ current }) => (current === 'true' ? 700 : 400)};
+  font-size: 16px;
   font-family: 'Montserrat';
   background-color: transparent;
   color: var(--text);

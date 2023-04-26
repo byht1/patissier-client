@@ -4,13 +4,11 @@ import { getProductCountByCategory } from 'api/products';
 import { Box } from 'components/global/Box';
 
 import { getProductCount } from '../helpers/getProductCount';
-import SortIcon from '../../../../img/products/sort.svg';
 import { Sorting } from './Sorting/Sorting';
 import { SortingIcon } from './Sorting/Sorting.styled';
 import { FilterIcon } from './Filters/Filters.styled';
 import {
   FilterButton,
-  Filter,
   FilterAndSortWrap,
 } from './ProductFiltersAndSorting.styled';
 import { Filters } from './Filters/Filters';

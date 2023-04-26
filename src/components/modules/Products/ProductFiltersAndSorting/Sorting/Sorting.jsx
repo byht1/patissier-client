@@ -7,6 +7,7 @@ import {
   SortingList,
   SortingItem,
   SortingBtn,
+  SortFilterBox,
 } from './Sorting.styled';
 
 export const Sorting = ({ applySortMethod, sortMethod }) => {
@@ -16,7 +17,7 @@ export const Sorting = ({ applySortMethod, sortMethod }) => {
   };
 
   return (
-    <Box borderRadius={12} width={356}>
+    <SortFilterBox borderRadius={12} width={356} position="absolute">
       <Wrap>
         <p>{sortMethod}</p>
         <SortingIcon />
@@ -34,6 +35,6 @@ export const Sorting = ({ applySortMethod, sortMethod }) => {
           </SortingItem>
         ))}
       </SortingList>
-    </Box>
+    </SortFilterBox>
   );
 };

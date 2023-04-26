@@ -18,7 +18,7 @@ export const Filter = styled.img`
   margin: 0 auto;
 `;
 
-export const FilterWrap = styled.div`
+export const FilterAndSortWrap = styled.div`
   display: flex;
   gap: 24px;
 `;

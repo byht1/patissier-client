@@ -2,15 +2,18 @@ import styled from 'styled-components';
 import { ReactComponent as SortIcon } from '../../../../../img/products/sort.svg';
 
 export const SortingIcon = styled(SortIcon)`
-  background-color: var(--button-bg);
+  /* background-color: var(--button-bg); */
   border-radius: 8px;
   width: 40px;
   height: 40px;
   padding: 10px;
 
   & path {
-    stroke: ${({ hoverColor }) => hoverColor || 'var(--accent-bg)'};
+    fill: ${({ color }) => color || 'none'};
   }
+  /* &:hover path {
+    stroke: ${({ hoverColor }) => hoverColor || 'var(--accent-bg)'};
+  } */
 `;
 
 export const Wrap = styled.div`
@@ -39,4 +42,13 @@ export const SortingBtn = styled.button`
   font-family: 'Montserrat';
   background-color: transparent;
   color: var(--text);
+`;
+export const SortFilterBox = styled.div`
+  position: absolute;
+  background-color: var(--background);
+  width: 356px;
+  border-radius: 12px;
+  right: -1px;
+  z-index: 2;
+  top: -1px;
 `;

@@ -7,7 +7,7 @@ import { HeroImage, ImgBlock, HeroInfo, HeroContainer } from './hero.styled';
 export const Hero = () => {
   return (
     <HeroContainer>
-      <Box display="flex" height="654px" justifyContent="center">
+      <Box display="flex" height="654px" justifyContent="center" >
         <ImgBlock>
           <HeroImage src={Image} alt="" loading="lazy" />
         </ImgBlock>

@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <Hero />
       <Statistics />
-      <Greetings ReadMoreLink={true} paddingTop={200} />
+      <Greetings ReadMoreLink={true} />
       <Courses />
       <Reviews title={'Відгуки'} />
       <Insta />

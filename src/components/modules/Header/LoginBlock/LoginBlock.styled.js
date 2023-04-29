@@ -10,7 +10,7 @@ import { NavLink } from 'react-router-dom';
 export const Div = styled.div`
   display: grid;
   grid-template-rows: 1;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: auto 1fr 1fr 1fr 1fr;
   column-gap: 12px;
 `;
 
@@ -133,7 +133,7 @@ export const CloseXIc = styled(closeXSvg)`
   position: absolute;
   top: 0px;
   right: 0px;
-  margin: 16px 10px 12px 0px;
+  margin: 9px 10px 12px 0px;
 
   cursor: pointer;
   &:hover {

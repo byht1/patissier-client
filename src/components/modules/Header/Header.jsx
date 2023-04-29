@@ -1,5 +1,11 @@
-import { Box } from '@mui/system';
-import { ListItem, Logo, Nav, NavLinkStyled, NavList } from './Header.styled';
+import {
+  ListItem,
+  Logo,
+  Nav,
+  NavLinkStyled,
+  NavList,
+  Box,
+} from './Header.styled';
 import { Container } from 'components/global/Container';
 import LogoSvg from '../../../img/logo/Logo.svg';
 import { LoginBlock } from './LoginBlock/LoginBlock';
@@ -11,7 +17,7 @@ export function Header() {
   const [showCallMe, setShowCallMe] = useState(false);
   return (
     <Container>
-      <Box display="flex" alignItems="center" justifyContent="space-between">
+      <Box>
         <Nav>
           <NavList>
             <ListItem>

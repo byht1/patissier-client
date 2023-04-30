@@ -24,7 +24,7 @@ export const signUp = async body => {
 
     return data;
   } catch (error) {
-    throw error.message;
+    throw error;
   }
 };
 
@@ -37,7 +37,7 @@ export const logIn = async body => {
 
     return data;
   } catch (error) {
-    throw error.message;
+    throw error;
   }
 };
 
@@ -49,6 +49,6 @@ export const logOutUser = async () => {
     token.unset();
     localStorage.removeItem('token');
   } catch (error) {
-    throw error.message;
+    throw error;
   }
 };

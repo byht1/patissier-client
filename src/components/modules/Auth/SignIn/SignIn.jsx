@@ -51,7 +51,10 @@ export function SignIn() {
 
   const { mutate: logUser, isLoading } = useMutation({
     mutationKey: ['user'],
-    mutationFn: data => logIn(data),
+    mutationFn: data => {
+      const res = logIn(data);
+      return res;
+    },
     onSuccess: logData => {
       setErr(null);
       dispatch(register(logData));

@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
-import { ReactComponent as checkBoxDefaultSvg } from '../../../../img/header/icons/checkBoxDefault.svg';
-import { ReactComponent as checkBoxActiveSvg } from '../../../../img/header/icons/checkBoxActive.svg';
+import { Link } from 'react-router-dom';
 import { ReactComponent as AppleSvg } from '../../../../img/header/icons/Apple.svg';
 import { ReactComponent as FacebookSvg } from '../../../../img/header/icons/Facebook.svg';
 import { ReactComponent as GoogleSvg } from '../../../../img/header/icons/Google.svg';
+import { ReactComponent as checkBoxActiveSvg } from '../../../../img/header/icons/checkBoxActive.svg';
+import { ReactComponent as checkBoxDefaultSvg } from '../../../../img/header/icons/checkBoxDefault.svg';
 
 export const ContentContainer = styled.div`
   display: flex;
@@ -24,11 +25,16 @@ export const Title = styled.h2`
   color: ${p => p.theme.colors.aBg};
 `;
 
+export const SignInImg = styled.img`
+  display: block;
+  width: 552px;
+`;
+
 export const RegistryBlockCover = styled.div`
   display: flex;
 `;
 
-export const Form = styled.form`
+export const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 60px;
@@ -36,6 +42,8 @@ export const Form = styled.form`
 
 export const Label = styled.label`
   margin-top: 40px;
+
+  position: relative;
 
   display: flex;
   flex-direction: column;
@@ -63,12 +71,7 @@ export const Input = styled.input`
   outline: none;
 `;
 
-export const SignUpImg = styled.img`
-  display: block;
-  width: 552px;
-`;
-
-export const PrivacyPolicy = styled.span`
+export const KeepOnline = styled.span`
   display: flex;
   margin-top: 40px;
 
@@ -80,7 +83,32 @@ export const PrivacyPolicy = styled.span`
 
   letter-spacing: -0.019em;
 
-  color: ${p => p.theme.colors.w};
+  color: ${p => p.theme.colors.wt};
+`;
+
+export const ForgotPassword = styled(Link)`
+  /* position: absolute;
+  top: 76px;
+  right: 0px; */
+  display: inline-block;
+  text-align: right;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.71;
+
+  letter-spacing: -0.019em;
+
+  color: ${p => p.theme.colors.t};
+
+  &:focus,
+  &:hover {
+    color: ${p => p.theme.colors.ah};
+  }
+
+  cursor: pointer;
 `;
 
 export const CheckBoxDefaultIc = styled(checkBoxDefaultSvg)`
@@ -125,23 +153,8 @@ export const SubmitBlock = styled.div`
   align-items: baseline;
 `;
 
-export const SubmitAlreadyHaveAccount = styled.span`
-  display: flex;
-  flex-direction: row;
-
+export const LinkToSignUp = styled.a`
   margin-left: 60px;
-
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.25;
-
-  color: ${p => p.theme.colors.t};
-`;
-
-export const LinkToLogin = styled.a`
-  margin-left: 6px;
 
   font-family: 'Montserrat';
   font-style: normal;

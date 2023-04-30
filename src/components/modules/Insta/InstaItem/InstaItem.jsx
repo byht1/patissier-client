@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import { InstaCard } from './InstaItem.styled';
 
 export const InstaItem = ({ post: { img, img2x, title } }) => {
-  console.log(img, img2x);
   return (
     <InstaCard>
       <img srcSet={`${img} 1x,${img2x} 2x`} src={img} alt={title} />

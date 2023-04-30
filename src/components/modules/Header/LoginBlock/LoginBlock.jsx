@@ -38,7 +38,9 @@ export function LoginBlock({ setShowCallMe }) {
           <SearchIcInput />
         </Label>
       )}
-      <HeartIc />
+      <NavigateLinkStyled to={'/select-product'}>
+        <HeartIc />
+      </NavigateLinkStyled>
       <NavigateLinkStyled to={'/basket'}>
         <ShoppingCartSVG />
       </NavigateLinkStyled>

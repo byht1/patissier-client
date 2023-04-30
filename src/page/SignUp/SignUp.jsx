@@ -1,11 +1,11 @@
 import React from 'react';
 import { SignUpComponent } from 'components/modules/Header/SignUp/SignUpComponent';
-import { Header } from 'components/modules/Header/Header';
+import { BackLinkRef } from 'components/global/BackLink/BackLink';
 
 export default function SignUp() {
   return (
     <>
-      <Header />
+      <BackLinkRef />
       <SignUpComponent />
     </>
   );

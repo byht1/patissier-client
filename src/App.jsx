@@ -1,12 +1,13 @@
 import { lazy } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Navigate, Route, Routes } from 'react-router-dom';
+import { ProductList } from 'components/modules/Products/ProductList';
 
 import AppBar from 'page/AppBar'; // Header
 
 const Home = lazy(() => import('page/Home')); // Головна сторінка
 const Goods = lazy(() => import('page/Goods')); // Tовари
-const SelectedProduct = lazy(() => import('page/SelectedProduct')); // Обраний товар
+const Products = lazy(() => import('page/Products')); // Обраний товар
 const Basket = lazy(() => import('page/Basket')); // Корзина
 const Courses = lazy(() => import('page/Courses')); // Курси
 const MasterClasses = lazy(() => import('page/MasterClasses')); // Майстер-класи
@@ -29,7 +30,14 @@ function App() {
         <Route path="/" element={<AppBar />}>
           <Route index element={<Home />} />
           <Route path="store" element={<Goods />} />
-          <Route path="select-product" element={<SelectedProduct />} />
+          <Route path="products" element={<Products />}>
+            <Route index element={<ProductList />} />
+            <Route path="cakes" element={<ProductList />} />
+            <Route path="pastries" element={<ProductList />} />
+            <Route path="cookies" element={<ProductList />} />
+            <Route path="bakering" element={<ProductList />} />
+            <Route path="pies" element={<ProductList />} />
+          </Route>
           <Route path="basket" element={<Basket />} />
           <Route path="courses" element={<Courses />} />
           <Route path="master-classes" element={<MasterClasses />} />

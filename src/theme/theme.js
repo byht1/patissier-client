@@ -10,7 +10,7 @@ export const theme = {
     wt: 'var(--white-text)',
     w: 'var(--white)',
     b: 'var(--black)',
-    overlay: 'var(--overlay)',
+    overlay: 'va  r(--overlay)',
     good: 'var(--good)',
     error: 'var(--error)',
   },

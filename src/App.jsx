@@ -22,6 +22,7 @@ const RegistrationForCourses = lazy(() =>
 const AboutUs = lazy(() => import('page/AboutUs')); // Про нас
 const SignUp = lazy(() => import('page/SignUp')); // регістрація на сайті
 const LogIn = lazy(() => import('page/LogIn')); // Вхід в
+const User = lazy(() => import('page/User'));
 // const PasswordRecovery = lazy(() => import('page/PasswordRecovery'));
 // const SetNewPassword = lazy(() => import('page/SetNewPassword'));
 
@@ -48,18 +49,25 @@ function App() {
           <Route path="current-courses" element={<CurrentCourses />} />
           <Route path="sing-up-courses" element={<RegistrationForCourses />} />
           <Route path="about-us" element={<AboutUs />} />
+          <Route path="user/*" element={<User />}>
+            <Route path="my_study" element={<>my_study</>} />
+            <Route path="billing_history" element={<>billing_history</>} />
+            <Route path="calendar" element={<>calendar</>} />
+            <Route path="my_profile" element={<>my_profile</>} />
+            <Route path="support" element={<>support</>} />
+          </Route>
 
           {/* Публічний шлях */}
           <Route
             path="sign-up"
             element={
-              <RestrictedRoute component={SignUp} redirectTo="/" />
+              <RestrictedRoute component={SignUp} redirectTo="/user" />
             } /*змінити на особистий кабінет */
           />
           <Route
             path="log-in"
             element={
-              <RestrictedRoute component={LogIn} redirectTo="/" />
+              <RestrictedRoute component={LogIn} redirectTo="/user" />
             } /*змінити на особистий кабінет */
           />
 
@@ -67,6 +75,7 @@ function App() {
             <Route index element={<PersonalOffice />}/>
             <Route path="admin" element={<Admin />} />
           </Route> */}
+
           <Route path="*" element={<Navigate to="/" />} />
         </Route>
       </Routes>

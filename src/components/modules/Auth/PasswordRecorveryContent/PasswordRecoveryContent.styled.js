@@ -18,19 +18,21 @@ export const Title = styled.h2`
   color: ${p => p.theme.colors.aBg};
 `;
 
+export const Cover = styled.div`
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+`;
+
 export const SignInImg = styled.img`
   display: block;
   width: 552px;
 `;
 
-export const Cover = styled.div`
-  display: flex;
-`;
-
-export const Form = styled.form`
+export const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 60px;
+  width: 486px;
 `;
 
 export const Label = styled.label`
@@ -48,7 +50,7 @@ export const Label = styled.label`
 export const Input = styled.input`
   margin-top: 8px;
 
-  width: 486px;
+  width: 100%;
   height: 44px;
   padding: 12px 14px;
   border-radius: 12px;

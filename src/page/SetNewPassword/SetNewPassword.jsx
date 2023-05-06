@@ -1,4 +1,4 @@
-import { SetNewPasswordContent } from 'components/modules/Header/SetNewPasswordContent/SetNewPasswordContent';
+import { SetNewPasswordContent } from 'components/modules/Auth/SetNewPasswordContent/SetNewPasswordContent';
 import React from 'react';
 
 export default function SetNewPassword() {

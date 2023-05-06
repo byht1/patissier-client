@@ -4,9 +4,9 @@ const UrlAuth = Object.freeze({
   signUp: '/auth/sing-up',
   logIn: '/auth/log-in',
   logOut: '/auth/logout',
+  recoveryPass: '/auth/forgotten-password',
   // active: '/auth/active',
   // newPass: '/auth/new-password',
-  // forgottenPass: '/auth/forgotten-password',
 });
 
 export const signUp = async body => {
@@ -48,6 +48,14 @@ export const logOutUser = async () => {
     await server.get(UrlAuth.logOut, body);
     token.unset();
     localStorage.removeItem('token');
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const recoveryPass = async email => {
+  try {
+    await server.patch(email);
   } catch (error) {
     throw error;
   }

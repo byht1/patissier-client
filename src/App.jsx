@@ -33,8 +33,8 @@ function App() {
       <Routes>
         <Route path="/" element={<AppBar />}>
           <Route index element={<Home />} />
-          <Route path="store" element={<Goods />} />
-          <Route path="products" element={<Products />}>
+          {/* <Route path="store" element={<Goods />} /> */}
+          <Route path="store" element={<Products />}>
             <Route index element={<ProductList />} />
             <Route path="cakes" element={<ProductList />} />
             <Route path="pastries" element={<ProductList />} />

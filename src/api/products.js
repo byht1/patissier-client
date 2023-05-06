@@ -12,10 +12,6 @@ export const getAllProducts = async ({ page = 1, limit = 3, sortMethod }) => {
         `?page=${page}&limit=${limit}&sort=${sortProductsMethod(sortMethod)}`
     );
     const { products } = data;
-    console.log(sortMethod);
-    console.log(
-      `?page=${page}&limit=${limit}&sort=${sortProductsMethod(sortMethod)}`
-    );
     return products;
   } catch (error) {
     throw error;
@@ -47,13 +43,22 @@ export const getProductsByCategory = async ({
   }
 };
 
+export const getProductCountByCategory = async () => {
+  try {
+    const { data } = await server.get(UrlProducts.all + `/category-records`);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const addProductToFavorite = async productID => {
   try {
     const { data } = await server.get(
       UrlProducts.all + `/add-favorite/${productID}`
     );
     const { favorites } = data;
-    console.log(favorites);
+    console.log('добавлено в избранное');
     return favorites;
   } catch (error) {
     throw error;
@@ -64,31 +69,20 @@ export const getFavoriteProducts = async () => {
   try {
     const { data } = await server.get(UrlProducts.all + `/user-favorite`);
     const { favorites } = data;
-    console.log(favorites);
     return favorites;
   } catch (error) {
     throw error;
   }
 };
 
-export const deleteProductFromFavorite = async productID => {
+export const removeProductFromFavorite = async productID => {
   try {
-    const { data } = await server.get(
+    const { data } = await server.delete(
       UrlProducts.all + `/favorite/${productID}`
     );
     const { favorites } = data;
-    console.log(favorites);
+    console.log('удалено из избранного');
     return favorites;
-  } catch (error) {
-    throw error;
-  }
-};
-
-export const getProductCountByCategory = async () => {
-  try {
-    const { data } = await server.get(UrlProducts.all + `/category-records`);
-    console.log(data);
-    return data;
   } catch (error) {
     throw error;
   }

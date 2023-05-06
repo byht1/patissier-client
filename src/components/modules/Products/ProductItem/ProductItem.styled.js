@@ -29,7 +29,7 @@ export const ProductPrice = styled.span`
   font-weight: 600;
 `;
 
-export const AddToFavBtn = styled('button')`
+export const AddToFavBtn = styled.button`
   position: absolute;
   top: 12px;
   right: 12px;
@@ -41,4 +41,13 @@ export const AddToFavBtn = styled('button')`
   background-color: #262524;
   backdrop-filter: blur(2px);
   border-radius: ${p => p.theme.radii.round};
+  /* &:hover svg {
+    color: green;
+  } */
+`;
+
+export const RemoveFromFavBtn = styled(AddToFavBtn)`
+  & svg {
+    color: white;
+  }
 `;

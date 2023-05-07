@@ -8,6 +8,8 @@ import React from 'react';
 
 import { RestrictedRoute } from 'components/global/RestrictedRoute';
 import 'react-toastify/dist/ReactToastify.css';
+import { UserProfileSupportBlank } from 'components/modules/UserProfileSupportBlank/UserProfileSupportBlank';
+import { UserProfileBilling } from 'components/modules/UserProfileBilling/UserProfileBilling';
 
 const Home = lazy(() => import('page/Home')); // Головна сторінка
 const Goods = lazy(() => import('page/Goods')); // Tовари
@@ -23,6 +25,7 @@ const AboutUs = lazy(() => import('page/AboutUs')); // Про нас
 const SignUp = lazy(() => import('page/SignUp')); // регістрація на сайті
 const LogIn = lazy(() => import('page/LogIn')); // Вхід в
 const User = lazy(() => import('page/User'));
+
 // const PasswordRecovery = lazy(() => import('page/PasswordRecovery'));
 // const SetNewPassword = lazy(() => import('page/SetNewPassword'));
 
@@ -51,10 +54,10 @@ function App() {
           <Route path="about-us" element={<AboutUs />} />
           <Route path="user/*" element={<User />}>
             <Route path="my_study" element={<>my_study</>} />
-            <Route path="billing_history" element={<>billing_history</>} />
+            <Route path="billing_history" element={<UserProfileBilling />} />
             <Route path="calendar" element={<>calendar</>} />
             <Route path="my_profile" element={<>my_profile</>} />
-            <Route path="support" element={<>support</>} />
+            <Route path="support" element={<UserProfileSupportBlank />} />
           </Route>
 
           {/* Публічний шлях */}

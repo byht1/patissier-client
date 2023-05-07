@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 export const UserProfileNavList = styled.ul`
   display: flex;
   justify-content: center;
-  margin-top: 60px;
+  padding-top: 60px;
 `;
 export const UserProfileNavItem = styled.li`
   &:not(:last-child) {

@@ -1,5 +1,11 @@
-import { Box } from '@mui/system';
-import { Logo, Nav, NavLinkStyled } from './Header.styled';
+import {
+  ListItem,
+  Logo,
+  Nav,
+  NavLinkStyled,
+  NavList,
+  Box,
+} from './Header.styled';
 import { Container } from 'components/global/Container';
 import LogoSvg from '../../../img/logo/Logo.svg';
 import { LoginBlock } from './LoginBlock/LoginBlock';
@@ -11,15 +17,27 @@ export function Header() {
   const [showCallMe, setShowCallMe] = useState(false);
   return (
     <Container>
-      <Box display="flex" alignItems="center" justifyContent="space-between">
+      <Box>
         <Nav>
-          <Link to={'/'}>
-            <Logo src={LogoSvg} />
-          </Link>
-          <NavLinkStyled to={'/about-us'}>Про нас</NavLinkStyled>
-          <NavLinkStyled to={'/store'}>Магазин</NavLinkStyled>
-          <NavLinkStyled to={'/courses'}>Курси</NavLinkStyled>
-          <NavLinkStyled to={'/blog'}>Блог</NavLinkStyled>
+          <NavList>
+            <ListItem>
+              <Link to={'/'}>
+                <Logo src={LogoSvg} />
+              </Link>
+            </ListItem>
+            <ListItem>
+              <NavLinkStyled to={'/about-us'}>Про нас</NavLinkStyled>
+            </ListItem>
+            <ListItem>
+              <NavLinkStyled to={'/store'}>Магазин</NavLinkStyled>
+            </ListItem>
+            <ListItem>
+              <NavLinkStyled to={'/courses'}>Курси</NavLinkStyled>
+            </ListItem>
+            <ListItem>
+              <NavLinkStyled to={'/blog'}>Блог</NavLinkStyled>
+            </ListItem>
+          </NavList>
         </Nav>
         <LoginBlock setShowCallMe={setShowCallMe} />
         {showCallMe ? <CallMe setShowCallMe={setShowCallMe} /> : null}

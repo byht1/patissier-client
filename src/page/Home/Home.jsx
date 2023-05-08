@@ -7,18 +7,15 @@ import { Courses } from 'components/modules/Courses';
 import { Reviews } from 'components/modules/Reviews';
 import { Insta } from 'components/modules/Insta';
 import { Footer } from 'components/modules/Footer';
-import { Header } from 'components/modules/Header/Header';
 
 import { Catalog } from 'components/modules/Catalog/Section/Catalog';
 
 export default function Home() {
   return (
     <>
-      <Header />
       <Hero />
       <Statistics />
-      <Greetings ReadMoreLink={true} paddingTop={200} />
-      <Catalog />
+      <Greetings ReadMoreLink={true} />
       <Courses />
       <Reviews title={'Відгуки'} />
       <Insta />

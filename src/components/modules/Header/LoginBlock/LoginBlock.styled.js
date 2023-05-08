@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { ButtonsGhost } from 'components/global/button';
 import { ReactComponent as PhoneSvg } from '../../../../img/header/icons/iphone.svg';
 import { ReactComponent as ShoppingCartSvg } from '../../../../img/header/icons/basket.svg';
 import { ReactComponent as HeartSvg } from '../../../../img/header/icons/Heart, Favorite.svg';
@@ -8,31 +7,11 @@ import { ReactComponent as SearchSvg } from '../../../../img/header/icons/search
 import { ReactComponent as closeXSvg } from '../../../../img/header/icons/closeX.svg';
 import { NavLink } from 'react-router-dom';
 
-export const Button = styled(ButtonsGhost)`
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 24px;
-  border-radius: 12px;
-  color: ${p => p.theme.colors.w};
-  border: 1px solid ${p => p.theme.colors.w};
-  &:focus,
-  &:hover {
-    color: ${p => p.theme.colors.aBg};
-    border: 1px solid ${p => p.theme.colors.aBg};
-    background-color: black;
-  }
-  &:not(:last-child) {
-    margin-right: 10px;
-  }
-`;
-
 export const Div = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-rows: 1;
+  grid-template-columns: auto 1fr 1fr 1fr 1fr;
+  column-gap: 12px;
 `;
 
 export const PhoneSVG = styled(PhoneSvg)`
@@ -42,9 +21,7 @@ export const PhoneSVG = styled(PhoneSvg)`
   height: 40px;
   padding: 5px;
 
-  margin-left: 12px;
   cursor: pointer;
-  margin-top: 6px;
 
   & path {
     fill: ${({ color }) => color || 'none'};
@@ -59,10 +36,10 @@ export const ShoppingCartSVG = styled(ShoppingCartSvg)`
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  margin-left: 12px;
+
   padding: 5px 0px 0px 6px;
   cursor: pointer;
-  margin-top: 6px;
+
   & path {
     fill: ${({ color }) => color || 'none'};
   }
@@ -79,10 +56,10 @@ export const HeartIc = styled(HeartSvg)`
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  margin-left: 12px;
+
   padding: 8px;
   cursor: pointer;
-  margin-top: 6px;
+
   & path {
     fill: ${({ color }) => color || 'none'};
   }
@@ -99,10 +76,10 @@ export const UserIc = styled(UserSvg)`
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  margin-left: 12px;
+
   padding: 8px;
   cursor: pointer;
-  margin-top: 6px;
+
   & path {
     fill: ${({ color }) => color || 'none'};
   }
@@ -119,10 +96,10 @@ export const SearchIc = styled(SearchSvg)`
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  margin-left: 12px;
+
   padding: 6px;
   cursor: pointer;
-  margin-top: 6px;
+
   & path {
     fill: ${({ color }) => color || 'none'};
   }
@@ -135,8 +112,6 @@ export const SearchIc = styled(SearchSvg)`
 `;
 
 export const Search = styled.input`
-  margin-top: 6px;
-
   width: 324px;
   height: 40px;
   padding: 12px 44px;
@@ -158,7 +133,7 @@ export const CloseXIc = styled(closeXSvg)`
   position: absolute;
   top: 0px;
   right: 0px;
-  margin: 16px 10px 12px 0px;
+  margin: 9px 10px 12px 0px;
 
   cursor: pointer;
   &:hover {
@@ -181,7 +156,7 @@ export const SearchIcInput = styled(SearchSvg)`
   height: 40px;
   padding: 6px;
   cursor: pointer;
-  margin-top: 6px;
+
   & path {
     stroke: ${({ color }) => color || 'black'};
   }

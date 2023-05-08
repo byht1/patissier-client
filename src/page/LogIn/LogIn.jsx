@@ -1,11 +1,12 @@
-import { Header } from 'components/modules/Header/Header';
-import { SignIn } from 'components/modules/Header/SignIn/SighnIn';
+import { BackLinkRef } from 'components/global/BackLink/BackLink';
+import { SignIn } from 'components/modules/Auth/SignIn/SignIn';
+
 import React from 'react';
 
 export default function LogIn() {
   return (
     <div>
-      <Header />
+      <BackLinkRef />
       <SignIn />
     </div>
   );

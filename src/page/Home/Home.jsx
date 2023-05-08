@@ -9,6 +9,8 @@ import { Insta } from 'components/modules/Insta';
 import { Footer } from 'components/modules/Footer';
 import { Header } from 'components/modules/Header/Header';
 
+import { Catalog } from 'components/modules/Catalog/Section/Catalog';
+
 export default function Home() {
   return (
     <>
@@ -16,6 +18,7 @@ export default function Home() {
       <Hero />
       <Statistics />
       <Greetings ReadMoreLink={true} paddingTop={200} />
+      <Catalog />
       <Courses />
       <Reviews title={'Відгуки'} />
       <Insta />

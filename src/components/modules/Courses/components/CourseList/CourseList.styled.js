@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
+export const CourseListContainer = styled.ul`
+  display: flex;
+  gap: 60px;
+`;
+
 export const CourseCard = styled.li`
   width: 360px;
 
@@ -22,7 +27,8 @@ export const CourseImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: ${p => p.theme.radii.normal};
+  border-top-left-radius: ${p => p.theme.radii.normal};
+  border-top-right-radius: ${p => p.theme.radii.normal};
   background-color: ${p => p.theme.colors.panelBg};
 `;
 
@@ -66,6 +72,4 @@ export const ToDetailsLink = styled(NavLink)`
     background-color: ${p => p.theme.colors.aBg};
     color: ${p => p.theme.colors.bg};
   }
-`
-
-
+`;

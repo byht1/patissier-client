@@ -8,7 +8,7 @@ import { Reviews } from 'components/modules/Reviews';
 import { Insta } from 'components/modules/Insta';
 import { Footer } from 'components/modules/Footer';
 
-import { Catalog } from 'components/modules/Catalog/Section/Catalog';
+import { Catalog } from 'page/Catalog';
 
 export default function Home() {
   return (
@@ -16,6 +16,7 @@ export default function Home() {
       <Hero />
       <Statistics />
       <Greetings ReadMoreLink={true} />
+      <Catalog />
       <Courses />
       <Reviews title={'Відгуки'} />
       <Insta />

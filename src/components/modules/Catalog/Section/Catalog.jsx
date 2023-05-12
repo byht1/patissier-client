@@ -4,8 +4,8 @@ import { Container } from 'components/global/Container';
 // import { Box } from 'components/global/Box';
 
 import { Section, SectionTitle, DownText, ReadMore } from './Catalog.styled';
-
-export const Catalog = () => {
+import { CatalogList } from '../CatalogList/CatalogList';
+export const CatalogDesserts = () => {
   return (
     <Section>
       <Container>
@@ -17,6 +17,7 @@ export const Catalog = () => {
           замовлення
         </DownText>
         <ReadMore to="/store">Дивитися всі позиції</ReadMore>
+        <CatalogList />
       </Container>
     </Section>
   );

@@ -18,6 +18,6 @@ export const CourseList = () => {
   );
 };
 
-CourseList.propTypes = {
-  courses: PropTypes.array.isRequired,
-};
+// CourseList.propTypes = {
+//   courses: PropTypes.array.isRequired,
+// };

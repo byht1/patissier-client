@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 // import { CourseItem } from './CourseItem';
 import { CourseItem } from './CourseItemDaft';
 import { CourseListContainer } from './CourseList.styled';

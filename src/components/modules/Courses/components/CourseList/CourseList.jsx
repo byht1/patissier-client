@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import { CourseItem } from './CourseItemDaft';
 import { CourseListContainer } from './CourseList.styled';
 
-export const CourseList = ({ courses }) => {
+// export const CourseList = ({ courses }) => {
+export const CourseList = () => {
   return (
     <CourseListContainer>
       {/* {courses.map(course => (

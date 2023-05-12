@@ -10,7 +10,7 @@ import { ReadMoreLink } from 'components/global/ReadMoreLink';
 import { CourseList } from '../components/CourseList';
 
 export const CoursesSection = () => {
-  const [courses, setCourses] = useState([]);
+  // const [courses, setCourses] = useState([]);
 
   // useQuery({
   //   queryKey: ['courses'],
@@ -32,7 +32,7 @@ export const CoursesSection = () => {
         <ReadMoreLink to="/courses" ml={'auto'}>
           Дивитись усі заходи
         </ReadMoreLink>
-        <CourseList courses={courses} />
+        <CourseList />
       </Box>
     </Container>
   );

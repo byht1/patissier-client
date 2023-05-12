@@ -1,28 +1,36 @@
-import React, { useState } from 'react';
-// import { useQuery } from '@tanstack/react-query';
-// import { getCourses } from 'api';
-
 import { Box } from 'components/global/Box';
 import { Container } from 'components/global/Container';
 import { Text, TitleH2 } from 'components/global/text';
+import { CourseItem } from './CourseItem';
+import { CourseList } from './Courses.styled';
 import { ReadMoreLink } from 'components/global/ReadMoreLink';
-
 import { CourseList } from '../components/CourseList';
+import { getCourses } from 'api';
+import { useQuery } from '@tanstack/react-query';
+import { useState } from 'react';
 
 export const CoursesSection = () => {
   const [courses, setCourses] = useState([]);
 
-  // useQuery({
-  //   queryKey: ['courses'],
-  //   queryFn: () => getCourses(),
-  //   onSuccess: data => {
-  //     setCourses(data.courses);
-  //   },
-  // });
-
+  const { isLoading, isError, error } = useQuery({
+    queryKey: ['courses'],
+    queryFn: () => getCourses(),
+    onSuccess: data => {
+      setCourses(data.courses);
+    },
+    // onError: () => console.log(1, error),
+  });
+  // if (isLoading) {
+  //   return <p>Loading...</p>;
+  // }
   return (
     <Container pt={100} pb={100}>
-      <Box display="flex" flexDirection="column" alignItems="center">
+      <Box
+        // @ts-ignore
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+      >
         <TitleH2 mb={32} color="at">
           Курси та майстер-класи
         </TitleH2>
@@ -32,6 +40,12 @@ export const CoursesSection = () => {
         <ReadMoreLink to="/courses" ml={'auto'}>
           Дивитись усі заходи
         </ReadMoreLink>
+        {isLoading && <p>Loading...</p>}
+        {isError &&
+          [503].includes(
+            // @ts-ignore
+            error?.response?.status
+          ) && <p>Waiting for server connection</p>}
         <CourseList courses={courses} />
       </Box>
     </Container>

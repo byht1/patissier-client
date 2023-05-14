@@ -1,4 +1,5 @@
 import { Container } from 'components/global/Container';
+import React from 'react';
 import {
   Box,
   LetterBox,

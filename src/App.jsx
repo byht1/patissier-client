@@ -1,15 +1,18 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
+
 import { ProductList } from 'components/modules/Products/ProductList';
+import { UserProfileSupportBlank } from 'components/modules/UserProfileSupportBlank/UserProfileSupportBlank';
+import { UserProfileBilling } from 'components/modules/UserProfileBilling/UserProfileBilling';
+import { UserProfilePersonalData } from 'components/modules/UserProfilePersonalData/UserProfilePersonalData';
 
 import AppBar from 'page/AppBar'; // Header
 import React from 'react';
 
 import { RestrictedRoute } from 'components/global/RestrictedRoute';
 import 'react-toastify/dist/ReactToastify.css';
-import { UserProfileSupportBlank } from 'components/modules/UserProfileSupportBlank/UserProfileSupportBlank';
-import { UserProfileBilling } from 'components/modules/UserProfileBilling/UserProfileBilling';
+import { UserProfilePersonalDataContent } from 'components/modules/UserProfilePersonalData/UserProfilePersonalDataContent/UserProfilePersonalDataContent';
 
 const Home = lazy(() => import('page/Home')); // Головна сторінка
 const Goods = lazy(() => import('page/Goods')); // Tовари
@@ -56,7 +59,14 @@ function App() {
             <Route path="my_study" element={<>my_study</>} />
             <Route path="billing_history" element={<UserProfileBilling />} />
             <Route path="calendar" element={<>calendar</>} />
-            <Route path="my_profile" element={<>my_profile</>} />
+            <Route path="my_profile/*" element={<UserProfilePersonalData />}>
+              <Route
+                path="personal_data"
+                element={<UserProfilePersonalDataContent />}
+              />
+              <Route path="contacts" element={<>contacts</>} />
+              <Route path="passwords" element={<>passwords</>} />
+            </Route>
             <Route path="support" element={<UserProfileSupportBlank />} />
           </Route>
 

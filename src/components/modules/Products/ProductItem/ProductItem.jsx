@@ -11,6 +11,7 @@ import { getFavoritesArray } from 'redux/products';
 import { getIsLogin } from 'redux/auth';
 import { addToFavorite, removeFromFavorite } from 'redux/products';
 import { updateProductFavorite } from 'api/products';
+import { showLoginWarning } from '../helpers/showLoginWarning';
 import {
   ProductWrap,
   ImageWrap,
@@ -28,7 +29,13 @@ export const ProductItem = ({ product }) => {
   const dispatch = useDispatch();
   const favorites = useSelector(getFavoritesArray);
   const isLoggedIn = useSelector(getIsLogin);
+
   const onAddToFavorite = async _id => {
+    if (!isLoggedIn) {
+      console.log('HIfgggggggggggggggggggggggggggggUHK');
+      showLoginWarning();
+      return;
+    }
     await updateProductFavorite(_id, 'add');
     dispatch(addToFavorite(_id));
   };
@@ -52,73 +59,51 @@ export const ProductItem = ({ product }) => {
     });
   console.log(favorites.includes(_id));
   return (
-    <ProductWrap key={_id}>
-      <ImageWrap>
-        {/* <AddToFavBtn
-          onClick={() => addToFav(_id)}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          {isHovered || favorites.includes(product._id) ? (
-            <AiFillHeart size={'24px'} fill={theme.colors.error} />
+    <>
+      <ProductWrap key={_id}>
+        <ImageWrap>
+          {!addToFavLoading &&
+          !removeFromFavLoading &&
+          favorites.includes(_id) &&
+          isLoggedIn ? (
+            <RemoveFromFavBtn onClick={() => removeFromFav(_id)}>
+              <AiFillHeart size={'24px'} fill={theme.colors.error} />
+            </RemoveFromFavBtn>
           ) : (
-            <AiOutlineHeart size={'24px'} color={theme.colors.w} />
+            <AddToFavBtn
+              onClick={() => addToFav(_id)}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
+              {isHovered ? (
+                <AiFillHeart size={'24px'} fill={theme.colors.error} />
+              ) : (
+                <AiOutlineHeart size={'24px'} color={theme.colors.w} />
+              )}
+            </AddToFavBtn>
           )}
-        </AddToFavBtn> */}
-        {!addToFavLoading &&
-        !removeFromFavLoading &&
-        favorites.includes(_id) &&
-        isLoggedIn ? (
-          <RemoveFromFavBtn onClick={() => removeFromFav(_id)}>
-            <AiFillHeart size={'24px'} fill={theme.colors.error} />
-          </RemoveFromFavBtn>
-        ) : (
-          <AddToFavBtn onClick={() => addToFav(_id)}>
-            <AiOutlineHeart size={'24px'} color={theme.colors.w} />
-          </AddToFavBtn>
-        )}
-
-        {/* <AddToFavBtn
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-        {/* {isHovered || favorites.includes(product._id) ? (
-          <AddToFavBtn
-          // onMouseEnter={() => setIsHovered(true)}
-          // onMouseLeave={() => setIsHovered(false)}
-          >
-            <AiFillHeart size={'24px'} />
-          </AddToFavBtn>
-        ) : (
-          <RemoveFromFavBtn
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            <AiOutlineHeart size={'24px'} color={theme.colors.w} />
-          </RemoveFromFavBtn>
-        )}
-        </AddToFavBtn> */}
-        <ProductImg src={picture} alt="Фото десерту" />
-      </ImageWrap>
-      <Box p={21}>
-        <TitleH2 size={20} mb={12} weight={600} family="montserrat">
-          {title}
-        </TitleH2>
-        <Text color="t" lh="big">
-          {description}
-        </Text>
-        <Box
-          mt={27}
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-        >
-          <Text size={20}>
-            <ProductPrice>{price + ',00'}</ProductPrice> грн/шт
+          <ProductImg src={picture} alt="Фото десерту" />
+        </ImageWrap>
+        <Box p={21}>
+          <TitleH2 size={20} mb={12} weight={600} family="montserrat">
+            {title}
+          </TitleH2>
+          <Text color="t" lh="big">
+            {description}
           </Text>
-          <ButtonsGhost width={152}>Купити</ButtonsGhost>
+          <Box
+            mt={27}
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Text size={20}>
+              <ProductPrice>{price + ',00'}</ProductPrice> грн/шт
+            </Text>
+            <ButtonsGhost width={152}>Купити</ButtonsGhost>
+          </Box>
         </Box>
-      </Box>
-    </ProductWrap>
+      </ProductWrap>
+    </>
   );
 };

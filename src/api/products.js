@@ -63,32 +63,6 @@ export const getFavoriteProducts = async () => {
   }
 };
 
-// export const addProductToFavorite = async productID => {
-//   try {
-//     const { data } = await server.get(
-//       UrlProducts.all + `/add-favorite/${productID}`
-//     );
-//     const { favorites } = data;
-//     console.log('добавлено в избранное');
-//     return favorites;
-//   } catch (error) {
-//     throw error;
-//   }
-// };
-
-// export const removeProductFromFavorite = async productID => {
-//   try {
-//     const { data } = await server.delete(
-//       UrlProducts.all + `/favorite/${productID}`
-//     );
-//     const { favorites } = data;
-//     console.log('удалено из избранного');
-//     return favorites;
-//   } catch (error) {
-//     throw error;
-//   }
-// };
-
 export const updateProductFavorite = async (productID, action) => {
   try {
     const { data } = await server.patch(

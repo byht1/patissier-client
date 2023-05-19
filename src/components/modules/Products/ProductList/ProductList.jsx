@@ -12,11 +12,10 @@ import { getIsLogin } from 'redux/auth';
 import { Box } from 'components/global/Box';
 import { getProductCategory } from '../helpers/getProductCategory';
 import { getLoadMoreButtonProps } from '../helpers/getLoadMoreButtonProps';
-import { getLoadingStatusText } from '../helpers/getLoadingStatusText';
 import { sortingParams } from '../ProductFiltersAndSorting/Sorting/sortingParams';
 import { ProductItem } from '../ProductItem';
 import { ProductFiltersAndSorting } from '../ProductFiltersAndSorting';
-import { addToFavorite, removeFromFavorite } from 'redux/products';
+import { addToFavorite } from 'redux/products';
 
 import { ProductListWrap, LoadMoreButton } from './ProductList.styled';
 
@@ -26,7 +25,6 @@ export const ProductList = () => {
   const pathname = location.pathname.split('/')[2];
   const isLoggedIn = useSelector(getIsLogin);
   const [sortMethod, setSortMethod] = useState(sortingParams[0]);
-  console.log(isLoggedIn ? 'ЗАРЕГИСТРИРОВАН' : 'НЕЕЕЕЕ ЗАРЕГИСТРИРОВАН');
   const applySortMethod = method => {
     setSortMethod(method);
   };
@@ -43,7 +41,6 @@ export const ProductList = () => {
 
   const {
     data,
-    error,
     fetchNextPage,
     hasNextPage,
     isFetching,

@@ -8,8 +8,9 @@ import { Box } from 'components/global/Box';
 import { TitleH2, Text } from 'components/global/text';
 import { ButtonsGhost } from 'components/global/button';
 import { getFavoritesArray } from 'redux/products';
+import { getIsLogin } from 'redux/auth';
 import { addToFavorite, removeFromFavorite } from 'redux/products';
-import { addProductToFavorite, removeProductFromFavorite } from 'api/products';
+import { updateProductFavorite } from 'api/products';
 import {
   ProductWrap,
   ImageWrap,
@@ -26,21 +27,14 @@ export const ProductItem = ({ product }) => {
   const { _id, picture, title, description, price } = product;
   const dispatch = useDispatch();
   const favorites = useSelector(getFavoritesArray);
-
+  const isLoggedIn = useSelector(getIsLogin);
   const onAddToFavorite = async _id => {
-    // console.log(_id);
-    // console.log(favorites.includes(_id));
-    // console.log(favorites);
-    // if (favorites.includes(_id)) {
-    //   dispatch(removeFromFavorite(_id));
-    //   await removeProductFromFavorite(_id);
-    // } else {
-    await addProductToFavorite(_id);
+    await updateProductFavorite(_id, 'add');
     dispatch(addToFavorite(_id));
   };
 
   const onRemoveFromFav = async _id => {
-    await removeProductFromFavorite(_id);
+    await updateProductFavorite(_id, 'delete');
     dispatch(removeFromFavorite(_id));
   };
   const { mutate: addToFav, isLoading: addToFavLoading } = useMutation({
@@ -73,7 +67,8 @@ export const ProductItem = ({ product }) => {
         </AddToFavBtn> */}
         {!addToFavLoading &&
         !removeFromFavLoading &&
-        favorites.includes(_id) ? (
+        favorites.includes(_id) &&
+        isLoggedIn ? (
           <RemoveFromFavBtn onClick={() => removeFromFav(_id)}>
             <AiFillHeart size={'24px'} fill={theme.colors.error} />
           </RemoveFromFavBtn>

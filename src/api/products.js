@@ -12,6 +12,7 @@ export const getAllProducts = async ({ page = 1, limit = 3, sortMethod }) => {
         `?page=${page}&limit=${limit}&sort=${sortProductsMethod(sortMethod)}`
     );
     const { products } = data;
+
     return products;
   } catch (error) {
     throw error;
@@ -52,22 +53,9 @@ export const getProductCountByCategory = async () => {
   }
 };
 
-export const addProductToFavorite = async productID => {
-  try {
-    const { data } = await server.get(
-      UrlProducts.all + `/add-favorite/${productID}`
-    );
-    const { favorites } = data;
-    console.log('добавлено в избранное');
-    return favorites;
-  } catch (error) {
-    throw error;
-  }
-};
-
 export const getFavoriteProducts = async () => {
   try {
-    const { data } = await server.get(UrlProducts.all + `/user-favorite`);
+    const { data } = await server.get(UrlProducts.all + `/favorites`);
     const { favorites } = data;
     return favorites;
   } catch (error) {
@@ -75,13 +63,38 @@ export const getFavoriteProducts = async () => {
   }
 };
 
-export const removeProductFromFavorite = async productID => {
+// export const addProductToFavorite = async productID => {
+//   try {
+//     const { data } = await server.get(
+//       UrlProducts.all + `/add-favorite/${productID}`
+//     );
+//     const { favorites } = data;
+//     console.log('добавлено в избранное');
+//     return favorites;
+//   } catch (error) {
+//     throw error;
+//   }
+// };
+
+// export const removeProductFromFavorite = async productID => {
+//   try {
+//     const { data } = await server.delete(
+//       UrlProducts.all + `/favorite/${productID}`
+//     );
+//     const { favorites } = data;
+//     console.log('удалено из избранного');
+//     return favorites;
+//   } catch (error) {
+//     throw error;
+//   }
+// };
+
+export const updateProductFavorite = async (productID, action) => {
   try {
-    const { data } = await server.delete(
-      UrlProducts.all + `/favorite/${productID}`
+    const { data } = await server.patch(
+      UrlProducts.all + `/favorite/${productID}?action=${action}`
     );
     const { favorites } = data;
-    console.log('удалено из избранного');
     return favorites;
   } catch (error) {
     throw error;

@@ -13,6 +13,8 @@ import React from 'react';
 import { RestrictedRoute } from 'components/global/RestrictedRoute';
 import 'react-toastify/dist/ReactToastify.css';
 import { UserProfilePersonalDataContent } from 'components/modules/UserProfilePersonalData/UserProfilePersonalDataContent/UserProfilePersonalDataContent';
+import { UserProfileContactsContent } from 'components/modules/UserProfilePersonalData/UserProfileContactsContent/UserProfileContactsContent';
+import { UserProfilePersonalPasswordsContent } from 'components/modules/UserProfilePersonalData/UserProfilePersonalPasswordsContent/UserProfilePersonalPasswordsContent';
 
 const Home = lazy(() => import('page/Home')); // Головна сторінка
 const Goods = lazy(() => import('page/Goods')); // Tовари
@@ -64,8 +66,11 @@ function App() {
                 path="personal_data"
                 element={<UserProfilePersonalDataContent />}
               />
-              <Route path="contacts" element={<>contacts</>} />
-              <Route path="passwords" element={<>passwords</>} />
+              <Route path="contacts" element={<UserProfileContactsContent />} />
+              <Route
+                path="passwords"
+                element={<UserProfilePersonalPasswordsContent />}
+              />
             </Route>
             <Route path="support" element={<UserProfileSupportBlank />} />
           </Route>

@@ -5,7 +5,7 @@ export function PersonalUserDataItem({ name, content, isEditing }) {
   return (
     <Item>
       <Name>{name}</Name>
-      {isEditing ? 'qweqweqwe' : <Content>{content}</Content>}
+      {isEditing ? `${content}` : <Content>{content}</Content>}
     </Item>
   );
 }

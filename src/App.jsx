@@ -15,7 +15,6 @@ const Products = lazy(() => import('page/Products')); // Обраний това
 const Basket = lazy(() => import('page/Basket')); // Корзина
 const Courses = lazy(() => import('page/Courses')); // Курси
 const MasterClasses = lazy(() => import('page/MasterClasses')); // Майстер-класи
-const CurrentCourses = lazy(() => import('page/CurrentCourses')); // Окрема сторінка курсу
 const RegistrationForCourses = lazy(() =>
   import('page/RegistrationForCourses')
 ); // Запис на курс
@@ -44,8 +43,7 @@ function App() {
           </Route>
           <Route path="basket" element={<Basket />} />
           <Route path="courses" element={<Courses />} />
-          <Route path="master-classes" element={<MasterClasses />} />
-          <Route path="current-courses" element={<CurrentCourses />} />
+          <Route path="courses/:id" element={<MasterClasses />} />
           <Route path="sing-up-courses" element={<RegistrationForCourses />} />
           <Route path="about-us" element={<AboutUs />} />
 

@@ -3,7 +3,13 @@ import { NavLink } from 'react-router-dom';
 
 export const CourseListContainer = styled.ul`
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   gap: 60px;
+
+  @media (min-width: 1224px) {
+    flex-direction: row;
+  }
 `;
 
 export const CourseCard = styled.li`

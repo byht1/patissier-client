@@ -7,10 +7,10 @@ import AppBar from 'page/AppBar'; // Header
 import React from 'react';
 
 import { RestrictedRoute } from 'components/global/RestrictedRoute';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Home = lazy(() => import('page/Home')); // Головна сторінка
-const Goods = lazy(() => import('page/Goods')); // Tовари
 const Products = lazy(() => import('page/Products')); // Обраний товар
 const Basket = lazy(() => import('page/Basket')); // Корзина
 const Courses = lazy(() => import('page/Courses')); // Курси
@@ -32,8 +32,8 @@ function App() {
       <Routes>
         <Route path="/" element={<AppBar />}>
           <Route index element={<Home />} />
-          <Route path="store" element={<Goods />} />
-          <Route path="products" element={<Products />}>
+          {/* <Route path="store" element={<Goods />} /> */}
+          <Route path="store" element={<Products />}>
             <Route index element={<ProductList />} />
             <Route path="cakes" element={<ProductList />} />
             <Route path="pastries" element={<ProductList />} />
@@ -68,6 +68,7 @@ function App() {
           <Route path="*" element={<Navigate to="/" />} />
         </Route>
       </Routes>
+      <ToastContainer />
     </QueryClientProvider>
   );
 }

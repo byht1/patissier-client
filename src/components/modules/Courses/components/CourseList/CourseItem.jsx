@@ -11,8 +11,7 @@ import {
 } from './CourseList.styled';
 
 // import Image from 'img/courses/випічка.jpg';
-import { Text, TitleH4 } from 'components/global/text';
-import { Box } from 'components/global/Box';
+import { Text, TitleH4, Box } from 'components/global';
 
 export const CourseItem = ({ course }) => {
   const {
@@ -80,7 +79,7 @@ CourseItem.propTypes = {
     type: PropTypes.string.isRequired,
     previewText: PropTypes.string.isRequired,
     totalPlaces: PropTypes.number.isRequired,
-    // courseDuration: ,
+    courseDuration: PropTypes.string.isRequired,
     images: PropTypes.array.isRequired,
     groups: PropTypes.array.isRequired,
   }).isRequired,

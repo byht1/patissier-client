@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
-
-import { Container } from 'components/global/Container';
-import { BackLink, Svg } from './BackLink.styled';
 import { useLocation } from 'react-router-dom';
-import { Box } from 'components/global/Box';
+
+import { BackLink, Svg } from './BackLink.styled';
+import { Container } from '../Container';
+import { Box } from '../Box';
 
 export const BackLinkRef = () => {
   const location = useLocation();

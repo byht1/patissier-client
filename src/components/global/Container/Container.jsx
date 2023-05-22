@@ -7,8 +7,6 @@ export const Container = ({ children, ...props }) => {
 };
 
 Container.propTypes = {
-  pt: PropTypes.number,
-  pb: PropTypes.number,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,

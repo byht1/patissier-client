@@ -10,8 +10,7 @@ import {
 } from './CourseList.styled';
 
 import Image from 'img/courses/випічка.jpg';
-import { Text, TitleH4 } from 'components/global/text';
-import { Box } from 'components/global/Box';
+import { Text, TitleH4, Box } from 'components/global';
 
 export const CourseItem = () => {
   const courseId = '6457cce091759bc4f4d25866';

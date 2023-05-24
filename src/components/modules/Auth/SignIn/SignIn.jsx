@@ -52,7 +52,7 @@ export function SignIn() {
   const { mutate: logUser, isLoading } = useMutation({
     mutationKey: ['user'],
     mutationFn: data => {
-      const res = logIn(data);
+      const res = logIn(data, keepOnline);
       return res;
     },
     onSuccess: logData => {

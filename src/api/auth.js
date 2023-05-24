@@ -6,7 +6,7 @@ const UrlAuth = Object.freeze({
   logOut: '/auth/logout',
   recoveryPass: '/auth/forgotten-password',
   newPass: '/auth/forgotten-password/new',
-  // active: '/auth/active',
+  current: '/auth/current',
 });
 
 export const signUp = async body => {
@@ -28,13 +28,26 @@ export const signUp = async body => {
   }
 };
 
-export const logIn = async body => {
+export const logIn = async (body, keepOnline) => {
   try {
     const { data } = await server.post(UrlAuth.logIn, body);
 
     token.set(data.token);
-    localStorage.setItem('token', data.token);
+    if (keepOnline) {
+      localStorage.setItem('token', data.token);
+    }
 
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const current = async () => {
+  try {
+    const currnetToken = localStorage.getItem('token');
+    token.set(currnetToken);
+    const { data } = await server.get(UrlAuth.current);
     return data;
   } catch (error) {
     throw error;

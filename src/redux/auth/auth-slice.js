@@ -35,8 +35,8 @@ export const authSlice = createSlice({
         email: payload.email,
         phone: payload.phone,
       };
-      // state.isLogin = state.isLogin;
-      // state.token = state.token;
+      state.isLogin = state.isLogin;
+      state.token = state.token;
     },
   },
 });

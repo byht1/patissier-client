@@ -1,4 +1,3 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { ProductList } from 'components/modules/Products/ProductList';
@@ -9,8 +8,7 @@ import React from 'react';
 import { RestrictedRoute } from 'components/global/RestrictedRoute';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import PasswordRecovery from 'page/PasswordRecovery/PasswordRecovery';
-import SetNewPassword from 'page/SetNewPassword/SetNewPassword';
+import { useAppLoading } from 'hooks/useAppLoading';
 
 const Home = lazy(() => import('page/Home')); // Головна сторінка
 const Products = lazy(() => import('page/Products')); // Обраний товар
@@ -23,14 +21,17 @@ const RegistrationForCourses = lazy(() =>
 const AboutUs = lazy(() => import('page/AboutUs')); // Про нас
 const SignUp = lazy(() => import('page/SignUp')); // регістрація на сайті
 const LogIn = lazy(() => import('page/LogIn')); // Вхід в
-// const PasswordRecovery = lazy(() => import('page/PasswordRecovery'));
-// const SetNewPassword = lazy(() => import('page/SetNewPassword'));
-
-const queryClient = new QueryClient();
+const PasswordRecovery = lazy(() => import('page/PasswordRecovery'));
+const SetNewPassword = lazy(() => import('page/SetNewPassword'));
 
 function App() {
+  const { isLoading, isSuccess, isError } = useAppLoading();
+
+  if (isLoading && (!isSuccess || isError)) {
+    return <div>Loading...</div>;
+  }
   return (
-    <QueryClientProvider client={queryClient}>
+    <>
       <Routes>
         <Route path="/" element={<AppBar />}>
           <Route index element={<Home />} />
@@ -70,7 +71,7 @@ function App() {
             }
           />
           <Route
-            path="new-password"
+            path="forgotten-password"
             element={
               <RestrictedRoute component={SetNewPassword} redirectTo="/" />
             }
@@ -84,7 +85,7 @@ function App() {
         </Route>
       </Routes>
       <ToastContainer />
-    </QueryClientProvider>
+    </>
   );
 }
 

@@ -1,50 +1,42 @@
 import { useState } from 'react';
 import signIn from '../../../../img/header/images/signIn.jpg';
 import {
-  SignInImg,
-  ContentContainer,
-  FormWrapper,
-  Input,
-  Label,
-  Cover,
-  Title,
-  Button,
-  SubmitBlock,
   Box,
+  Button,
+  ContentContainer,
+  Cover,
+  FormWrapper,
   Hint,
-  ResendLink,
-  PasswordStrictParameters,
   Parameter,
   ParameterContent,
-  EyeHiddenIc,
-  EyeIc,
+  PasswordStrictParameters,
+  ResendLink,
+  SignInImg,
+  SubmitBlock,
+  Title,
 } from './SetNewPasswordContent.styled';
 
 import { Container } from 'components/global/Container';
 
-import { FormContext } from 'components/global/FormContext';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useForm } from 'react-hook-form';
 import { Alert } from '@mui/material';
+import { FormContext } from 'components/global/FormContext';
+import { useForm } from 'react-hook-form';
+// import { useDispatch } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
 import { newPassSchema } from './newPasswordSchema';
-import { useDispatch } from 'react-redux';
-import { useSearchParams } from 'react-router-dom';
 
 import { useMutation } from '@tanstack/react-query';
 import { newPass } from 'api/auth';
-import { register } from 'redux/auth';
 import { FormInput } from 'components/global/FormInput/FormInput';
-import { toast, ToastContainer } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
+// import { register } from 'redux/auth';
 
 export function SetNewPasswordContent() {
   const [err, setErr] = useState(null);
-  const dispatch = useDispatch();
-  const [searchParams, setSearchParams] = useSearchParams();
-  console.log(
-    '🚀 ~ file: SetNewPasswordContent.jsx:43 ~ SetNewPasswordContent ~ searchParams:',
-    searchParams
-  );
-  const token = searchParams.get('token');
+  // const dispatch = useDispatch();
+  const { token } = useParams();
+  const navigate = useNavigate();
 
   const methods = useForm({
     resolver: yupResolver(newPassSchema),
@@ -59,9 +51,9 @@ export function SetNewPasswordContent() {
     },
     onSuccess: newData => {
       setErr(null);
-      dispatch(register(newData));
-      setSearchParams({});
+      // dispatch(register(newData));
       reset();
+      navigate('/log-in');
     },
     onError: error => {
       setErr(error.response.data.message);
@@ -70,7 +62,7 @@ export function SetNewPasswordContent() {
 
   const onSubmit = () => {
     const password = getValues('password');
-    saveNewPass({ token, data: { password } });
+    saveNewPass({ token, data: { newPassword: password } });
   };
 
   return (
@@ -78,9 +70,10 @@ export function SetNewPasswordContent() {
       <Container>
         <ToastContainer />
         {isLoading && <h1 style={{ textAlign: 'center' }}>Loading ...</h1>}
-        {err && <h1>There is the error {err}</h1>}
+
         <ContentContainer>
           <Title>Новий Пароль</Title>
+
           <Cover>
             <SignInImg src={signIn} />
             <FormWrapper>
@@ -88,16 +81,6 @@ export function SetNewPasswordContent() {
                 <Box>
                   <Hint>Придумайте та введіть новий пароль.</Hint>
                 </Box>
-
-                {/* <Label>
-                Пароль
-                {showPassword ? (
-                  <EyeHiddenIc onClick={HideSymbols} />
-                ) : (
-                  <EyeIc onClick={SeeSymbols} />
-                )}
-                <Input type={inputType} minLength={8} autoComplete="off" />
-              </Label> */}
 
                 <FormInput
                   label="Password"
@@ -108,6 +91,15 @@ export function SetNewPasswordContent() {
                   mb={8}
                   showhide={true}
                 />
+                {err && (
+                  <Alert
+                    style={{ marginBottom: 16 }}
+                    severity="error"
+                    onClose={() => setErr(null)}
+                  >
+                    {err}
+                  </Alert>
+                )}
 
                 <PasswordStrictParameters>
                   Пароль повинен містити:
@@ -129,7 +121,9 @@ export function SetNewPasswordContent() {
                 </PasswordStrictParameters>
                 <SubmitBlock>
                   <Button type="submit">Далі</Button>
-                  <ResendLink>Надіслати повторно</ResendLink>
+                  <ResendLink to="/password-recovery">
+                    Надіслати повторно
+                  </ResendLink>
                 </SubmitBlock>
               </FormContext>
             </FormWrapper>

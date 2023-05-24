@@ -10,17 +10,16 @@ export const useAppLoading = () => {
   const navigate = useNavigate();
 
   const { isLoading, isError, isSuccess } = useQuery({
-    queryFn: () => {
-      return current();
+    queryFn: async () => {
+      const data = await current();
+      return data || true;
     },
     queryKey: ['user'],
     onSuccess: data => {
-      if (!data) {
-        return navigate('/');
+      if (typeof data === 'boolean') {
+        return;
       }
-
       dispatch(register(data));
-      return navigate('/');
     },
     onError: error => console.error(error.response.data.message),
     retry: 1,

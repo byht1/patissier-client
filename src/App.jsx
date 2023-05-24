@@ -71,7 +71,7 @@ function App() {
             }
           />
           <Route
-            path="forgotten-password"
+            path="auth/forgotten-password/:token"
             element={
               <RestrictedRoute component={SetNewPassword} redirectTo="/" />
             }

@@ -46,6 +46,9 @@ export const logIn = async (body, keepOnline) => {
 export const current = async () => {
   try {
     const currnetToken = localStorage.getItem('token');
+    if (!currnetToken) {
+      return;
+    }
     token.set(currnetToken);
     const { data } = await server.get(UrlAuth.current);
     return data;
@@ -74,10 +77,12 @@ export const recoveryPass = async email => {
   }
 };
 
-export const newPass = async (userToken, body) => {
+export const newPass = async (resetToken, newPassword) => {
   try {
-    token.set(userToken);
-    const { data } = await server.post(UrlAuth.newPass, body);
+    const { data } = await server.patch(
+      `${UrlAuth.newPass}/${resetToken}`,
+      newPassword
+    );
   } catch (error) {
     throw error;
   }

@@ -36,10 +36,10 @@ export const signInSchema = yup.object({
       32,
       // 'Must be less than 32 characters'
       'Має бути менше ніж 32 символа'
-    )
-    .matches(
-      /(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*_]{7,}/,
-      //'The password must contain uppercase and lowercase letters, at least 7 symbols'
-      'Пароль повинен містити великі та малі літери, мінімум 7 символів'
     ),
+  // .matches(
+  //   /(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*_]{7,}/,
+  //   //'The password must contain uppercase and lowercase letters, at least 7 symbols'
+  //   'Пароль повинен містити великі та малі літери, мінімум 7 символів'
+  // ),
 });

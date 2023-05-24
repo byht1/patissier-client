@@ -44,11 +44,6 @@ export function PasswordRecoveryContent() {
     setIsLoading(true);
     try {
       const res = await recoveryPass(email);
-      console.log(
-        '🚀 ~ file: PasswordRecoveryContent.jsx:47 ~ onSubmit ~ res:',
-        res,
-        email
-      );
 
       setSuccess(true);
     } catch (error) {

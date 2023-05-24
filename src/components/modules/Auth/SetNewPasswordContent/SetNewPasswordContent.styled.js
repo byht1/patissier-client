@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import { ReactComponent as EyeHiddenSvg } from '../../../../img/header/icons/EyeHidden.svg';
 import { ReactComponent as EyeSvg } from '../../../../img/header/icons/Eye.svg';
+import { Link } from 'react-router-dom';
 
 export const ContentContainer = styled.div`
   display: flex;
@@ -113,7 +114,7 @@ export const Hint = styled.p`
   color: ${p => p.theme.colors.t};
 `;
 
-export const ResendLink = styled.span`
+export const ResendLink = styled(Link)`
   margin-left: 40px;
 
   font-family: 'Montserrat';

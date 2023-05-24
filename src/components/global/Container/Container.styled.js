@@ -1,16 +1,20 @@
 import styled from 'styled-components';
+import { Box } from '../Box';
 
-export const ContainerBox = styled.div`
-  ${p => p.pt && `padding-top: ${p.pt}px`};
-  ${p => p.pb && `padding-bottom: ${p.pb}px`};
-  padding-left: 15px;
-  padding-right: 15px;
-  margin: 0 auto;
+export const ContainerBox = styled(Box)`
   width: 100%;
+  padding: 0 12px;
+  margin: 0 auto;
+
+  @media (min-width: 480px) {
+    width: 480px;
+  }
 
   @media (min-width: 768px) {
+    width: 768px;
   }
-  @media (min-width: 1440px) {
-    width: 1230px;
+
+  @media (min-width: 1224px) {
+    width: 1224px;
   }
 `;

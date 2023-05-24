@@ -3,7 +3,8 @@ import axios from 'axios';
 // https://patissier-server.onrender.com/docs Документаці як в 8 дз по React
 // Перший запит може йти довго так як server безкоштовний і він "засинає"
 
-const URL = 'https://patissier-server.onrender.com';
+const URL = 'https://patissier-server.herokuapp.com';
+// const URL = 'https://patissier-server.onrender.com';
 // const URL = 'http://localhost:5000';
 
 export const server = axios.create({

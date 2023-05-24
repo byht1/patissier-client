@@ -39,14 +39,17 @@ export function PasswordRecoveryContent() {
 
   const onSubmit = async () => {
     const { email } = getValues();
-    console.log(
-      '🚀 ~ file: PasswordRecoveryContent.jsx:42 ~ onSubmit ~ email:',
-      email
-    );
+
     setSuccess(true);
     setIsLoading(true);
     try {
-      await recoveryPass(email);
+      const res = await recoveryPass(email);
+      console.log(
+        '🚀 ~ file: PasswordRecoveryContent.jsx:47 ~ onSubmit ~ res:',
+        res,
+        email
+      );
+
       setSuccess(true);
     } catch (error) {
       toast.error(error.response.data.message, {

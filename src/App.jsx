@@ -9,6 +9,7 @@ import React from 'react';
 import { RestrictedRoute } from 'components/global/RestrictedRoute';
 import 'react-toastify/dist/ReactToastify.css';
 import PasswordRecovery from 'page/PasswordRecovery/PasswordRecovery';
+import SetNewPassword from 'page/SetNewPassword/SetNewPassword';
 
 const Home = lazy(() => import('page/Home')); // Головна сторінка
 const Goods = lazy(() => import('page/Goods')); // Tовари
@@ -68,6 +69,12 @@ function App() {
             path="password-recovery"
             element={
               <RestrictedRoute component={PasswordRecovery} redirectTo="/" />
+            }
+          />
+          <Route
+            path="new-password"
+            element={
+              <RestrictedRoute component={SetNewPassword} redirectTo="/" />
             }
           />
 

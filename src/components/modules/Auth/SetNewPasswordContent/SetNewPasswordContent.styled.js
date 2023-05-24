@@ -30,7 +30,7 @@ export const Cover = styled.div`
   display: flex;
 `;
 
-export const Form = styled.form`
+export const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 60px;

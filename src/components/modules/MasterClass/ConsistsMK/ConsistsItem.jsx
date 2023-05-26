@@ -1,17 +1,18 @@
 import { Text } from 'components/global/text';
-import { Box } from 'components/global/Box';
 import { TitleH4 } from 'components/global/text';
 import {ConsistsItems} from './Consists.styled';
-export const ConsistsItem = ({ title, text }) => {
+
+
+export const ConsistsItem = ({ name, description }) => {
+
   return (
-    <Box>   
+   
       <ConsistsItems>
-      <TitleH4 mb={16} weight={700}>{title}</TitleH4>
-        <Text lh='body'>
-            {text}
+        <TitleH4 mb={16} weight={700}>{name}</TitleH4>
+        <Text lh='body' color="t">
+            {description}
         </Text>
       </ConsistsItems>
     
-    </Box>
   );
 };

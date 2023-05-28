@@ -23,18 +23,16 @@ export const Reviews = ({ title }) => {
   }, []);
 
   return (
-    <Box as="section">
-      <Container pt={114} pb={100}>
-        <Box display="flex" flexDirection="column" alignItems="center">
-          <TitleH2 mb={75} color="at">
-            {title}
-          </TitleH2>
-          <ReviewsList>
-            {reviewsList.map(reviewItem => (
-              <ReviewItem key={reviewItem._id} reviewItem={reviewItem} />
-            ))}
-          </ReviewsList>
-        </Box>
+    <Box as="section" pt={100} pb={100}>
+      <Container display="flex" flexDirection="column" alignItems="center">
+        <TitleH2 mb={75} color="at">
+          {title}
+        </TitleH2>
+        <ReviewsList>
+          {reviewsList.map(reviewItem => (
+            <ReviewItem key={reviewItem._id} reviewItem={reviewItem} />
+          ))}
+        </ReviewsList>
       </Container>
     </Box>
   );

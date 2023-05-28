@@ -1,30 +1,67 @@
+import React from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { useParams } from 'react-router-dom';
+import {getCourseById} from 'api/courses';
 import { TitleH3} from 'components/global/text';
 import { Container} from 'components/global/Container';
 import { ConsistsItem } from './ConsistsItem';
 import {ConsistsList, ConsistsSection} from './Consists.styled';
+import { Section } from 'components/global/Section';
 
+export const ConsistsMK = () => {
 
-export const ConsistsMK = ({aboutList}) =>{
-    return(
-        <Container pt={100} pb={100}>
-        <ConsistsSection>
-            <TitleH3 color="at" mb={60} alignItems='center'>Що містить майстер клас?</TitleH3>
-            <ConsistsList>
-            {aboutList.map(({ title, text, id}) =>{
-                    return(
-                    <ConsistsItem
-                            key={id}
-                            title={title}
-                            text={text}
+    const {id: courseId } = useParams();
+
+    const {data, isSuccess, isLoading, isError, error } = useQuery({
+      queryKey: ['courses', courseId],
+      queryFn: () => getCourseById(courseId),
+      staleTime: 5 * 60 * 1000,
+    });
+
+    if (isLoading) {
+        return "Loader...";
+      }
+
+    if (isError){
+        return error
+    }
+
+    if (isSuccess){
+        
+        const detailsArray = Object.values(data.details);
+        return(
+            <Section>
+                <Container >
+                    <ConsistsSection>
+                        <TitleH3 color="at">Що містить майстер клас?</TitleH3>
+                        <ConsistsList>
+                         
+                                {detailsArray.map(({name, description}) =>{
+                                        return(
+                                        <ConsistsItem
+                                                key={name}
+                                                name={name}
+                                                description={description}
+                                        
+                                        />
+                                        )
+                                    })}
                     
-                    />
-                    )
-                })}
+                        </ConsistsList>
                 
-            </ConsistsList>
+    
+                    </ConsistsSection>
+                </Container>
+            </Section>
+        )
+    }
+    
+
+        
+    }
+      
             
 
-        </ConsistsSection>
-    </Container>
-    )
-}
+        
+    
+   

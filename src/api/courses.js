@@ -16,7 +16,7 @@ export const getCourses = async (skip = 0, limit = 3) => {
 
 export const getCourseById = async (courseId, format) => {
   let query = `${UrlCourses.courses}/${courseId}?`;
-  if (format !== 'all') {
+  if (format && format !== 'all') {
     query += `format=${format}`;
   }
 

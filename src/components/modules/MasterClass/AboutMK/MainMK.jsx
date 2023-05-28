@@ -1,12 +1,18 @@
 import { Container } from 'components/global/Container';
+import { Section } from 'components/global/Section';
 import { Box } from 'components/global/Box';
 import { TitleH1, TitleH4, Text  } from 'components/global/text';
 import {ImageWrap, MKImage, TextWrap, MKSection} from './MainMK.styled';
 import Image from 'img/mk/main.jpg';
 
+
 export const MainMK = () => {
+
+
+
   return (
-    <Container pt={58} pb={100}>
+   <Section>
+     <Container>
       <MKSection>
        <TitleH1 size={84} mb={52} color="at">
        Різдвяний штолен
@@ -42,6 +48,7 @@ export const MainMK = () => {
         </Box>
       </MKSection>
     </Container>
+   </Section>
     
    
   );

@@ -17,13 +17,16 @@ width: 100%;
 object-fit: cover;
 border-radius: 12px;
 `;
-export const TextWrap = styled.div`
+export const TextList = styled.ul`
  display: flex;
  flex-direction: column;
  gap: 20px;
  width: 588px;
  padding-right: 78px;
 
+
+`;
+export const TextWrap = styled.div`
 `;
 export const BakeryList = styled.ul`
   
@@ -32,5 +35,8 @@ export const DrinkList = styled.ul`
   
 `;
 export const BonusList = styled.ul`
+  
+`;
+export const TextItem = styled.li`
   
 `;

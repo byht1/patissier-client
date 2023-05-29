@@ -33,7 +33,12 @@ export const ConsistsMK = () => {
             <Section>
                 <Container >
                     <ConsistsSection>
-                        <TitleH3 color="at">Що містить майстер клас?</TitleH3>
+                    {data.type === "courses" ? (
+                        <TitleH3 color="at">Що містить кондитерський курс?</TitleH3>
+                        ) : (
+                            <TitleH3 color="at">Що містить майстер клас?</TitleH3>
+                        ) }
+                       
                         <ConsistsList>
                          
                                 {detailsArray.map(({name, description}) =>{

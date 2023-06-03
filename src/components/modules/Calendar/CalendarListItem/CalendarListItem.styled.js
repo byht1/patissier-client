@@ -12,7 +12,9 @@ export const Day = styled.p`
 `;
 
 export const NotActiveMonthLi = styled(Li)`
-  background: none;
+  background: #030305;
+  border: 1.5px solid #101011;
+  border-radius: 12px;
 `;
 
 export const ActiveDay = styled(Li)`

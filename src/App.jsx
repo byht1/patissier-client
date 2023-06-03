@@ -15,6 +15,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { UserProfilePersonalDataContent } from 'components/modules/UserProfilePersonalData/UserProfilePersonalDataContent/UserProfilePersonalDataContent';
 import { UserProfileContactsContent } from 'components/modules/UserProfilePersonalData/UserProfileContactsContent/UserProfileContactsContent';
 import { UserProfilePersonalPasswordsContent } from 'components/modules/UserProfilePersonalData/UserProfilePersonalPasswordsContent/UserProfilePersonalPasswordsContent';
+import { Calendar } from 'components/modules/Calendar/Calendar';
 
 const Home = lazy(() => import('page/Home')); // Головна сторінка
 const Goods = lazy(() => import('page/Goods')); // Tовари
@@ -60,7 +61,7 @@ function App() {
           <Route path="user/*" element={<User />}>
             <Route path="my_study" element={<>my_study</>} />
             <Route path="billing_history" element={<UserProfileBilling />} />
-            <Route path="calendar" element={<>calendar</>} />
+            <Route path="calendar" element={<Calendar />} />
             <Route path="my_profile/*" element={<UserProfilePersonalData />}>
               <Route
                 path="personal_data"

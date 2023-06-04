@@ -10,9 +10,11 @@ export default function Courses() {
   return (
     <>
       <CourseHero />
-      <Box as="section" pt={60} pb={114}>
-        <Statistics />
-        <Container mt={200}>
+      <Box as="section" pt={76} pb={120}>
+        <Statistics />{' '}
+      </Box>
+      <Box as="section" pt={76} pb={120}>
+        <Container>
           <TitleH2 size={84} mb={48} color="at" textAlign="center">
             Курси та майстер-класи
           </TitleH2>

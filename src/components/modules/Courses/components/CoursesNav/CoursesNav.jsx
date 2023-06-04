@@ -6,7 +6,8 @@ export const CoursesNav = () => {
       display="flex"
       alignItems="center"
       justifyContent="space-between"
-      mb={60}
+      width={588}
+      m={'0 auto 200px'}
     >
       <NavButton to="" end>
         Всі пропозиції

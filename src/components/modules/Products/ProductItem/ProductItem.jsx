@@ -32,7 +32,6 @@ export const ProductItem = ({ product }) => {
 
   const onAddToFavorite = async _id => {
     if (!isLoggedIn) {
-      console.log('HIfgggggggggggggggggggggggggggggUHK');
       showLoginWarning();
       return;
     }
@@ -57,7 +56,6 @@ export const ProductItem = ({ product }) => {
         client.invalidateQueries({ queryKey: ['products'] });
       },
     });
-  console.log(favorites.includes(_id));
   return (
     <>
       <ProductWrap key={_id}>

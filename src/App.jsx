@@ -3,7 +3,6 @@ import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { ProductList } from 'components/modules/Products/ProductList';
 import { CourseList } from 'components/modules/Courses/components/CourseList';
-
 import AppBar from 'page/AppBar'; // Header
 import React from 'react';
 
@@ -44,7 +43,9 @@ function App() {
           </Route>
           <Route path="basket" element={<Basket />} />
           <Route path="courses" element={<Courses />}>
-            <Route index element={<CourseList />} />{' '}
+            <Route index element={<CourseList />} />
+            <Route path="course" element={<CourseList />} />
+            <Route path="master-classes" element={<CourseList />} />
           </Route>
           <Route path="courses/:id" element={<MasterClasses />} />
           <Route path="sing-up-courses" element={<RegistrationForCourses />} />

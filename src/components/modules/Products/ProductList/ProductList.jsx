@@ -33,7 +33,6 @@ export const ProductList = () => {
     if (!isLoggedIn) return;
     const setFavoritesArray = async () => {
       const favorites = await getFavoriteProducts();
-      console.log(favorites);
       dispatch(addToFavorite(favorites));
     };
     setFavoritesArray();

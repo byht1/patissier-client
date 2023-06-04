@@ -23,7 +23,6 @@ import { CourseListContainer } from './CourseList.styled';
 
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { getCoursesCategory } from '../../helpers/getCoursesCategory';
 // import { getAllProducts, getProductsByCategory } from 'api/products';

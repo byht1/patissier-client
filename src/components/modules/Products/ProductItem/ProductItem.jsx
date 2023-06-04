@@ -83,9 +83,9 @@ export const ProductItem = ({ product }) => {
           <ProductImg src={picture} alt="Фото десерту" />
         </ImageWrap>
         <Box p={21}>
-          <TitleH2 size={20} mb={12} weight={600} family="montserrat">
+          <Text size={20} mb={12} weight={600} family="montserrat">
             {title}
-          </TitleH2>
+          </Text>
           <Text color="t" lh="big">
             {description}
           </Text>

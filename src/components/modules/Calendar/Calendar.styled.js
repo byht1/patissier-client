@@ -1,7 +1,9 @@
 import styled from 'styled-components';
+import { ReactComponent as rightArrowSVG } from '../../../img/svg/arrowToRight.svg';
+import { ReactComponent as leftArrowSVG } from '../../../img/svg/arrowToLeft.svg';
 
 export const CalendarBox = styled.div`
-  margin-top: 60px;
+  margin-top: 40px;
   background: #030305;
   box-shadow: 0px 0px 200px 30px rgba(199, 103, 56, 0.2);
   border-radius: 12px;
@@ -40,3 +42,24 @@ export const ColumnName = styled.p`
 
   color: #ffffff;
 `;
+
+export const ControlPanel = styled.div`
+  margin-top: 40px;
+`;
+
+export const MonthCounterBtn = styled.button`
+  background-color: inherit;
+  padding: 4px;
+  margin-left: 20px;
+
+  &:first-child {
+    margin-left: 0px;
+    margin-right: 20px;
+  }
+`;
+
+export const MonthName = styled.span``;
+
+export const LeftIc = styled(leftArrowSVG)``;
+
+export const RightIc = styled(rightArrowSVG)``;

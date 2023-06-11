@@ -7,21 +7,31 @@ import {
 } from './CalendarListItem.styled';
 import { useState } from 'react';
 
-export function CalendarListItem({ day }) {
+export function CalendarListItem({
+  day,
+  numberOfChoosedMonth,
+  numberOfChoosedYear,
+}) {
   // eslint-disable-next-line
-  const [numberOfCurrentMonth, setNumberOfCurrentMonth] = useState(
-    moment().month()
-  ); // eslint-disable-next-line
+
   const [monthNuber, setMonthNubmer] = useState(moment(day).month());
   const todayNumber = moment().format('D');
+  const todayMonth = moment().month();
+  const todayYear = moment().year();
   const dayNumber = day.format('D');
-  console.log(todayNumber);
-
+  console.log(
+    'weqeqeqweqeqwewq=======',
+    monthNuber,
+    'numberOfChoosedMonth====',
+    numberOfChoosedMonth
+  );
   return (
     <>
-      {numberOfCurrentMonth === monthNuber ? (
+      {numberOfChoosedMonth === monthNuber ? (
         <>
-          {todayNumber === dayNumber ? (
+          {todayNumber === dayNumber &&
+          todayMonth === numberOfChoosedMonth &&
+          todayYear === numberOfChoosedYear ? (
             <ActiveDay>
               <Day>{day.format('D')}</Day>
             </ActiveDay>

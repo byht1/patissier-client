@@ -1,31 +1,11 @@
-// import PropTypes from 'prop-types';
-// import { CourseItem } from './CourseItem';
+
 import { CourseItem } from '../CourseItem/CourseItem';
-import { CourseListContainer } from './CourseList.styled';
 
-// export const CourseList = ({ courses }) => {
-// export const CourseList = () => {
-//   return (
-//     <CourseListContainer>
-//       {/* {courses.map(course => (
-//         <CourseItem key={course._id} course={course} />
-//       ))} */}
-//       <CourseItem />
-//       <CourseItem />
-//       <CourseItem />
-//     </CourseListContainer>
-//   );
-// };
-
-// CourseList.propTypes = {
-//   courses: PropTypes.array.isRequired,
-// };
 
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { getCoursesCategory } from '../../helpers/getCoursesCategory';
-// import { getAllProducts, getProductsByCategory } from 'api/products';
 import { getCourses, getCoursesByCategory } from 'api';
 import { Box } from 'components/global/Box';
 import { getLoadMoreButtonProps } from 'components/modules/Products/helpers/getLoadMoreButtonProps';

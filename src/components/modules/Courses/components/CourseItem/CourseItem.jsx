@@ -1,16 +1,9 @@
 import React, { useState } from 'react';
-import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
-import { useTheme } from 'styled-components';
-import { useSelector, useDispatch } from 'react-redux';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 import { Box } from 'components/global/Box';
-import { TitleH2, Text } from 'components/global/text';
-import { ButtonsGhost } from 'components/global/button';
-import { getFavoritesArray } from 'redux/products';
-import { getIsLogin } from 'redux/auth';
-import { addToFavorite, removeFromFavorite } from 'redux/products';
-import { updateProductFavorite } from 'api/products';
+import { Text } from 'components/global/text';
+import { LinkStyled, TotalPlaces } from './CourseItem.styled';
+
 import {
   ProductWrap,
   ImageWrap,
@@ -19,16 +12,9 @@ import {
 } from 'components/modules/Products/ProductItem/ProductItem.styled';
 
 export const CourseItem = ({ course }) => {
-  const theme = useTheme();
-  const client = useQueryClient();
-  const [isHovered, setIsHovered] = useState(false);
   console.log(course);
   const { _id, category, type, previewText, totalPlaces, groups, images } =
     course;
-  const dispatch = useDispatch();
-  const favorites = useSelector(getFavoritesArray);
-  const isLoggedIn = useSelector(getIsLogin);
-
   return (
     <>
       <ProductWrap key={_id}>
@@ -36,11 +22,28 @@ export const CourseItem = ({ course }) => {
           <ProductImg src={images[0]} alt="Фото десерту" />
         </ImageWrap>
         <Box p={21}>
-          <TitleH2 size={20} mb={12} weight={600} family="montserrat">
-            {type}
-          </TitleH2>
-          <Text color="t" lh="big">
+          <Text
+            textAlign="center"
+            size={20}
+            mb={12}
+            weight={600}
+            family="montserrat"
+          >
+            {category}
+          </Text>
+          <Text textAlign="center" mb={20} color="t" lh="big">
+            {type === 'courses' ? 'Курс' : 'Майстер-клас'}
+          </Text>
+          <Text color="t" lh="big" mb={17}>
             {previewText}
+          </Text>
+          <Text size={16} weight={700} mb={15}>
+            Група:
+            <TotalPlaces> &nbsp;{totalPlaces} осіб</TotalPlaces>
+          </Text>
+          <Text size={16} weight={700}>
+            Термін:
+            <TotalPlaces> &nbsp;???? днів</TotalPlaces>
           </Text>
           <Box
             mt={27}
@@ -49,9 +52,9 @@ export const CourseItem = ({ course }) => {
             alignItems="center"
           >
             <Text size={20}>
-              <ProductPrice>{100 + ',00'}</ProductPrice> грн/шт
+              <ProductPrice>???? грн</ProductPrice>
             </Text>
-            <ButtonsGhost width={152}>Купити</ButtonsGhost>
+            <LinkStyled>Детальніше</LinkStyled>
           </Box>
         </Box>
       </ProductWrap>

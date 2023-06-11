@@ -41,9 +41,6 @@ export const AddToFavBtn = styled.button`
   background-color: #262524;
   backdrop-filter: blur(2px);
   border-radius: ${p => p.theme.radii.round};
-  /* &:hover svg {
-    color: green;
-  } */
 `;
 
 export const RemoveFromFavBtn = styled(AddToFavBtn)`

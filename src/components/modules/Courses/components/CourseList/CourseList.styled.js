@@ -22,7 +22,6 @@ export const CourseCard = styled.li`
 `;
 
 export const ImageWpar = styled.div`
-  /* width: 360px; */
   width: 100%;
   height: 266px;
   margin-bottom: 16px;

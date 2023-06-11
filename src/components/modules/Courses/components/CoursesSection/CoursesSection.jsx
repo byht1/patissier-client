@@ -3,20 +3,10 @@ import React from 'react';
 // import { getCourses } from 'api';
 
 import { Container, ReadMoreLink, Section, TitleH2 } from 'components/global';
-import { CourseList } from '../components/CourseList';
+import { CourseList } from '../CourseList';
 import { TopText } from './CoursesSection.styled';
 
 export const CoursesSection = () => {
-  // const [courses, setCourses] = useState([]);
-
-  // useQuery({
-  //   queryKey: ['courses'],
-  //   queryFn: () => getCourses(),
-  //   onSuccess: data => {
-  //     setCourses(data.courses);
-  //   },
-  // });
-
   return (
     <Section>
       <Container display="flex" flexDirection="column" alignItems="center">

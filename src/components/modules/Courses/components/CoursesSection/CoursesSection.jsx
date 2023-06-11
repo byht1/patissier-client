@@ -1,6 +1,4 @@
 import React from 'react';
-// import { useQuery } from '@tanstack/react-query';
-// import { getCourses } from 'api';
 
 import { Container, ReadMoreLink, Section, TitleH2 } from 'components/global';
 import { CourseList } from '../CourseList';

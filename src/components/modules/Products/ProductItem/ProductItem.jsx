@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
-import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
-import { useTheme } from 'styled-components';
+import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { NavLink } from 'react-router-dom';
-import { Box } from 'components/global/Box';
-import { TitleH2, Text } from 'components/global/text';
-import { ButtonsGhost } from 'components/global/button';
-import { getFavoritesArray } from 'redux/products';
+
+import {
+  getFavoritesArray,
+  addToFavorite,
+  removeFromFavorite,
+} from 'redux/products';
 import { getIsLogin } from 'redux/auth';
-import { addToFavorite, removeFromFavorite } from 'redux/products';
 import { updateProductFavorite } from 'api/products';
 import { showLoginWarning } from '../helpers/showLoginWarning';
+
+import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
+import { useTheme } from 'styled-components';
+import { Box } from 'components/global/Box';
+import { Text } from 'components/global/text';
+import { ButtonsGhost } from 'components/global/button';
+
 import {
   ProductWrap,
   ImageWrap,

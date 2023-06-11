@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { Box } from 'components/global/Box';
 import { Text } from 'components/global/text';
 import { LinkStyled, TotalPlaces } from './CourseItem.styled';
-
 import {
   ProductWrap,
   ImageWrap,
@@ -13,8 +12,7 @@ import {
 
 export const CourseItem = ({ course }) => {
   console.log(course);
-  const { _id, category, type, previewText, totalPlaces, groups, images } =
-    course;
+  const { _id, category, type, previewText, totalPlaces, images } = course;
   return (
     <>
       <ProductWrap key={_id}>

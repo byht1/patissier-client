@@ -41,7 +41,7 @@ export const CourseItem = ({ course }) => {
           </Text>
           <Text size={16} weight={700}>
             Термін:
-            <TotalPlaces> &nbsp;????? днів</TotalPlaces>
+            <TotalPlaces> &nbsp;????? </TotalPlaces>
           </Text>
           <Box
             mt={27}

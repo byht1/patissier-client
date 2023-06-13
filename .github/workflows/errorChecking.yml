@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  build-and-deploy:
+  checking-esLint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️

@@ -11,7 +11,7 @@ export const ConsistsList = styled.ul`
  display: flex;
  gap: 24px;
 `
-export const ConsistsItems = styled.div`
+export const ConsistsItems = styled.li`
 width: 384px;
 padding-right: 10px;
 

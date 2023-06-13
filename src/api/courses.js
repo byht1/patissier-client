@@ -4,26 +4,32 @@ const UrlCourses = Object.freeze({
   courses: '/courses',
 });
 // Function for requests on the main page and all courses page:
-export const getCourses = async ({ skip = 0, limit = 3 }) => {
-  const query = `${UrlCourses.courses}?skip=${skip}&limit=${limit}`;
-  console.log(`${UrlCourses.courses}?skip=${skip}&limit=${limit}`);
+export const getCourses = async ({ skip, limit = 3 }) => {
+  let query;
+  if (skip === 0) {
+    query = `${UrlCourses.courses}?limit=${limit}`;
+  } else {
+    query = `${UrlCourses.courses}?skip=${skip}&limit=${limit}`;
+  }
   try {
     const { data } = await server.get(query);
     const { courses } = data;
-    console.log(courses);
     return courses;
   } catch (error) {
     throw error;
   }
 };
 
-export const getCoursesByCategory = async ({ type, skip = 0, limit = 3 }) => {
-  const query = `${UrlCourses.courses}?type=${type}&skip=${skip}&limit=${limit}`;
-  console.log(`${UrlCourses.courses}?type=${type}&skip=${skip}&limit=${limit}`);
+export const getCoursesByCategory = async ({ type, skip, limit = 3 }) => {
+  let query;
+  if (skip === 0) {
+    query = `${UrlCourses.courses}?type=${type}&limit=${limit}`;
+  } else {
+    query = `${UrlCourses.courses}?type=${type}&skip=${skip}&limit=${limit}`;
+  }
   try {
     const { data } = await server.get(query);
     const { courses } = data;
-    console.log(courses);
     return courses;
   } catch (error) {
     throw error;
@@ -35,7 +41,6 @@ export const getCourseById = async (courseId, format) => {
   if (format && format !== 'all') {
     query += `format=${format}`;
   }
-
   try {
     const { data } = await server.get(query);
     return data;

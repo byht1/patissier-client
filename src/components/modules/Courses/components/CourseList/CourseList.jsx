@@ -1,8 +1,6 @@
-
 import { CourseItem } from '../CourseItem/CourseItem';
 
-
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { getCoursesCategory } from '../../helpers/getCoursesCategory';
@@ -17,7 +15,7 @@ import {
 export const CourseList = () => {
   const location = useLocation();
   const pathname = location.pathname.split('/')[2];
-  console.log(pathname);
+  // const [nextPage, setNextPage] = useState(true);
 
   const {
     data,
@@ -29,15 +27,12 @@ export const CourseList = () => {
     isSuccess,
   } = useInfiniteQuery(
     ['courses', pathname],
-    ({ pageParam = 1 }) => {
+    ({ pageParam = 0 }) => {
       if (!pathname) {
-        console.log(pathname);
         return getCourses({
           skip: pageParam,
         });
       } else {
-        console.log(pathname);
-
         return getCoursesByCategory({
           type: getCoursesCategory(pathname),
           skip: pageParam,
@@ -47,10 +42,22 @@ export const CourseList = () => {
     {
       getNextPageParam: (lastPage, allPages) => {
         if (lastPage.length === 0) return undefined;
-        return allPages.length + 1;
+        return allPages.length + 2;
       },
     }
   );
+
+  console.log(data);
+  let nextPage = true;
+  if (data && data.pages) {
+    for (let i = 1; i < data.pages.length; i++) {
+      if (data.pages[i] < data.pages[i - 1]) {
+        nextPage = false;
+        break;
+      }
+    }
+  }
+  console.log(nextPage);
 
   const isLoadingInitialData = !isSuccess && !isError;
   return (
@@ -61,8 +68,6 @@ export const CourseList = () => {
         <>
           <ProductListWrap>
             {data.pages.map((group, i) => {
-              console.log(data.pages);
-              console.log(group.courses);
               return (
                 <React.Fragment key={i}>
                   {group.map(course => {
@@ -76,7 +81,11 @@ export const CourseList = () => {
           </ProductListWrap>
           {data.pages[0].length > 2 && (
             <LoadMoreButton
-              {...getLoadMoreButtonProps(hasNextPage, isFetchingNextPage)}
+              {...getLoadMoreButtonProps(
+                hasNextPage,
+                isFetchingNextPage,
+                nextPage
+              )}
               onClick={() => fetchNextPage()}
             />
           )}

@@ -12,7 +12,9 @@ import {
 
 export const CourseItem = ({ course }) => {
   console.log(course);
-  const { _id, category, type, previewText, totalPlaces, images } = course;
+  const { _id, category, type, previewText, totalPlaces, images, groups } =
+    course;
+  console.log(groups);
   return (
     <>
       <ProductWrap key={_id}>
@@ -41,7 +43,7 @@ export const CourseItem = ({ course }) => {
           </Text>
           <Text size={16} weight={700}>
             Термін:
-            <TotalPlaces> &nbsp;????? </TotalPlaces>
+            <TotalPlaces> &nbsp; </TotalPlaces>
           </Text>
           <Box
             mt={27}

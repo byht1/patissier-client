@@ -1,13 +1,17 @@
 import { AiOutlineReload } from 'react-icons/ai';
 
-export const getLoadMoreButtonProps = (hasNextPage, isFetchingNextPage) => {
+export const getLoadMoreButtonProps = (
+  hasNextPage,
+  isFetchingNextPage,
+  nextPage
+) => {
   const buttonLabel = isFetchingNextPage
     ? 'Завантаження...'
-    : hasNextPage
+    : nextPage
     ? 'Показати ще'
-    : 'Позицій більше немає';
-  const buttonIcon = hasNextPage && <AiOutlineReload size={25} />;
-  const buttonDisabled = !hasNextPage || isFetchingNextPage;
+    : 'Ви переглянули всі курси';
+  const buttonIcon = hasNextPage && nextPage && <AiOutlineReload size={25} />;
+  const buttonDisabled = !hasNextPage || !nextPage || isFetchingNextPage;
 
   return {
     disabled: buttonDisabled,

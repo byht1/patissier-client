@@ -1,12 +1,13 @@
 import { CourseItem } from '../CourseItem/CourseItem';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { getCoursesCategory } from '../../helpers/getCoursesCategory';
 import { getCourses, getCoursesByCategory } from 'api';
 import { Box } from 'components/global/Box';
-import { getLoadMoreButtonProps } from 'components/modules/Products/helpers/getLoadMoreButtonProps';
+import { getLoadMoreButtonProps } from '../../helpers/getLoadMoreButtonProps';
+
 import {
   ProductListWrap,
   LoadMoreButton,
@@ -15,7 +16,6 @@ import {
 export const CourseList = () => {
   const location = useLocation();
   const pathname = location.pathname.split('/')[2];
-  // const [nextPage, setNextPage] = useState(true);
 
   const {
     data,
@@ -47,7 +47,6 @@ export const CourseList = () => {
     }
   );
 
-  console.log(data);
   let nextPage = true;
   if (data && data.pages) {
     for (let i = 1; i < data.pages.length; i++) {
@@ -57,7 +56,6 @@ export const CourseList = () => {
       }
     }
   }
-  console.log(nextPage);
 
   const isLoadingInitialData = !isSuccess && !isError;
   return (
@@ -71,6 +69,7 @@ export const CourseList = () => {
               return (
                 <React.Fragment key={i}>
                   {group.map(course => {
+                    console.log(course);
                     return (
                       <CourseItem course={course} key={course._id}></CourseItem>
                     );

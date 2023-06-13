@@ -43,7 +43,7 @@ export const CourseItem = ({ course }) => {
           </Text>
           <Text size={16} weight={700}>
             Термін:
-            <TotalPlaces> &nbsp; </TotalPlaces>
+            <TotalPlaces> </TotalPlaces>
           </Text>
           <Box
             mt={27}
@@ -52,7 +52,7 @@ export const CourseItem = ({ course }) => {
             alignItems="center"
           >
             <Text size={20}>
-              <ProductPrice>???? грн</ProductPrice>
+              <ProductPrice> грн</ProductPrice>
             </Text>
             <LinkStyled>Детальніше</LinkStyled>
           </Box>

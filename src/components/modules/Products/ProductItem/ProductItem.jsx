@@ -90,7 +90,7 @@ export const ProductItem = ({ product }) => {
             <ProductImg src={picture} alt="Фото десерту" />
           </ImageWrap>
           <Box p={21}>
-            <Text size={20} mb={12} weight={600} family="montserrat">
+            <Text size={20} mb={12} weight={600} family="montserrat" color="wt">
               {title}
             </Text>
             <Text color="t" lh="big">
@@ -102,7 +102,7 @@ export const ProductItem = ({ product }) => {
               justifyContent="space-between"
               alignItems="center"
             >
-              <Text size={20}>
+              <Text size={20} color="wt">
                 <ProductPrice>{price + ',00'}</ProductPrice> грн/шт
               </Text>
               <ButtonsGhost width={152}>Купити</ButtonsGhost>

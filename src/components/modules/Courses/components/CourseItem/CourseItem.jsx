@@ -11,10 +11,9 @@ import {
 } from 'components/modules/Products/ProductItem/ProductItem.styled';
 
 export const CourseItem = ({ course }) => {
-  console.log(course);
   const { _id, category, type, previewText, totalPlaces, images, groups } =
     course;
-  console.log(groups);
+
   return (
     <>
       <ProductWrap key={_id}>
@@ -52,7 +51,9 @@ export const CourseItem = ({ course }) => {
             alignItems="center"
           >
             <Text size={20}>
-              <ProductPrice> грн</ProductPrice>
+              <ProductPrice>
+                {groups[0] ? groups[0].price : '?????'} грн
+              </ProductPrice>
             </Text>
             <LinkStyled>Детальніше</LinkStyled>
           </Box>

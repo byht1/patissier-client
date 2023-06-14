@@ -11,8 +11,8 @@ export const getLoadMoreButtonProps = (
     ? 'Показати ще'
     : 'Ви переглянули всі позиції';
   const buttonIcon = hasNextPage && nextPage && <AiOutlineReload size={25} />;
-  const buttonDisabled = !hasNextPage || !nextPage || isFetchingNextPage;
-
+  // const buttonDisabled = !hasNextPage || !nextPage || isFetchingNextPage;
+  const buttonDisabled = isFetchingNextPage;
   return {
     disabled: buttonDisabled,
     children: (

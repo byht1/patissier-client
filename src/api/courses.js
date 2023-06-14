@@ -14,7 +14,7 @@ export const getCourses = async ({ skip, limit = 3 }) => {
   try {
     const { data } = await server.get(query);
     const { courses } = data;
-    return courses;
+    return data;
   } catch (error) {
     throw error;
   }
@@ -30,7 +30,7 @@ export const getCoursesByCategory = async ({ type, skip, limit = 3 }) => {
   try {
     const { data } = await server.get(query);
     const { courses } = data;
-    return courses;
+    return data;
   } catch (error) {
     throw error;
   }

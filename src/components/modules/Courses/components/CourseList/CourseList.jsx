@@ -1,6 +1,6 @@
 import { CourseItem } from '../CourseItem/CourseItem';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { getCoursesCategory } from '../../helpers/getCoursesCategory';
@@ -16,7 +16,9 @@ import {
 export const CourseList = () => {
   const location = useLocation();
   const pathname = location.pathname.split('/')[2];
-
+  const [group, setGroup] = useState(0);
+  let hits = 0;
+  let hitsTotal = 0;
   const {
     data,
     fetchNextPage,
@@ -42,15 +44,16 @@ export const CourseList = () => {
     {
       getNextPageParam: (lastPage, allPages) => {
         if (lastPage.length === 0) return undefined;
+        console.log(allPages.length + 2);
+        hitsTotal = allPages.length + 2;
         return allPages.length + 2;
       },
     }
   );
-
   let nextPage = true;
   if (data && data.pages) {
     for (let i = 1; i < data.pages.length; i++) {
-      if (data.pages[i] < data.pages[i - 1]) {
+      if (data.pages[i] < data.pages[i - 1] || data.pages[i].length < 3) {
         nextPage = false;
         break;
       }
@@ -66,10 +69,14 @@ export const CourseList = () => {
         <>
           <ProductListWrap>
             {data.pages.map((group, i) => {
+              console.log(data.pages);
+              hits = group.totalHits;
+              console.log(hits);
+              console.log(hits % hitsTotal);
+
               return (
                 <React.Fragment key={i}>
-                  {group.map(course => {
-                    console.log(course);
+                  {group.courses.map(course => {
                     return (
                       <CourseItem course={course} key={course._id}></CourseItem>
                     );
@@ -78,7 +85,7 @@ export const CourseList = () => {
               );
             })}
           </ProductListWrap>
-          {data.pages[0].length > 2 && (
+          {hits % hitsTotal > 0 && data.pages[0].courses.length > 2 && (
             <LoadMoreButton
               {...getLoadMoreButtonProps(
                 hasNextPage,
@@ -88,9 +95,10 @@ export const CourseList = () => {
               onClick={() => fetchNextPage()}
             />
           )}
-          <div>
+
+          <Box textAlign="center">
             {isFetching && !isFetchingNextPage ? 'Завантаження...' : null}
-          </div>
+          </Box>
         </>
       )}
     </Box>

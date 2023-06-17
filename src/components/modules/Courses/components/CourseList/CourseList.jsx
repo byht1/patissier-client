@@ -1,6 +1,6 @@
 import { CourseItem } from '../CourseItem/CourseItem';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { getCoursesCategory } from '../../helpers/getCoursesCategory';
@@ -16,7 +16,6 @@ import {
 export const CourseList = () => {
   const location = useLocation();
   const pathname = location.pathname.split('/')[2];
-  const [group, setGroup] = useState(0);
   let hits = 0;
   let hitsTotal = 0;
   const {
@@ -44,7 +43,6 @@ export const CourseList = () => {
     {
       getNextPageParam: (lastPage, allPages) => {
         if (lastPage.length === 0) return undefined;
-        console.log(allPages.length + 2);
         hitsTotal = allPages.length + 2;
         return allPages.length + 2;
       },
@@ -69,11 +67,7 @@ export const CourseList = () => {
         <>
           <ProductListWrap>
             {data.pages.map((group, i) => {
-              console.log(data.pages);
               hits = group.totalHits;
-              console.log(hits);
-              console.log(hits % hitsTotal);
-
               return (
                 <React.Fragment key={i}>
                   {group.courses.map(course => {

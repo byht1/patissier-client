@@ -11,12 +11,19 @@ import {
 } from 'components/modules/Products/ProductItem/ProductItem.styled';
 
 export const CourseItem = ({ course }) => {
-  const { _id, category, type, previewText, totalPlaces, images, groups } =
-    course;
+  const {
+    _id: courseID,
+    category,
+    type,
+    previewText,
+    totalPlaces,
+    images,
+    groups,
+  } = course;
 
   return (
     <>
-      <ProductWrap key={_id}>
+      <ProductWrap key={courseID}>
         <ImageWrap>
           <ProductImg src={images[0]} alt="Фото десерту" />
         </ImageWrap>

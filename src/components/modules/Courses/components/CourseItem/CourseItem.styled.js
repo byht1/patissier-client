@@ -10,6 +10,7 @@ export const LinkStyled = styled(NavLink)`
   color: var(--accent-text);
   border: 2px solid var(--accent-text);
   border-radius: 12px;
+  transition: var(--transition-bg), var(--transition-color);
   &:hover,
   &:focus {
     color: var(--background);

@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 export const ProductWrap = styled.li`
-  border: 1px solid var(--background);
   width: 360px;
   border-radius: 12px;
+  border: 1px solid transparent;
+  transition: var(--transition-border-color);
   &:hover,
   &:focus {
     border: 1px solid var(--accent-bg);

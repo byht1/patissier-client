@@ -22,6 +22,7 @@ export const NavLinkStyled = styled(NavLink)`
   font-size: 16px;
   border-radius: 12px;
   background-color: ${p => p.theme.colors.at};
+  transition: var(--transition-bg);
   &:focus,
   &:hover {
     background-color: ${p => p.theme.colors.ah};

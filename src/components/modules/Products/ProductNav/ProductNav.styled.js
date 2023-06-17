@@ -16,15 +16,15 @@ export const NavButton = styled(NavLink)`
   background-color: ${p => p.theme.colors.btnBg};
   color: ${p => p.theme.colors.wt};
   border-radius: 12px;
+  transition: var(--transition-bg), var(--transition-color),
+    var(--transition-border-color);
+  border-bottom: 1.5px solid transparent;
   &:hover,
-  &:focus {
-    border-bottom: 1.5px solid ${p => p.theme.colors.at};
-    color: ${p => p.theme.colors.at};
-    font-weight: 700;
-  }
+  &:focus,
   &.active {
     border-bottom: 1.5px solid ${p => p.theme.colors.at};
     color: ${p => p.theme.colors.at};
     font-weight: 700;
+    background-color: ${p => p.theme.colors.panelBg};
   }
 `;

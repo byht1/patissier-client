@@ -1,19 +1,25 @@
-import { Box } from 'components/global/Box';
 import { NavButton } from 'components/modules/Products/ProductNav/ProductNav.styled';
+import { NavList } from './CourseNav.styled';
 export const CoursesNav = () => {
   return (
-    <Box
+    <NavList
       display="flex"
       alignItems="center"
       justifyContent="space-between"
       width={588}
       m={'0 auto 200px'}
     >
-      <NavButton to="" end>
-        Всі пропозиції
-      </NavButton>
-      <NavButton to="course">Курси</NavButton>
-      <NavButton to="master-classes">Майстер-класи</NavButton>
-    </Box>
+      <li>
+        <NavButton to="" end>
+          Всі пропозиції
+        </NavButton>
+      </li>
+      <li>
+        <NavButton to="course">Курси</NavButton>
+      </li>
+      <li>
+        <NavButton to="master-classes">Майстер-класи</NavButton>
+      </li>
+    </NavList>
   );
 };

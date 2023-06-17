@@ -2,8 +2,7 @@ import { getReviews } from 'api';
 import { useEffect, useState } from 'react';
 import { Box } from 'components/global/Box';
 import { Container } from 'components/global/Container';
-import { TitleH2 } from 'components/global/text';
-import { ReviewsList } from './Reviews.styled';
+import { ReviewsList, Title } from './Reviews.styled';
 import { ReviewItem } from './ReviewsItem';
 import { defaultReviewsList } from './defaultReviews';
 
@@ -25,9 +24,7 @@ export const Reviews = ({ title }) => {
   return (
     <Box as="section" pt={100} pb={100}>
       <Container display="flex" flexDirection="column" alignItems="center">
-        <TitleH2 mb={75} color="at">
-          {title}
-        </TitleH2>
+        <Title>{title}</Title>
         <ReviewsList>
           {reviewsList.map(reviewItem => (
             <ReviewItem key={reviewItem._id} reviewItem={reviewItem} />

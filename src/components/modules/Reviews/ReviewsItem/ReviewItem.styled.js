@@ -5,11 +5,10 @@ export const ReviewWrap = styled.li`
   box-shadow: ${p => p.theme.shadows.s};
   border-radius: ${p => p.theme.radii.normal};
   border: 1px solid transparent;
-  padding: 20px 20px 38px 20px;
+  padding: 20px;
   width: 282px;
-  height: 269px;
+  height: 264px;
   overflow-y: auto;
-
   ::-webkit-scrollbar {
     width: 4px;
   }
@@ -31,7 +30,7 @@ export const ReviewData = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 `;
 
 export const Img = styled.img`
@@ -45,5 +44,5 @@ export const ReviewName = styled.p`
 
 export const ReviewComment = styled.p`
   font-size: ${p => p.theme.fontSizes.min};
-  line-height: ${p => p.theme.lineHeights.body};
+  line-height: ${p => p.theme.lineHeights.big};
 `;

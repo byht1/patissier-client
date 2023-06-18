@@ -1,23 +1,22 @@
-import { CourseItem } from '../CourseItem/CourseItem';
-
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { useInfiniteQuery } from '@tanstack/react-query';
-import { getCoursesCategory } from '../../helpers/getCoursesCategory';
 import { getCourses, getCoursesByCategory } from 'api';
-import { Box } from 'components/global/Box';
+
+import { CourseItem } from '../CourseItem';
+import { getCoursesCategory } from '../../helpers/getCoursesCategory';
 import { getLoadMoreButtonProps } from '../../helpers/getLoadMoreButtonProps';
 
-import {
-  ProductListWrap,
-  LoadMoreButton,
-} from 'components/modules/Products/ProductList/ProductList.styled';
+import { Box } from 'components/global/Box';
+import { LoadMoreButton } from 'components/global/LoadMoreBtn';
+import { CourseListWrap } from './CourseList.styled';
 
 export const CourseList = () => {
   const location = useLocation();
   const pathname = location.pathname.split('/')[2];
   let hits = 0;
   let hitsTotal = 0;
+
   const {
     data,
     fetchNextPage,
@@ -48,48 +47,32 @@ export const CourseList = () => {
       },
     }
   );
-  let nextPage = true;
-  if (data && data.pages) {
-    for (let i = 1; i < data.pages.length; i++) {
-      if (data.pages[i] < data.pages[i - 1] || data.pages[i].length < 3) {
-        nextPage = false;
-        break;
-      }
-    }
-  }
 
-  const isLoadingInitialData = !isSuccess && !isError;
   return (
     <Box>
-      {isLoadingInitialData && <p>Завантаження курсів...</p>}
+      {!isSuccess && !isError && <p>Завантаження курсів...</p>}
       {isError && <p>Виникла помилка. Спробуйте пізніше</p>}
       {isSuccess && (
         <>
-          <ProductListWrap>
+          <CourseListWrap>
             {data.pages.map((group, i) => {
               hits = group.totalHits;
               return (
                 <React.Fragment key={i}>
                   {group.courses.map(course => {
-                    return (
-                      <CourseItem course={course} key={course._id}></CourseItem>
-                    );
+                    return <CourseItem course={course} key={course._id} />;
                   })}
                 </React.Fragment>
               );
             })}
-          </ProductListWrap>
-          {hits % hitsTotal > 0 && data.pages[0].courses.length > 2 && (
-            <LoadMoreButton
-              {...getLoadMoreButtonProps(
-                hasNextPage,
-                isFetchingNextPage,
-                nextPage
-              )}
-              onClick={() => fetchNextPage()}
-            />
-          )}
-
+          </CourseListWrap>
+          {data.pages.length < Math.ceil(hits / hitsTotal) &&
+            data.pages[0].courses.length > hitsTotal - 1 && (
+              <LoadMoreButton
+                {...getLoadMoreButtonProps(hasNextPage, isFetchingNextPage)}
+                onClick={() => fetchNextPage()}
+              />
+            )}
           <Box textAlign="center">
             {isFetching && !isFetchingNextPage ? 'Завантаження...' : null}
           </Box>

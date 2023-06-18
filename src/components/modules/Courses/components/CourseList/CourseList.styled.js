@@ -78,3 +78,11 @@ export const ToDetailsLink = styled(NavLink)`
     color: ${p => p.theme.colors.bg};
   }
 `;
+
+export const CourseListWrap = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  margin-bottom: 35px;
+  justify-content: space-between;
+`;

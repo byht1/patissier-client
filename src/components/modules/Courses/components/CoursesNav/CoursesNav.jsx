@@ -1,5 +1,5 @@
-import { NavButton } from 'components/modules/Products/ProductNav/ProductNav.styled';
-import { NavList } from './CourseNav.styled';
+import { NavList, NavButton } from './CourseNav.styled';
+
 export const CoursesNav = () => {
   return (
     <NavList

@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { Container, ReadMoreLink, Section, TitleH2 } from 'components/global';
 import { CourseList } from '../CourseList';
+
+import { Container, ReadMoreLink, Section, TitleH2 } from 'components/global';
 import { TopText } from './CoursesSection.styled';
 
 export const CoursesSection = () => {

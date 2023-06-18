@@ -48,8 +48,8 @@ export const ProductFiltersAndSorting = ({ applySortMethod, sortMethod }) => {
 
   const onFilterSortButton = e => {
     setSelectedButton(e.currentTarget.value);
-    console.log(e.currentTarget.value);
-    console.log(selectedButton);
+    // console.log(e.currentTarget.value);
+    // console.log(selectedButton);
     // if (
     //   e.currentTarget.value !== 'filter' &&
     //   e.currentTarget.value !== 'sorting'

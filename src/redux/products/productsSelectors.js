@@ -1,1 +1,3 @@
-export const gatFavoriteProducts = state => state.products.favoriteProducts;
+export const getFavoritesArray = state => {
+  return state.products.favoriteProducts;
+};

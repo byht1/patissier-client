@@ -22,6 +22,13 @@ transition: var(--transition-bg), var(--transition-color), var(--transition-bord
   border-bottom: 1.5px solid ${p => p.theme.colors.aBg};
   background-color: ${p => p.theme.colors.btnBg};
   color: ${p => p.theme.colors.aBg};
+  font-weight: 700;
+}
+&.active {
+  border-bottom: 1.5px solid ${p => p.theme.colors.aBg};
+  background-color: ${p => p.theme.colors.btnBg};
+  color: ${p => p.theme.colors.aBg};
+  font-weight: 700;
 }
 `;
 

@@ -12,10 +12,7 @@ export const getAllProducts = async ({ page = 1, limit = 3, sortMethod }) => {
         `?page=${page}&limit=${limit}&sort=${sortProductsMethod(sortMethod)}`
     );
     const { products } = data;
-    console.log(sortMethod);
-    console.log(
-      `?page=${page}&limit=${limit}&sort=${sortProductsMethod(sortMethod)}`
-    );
+
     return products;
   } catch (error) {
     throw error;
@@ -47,14 +44,10 @@ export const getProductsByCategory = async ({
   }
 };
 
-export const addProductToFavorite = async productID => {
+export const getProductCountByCategory = async () => {
   try {
-    const { data } = await server.get(
-      UrlProducts.all + `/add-favorite/${productID}`
-    );
-    const { favorites } = data;
-    console.log(favorites);
-    return favorites;
+    const { data } = await server.get(UrlProducts.all + `/category-records`);
+    return data;
   } catch (error) {
     throw error;
   }
@@ -62,33 +55,21 @@ export const addProductToFavorite = async productID => {
 
 export const getFavoriteProducts = async () => {
   try {
-    const { data } = await server.get(UrlProducts.all + `/user-favorite`);
+    const { data } = await server.get(UrlProducts.all + `/favorites`);
     const { favorites } = data;
-    console.log(favorites);
     return favorites;
   } catch (error) {
     throw error;
   }
 };
 
-export const deleteProductFromFavorite = async productID => {
+export const updateProductFavorite = async (productID, action) => {
   try {
-    const { data } = await server.get(
-      UrlProducts.all + `/favorite/${productID}`
+    const { data } = await server.patch(
+      UrlProducts.all + `/favorite/${productID}?action=${action}`
     );
     const { favorites } = data;
-    console.log(favorites);
     return favorites;
-  } catch (error) {
-    throw error;
-  }
-};
-
-export const getProductCountByCategory = async () => {
-  try {
-    const { data } = await server.get(UrlProducts.all + `/category-records`);
-    console.log(data);
-    return data;
   } catch (error) {
     throw error;
   }

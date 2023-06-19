@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-export const ProductNav = styled.div`
-  display: block;
+export const NavList = styled.ul`
+  margin: 0 auto 200px;
+  display: flex;
+  width: 588px;
+  align-items: center;
   justify-content: space-between;
 `;
 

@@ -22,7 +22,6 @@ export const ProductFiltersAndSorting = ({ applySortMethod, sortMethod }) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleDocumentClick = event => {
     if (!event.target.closest('#sort-filter')) {
-      console.log('fjgkhjkhjkhj');
       setSelectedButton(null);
     }
   };
@@ -49,8 +48,8 @@ export const ProductFiltersAndSorting = ({ applySortMethod, sortMethod }) => {
 
   const onFilterSortButton = e => {
     setSelectedButton(e.currentTarget.value);
-    console.log(e.currentTarget.value);
-    console.log(selectedButton);
+    // console.log(e.currentTarget.value);
+    // console.log(selectedButton);
     // if (
     //   e.currentTarget.value !== 'filter' &&
     //   e.currentTarget.value !== 'sorting'

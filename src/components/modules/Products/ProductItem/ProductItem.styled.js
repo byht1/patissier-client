@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 export const ProductWrap = styled.li`
-  border: 1px solid var(--background);
   width: 360px;
   border-radius: 12px;
+  border: 1px solid transparent;
+  transition: var(--transition-border-color);
   &:hover,
   &:focus {
     border: 1px solid var(--accent-bg);
@@ -41,9 +42,6 @@ export const AddToFavBtn = styled.button`
   background-color: #262524;
   backdrop-filter: blur(2px);
   border-radius: ${p => p.theme.radii.round};
-  /* &:hover svg {
-    color: green;
-  } */
 `;
 
 export const RemoveFromFavBtn = styled(AddToFavBtn)`

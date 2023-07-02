@@ -9,14 +9,13 @@ import {
   removeFromFavorite,
 } from 'redux/products';
 import { getIsLogin } from 'redux/auth';
-import { updateProductFavorite } from 'api/products';
+import { updateProductFavorite, addProductToBasket } from 'api/products';
 import { showLoginWarning } from '../helpers/showLoginWarning';
 
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 import { useTheme } from 'styled-components';
 import { Box } from 'components/global/Box';
 import { Text } from 'components/global/text';
-import { ButtonsGhost } from 'components/global/button';
 
 import {
   ProductWrap,
@@ -25,29 +24,31 @@ import {
   ProductPrice,
   AddToFavBtn,
   RemoveFromFavBtn,
+  ButtonBuy,
 } from './ProductItem.styled';
 
 export const ProductItem = ({ product }) => {
   const theme = useTheme();
   const client = useQueryClient();
-  const [isHovered, setIsHovered] = useState(false);
-  const { _id, picture, title, description, price } = product;
   const dispatch = useDispatch();
   const favorites = useSelector(getFavoritesArray);
   const isLoggedIn = useSelector(getIsLogin);
+  const [isHovered, setIsHovered] = useState(false);
+  const [addedToBasket, setAddedToBasket] = useState(false);
+  const { _id: id, picture, title, description, price } = product;
 
-  const onAddToFavorite = async _id => {
+  const onAddToFavorite = async id => {
     if (!isLoggedIn) {
       showLoginWarning();
       return;
     }
-    await updateProductFavorite(_id, 'add');
-    dispatch(addToFavorite(_id));
+    await updateProductFavorite(id, 'add');
+    dispatch(addToFavorite(id));
   };
 
-  const onRemoveFromFav = async _id => {
-    await updateProductFavorite(_id, 'delete');
-    dispatch(removeFromFavorite(_id));
+  const onRemoveFromFav = async id => {
+    await updateProductFavorite(id, 'delete');
+    dispatch(removeFromFavorite(id));
   };
   const { mutate: addToFav, isLoading: addToFavLoading } = useMutation({
     mutationFn: onAddToFavorite,
@@ -62,21 +63,26 @@ export const ProductItem = ({ product }) => {
         client.invalidateQueries({ queryKey: ['products'] });
       },
     });
+
+  const onButtonBuy = () => {
+    addProductToBasket(id);
+    setAddedToBasket(true);
+  };
   return (
     <>
-      <ProductWrap key={_id}>
+      <ProductWrap key={id}>
         <NavLink to="/">
           <ImageWrap>
             {!addToFavLoading &&
             !removeFromFavLoading &&
-            favorites.includes(_id) &&
+            favorites.includes(id) &&
             isLoggedIn ? (
-              <RemoveFromFavBtn onClick={() => removeFromFav(_id)}>
+              <RemoveFromFavBtn onClick={() => removeFromFav(id)}>
                 <AiFillHeart size={'24px'} fill={theme.colors.error} />
               </RemoveFromFavBtn>
             ) : (
               <AddToFavBtn
-                onClick={() => addToFav(_id)}
+                onClick={() => addToFav(id)}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
               >
@@ -89,7 +95,7 @@ export const ProductItem = ({ product }) => {
             )}
             <ProductImg src={picture} alt="Фото десерту" />
           </ImageWrap>
-          <Box p={21}>
+          <Box p={21} pt={23} pb={40}>
             <Text size={20} mb={12} weight={600} family="montserrat" color="wt">
               {title}
             </Text>
@@ -105,10 +111,12 @@ export const ProductItem = ({ product }) => {
               <Text size={20} color="wt">
                 <ProductPrice>{price + ',00'}</ProductPrice> грн/шт
               </Text>
-              <ButtonsGhost width={152}>Купити</ButtonsGhost>
             </Box>
           </Box>
         </NavLink>
+        <ButtonBuy width={152} onClick={onButtonBuy}>
+          {addedToBasket ? 'В кошику' : 'Купити'}
+        </ButtonBuy>
       </ProductWrap>
     </>
   );

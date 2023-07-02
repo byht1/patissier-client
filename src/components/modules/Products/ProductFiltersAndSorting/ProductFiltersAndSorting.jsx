@@ -98,7 +98,8 @@ export const ProductFiltersAndSorting = ({ applySortMethod, sortMethod }) => {
             />{' '}
           </SortFilterBox>
         )}
-        {selectedButton === 'filter' && <Filters />}
+        {/* {selectedButton === 'filter' && <Filters />} */}
+        <Filters />
       </Box>
     </>
   );

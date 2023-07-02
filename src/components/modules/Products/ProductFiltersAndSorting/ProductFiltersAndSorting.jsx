@@ -5,7 +5,7 @@ import { Box } from 'components/global/Box';
 
 import { getProductCount } from '../helpers/getProductCount';
 import { Sorting } from './Sorting/Sorting';
-import { SortingIcon } from './Sorting/Sorting.styled';
+import { SortingIcon, GlobalStyles } from './Sorting/Sorting.styled';
 import { FilterIcon } from './Filters/Filters.styled';
 import {
   FilterButton,
@@ -62,38 +62,44 @@ export const ProductFiltersAndSorting = ({ applySortMethod, sortMethod }) => {
   };
 
   return (
-    <Box
-      mb={60}
-      display="flex"
-      justifyContent="space-between"
-      alignItems="center"
-      color="t"
-      position="relative"
-    >
-      <p>
-        всього
-        <span> {getProductCount(pathname, productsCountArray)} </span>
-        варіантів
-      </p>
-      <FilterAndSortWrap>
-        <FilterButton value="filter" onClick={onFilterSortButton}>
-          <FilterIcon id="sort-filter" />
-        </FilterButton>
-        <FilterButton value="sorting" onClick={onFilterSortButton}>
-          <SortingIcon id="sort-filter" />
-        </FilterButton>
-      </FilterAndSortWrap>
-      {/* <Sorting
+    <>
+      <GlobalStyles isSelected={selectedButton !== null} />
+      <Box
+        mb={60}
+        display="flex"
+        justifyContent="space-between"
+        alignItems="center"
+        color="t"
+        position="relative"
+      >
+        <p>
+          всього
+          <span> {getProductCount(pathname, productsCountArray)} </span>
+          варіантів
+        </p>
+        <FilterAndSortWrap>
+          <FilterButton value="filter" onClick={onFilterSortButton}>
+            <FilterIcon id="sort-filter" />
+          </FilterButton>
+          <FilterButton value="sorting" onClick={onFilterSortButton}>
+            <SortingIcon id="sort-filter" />
+          </FilterButton>
+        </FilterAndSortWrap>
+        {/* <Sorting
         applySortMethod={applySortMethod}
         sortMethod={sortMethod}
       ></Sorting>
       <Filters /> */}{' '}
-      {selectedButton === 'sorting' && (
-        <SortFilterBox isSelected={selectedButton === 'sorting'}>
-          <Sorting applySortMethod={applySortMethod} sortMethod={sortMethod} />{' '}
-        </SortFilterBox>
-      )}
-      {selectedButton === 'filter' && <Filters />}
-    </Box>
+        {selectedButton === 'sorting' && (
+          <SortFilterBox isSelected={selectedButton === 'sorting'}>
+            <Sorting
+              applySortMethod={applySortMethod}
+              sortMethod={sortMethod}
+            />{' '}
+          </SortFilterBox>
+        )}
+        {selectedButton === 'filter' && <Filters />}
+      </Box>
+    </>
   );
 };

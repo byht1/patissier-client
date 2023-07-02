@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, createGlobalStyle } from 'styled-components';
 import { ReactComponent as SortIcon } from '../../../../../img/products/sort.svg';
 
 export const SortingIcon = styled(SortIcon)`
@@ -60,7 +60,12 @@ export const SortingBtn = styled.button`
   font-family: 'Montserrat';
   background-color: transparent;
   color: var(--text);
+  &:hover,
+  &:focus {
+    font-weight: 500;
+  }
 `;
+
 export const SortFilterBox = styled.div`
   position: absolute;
   background-color: var(--background);
@@ -69,7 +74,14 @@ export const SortFilterBox = styled.div`
   right: -1px;
   z-index: 2;
   top: -1px;
-  /* transition: opacity 250ms linear;
-  opacity: ${({ isSelected }) => (isSelected ? '1' : '0')}; */
+  pointer-events: all;
+  transition: opacity 250ms linear;
+  /* opacity: ${({ isSelected }) => (isSelected ? '1' : '0')}; */
   animation: ${({ isSelected }) => (isSelected ? fadeIn : fadeOut)} 250ms linear;
+`;
+
+export const GlobalStyles = createGlobalStyle`
+  body {
+    pointer-events: ${({ isSelected }) => (isSelected ? 'none' : 'auto')};
+  }
 `;

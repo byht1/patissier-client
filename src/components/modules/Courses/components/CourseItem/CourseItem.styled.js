@@ -5,7 +5,7 @@ export const DetailsLink = styled(NavLink)`
   display: inline-block;
   font-weight: 700;
   font-size: 16px;
-  width: 184px;
+  min-width: 184px;
   padding: 16px 40px;
   color: var(--accent-text);
   border: 2px solid var(--accent-text);
@@ -28,10 +28,10 @@ export const CourseWrap = styled.li`
   border-radius: 12px;
   border: 1px solid transparent;
   transition: var(--transition-border-color);
-  &:hover,
+  /* &:hover,
   &:focus {
     border: 1px solid var(--accent-bg);
-  }
+  } */
 `;
 
 export const ImageWrap = styled.div`

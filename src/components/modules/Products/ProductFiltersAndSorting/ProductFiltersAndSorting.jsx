@@ -12,6 +12,7 @@ import {
   FilterAndSortWrap,
 } from './ProductFiltersAndSorting.styled';
 import { Filters } from './Filters/Filters';
+import { SortFilterBox } from './Sorting/Sorting.styled';
 
 export const ProductFiltersAndSorting = ({ applySortMethod, sortMethod }) => {
   const location = useLocation();
@@ -48,6 +49,7 @@ export const ProductFiltersAndSorting = ({ applySortMethod, sortMethod }) => {
 
   const onFilterSortButton = e => {
     setSelectedButton(e.currentTarget.value);
+
     // console.log(e.currentTarget.value);
     // console.log(selectedButton);
     // if (
@@ -85,9 +87,11 @@ export const ProductFiltersAndSorting = ({ applySortMethod, sortMethod }) => {
         applySortMethod={applySortMethod}
         sortMethod={sortMethod}
       ></Sorting>
-      <Filters /> */}
+      <Filters /> */}{' '}
       {selectedButton === 'sorting' && (
-        <Sorting applySortMethod={applySortMethod} sortMethod={sortMethod} />
+        <SortFilterBox isSelected={selectedButton === 'sorting'}>
+          <Sorting applySortMethod={applySortMethod} sortMethod={sortMethod} />{' '}
+        </SortFilterBox>
       )}
       {selectedButton === 'filter' && <Filters />}
     </Box>

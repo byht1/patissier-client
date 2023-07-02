@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { ReactComponent as SortIcon } from '../../../../../img/products/sort.svg';
 
 export const SortingIcon = styled(SortIcon)`
@@ -36,6 +36,23 @@ export const SortingItem = styled.li`
     margin-bottom: 6px;
   }
 `;
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+const fadeOut = keyframes`
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+`;
 
 export const SortingBtn = styled.button`
   font-weight: ${({ current }) => (current === 'true' ? 700 : 400)};
@@ -52,4 +69,7 @@ export const SortFilterBox = styled.div`
   right: -1px;
   z-index: 2;
   top: -1px;
+  /* transition: opacity 250ms linear;
+  opacity: ${({ isSelected }) => (isSelected ? '1' : '0')}; */
+  animation: ${({ isSelected }) => (isSelected ? fadeIn : fadeOut)} 250ms linear;
 `;

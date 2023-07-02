@@ -16,7 +16,8 @@ export const Sorting = ({ applySortMethod, sortMethod }) => {
   };
 
   return (
-    <SortFilterBox borderRadius={12} width={356} position="absolute">
+    // <SortFilterBox borderRadius={12} width={356} position="absolute">
+    <>
       <Wrap>
         <p>{sortMethod}</p>
         <SortingIcon />
@@ -34,6 +35,7 @@ export const Sorting = ({ applySortMethod, sortMethod }) => {
           </SortingItem>
         ))}
       </SortingList>
-    </SortFilterBox>
+    </>
+    // </SortFilterBox>
   );
 };

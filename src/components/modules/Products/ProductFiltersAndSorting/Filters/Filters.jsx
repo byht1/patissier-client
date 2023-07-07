@@ -147,12 +147,12 @@
 import React from 'react';
 import 'sanitize.css';
 import { Slider } from '@mui/material';
-import { makeStyles } from '@material-ui/core/styles';
-
+// import { makeStyles } from '@material-ui/core/styles';
+import { ThemeProvider } from '@mui/material/styles';
 // // docs:
 // // - https://material-ui.com/api/slider/#css
 // // - https://material-ui.com/styles/advanced/#makestyles-withstyles-styled
-const useStyles = makeStyles(
+const useStyles = ThemeProvider(
   {
     track: {
       color: '#8f23b3',
@@ -189,7 +189,6 @@ const useStyles = makeStyles(
 export const Filters = () => {
   const [val, setVal] = React.useState({ min: 0, max: 100 });
   const [val2, setVal2] = React.useState([0, 100]);
-  const classes = useStyles();
   return (
     <div className="App" style={{ maxWidth: '100vw', padding: '0 10vw' }}>
       <p>Ціна</p>
@@ -197,7 +196,7 @@ export const Filters = () => {
         <div>
           <Slider
             //disabled
-            classes={classes}
+            // classes={classes}
             step={1}
             min={0}
             max={2300}

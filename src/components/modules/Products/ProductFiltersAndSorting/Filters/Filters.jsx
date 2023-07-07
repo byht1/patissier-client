@@ -147,44 +147,78 @@
 import React from 'react';
 import 'sanitize.css';
 import { Slider } from '@mui/material';
-// import { makeStyles } from '@material-ui/core/styles';
+import { styled } from '@mui/system';
 import { ThemeProvider } from '@mui/material/styles';
+const CustomSlider = styled(Slider)(({ theme }) => ({
+  // Стили для трека
+  '.MuiSlider-root': {
+    backgroundColor: '#FF852D',
+    // border: 'none',
+  },
+  '& .MuiSlider-track': {
+    height: '3px',
+    borderRadius: '3px',
+    backgroundColor: '#FF852D',
+    border: 'none',
+  },
+  // Стили для заполненной части трека
+  '& .MuiSlider-rail': {
+    height: '3px',
+    borderRadius: '3px',
+    backgroundColor: '#B5B5B5',
+  },
+  // Стили для ползунка
+  '& .MuiSlider-thumb': {
+    width: '16px',
+    height: '16px',
+    // marginTop: '-6px',
+    backgroundColor: '#FFFFFF',
+    border: '2px solid #B5B5B5',
+    // boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.09)',
+    // '&:hover, &.Mui-focusVisible': {
+    //   boxShadow: '0 0 0 8px rgba(155, 38, 182, 0.2)',
+    // },
+    // '&.Mui-active': {
+    //   boxShadow: '0 0 0 14px rgba(155, 38, 182, 0.2)',
+    // },
+  },
+}));
 // // docs:
 // // - https://material-ui.com/api/slider/#css
 // // - https://material-ui.com/styles/advanced/#makestyles-withstyles-styled
-const useStyles = ThemeProvider(
-  {
-    track: {
-      color: '#8f23b3',
-      height: '3px',
-      borderRadius: '3px',
-    },
-    rail: {
-      opacity: 1,
-      backgroundColor: '#e6e9ea',
-      height: '3px',
-      borderRadius: '3px',
-    },
-    thumb: {
-      color: 'white',
-      width: '1rem',
-      height: '1rem',
-      marginTop: '-6px',
-      border: '2px solid #8f23b3',
-      boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.09)',
-      '&$focusVisible,&:hover': {
-        boxShadow: '0 0 0 8px rgba(155, 38, 182, 0.2)',
-      },
-      '&$active': {
-        boxShadow: '0 0 0 14px rgba(155, 38, 182, 0.2)',
-      },
-    },
-    // don't remove the following lines
-    focusVisible: {},
-    active: {},
-  },
-  { name: 'MuiSlider' }
-);
+// const useStyles = ThemeProvider(
+//   {
+//     track: {
+//       color: '#8f23b3',
+//       height: '3px',
+//       borderRadius: '3px',
+//     },
+//     rail: {
+//       opacity: 1,
+//       backgroundColor: '#e6e9ea',
+//       height: '3px',
+//       borderRadius: '3px',
+//     },
+//     thumb: {
+//       color: 'white',
+//       width: '1rem',
+//       height: '1rem',
+//       marginTop: '-6px',
+//       border: '2px solid #8f23b3',
+//       boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.09)',
+//       '&$focusVisible,&:hover': {
+//         boxShadow: '0 0 0 8px rgba(155, 38, 182, 0.2)',
+//       },
+//       '&$active': {
+//         boxShadow: '0 0 0 14px rgba(155, 38, 182, 0.2)',
+//       },
+//     },
+//     // don't remove the following lines
+//     focusVisible: {},
+//     active: {},
+//   },
+//   { name: 'MuiSlider' }
+// );
 
 export const Filters = () => {
   const [val, setVal] = React.useState({ min: 0, max: 100 });
@@ -194,7 +228,7 @@ export const Filters = () => {
       <p>Ціна</p>
       <div>
         <div>
-          <Slider
+          <CustomSlider
             //disabled
             // classes={classes}
             step={1}
@@ -214,8 +248,8 @@ export const Filters = () => {
             onChange={e => setVal2([Number(e.target.value), val2[1]])}
           />
           <input
-            type="number"
-            min="0"
+            // type="number"
+            min=""
             max="2300"
             value={val2[1]}
             onChange={e => {

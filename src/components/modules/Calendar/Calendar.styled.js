@@ -8,6 +8,7 @@ export const CalendarBox = styled.div`
   box-shadow: 0px 0px 200px 30px rgba(199, 103, 56, 0.2);
   border-radius: 12px;
   padding: 0px 0px 20px 0px;
+  margin-bottom: 200px;
 `;
 
 export const CalendarDisplayListDays = styled.ul`

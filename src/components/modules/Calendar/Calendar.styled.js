@@ -7,20 +7,53 @@ export const CalendarBox = styled.div`
   background: #030305;
   box-shadow: 0px 0px 200px 30px rgba(199, 103, 56, 0.2);
   border-radius: 12px;
+  padding: 0px 0px 20px 0px;
 `;
 
-export const CalendarDaysList = styled.ul`
+export const CalendarDisplayListDays = styled.ul`
   display: grid;
-  padding: 8px 35px 20px 35px;
+
   justify-content: center;
   grid-template-columns: 158px 158px 158px 158px 158px 158px 158px;
   gap: 4px;
 `;
 
-export const NamesOfColums = styled(CalendarDaysList)`
-  padding: 20px 0px 0px 0px;
-  align-items: center;
-  text-align: center;
+export const CalendarDisplayListHours = styled.ul`
+  display: grid;
+  padding: 0px 0px 0px 24px;
+  justify-content: center;
+  grid-template-columns: 158px 158px 158px 158px 158px 158px 158px;
+  gap: 4px;
+  height: 596px;
+  width: 1184px;
+  overflow: scroll;
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 0px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #b5b5b520;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #b5b5b5;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: none;
+  }
+`;
+
+export const NamesOfColums = styled.ul`
+  display: grid;
+  padding: 20px 0px 4px 0px;
+  justify-content: center;
+  grid-template-columns: 158px 158px 158px 158px 158px 158px 158px;
+  gap: 4px;
 `;
 
 export const ColumnHead = styled.li`
@@ -34,13 +67,23 @@ export const ColumnName = styled.p`
   font-weight: 700;
   font-size: 16px;
   line-height: 1.25;
-  width: fit-content;
+  padding-bottom: 20px;
+
+  justify-content: center;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
 
   display: flex;
   align-items: center;
   text-align: center;
 
   color: #ffffff;
+`;
+
+export const ColumnNameActive = styled(ColumnName)`
+  outline: 1.5px solid #ff852d;
+  color: #ff852d;
 `;
 
 export const ControlPanel = styled.div`

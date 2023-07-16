@@ -1,9 +1,10 @@
 import moment from 'moment/moment';
 import {
   CalendarBox,
-  CalendarDaysList,
+  CalendarDisplayListDays,
   ColumnHead,
   ColumnName,
+  ColumnNameActive,
   NamesOfColums,
   ControlPanel,
   LeftIc,
@@ -16,9 +17,11 @@ import {
   ModeListItem,
   ModeName,
   CurrentMode,
+  CalendarDisplayListHours,
 } from './Calendar.styled';
-import { CalendarListItem } from './CalendarListItem/CalendarListItem';
+import { CalendarListItemDay } from './CalendarListItemDay/CalendarListItemDay';
 import { useEffect, useState } from 'react';
+import { CalendarListItemHour } from './CalendarListItemHour/CalendarListItemHour';
 moment.updateLocale('en', { week: { dow: 1 } });
 
 export function Calendar() {
@@ -54,7 +57,9 @@ export function Calendar() {
     setMonth(today.clone().format('MMM'));
     setStartDay(today.clone().startOf('month').startOf('week'));
     setEndDay(today.clone().endOf('month').endOf('week'));
+
     setDate(today.clone().format('Y')); // eslint-disable-next-line
+    setCurrentWeek(today.week());
   }, [today]);
 
   const monthNameTranslation = month => {
@@ -101,13 +106,19 @@ export function Calendar() {
     }
   };
 
-  const monthController = e => {
+  const controller = e => {
     switch (e.currentTarget.id) {
       case 'monthDecrement':
         setToday(prev => prev.clone().subtract(1, 'month'));
         break;
       case 'monthIncrement':
         setToday(prev => prev.clone().add(1, 'month'));
+        break;
+      case 'weekDecrement':
+        setToday(prev => prev.clone().subtract(7, 'days'));
+        break;
+      case 'weekIncrement':
+        setToday(prev => prev.clone().add(7, 'days'));
         break;
 
       default:
@@ -146,8 +157,8 @@ export function Calendar() {
   };
 
   //  week
-
-  const [currentWeek, setCurrentWeek] = useState(moment().week());
+  const activeDay = moment();
+  const [currentWeek, setCurrentWeek] = useState(today.week());
   const weekDaysArr = [];
   const startWeekDay = moment().week(currentWeek).weekday(0);
   while (!startWeekDay.isAfter(moment().week(currentWeek).weekday(6))) {
@@ -155,18 +166,40 @@ export function Calendar() {
     startWeekDay.add(1, 'day');
   }
   console.log(weekDaysArr);
+  console.log(
+    today.format('YYYY'),
+    today.format('M'),
+    today.format('D'),
+    weekDaysArr[6].format('YYYY'),
+    weekDaysArr[6].format('M'),
+    weekDaysArr[6].format('D')
+  );
 
   return (
     <>
       <ControlPanel>
         <SwitchPanel>
-          <MonthCounterBtn id="monthDecrement" onClick={monthController}>
-            <LeftIc />
-          </MonthCounterBtn>
-          <MonthName>{`${month} ${date}`}</MonthName>
-          <MonthCounterBtn id="monthIncrement" onClick={monthController}>
-            <RightIc />
-          </MonthCounterBtn>
+          {calendarMode === 'month' ? (
+            <>
+              <MonthCounterBtn id="monthDecrement" onClick={controller}>
+                <LeftIc />
+              </MonthCounterBtn>
+              <MonthName>{`${month} ${date}`}</MonthName>
+              <MonthCounterBtn id="monthIncrement" onClick={controller}>
+                <RightIc />
+              </MonthCounterBtn>
+            </>
+          ) : (
+            <>
+              <MonthCounterBtn id="weekDecrement" onClick={controller}>
+                <LeftIc />
+              </MonthCounterBtn>
+              <MonthName>{`${month} ${date}`}</MonthName>
+              <MonthCounterBtn id="weekIncrement" onClick={controller}>
+                <RightIc />
+              </MonthCounterBtn>
+            </>
+          )}
         </SwitchPanel>
         <ModeSwitcher onClick={showModesOperator}>
           <CurrentMode>
@@ -187,54 +220,123 @@ export function Calendar() {
       <CalendarBox>
         <NamesOfColums>
           <ColumnHead>
-            <ColumnName>
-              ПН <br />
-              {calendarMode === 'week' ? weekDaysArr[0].format('D') : null}
-            </ColumnName>
+            {calendarMode === 'week' &&
+            activeDay.format('YYYY') === weekDaysArr[0].format('YYYY') &&
+            activeDay.format('M') === weekDaysArr[0].format('M') &&
+            activeDay.format('D') === weekDaysArr[0].format('D') ? (
+              <ColumnNameActive>
+                ПН <br />
+                {calendarMode === 'week' ? weekDaysArr[0].format('D') : null}
+              </ColumnNameActive>
+            ) : (
+              <ColumnName>
+                ПН <br />
+                {calendarMode === 'week' ? weekDaysArr[0].format('D') : null}
+              </ColumnName>
+            )}
           </ColumnHead>
           <ColumnHead>
-            <ColumnName>
-              ВТ
-              <br />
-              {calendarMode === 'week' ? weekDaysArr[1].format('D') : null}
-            </ColumnName>
+            {calendarMode === 'week' &&
+            activeDay.format('YYYY') === weekDaysArr[1].format('YYYY') &&
+            activeDay.format('M') === weekDaysArr[1].format('M') &&
+            activeDay.format('D') === weekDaysArr[1].format('D') ? (
+              <ColumnNameActive>
+                ВТ <br />
+                {calendarMode === 'week' ? weekDaysArr[1].format('D') : null}
+              </ColumnNameActive>
+            ) : (
+              <ColumnName>
+                ВТ <br />
+                {calendarMode === 'week' ? weekDaysArr[1].format('D') : null}
+              </ColumnName>
+            )}
           </ColumnHead>
           <ColumnHead>
-            <ColumnName>
-              СР <br />
-              {calendarMode === 'week' ? weekDaysArr[2].format('D') : null}
-            </ColumnName>
+            {calendarMode === 'week' &&
+            activeDay.format('YYYY') === weekDaysArr[2].format('YYYY') &&
+            activeDay.format('M') === weekDaysArr[2].format('M') &&
+            activeDay.format('D') === weekDaysArr[2].format('D') ? (
+              <ColumnNameActive>
+                СР <br />
+                {calendarMode === 'week' ? weekDaysArr[2].format('D') : null}
+              </ColumnNameActive>
+            ) : (
+              <ColumnName>
+                СР <br />
+                {calendarMode === 'week' ? weekDaysArr[2].format('D') : null}
+              </ColumnName>
+            )}
           </ColumnHead>
           <ColumnHead>
-            <ColumnName>
-              ЧТ <br />
-              {calendarMode === 'week' ? weekDaysArr[3].format('D') : null}
-            </ColumnName>
+            {calendarMode === 'week' &&
+            activeDay.format('YYYY') === weekDaysArr[3].format('YYYY') &&
+            activeDay.format('M') === weekDaysArr[3].format('M') &&
+            activeDay.format('D') === weekDaysArr[3].format('D') ? (
+              <ColumnNameActive>
+                ЧТ <br />
+                {calendarMode === 'week' ? weekDaysArr[3].format('D') : null}
+              </ColumnNameActive>
+            ) : (
+              <ColumnName>
+                ЧТ <br />
+                {calendarMode === 'week' ? weekDaysArr[3].format('D') : null}
+              </ColumnName>
+            )}
           </ColumnHead>
           <ColumnHead>
-            <ColumnName>
-              ПТ <br />
-              {calendarMode === 'week' ? weekDaysArr[4].format('D') : null}
-            </ColumnName>
+            {calendarMode === 'week' &&
+            activeDay.format('YYYY') === weekDaysArr[4].format('YYYY') &&
+            activeDay.format('M') === weekDaysArr[4].format('M') &&
+            activeDay.format('D') === weekDaysArr[4].format('D') ? (
+              <ColumnNameActive>
+                ПТ <br />
+                {calendarMode === 'week' ? weekDaysArr[4].format('D') : null}
+              </ColumnNameActive>
+            ) : (
+              <ColumnName>
+                ПТ <br />
+                {calendarMode === 'week' ? weekDaysArr[4].format('D') : null}
+              </ColumnName>
+            )}
           </ColumnHead>
           <ColumnHead>
-            <ColumnName>
-              СБ <br />
-              {calendarMode === 'week' ? weekDaysArr[5].format('D') : null}
-            </ColumnName>
+            {calendarMode === 'week' &&
+            activeDay.format('YYYY') === weekDaysArr[5].format('YYYY') &&
+            activeDay.format('M') === weekDaysArr[5].format('M') &&
+            activeDay.format('D') === weekDaysArr[5].format('D') ? (
+              <ColumnNameActive>
+                СБ <br />
+                {calendarMode === 'week' ? weekDaysArr[5].format('D') : null}
+              </ColumnNameActive>
+            ) : (
+              <ColumnName>
+                СБ <br />
+                {calendarMode === 'week' ? weekDaysArr[5].format('D') : null}
+              </ColumnName>
+            )}
           </ColumnHead>
           <ColumnHead>
-            <ColumnName>
-              НД <br />
-              {calendarMode === 'week' ? weekDaysArr[6].format('D') : null}
-            </ColumnName>
+            {calendarMode === 'week' &&
+            activeDay.format('YYYY') === weekDaysArr[6].format('YYYY') &&
+            activeDay.format('M') === weekDaysArr[6].format('M') &&
+            activeDay.format('D') === weekDaysArr[6].format('D') ? (
+              <ColumnNameActive>
+                НД <br />
+                {calendarMode === 'week' ? weekDaysArr[6].format('D') : null}
+              </ColumnNameActive>
+            ) : (
+              <ColumnName>
+                НД <br />
+                {calendarMode === 'week' ? weekDaysArr[6].format('D') : null}
+              </ColumnName>
+            )}
           </ColumnHead>
         </NamesOfColums>
         {calendarMode === 'month' ? (
-          <CalendarDaysList>
+          <CalendarDisplayListDays>
             {calendar.map(day => {
               return (
-                <CalendarListItem
+                <CalendarListItemDay
                   key={day.format('DDD')}
                   day={day}
                   numberOfChoosedMonth={today.month()}
@@ -242,8 +344,12 @@ export function Calendar() {
                 />
               );
             })}
-          </CalendarDaysList>
-        ) : null}
+          </CalendarDisplayListDays>
+        ) : (
+          <CalendarDisplayListHours>
+            <CalendarListItemHour />
+          </CalendarDisplayListHours>
+        )}
       </CalendarBox>
     </>
   );

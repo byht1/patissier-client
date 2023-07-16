@@ -4,10 +4,10 @@ import {
   Day,
   Li,
   NotActiveMonthLi,
-} from './CalendarListItem.styled';
+} from './CalendarListItemDay.styled';
 import { useState } from 'react';
 
-export function CalendarListItem({
+export function CalendarListItemDay({
   day,
   numberOfChoosedMonth,
   numberOfChoosedYear,

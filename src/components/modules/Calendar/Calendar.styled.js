@@ -44,22 +44,76 @@ export const ColumnName = styled.p`
 `;
 
 export const ControlPanel = styled.div`
-  margin-top: 40px;
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const MonthCounterBtn = styled.button`
   background-color: inherit;
-  padding: 4px;
-  margin-left: 20px;
+  /* padding: 4px; */
+  /* margin-left: 20px;
 
   &:first-child {
     margin-left: 0px;
     margin-right: 20px;
-  }
+  } */
 `;
 
-export const MonthName = styled.span``;
+export const MonthName = styled.span`
+  text-align: center;
+`;
 
 export const LeftIc = styled(leftArrowSVG)``;
 
 export const RightIc = styled(rightArrowSVG)``;
+
+export const SwitchPanel = styled.span`
+  display: grid;
+  grid-template-columns: 45px 180px 45px;
+`;
+
+export const ModeSwitcher = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 0px;
+  gap: 12px;
+
+  width: 180px;
+  height: 56px;
+
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+`;
+
+export const ModeList = styled.ul`
+  top: 57px;
+  position: absolute;
+  border-radius: 12px;
+`;
+
+export const ModeListItem = styled.li`
+  margin-top: 1px;
+  &:first-child {
+    margin-top: 0px;
+  }
+`;
+
+export const ModeName = styled.p`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 57px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  &:hover {
+    background-color: #ff852d9c;
+    border-radius: 12px;
+  }
+`;
+
+export const CurrentMode = styled.span``;

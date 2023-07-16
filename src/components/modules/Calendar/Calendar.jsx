@@ -10,20 +10,31 @@ import {
   RightIc,
   MonthCounterBtn,
   MonthName,
+  SwitchPanel,
+  ModeSwitcher,
+  ModeList,
+  ModeListItem,
+  ModeName,
+  CurrentMode,
 } from './Calendar.styled';
 import { CalendarListItem } from './CalendarListItem/CalendarListItem';
 import { useEffect, useState } from 'react';
 moment.updateLocale('en', { week: { dow: 1 } });
 
 export function Calendar() {
+  const [calendarMode, setCalendarMode] = useState('month');
   const [today, setToday] = useState(moment());
   const [month, setMonth] = useState(today.clone().format('MMM'));
+  const [showModes, setShowModes] = useState(false);
+
   const [startDay, setStartDay] = useState(
     today.clone().startOf('month').startOf('week')
   );
+
   const [endDay, setEndDay] = useState(
     today.clone().endOf('month').endOf('week')
   );
+
   const [date, setDate] = useState(today.clone().format('Y'));
 
   const calendar = [];
@@ -43,8 +54,7 @@ export function Calendar() {
     setMonth(today.clone().format('MMM'));
     setStartDay(today.clone().startOf('month').startOf('week'));
     setEndDay(today.clone().endOf('month').endOf('week'));
-    setDate(today.clone().format('Y'));
-    console.log('today===', today.format('M'));
+    setDate(today.clone().format('Y')); // eslint-disable-next-line
   }, [today]);
 
   const monthNameTranslation = month => {
@@ -105,53 +115,135 @@ export function Calendar() {
     }
   };
 
+  const showModesOperator = () => {
+    switch (showModes) {
+      case true:
+        setShowModes(false);
+        break;
+
+      case false:
+        setShowModes(true);
+        break;
+
+      default:
+        break;
+    }
+  };
+
+  const modeToggler = e => {
+    switch (e.target.innerText) {
+      case 'Mісяць':
+        setCalendarMode('month');
+        break;
+
+      case 'Тиждень':
+        setCalendarMode('week');
+        break;
+
+      default:
+        break;
+    }
+  };
+
+  //  week
+
+  const [currentWeek, setCurrentWeek] = useState(moment().week());
+  const weekDaysArr = [];
+  const startWeekDay = moment().week(currentWeek).weekday(0);
+  while (!startWeekDay.isAfter(moment().week(currentWeek).weekday(6))) {
+    weekDaysArr.push(startWeekDay.clone());
+    startWeekDay.add(1, 'day');
+  }
+  console.log(weekDaysArr);
+
   return (
     <>
       <ControlPanel>
-        <MonthCounterBtn id="monthDecrement" onClick={monthController}>
-          <LeftIc />
-        </MonthCounterBtn>
-        <MonthName>{`${month} ${date}`}</MonthName>
-        <MonthCounterBtn id="monthIncrement" onClick={monthController}>
-          <RightIc />
-        </MonthCounterBtn>
+        <SwitchPanel>
+          <MonthCounterBtn id="monthDecrement" onClick={monthController}>
+            <LeftIc />
+          </MonthCounterBtn>
+          <MonthName>{`${month} ${date}`}</MonthName>
+          <MonthCounterBtn id="monthIncrement" onClick={monthController}>
+            <RightIc />
+          </MonthCounterBtn>
+        </SwitchPanel>
+        <ModeSwitcher onClick={showModesOperator}>
+          <CurrentMode>
+            {calendarMode === 'month' ? 'Місяць' : 'Тиждень'}
+          </CurrentMode>
+          {showModes ? (
+            <ModeList onClick={modeToggler}>
+              <ModeListItem>
+                <ModeName modeName="month">Mісяць</ModeName>
+              </ModeListItem>
+              <ModeListItem>
+                <ModeName modeName="week">Тиждень</ModeName>
+              </ModeListItem>
+            </ModeList>
+          ) : null}
+        </ModeSwitcher>
       </ControlPanel>
       <CalendarBox>
         <NamesOfColums>
           <ColumnHead>
-            <ColumnName>ПН</ColumnName>
+            <ColumnName>
+              ПН <br />
+              {calendarMode === 'week' ? weekDaysArr[0].format('D') : null}
+            </ColumnName>
           </ColumnHead>
           <ColumnHead>
-            <ColumnName>ВТ</ColumnName>
+            <ColumnName>
+              ВТ
+              <br />
+              {calendarMode === 'week' ? weekDaysArr[1].format('D') : null}
+            </ColumnName>
           </ColumnHead>
           <ColumnHead>
-            <ColumnName>СР</ColumnName>
+            <ColumnName>
+              СР <br />
+              {calendarMode === 'week' ? weekDaysArr[2].format('D') : null}
+            </ColumnName>
           </ColumnHead>
           <ColumnHead>
-            <ColumnName>ЧТ</ColumnName>
+            <ColumnName>
+              ЧТ <br />
+              {calendarMode === 'week' ? weekDaysArr[3].format('D') : null}
+            </ColumnName>
           </ColumnHead>
           <ColumnHead>
-            <ColumnName>ПТ</ColumnName>
+            <ColumnName>
+              ПТ <br />
+              {calendarMode === 'week' ? weekDaysArr[4].format('D') : null}
+            </ColumnName>
           </ColumnHead>
           <ColumnHead>
-            <ColumnName>СБ</ColumnName>
+            <ColumnName>
+              СБ <br />
+              {calendarMode === 'week' ? weekDaysArr[5].format('D') : null}
+            </ColumnName>
           </ColumnHead>
           <ColumnHead>
-            <ColumnName>НД</ColumnName>
+            <ColumnName>
+              НД <br />
+              {calendarMode === 'week' ? weekDaysArr[6].format('D') : null}
+            </ColumnName>
           </ColumnHead>
         </NamesOfColums>
-        <CalendarDaysList>
-          {calendar.map(day => {
-            return (
-              <CalendarListItem
-                key={day.format('DDD')}
-                day={day}
-                numberOfChoosedMonth={today.month()}
-                numberOfChoosedYear={today.year()}
-              />
-            );
-          })}
-        </CalendarDaysList>
+        {calendarMode === 'month' ? (
+          <CalendarDaysList>
+            {calendar.map(day => {
+              return (
+                <CalendarListItem
+                  key={day.format('DDD')}
+                  day={day}
+                  numberOfChoosedMonth={today.month()}
+                  numberOfChoosedYear={today.year()}
+                />
+              );
+            })}
+          </CalendarDaysList>
+        ) : null}
       </CalendarBox>
     </>
   );

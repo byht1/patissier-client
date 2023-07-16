@@ -13,18 +13,12 @@ export function CalendarListItem({
   numberOfChoosedYear,
 }) {
   // eslint-disable-next-line
-
   const [monthNuber, setMonthNubmer] = useState(moment(day).month());
   const todayNumber = moment().format('D');
   const todayMonth = moment().month();
   const todayYear = moment().year();
   const dayNumber = day.format('D');
-  console.log(
-    'weqeqeqweqeqwewq=======',
-    monthNuber,
-    'numberOfChoosedMonth====',
-    numberOfChoosedMonth
-  );
+
   return (
     <>
       {numberOfChoosedMonth === monthNuber ? (

@@ -2,7 +2,6 @@ import styled, { keyframes, createGlobalStyle } from 'styled-components';
 import { ReactComponent as SortIcon } from '../../../../../img/products/sort.svg';
 
 export const SortingIcon = styled(SortIcon)`
-  /* background-color: var(--button-bg); */
   border-radius: 8px;
   width: 40px;
   height: 40px;
@@ -10,6 +9,16 @@ export const SortingIcon = styled(SortIcon)`
 
   & path {
     fill: ${({ color }) => color || 'none'};
+  }
+`;
+
+export const SortingIconOpen = styled(SortIcon)`
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  & path {
+    stroke: var(--accent-bg);
   }
   /* &:hover path {
     stroke: ${({ hoverColor }) => hoverColor || 'var(--accent-bg)'};

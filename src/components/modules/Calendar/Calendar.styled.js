@@ -129,8 +129,9 @@ export const ModeSwitcher = styled.div`
   width: 180px;
   height: 56px;
 
-  background: rgba(255, 255, 255, 0.05);
+  background-color: #ff852d9c;
   border-radius: 12px;
+  cursor: pointer;
 `;
 
 export const ModeList = styled.ul`

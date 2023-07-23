@@ -118,7 +118,8 @@ export const calendarFilling = (startDay, endDay, setCalendar) => {
 
 // weekDaysArrFilling наповнення масиву під назвою weekDaysArr для відобрашення сітки днів тижня при вибранному режимі тиждень
 
-export const weekDaysArrFilling = (currentWeek, setWeekDaysArr) => {
+export const weekDaysArrFilling = (today, setWeekDaysArr) => {
+  const currentWeek = today.week();
   const weekDaysArr = [];
   const startWeekDay = moment().week(currentWeek).weekday(0);
 

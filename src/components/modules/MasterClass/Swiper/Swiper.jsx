@@ -1,48 +1,40 @@
-import React from "react";
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Container} from 'components/global/Container';
-import {SwiperSlides} from './SwiperSlide';
+import { Container } from 'components/global/Container';
+import { SwiperSlides } from './SwiperSlide';
 
-import './styles.css'
+import './styles.css';
 import 'swiper/css';
 import 'swiper/css/bundle';
-import "swiper/css/pagination";
+import 'swiper/css/pagination';
 
+import { Pagination } from 'swiper';
 
-import { Pagination } from "swiper";
-
-
-export const Slider = ({startList}) => {
+export const Slider = ({ startList }) => {
   return (
- 
-      <Container> 
-      
+    <Container>
       <Swiper
-      spaceBetween={30}
-      slidesPerView={4}
-      pagination={{
+        spaceBetween={30}
+        slidesPerView={4}
+        pagination={{
           clickable: true,
         }}
         modules={[Pagination]}
         className="mySwiper"
       >
-             {startList.map(({ date, time, isOnline, _id }) =>{
-                  return(
-                      <SwiperSlide>
-                          <SwiperSlides 
-                            key = {_id}
-                            date = {date} 
-                            time={time} 
-                            isOnline={isOnline}/>
-                      </SwiperSlide>
-                  )
-              })}
-             
-          
-             
+        {startList.map(({ date, time, isOnline, _id }) => {
+          return (
+            <SwiperSlide>
+              <SwiperSlides
+                key={_id}
+                date={date}
+                time={time}
+                isOnline={isOnline}
+              />
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
-  
-   </Container> 
-  
+    </Container>
   );
 };

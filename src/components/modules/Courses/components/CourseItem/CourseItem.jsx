@@ -62,7 +62,7 @@ export const CourseItem = ({ course }) => {
               {groups[0] ? groups[0].price : '?????'} грн
             </CoursePrice>
           </Text>
-          <DetailsLink>Детальніше</DetailsLink>
+          <DetailsLink to={`/courses/${courseID}`}>Детальніше</DetailsLink>
         </Box>
       </Box>
     </CourseWrap>

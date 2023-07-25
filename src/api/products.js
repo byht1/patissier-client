@@ -68,3 +68,14 @@ export const updateProductFavorite = async (productID, action) => {
     throw error;
   }
 };
+
+export const addProductToBasket = async productID => {
+  try {
+    const { data } = await server.patch(
+      `store/order/basket/${productID}?action=add`
+    );
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};

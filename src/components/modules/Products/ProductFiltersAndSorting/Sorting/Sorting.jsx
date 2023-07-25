@@ -1,12 +1,11 @@
 import { sortingParams } from './sortingParams';
 
 import {
-  SortingIcon,
+  SortingIconOpen,
   Wrap,
   SortingList,
   SortingItem,
   SortingBtn,
-  SortFilterBox,
 } from './Sorting.styled';
 
 export const Sorting = ({ applySortMethod, sortMethod }) => {
@@ -16,10 +15,10 @@ export const Sorting = ({ applySortMethod, sortMethod }) => {
   };
 
   return (
-    <SortFilterBox borderRadius={12} width={356} position="absolute">
+    <>
       <Wrap>
         <p>{sortMethod}</p>
-        <SortingIcon />
+        <SortingIconOpen />
       </Wrap>
       <SortingList>
         {sortingParams.map(item => (
@@ -34,6 +33,6 @@ export const Sorting = ({ applySortMethod, sortMethod }) => {
           </SortingItem>
         ))}
       </SortingList>
-    </SortFilterBox>
+    </>
   );
 };

@@ -5,15 +5,12 @@ const UrlCourses = Object.freeze({
 });
 // Function for requests on the main page and all courses page:
 export const getCourses = async ({ skip, limit = 3 }) => {
-  let query;
-  if (skip === 0) {
-    query = `${UrlCourses.courses}?limit=${limit}`;
-  } else {
-    query = `${UrlCourses.courses}?skip=${skip}&limit=${limit}`;
-  }
+  const query =
+    skip === 0
+      ? `${UrlCourses.courses}?limit=${limit}`
+      : `${UrlCourses.courses}?skip=${skip}&limit=${limit}`;
   try {
     const { data } = await server.get(query);
-    const { courses } = data;
     return data;
   } catch (error) {
     throw error;
@@ -29,7 +26,6 @@ export const getCoursesByCategory = async ({ type, skip, limit = 3 }) => {
   }
   try {
     const { data } = await server.get(query);
-    const { courses } = data;
     return data;
   } catch (error) {
     throw error;

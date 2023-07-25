@@ -27,7 +27,6 @@ export const NavButton = styled(NavLink)`
   &.active {
     border-bottom: 1.5px solid ${p => p.theme.colors.at};
     color: ${p => p.theme.colors.at};
-    font-weight: 700;
     background-color: ${p => p.theme.colors.panelBg};
   }
 `;

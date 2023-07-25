@@ -4,21 +4,25 @@ import { getProductCountByCategory } from 'api/products';
 import { Box } from 'components/global/Box';
 
 import { getProductCount } from '../helpers/getProductCount';
-import { Sorting } from './Sorting/Sorting';
-import { SortingIcon } from './Sorting/Sorting.styled';
+import { Sorting } from './Sorting';
+import { Filters } from './Filters';
+import {
+  SortingIcon,
+  GlobalStyles,
+  SortFilterBox,
+} from './Sorting/Sorting.styled';
 import { FilterIcon } from './Filters/Filters.styled';
 import {
   FilterButton,
   FilterAndSortWrap,
 } from './ProductFiltersAndSorting.styled';
-import { Filters } from './Filters/Filters';
 
 export const ProductFiltersAndSorting = ({ applySortMethod, sortMethod }) => {
   const location = useLocation();
   const pathname = location.pathname.split('/')[2];
   const [productsCountArray, setProductsCountArray] = useState([]);
   const [selectedButton, setSelectedButton] = useState(null);
-  // const [sortMethod, setSortMethod] = useState(sortingParams[0]);
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleDocumentClick = event => {
     if (!event.target.closest('#sort-filter')) {
@@ -48,48 +52,48 @@ export const ProductFiltersAndSorting = ({ applySortMethod, sortMethod }) => {
 
   const onFilterSortButton = e => {
     setSelectedButton(e.currentTarget.value);
-    // console.log(e.currentTarget.value);
-    // console.log(selectedButton);
-    // if (
-    //   e.currentTarget.value !== 'filter' &&
-    //   e.currentTarget.value !== 'sorting'
-    // ) {
-    //   console.log(e.currentTarget.value);
-    //   setSelectedButton(null);
-    // }
   };
-
   return (
-    <Box
-      mb={60}
-      display="flex"
-      justifyContent="space-between"
-      alignItems="center"
-      color="t"
-      position="relative"
-    >
-      <p>
-        всього
-        <span> {getProductCount(pathname, productsCountArray)} </span>
-        варіантів
-      </p>
-      <FilterAndSortWrap>
-        <FilterButton value="filter" onClick={onFilterSortButton}>
-          <FilterIcon id="sort-filter" />
-        </FilterButton>
-        <FilterButton value="sorting" onClick={onFilterSortButton}>
-          <SortingIcon id="sort-filter" />
-        </FilterButton>
-      </FilterAndSortWrap>
-      {/* <Sorting
-        applySortMethod={applySortMethod}
-        sortMethod={sortMethod}
-      ></Sorting>
-      <Filters /> */}
-      {selectedButton === 'sorting' && (
-        <Sorting applySortMethod={applySortMethod} sortMethod={sortMethod} />
-      )}
-      {selectedButton === 'filter' && <Filters />}
-    </Box>
+    <>
+      <GlobalStyles isSelected={selectedButton !== null} />
+      <Box
+        mb={60}
+        display="flex"
+        justifyContent="space-between"
+        alignItems="center"
+        color="t"
+        position="relative"
+      >
+        <p>
+          всього
+          <span> {getProductCount(pathname, productsCountArray)} </span>
+          варіантів
+        </p>
+        <FilterAndSortWrap>
+          <FilterButton value="filter" onClick={onFilterSortButton}>
+            <FilterIcon id="sort-filter" />
+          </FilterButton>
+          <FilterButton value="sorting" onClick={onFilterSortButton}>
+            <SortingIcon id="sort-filter" />
+          </FilterButton>
+        </FilterAndSortWrap>
+        {selectedButton === 'sorting' && (
+          <SortFilterBox isSelected={selectedButton === 'sorting'}>
+            <Sorting
+              applySortMethod={applySortMethod}
+              sortMethod={sortMethod}
+            />{' '}
+          </SortFilterBox>
+        )}
+        {selectedButton === 'filter' && (
+          <SortFilterBox
+            id="sort-filter"
+            isSelected={selectedButton === 'filter'}
+          >
+            <Filters />
+          </SortFilterBox>
+        )}
+      </Box>
+    </>
   );
 };

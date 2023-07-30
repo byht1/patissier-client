@@ -7,10 +7,12 @@ import {
   modeToggler,
   calendarFilling,
   weekDaysArrFilling,
+  daysOfTheWeekTranslation,
+  nameSeterDayOfTheWeek,
 } from './lib/opreators';
 
 import {
-  CalendarBox,
+  Display,
   CalendarDisplayListDays,
   NamesOfColums,
   ControlPanel,
@@ -18,13 +20,15 @@ import {
   RightIc,
   MonthCounterBtn,
   MonthName,
-  SwitchPanel,
+  CalendarManipulate,
   ModeSwitcher,
   ModeList,
   ModeListItem,
   ModeName,
   CurrentMode,
   CalendarDisplayListHours,
+  OpenArrowIc,
+  CloseArrowIc,
 } from './Calendar.styled';
 
 import { CalendarListItemDay } from './CalendarListItemDay/CalendarListItemDay';
@@ -39,7 +43,7 @@ export function Calendar() {
   const [today, setToday] = useState(moment()); // Головний экземпляр моменту що мутується на оснві якого побудована логіка та ведуться обчислення всього календю в не залежності від вибраного режиму "місяць"/"тиждень"
   const [month, setMonth] = useState(today.clone().format('MMM')); // Забирає з моменту назву місяцю для відображення
   const [showModes, setShowModes] = useState(false); // Переключає випадашку зміни режиму роботи календаря "місяць"/"тиждень"
-  const [calendar, setCalendar] = useState([]); // Масив в днів для відображення сітки днів
+  const [calendar, setCalendar] = useState([]); // Масив з днів для відображення сітки днів
 
   const [startDay, setStartDay] = useState(
     today.clone().startOf('month').startOf('week')
@@ -72,7 +76,7 @@ export function Calendar() {
   return (
     <>
       <ControlPanel>
-        <SwitchPanel>
+        <CalendarManipulate>
           {calendarMode === 'month' ? (
             <>
               <MonthCounterBtn
@@ -114,7 +118,7 @@ export function Calendar() {
               </MonthCounterBtn>
             </>
           )}
-        </SwitchPanel>
+        </CalendarManipulate>
         <ModeSwitcher
           onClick={() => {
             showModesOperator(showModes, setShowModes);
@@ -122,6 +126,7 @@ export function Calendar() {
         >
           <CurrentMode>
             {calendarMode === 'month' ? 'Місяць' : 'Тиждень'}
+            {showModes ? <CloseArrowIc /> : <OpenArrowIc />}
           </CurrentMode>
           {showModes ? (
             <ModeList
@@ -129,62 +134,38 @@ export function Calendar() {
                 modeToggler(e, setCalendarMode);
               }}
             >
-              <ModeListItem>
-                <ModeName modeName="month">Mісяць</ModeName>
-              </ModeListItem>
-              <ModeListItem>
-                <ModeName modeName="week">Тиждень</ModeName>
-              </ModeListItem>
+              {calendarMode === 'week' ? (
+                <ModeListItem>
+                  <ModeName modeName="month">Mісяць</ModeName>
+                </ModeListItem>
+              ) : null}
+              {calendarMode === 'month' ? (
+                <ModeListItem>
+                  <ModeName modeName="week">Тиждень</ModeName>
+                </ModeListItem>
+              ) : null}
             </ModeList>
           ) : null}
         </ModeSwitcher>
       </ControlPanel>
-      <CalendarBox>
+      <Display>
         <NamesOfColums>
-          <>
-            <ColumnDayName
-              name={'ПН'}
-              calendarMode={calendarMode}
-              activeDay={activeDay}
-              weekDay={weekDaysArr[0]}
-            />
-            <ColumnDayName
-              name={'ВТ'}
-              calendarMode={calendarMode}
-              activeDay={activeDay}
-              weekDay={weekDaysArr[1]}
-            />
-            <ColumnDayName
-              name={'СР'}
-              calendarMode={calendarMode}
-              activeDay={activeDay}
-              weekDay={weekDaysArr[2]}
-            />
-            <ColumnDayName
-              name={'ЧТ'}
-              calendarMode={calendarMode}
-              activeDay={activeDay}
-              weekDay={weekDaysArr[3]}
-            />
-            <ColumnDayName
-              name={'ПТ'}
-              calendarMode={calendarMode}
-              activeDay={activeDay}
-              weekDay={weekDaysArr[4]}
-            />
-            <ColumnDayName
-              name={'СБ'}
-              calendarMode={calendarMode}
-              activeDay={activeDay}
-              weekDay={weekDaysArr[5]}
-            />
-            <ColumnDayName
-              name={'НД'}
-              calendarMode={calendarMode}
-              activeDay={activeDay}
-              weekDay={weekDaysArr[6]}
-            />
-          </>
+          {weekDaysArr.length !== 0
+            ? weekDaysArr.map(day => {
+                return (
+                  <ColumnDayName
+                    key={day.format('dd')}
+                    name={daysOfTheWeekTranslation(
+                      day.format('dd'),
+                      nameSeterDayOfTheWeek
+                    )}
+                    calendarMode={calendarMode}
+                    activeDay={activeDay}
+                    weekDay={day}
+                  />
+                );
+              })
+            : null}
         </NamesOfColums>
         {calendarMode === 'month' ? (
           <CalendarDisplayListDays>
@@ -206,7 +187,7 @@ export function Calendar() {
             <CalendarListItemHour />
           </CalendarDisplayListHours>
         )}
-      </CalendarBox>
+      </Display>
     </>
   );
 }

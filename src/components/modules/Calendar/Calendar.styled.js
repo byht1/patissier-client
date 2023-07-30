@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import { ReactComponent as rightArrowSVG } from '../../../img/svg/arrowToRight.svg';
 import { ReactComponent as leftArrowSVG } from '../../../img/svg/arrowToLeft.svg';
+import { ReactComponent as openArrowSVG } from '../../../img/svg/openArrowForToogleMenu.svg';
+import { ReactComponent as closeArrowSVG } from '../../../img/svg/closeArrowForToogleMenu.svg';
 
-export const CalendarBox = styled.div`
+export const Display = styled.div`
   margin-top: 40px;
   background: #030305;
   box-shadow: 0px 0px 200px 30px rgba(199, 103, 56, 0.2);
@@ -109,11 +111,23 @@ export const MonthName = styled.span`
   text-align: center;
 `;
 
-export const LeftIc = styled(leftArrowSVG)``;
+export const LeftIc = styled(leftArrowSVG)`
+  &:hover {
+    path {
+      stroke: #ff852d;
+    }
+  }
+`;
 
-export const RightIc = styled(rightArrowSVG)``;
+export const RightIc = styled(rightArrowSVG)`
+  &:hover {
+    path {
+      stroke: #ff852d;
+    }
+  }
+`;
 
-export const SwitchPanel = styled.span`
+export const CalendarManipulate = styled.span`
   display: grid;
   grid-template-columns: 45px 180px 45px;
 `;
@@ -138,12 +152,17 @@ export const ModeList = styled.ul`
   top: 57px;
   position: absolute;
   border-radius: 12px;
+  background-color: #c3c3c38a;
 `;
 
 export const ModeListItem = styled.li`
   margin-top: 1px;
   &:first-child {
     margin-top: 0px;
+  }
+  &:hover {
+    background-color: #ff852d9c;
+    border-radius: 12px;
   }
 `;
 
@@ -155,10 +174,16 @@ export const ModeName = styled.p`
   height: 57px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  &:hover {
-    background-color: #ff852d9c;
-    border-radius: 12px;
-  }
 `;
 
-export const CurrentMode = styled.span``;
+export const CurrentMode = styled.span`
+  display: flex;
+`;
+
+export const OpenArrowIc = styled(openArrowSVG)`
+  margin-left: 12px;
+`;
+
+export const CloseArrowIc = styled(closeArrowSVG)`
+  margin-left: 12px;
+`;

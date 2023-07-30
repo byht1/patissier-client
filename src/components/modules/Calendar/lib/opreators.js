@@ -85,6 +85,32 @@ export const monthNameTranslation = (month, setMonth) => {
   }
 };
 
+export const nameSeterDayOfTheWeek = day => {
+  return day;
+};
+
+export const daysOfTheWeekTranslation = (day, nameSeterDayOfTheWeek) => {
+  switch (day) {
+    case 'Mo':
+      return nameSeterDayOfTheWeek('ПН');
+    case 'Tu':
+      return nameSeterDayOfTheWeek('ВТ');
+    case 'We':
+      return nameSeterDayOfTheWeek('СР');
+    case 'Th':
+      return nameSeterDayOfTheWeek('ЧТ');
+    case 'Fr':
+      return nameSeterDayOfTheWeek('ПТ');
+    case 'Sa':
+      return nameSeterDayOfTheWeek('СБ');
+    case 'Su':
+      return nameSeterDayOfTheWeek('НД');
+
+    default:
+      break;
+  }
+};
+
 // modeToggler - перемикач режиму роботи календаря "month"/"week"
 
 export const modeToggler = (e, setCalendarMode) => {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Hero } from 'components/modules/hero/hero';
+import { Hero } from 'components/modules/Hero';
 import { Statistics } from 'components/modules/Statistics/Statistics';
 import { Greetings } from 'components/modules/AboutUs/Greetings';
 import { CoursesSection as Courses } from 'components/modules/Courses/CoursesSection';

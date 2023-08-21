@@ -21,12 +21,13 @@ export const ImageWrap = styled.section`
 `;
 
 export const NavLinkStyled = styled(NavLink)`
-  color: ${p => p.theme.colors.bg};
+  display: block;
   width: 216px;
   padding: 16px 57.5px;
   font-weight: 700;
   font-size: 16px;
   border-radius: 12px;
+  color: ${p => p.theme.colors.bg};
   background-color: ${p => p.theme.colors.at};
   transition: var(--transition-bg);
   &:focus,

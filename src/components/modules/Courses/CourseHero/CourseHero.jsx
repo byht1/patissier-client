@@ -6,7 +6,7 @@ export const CourseHero = () => {
   return (
     <ImageWrap>
       <Container pt={114} pb={100}>
-        <H1 mb={60}>Станьте кондитером!</H1>
+        <H1 mb={40}>Станьте кондитером!</H1>
         <Text
           mb={60}
           width={460}

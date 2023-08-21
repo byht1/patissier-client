@@ -1,0 +1,1 @@
+export { CourseListContainer } from './CourseListContainer';

@@ -24,15 +24,15 @@ export const CourseItem = ({ course }) => {
   } = course;
 
   return (
-    <CourseWrap key={courseID}>
+    <CourseWrap>
       <ImageWrap>
         <CourseImg src={images[0]} alt="Фото десерту" />
       </ImageWrap>
-      <Box p={21}>
+      <Box p={6}>
         <Text
           textAlign="center"
           size={20}
-          mb={12}
+          mb={8}
           weight={600}
           family="montserrat"
         >
@@ -41,18 +41,18 @@ export const CourseItem = ({ course }) => {
         <Text textAlign="center" mb={20} color="t" lh="big">
           {type === 'courses' ? 'Курс' : 'Майстер-клас'}
         </Text>
-        <Text color="t" lh="big" mb={17}>
+        <Text color="t" lh="big" mb={12}>
           {previewText}
         </Text>
-        <Text size={16} weight={700} mb={15}>
+        <Text size={16} weight={700} mb={8} lh="body">
           Група:
           <CourseInfo> &nbsp;{totalPlaces} осіб</CourseInfo>
         </Text>
-        <Text size={16} weight={700}>
+        <Text size={16} weight={700} lh="body">
           Термін: <CourseInfo>&nbsp;{courseDuration} </CourseInfo>
         </Text>
         <Box
-          mt={27}
+          mt={5}
           display="flex"
           justifyContent="space-between"
           alignItems="center"

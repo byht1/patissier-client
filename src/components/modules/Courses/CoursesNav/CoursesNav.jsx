@@ -1,4 +1,4 @@
-import { NavList, NavButton } from './CourseNav.styled';
+import { NavList, NavButton } from './CoursesNav.styled';
 
 export const CoursesNav = () => {
   return (
@@ -6,8 +6,6 @@ export const CoursesNav = () => {
       display="flex"
       alignItems="center"
       justifyContent="space-between"
-      width={588}
-      m={'0 auto 200px'}
     >
       <li>
         <NavButton to="" end>

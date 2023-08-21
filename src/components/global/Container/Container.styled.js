@@ -5,6 +5,7 @@ export const ContainerBox = styled(Box)`
   width: 100%;
   padding: 0 12px;
   margin: 0 auto;
+  overflow: hidden;
 
   @media (min-width: 480px) {
     width: 480px;

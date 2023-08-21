@@ -3,8 +3,8 @@ import { server } from './basic';
 const UrlCourses = Object.freeze({
   courses: '/courses',
 });
-// Function for requests on the main page and all courses page:
-export const getCourses = async ({ skip, limit = 3 }) => {
+
+export const getAllCourses = async ({ skip, limit = 3 }) => {
   const query =
     skip === 0
       ? `${UrlCourses.courses}?limit=${limit}`

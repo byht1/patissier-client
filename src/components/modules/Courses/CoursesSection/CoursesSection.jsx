@@ -1,11 +1,18 @@
 import React from 'react';
-
-import { CourseList } from '../CourseList';
+import { getAllCourses } from 'api';
+import { useQuery } from '@tanstack/react-query';
+import { CourseList } from '../common/CourseList';
 
 import { Container, ReadMoreLink, Section, TitleH2 } from 'components/global';
 import { TopText } from './CoursesSection.styled';
 
 export const CoursesSection = () => {
+
+  const { data, isLoading, isError, isSuccess } = useQuery({
+    queryKey: ['courses'],
+    queryFn: () => getAllCourses({ skip: 0 }),
+  });
+
   return (
     <Section>
       <Container display="flex" flexDirection="column" alignItems="center">
@@ -14,7 +21,9 @@ export const CoursesSection = () => {
           Перегляньте найближчі події, авторські курси та майстер-класи
         </TopText>
         <ReadMoreLink to="/courses">Дивитись усі заходи</ReadMoreLink>
-        <CourseList />
+        {isLoading && <p>Завантаження курсів...</p>}
+        {isError && <p>Виникла помилка. Спробуйте пізніше</p>}
+        {isSuccess && <CourseList courses={data.courses} />}
       </Container>
     </Section>
   );

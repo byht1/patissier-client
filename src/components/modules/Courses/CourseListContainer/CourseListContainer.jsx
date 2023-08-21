@@ -1,17 +1,17 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { useInfiniteQuery } from '@tanstack/react-query';
-import { getCourses, getCoursesByCategory } from 'api';
+import { getAllCourses, getCoursesByCategory } from 'api';
 
-import { CourseItem } from '../CourseItem';
-import { getCoursesCategory } from '../../helpers/getCoursesCategory';
-import { getLoadMoreButtonProps } from '../../helpers/getLoadMoreButtonProps';
+import { getCoursesCategory } from '../helpers/getCoursesCategory';
+import { getLoadMoreButtonProps } from '../helpers/getLoadMoreButtonProps';
 
 import { Box } from 'components/global/Box';
 import { LoadMoreButton } from 'components/global/LoadMoreBtn';
-import { CourseListWrap } from './CourseList.styled';
+import { CourseListWrap } from './CourseListContainer.styled';
+import { CourseList } from '../common/CourseList';
 
-export const CourseList = () => {
+export const CourseListContainer = () => {
   const location = useLocation();
   const pathname = location.pathname.split('/')[2];
   let hits = 0;
@@ -29,7 +29,7 @@ export const CourseList = () => {
     ['courses', pathname],
     ({ pageParam = 0 }) => {
       if (!pathname) {
-        return getCourses({
+        return getAllCourses({
           skip: pageParam,
         });
       } else {
@@ -55,13 +55,11 @@ export const CourseList = () => {
       {isSuccess && (
         <>
           <CourseListWrap>
-            {data.pages.map((group, i) => {
-              hits = group.totalHits;
+            {data.pages.map((courseSet, i) => {
+              hits = courseSet.totalHits;
               return (
                 <React.Fragment key={i}>
-                  {group.courses.map(course => {
-                    return <CourseItem course={course} key={course._id} />;
-                  })}
+                  <CourseList courses={courseSet.courses} />
                 </React.Fragment>
               );
             })}

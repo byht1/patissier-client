@@ -8,7 +8,6 @@ export const SectionBox = styled.section`
   }
 
   @media (min-width: 1224px) {
-    padding-top: 100px;
     padding-bottom: 100px;
   }
 `;

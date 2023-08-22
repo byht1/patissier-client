@@ -1,10 +1,9 @@
 import React from 'react';
-import { TitleH1, Text } from 'components/global/text';
-import { Button } from 'components/global/button';
-import { Box } from 'components/global/Box';
+import { HeroContainer, HeroImage, HeroInfo, ImgBlock } from './Hero.styled';
+import { Box, Button, Text, TitleH1 } from 'components/global';
+
 import Image from 'img/hero/hero.jpg';
 
-import { HeroImage, ImgBlock, HeroInfo, HeroContainer } from './Hero.styled';
 export const Hero = () => {
   return (
     <HeroContainer>

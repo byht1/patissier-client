@@ -8,6 +8,7 @@ import { Reviews } from 'components/modules/Reviews';
 import { Insta } from 'components/modules/Insta';
 import { Footer } from 'components/modules/Footer';
 
+
 export default function Home() {
   return (
     <>

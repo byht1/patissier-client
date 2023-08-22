@@ -1,6 +1,9 @@
-import { Container } from 'components/global';
+// import { Container } from 'components/global';
 import { StatisticItem } from './StatisticItem';
-import { StaticSection, StatisticList } from './Statistics.styled';
+import {
+  StaticSection,
+  StatisticContainer, StatisticList,
+} from './Statistics.styled';
 
 import statistics1 from 'img/statistics/statistics1.svg';
 import statistics2 from 'img/statistics/statistics2.svg';
@@ -10,7 +13,7 @@ import statistics4 from 'img/statistics/statistics4.svg';
 export const Statistics = () => {
   return (
     <StaticSection>
-      <Container>
+      <StatisticContainer>
         <StatisticList>
           <StatisticItem
             src={statistics1}
@@ -29,7 +32,7 @@ export const Statistics = () => {
           />
           <StatisticItem src={statistics4} number="7" text="Років успіху" />
         </StatisticList>
-      </Container>
+      </StatisticContainer>
     </StaticSection>
   );
 };

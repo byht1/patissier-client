@@ -32,11 +32,24 @@ export const getCoursesByCategory = async ({ type, skip, limit = 3 }) => {
   }
 };
 
-export const getCourseById = async (courseId, format) => {
-  let query = `${UrlCourses.courses}/${courseId}?`;
-  if (format && format !== 'all') {
-    query += `format=${format}`;
+export const getCourseById = async (courseId) => {
+  const query = `${UrlCourses.courses}/${courseId}`;
+
+  try {
+    const { data } = await server.get(query);
+    return data;
+  } catch (error) {
+    throw error;
   }
+};
+
+export const getCourseGroups = async (courseId, format) => {
+  let query = `${UrlCourses.courses}/${courseId}/groups`;
+  
+  if (format) {
+    query = `${query}?format=${format}`;
+  }
+
   try {
     const { data } = await server.get(query);
     return data;

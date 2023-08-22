@@ -7,8 +7,7 @@ import { Container, ReadMoreLink, Section, TitleH2 } from 'components/global';
 import { TopText } from './CoursesSection.styled';
 
 export const CoursesSection = () => {
-
-  const { data, isLoading, isError, isSuccess } = useQuery({
+  const { data, isLoading, isSuccess, isError } = useQuery({
     queryKey: ['courses'],
     queryFn: () => getAllCourses({ skip: 0 }),
   });

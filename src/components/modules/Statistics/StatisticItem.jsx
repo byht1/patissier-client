@@ -1,7 +1,7 @@
 import { Text } from 'components/global/text';
 import {
-  StatisticInfo,
   StatisticWrap,
+  StatisticContentWrap,
   StatisticImg,
   StatisticInfoText,
 } from './Statistics.styled';
@@ -9,15 +9,13 @@ import {
 export const StatisticItem = ({ src, number, text }) => {
   return (
     <StatisticWrap>
-      <StatisticImg src={src} alt={text} />
-      <StatisticInfo>
+      <StatisticContentWrap>
+        <StatisticImg src={src} alt={text} />
         <Text weight={500} size={36} color="at" lh="body">
           {number}
         </Text>
-        <StatisticInfoText>
-          {text}
-        </StatisticInfoText>
-      </StatisticInfo>
+        <StatisticInfoText>{text}</StatisticInfoText>
+      </StatisticContentWrap>
     </StatisticWrap>
   );
 };

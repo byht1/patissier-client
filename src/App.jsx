@@ -1,10 +1,11 @@
+import React from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { ProductList } from 'components/modules/Products/ProductList';
 import { CourseListContainer } from 'components/modules/Courses/CourseListContainer';
+import { GroupList } from 'components/modules/CourseDetails/components/Groups/GroupList';
 import AppBar from 'page/AppBar'; // Header
-import React from 'react';
 
 import { RestrictedRoute } from 'components/global/RestrictedRoute';
 import { ToastContainer } from 'react-toastify';
@@ -14,7 +15,7 @@ const Home = lazy(() => import('page/Home')); // Головна сторінка
 const Products = lazy(() => import('page/Products')); // Обраний товар
 const Basket = lazy(() => import('page/Basket')); // Корзина
 const Courses = lazy(() => import('page/Courses')); // Курси
-const MasterClasses = lazy(() => import('page/MasterClasses')); // Майстер-класи
+const CourseDetails = lazy(() => import('page/CourseDetails')); // Course Details
 const RegistrationForCourses = lazy(() =>
   import('page/RegistrationForCourses')
 ); // Запис на курс
@@ -47,7 +48,11 @@ function App() {
             <Route path="course" element={<CourseListContainer />} />
             <Route path="master-classes" element={<CourseListContainer />} />
           </Route>
-          <Route path="courses/:id" element={<MasterClasses />} />
+          <Route path="courses/:id" element={<CourseDetails />}>
+            <Route index element={<GroupList />} />
+            <Route path="online" element={<GroupList />} />
+            <Route path="offline" element={<GroupList />} />
+          </Route>
           <Route path="sing-up-courses" element={<RegistrationForCourses />} />
           <Route path="about-us" element={<AboutUs />} />
 

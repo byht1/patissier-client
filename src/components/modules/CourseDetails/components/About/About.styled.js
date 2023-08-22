@@ -29,7 +29,3 @@ export const TextWrap = styled.div`
   width: 588px;
   padding-right: 78px;
 `;
-
-export const BakeryList = styled.ul``;
-export const DrinkList = styled.ul``;
-export const BonusList = styled.ul``;

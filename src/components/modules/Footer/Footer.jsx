@@ -10,7 +10,7 @@ import { FooterWrap } from './Footer.styled';
 export const Footer = () => {
   return (
     <FooterWrap>
-      <Container pt={60}>
+      <Container>
         <Box
           display="flex"
           flexDirection="row"

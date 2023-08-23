@@ -19,3 +19,4 @@ export const HeroInfo = styled.div`
   margin-left: 0;
   width: 588px;
 `;
+

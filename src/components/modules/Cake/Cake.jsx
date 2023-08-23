@@ -1,10 +1,10 @@
 import React from 'react';
-import { HeroContainer, HeroImage, HeroInfo, ImgBlock } from './Hero.styled';
+import { HeroContainer, ImgBlock, HeroImage, HeroInfo } from './Cake.styled';
 import { Box, Button, Text, TitleH1 } from 'components/global';
 
 import Image from 'img/hero/hero.jpg';
 
-export const Hero = () => {
+export const Cake = () => {
   return (
     <HeroContainer>
       <Box display="flex" height="654px" justifyContent="center">

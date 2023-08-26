@@ -1,5 +1,4 @@
-import { TitleH3, TitleH4, Text } from 'components/global/text';
-import { Container } from 'components/global/Container';
+import { Container, Section, Text, TitleH4 } from 'components/global';
 import { ProgramItem } from './ProgramItem';
 
 import {
@@ -9,10 +8,11 @@ import {
   ProgramList,
   Block,
   DetailsBlock,
-  DetailsContainer,
+  ProgramContainer,
   PriceContainer,
 } from './Programs.styled';
-import { Section } from 'components/global/Section';
+
+import { SectionTitle } from '../../common';
 
 export const Program = ({ category, program, price, image }) => {
   if (!program) return;
@@ -21,14 +21,13 @@ export const Program = ({ category, program, price, image }) => {
   return (
     <Section>
       <Container>
-        <TitleH3 color="at">Деталі навчання</TitleH3>
-        {/* <ButtonWrap>
-            <Buttons>Онлайн</Buttons>
-            <Buttons>Офлайн</Buttons>
-          </ButtonWrap> */}
+        <SectionTitle color="at">Деталі навчання</SectionTitle>
         <DetailsBlock>
+          <ImageWrap>
+            <Image src={image} alt={category} loading="lazy" />
+          </ImageWrap>
           <Block>
-            <DetailsContainer>
+            <ProgramContainer>
               <TitleH4 color="at" mb={20}>
                 Програма
               </TitleH4>
@@ -41,24 +40,19 @@ export const Program = ({ category, program, price, image }) => {
                   />
                 ))}
               </ProgramList>
-            </DetailsContainer>
+            </ProgramContainer>
             <PriceContainer>
-              <TitleH4 color="at" mb={20}>
-                Вартість
-              </TitleH4>
-              <Text weight={700} size={20} lh="big" mb={20}>
+              <TitleH4 color="at">Вартість</TitleH4>
+              <Text weight={700} size={20} lh="big">
                 {price ? price : '?????'} грн
               </Text>
-              <Text color="t" mb={20}>
+              <Text color="t" textAlign="center" lh="body">
                 *Перед оплатою уточніть наявність вільних місць, а також умов
                 оплати
               </Text>
               <ButtonPay>Оплатити</ButtonPay>
             </PriceContainer>
           </Block>
-          <ImageWrap>
-            <Image src={image} alt={category} loading="lazy" />
-          </ImageWrap>
         </DetailsBlock>
       </Container>
     </Section>

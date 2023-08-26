@@ -1,13 +1,13 @@
-import { Text } from 'components/global/text';
-import { Box } from 'components/global/Box';
+import { Text } from "components/global";
+import { Item } from "./Programs.styled";
 
 export const ProgramItem = ({ name, description}) => {
   return (
-    <Box display="flex">
-      <Text size={16} weight={700} mr={12}>
-        {name}
+    <Item>
+      <Text size={16} weight={700} lh="body">
+        {name}:
       </Text>
       <Text lh="body">{description}</Text>
-    </Box>
+    </Item>
   );
 };

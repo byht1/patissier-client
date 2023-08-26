@@ -1,6 +1,7 @@
 import { marginProps, widthTypeOf } from 'helpers';
 import styled from 'styled-components';
 import { sizes, weights } from '../helpers';
+import { devices } from 'components/global/styled';
 
 export const H1 = styled.h1`
   ${p => marginProps(p)}
@@ -10,7 +11,7 @@ export const H1 = styled.h1`
   font-size: 72px;
   line-height: ${p => p.theme.lineHeights.normal};
 
-  @media (min-width: 1224px) {
+  ${devices.desktop} {
     font-size: 96px;
   }
 
@@ -29,7 +30,7 @@ export const H2 = styled.h2`
   line-height: ${p => p.theme.lineHeights.normal};
   text-align: center;
 
-  @media (min-width: 1224px) {
+  ${devices.desktop} {
     margin-bottom: 32px;
     font-size: 84px;
   }
@@ -44,10 +45,10 @@ export const H3 = styled.h3`
   font-family: ${p => p.theme.fonts.montserrat};
   font-weight: ${p => p.theme.fontWeights.average};
   font-size: 36px;
-  line-height: calc(48px / 36px);
+  line-height: 133%;
   text-align: center;
 
-  @media (min-width: 1224px) {
+  ${devices.desktop} {
     margin-bottom: 60px;
   }
 

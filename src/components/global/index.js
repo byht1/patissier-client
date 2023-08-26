@@ -9,3 +9,4 @@ export { ReadMoreLink } from './ReadMoreLink';
 export { RestrictedRoute } from './RestrictedRoute';
 export { Section } from './Section';
 export { Text, TitleH1, TitleH2, TitleH3, TitleH4 } from './text';
+export { Sizes, devices } from './styled';

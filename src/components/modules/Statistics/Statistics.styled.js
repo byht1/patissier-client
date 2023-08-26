@@ -1,4 +1,5 @@
 import { Container, Text } from 'components/global';
+import { devices } from 'components/global/styled';
 import styled from 'styled-components';
 
 export const StaticSection = styled.section`
@@ -24,19 +25,19 @@ export const StatisticList = styled.ul`
   min-width: 352px;
   max-width: 352px;
   padding: 0 35px;
-  @media screen and (min-width: 1224px) {
+
+  ${devices.desktop} {
     flex-direction: row;
     padding: 40px 0;
   }
 `;
 
-//
 export const StatisticInfoText = styled(Text)`
   font-size: 16px;
   line-height: 125%;
   color: ${p => p.theme.colors.t};
 
-  @media screen and (min-width: 1224px) {
+  ${devices.desktop} {
     width: min-content;
   }
 `;
@@ -54,7 +55,7 @@ export const StatisticWrap = styled.li`
     padding-bottom: 40px;
   }
 
-  @media screen and (min-width: 1224px) {
+  ${devices.desktop} {
     padding: 0 40px 12px;
     display: flex;
     gap: 16px;
@@ -79,7 +80,7 @@ export const StatisticContentWrap = styled.div`
   ${StatisticInfoText} {
     grid-column-start: 1;
     grid-column-end: 3;
-    @media screen and (min-width: 1224px) {
+    ${devices.desktop} {
       grid-column-start: 2;
     }
   }
@@ -90,7 +91,7 @@ export const StatisticContentWrap = styled.div`
   &:not(:last-child) {
     padding-bottom: 40px;
   }
-  @media screen and (min-width: 1224px) {
+  ${devices.desktop} {
     width: 214px;
   }
 `;

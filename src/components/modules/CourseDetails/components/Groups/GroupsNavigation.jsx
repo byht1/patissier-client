@@ -1,20 +1,35 @@
 import React from 'react';
-import { NavList, NavButton } from './Groups.styled';
 
-export const GroupsNav = () => {
+import 'swiper/css';
+import 'swiper/css/bundle';
+//
+import { NavButton, NavSwiper, NavSwiperSlide } from './Groups.styled';
+import { Sizes } from 'components/global';
+
+export const GroupsNavigation = () => {
+  const breakpointStyles = {
+    [Sizes.desktop]: {
+      spaceBetween: 24,
+    },
+  };
+
   return (
-    <NavList>
-      <li>
+    <NavSwiper
+      spaceBetween={12}
+      slidesPerView="auto"
+      breakpoints={breakpointStyles}
+    >
+      <NavSwiperSlide>
         <NavButton to="" end>
           Всі пропозиції
         </NavButton>
-      </li>
-      <li>
+      </NavSwiperSlide>
+      <NavSwiperSlide>
         <NavButton to="online">Онлайн</NavButton>
-      </li>
-      <li>
+      </NavSwiperSlide>
+      <NavSwiperSlide>
         <NavButton to="offline">Офлайн</NavButton>
-      </li>
-    </NavList>
+      </NavSwiperSlide>
+    </NavSwiper>
   );
 };

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { devices } from 'components/global/styled';
 
 export const NavList = styled.ul`
   display: flex;
@@ -8,7 +9,7 @@ export const NavList = styled.ul`
   margin-bottom: 40px;
   gap: 24px;
 
-  @media screen and (min-width: 1224px) {
+  ${devices.desktop} {
     margin-bottom: 200px;
   }
 `;

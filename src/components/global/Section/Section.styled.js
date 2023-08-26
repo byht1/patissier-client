@@ -1,13 +1,11 @@
 import styled from 'styled-components';
+import { devices } from '../styled';
 
 export const SectionBox = styled.section`
   padding-top: 60px;
   padding-bottom: 60px;
 
-  @media (min-width: 768px) {
-  }
-
-  @media (min-width: 1224px) {
+  ${devices.desktop} {
     padding-top: 100px;
     padding-bottom: 100px;
   }

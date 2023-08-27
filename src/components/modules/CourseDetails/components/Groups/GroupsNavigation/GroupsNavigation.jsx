@@ -1,20 +1,22 @@
+import React from 'react';
 import { Swiper } from 'swiper/react';
-import { NavButton, NavContainer, NavSwiperSlide } from './CoursesNav.styled';
+import { GroupsNavContainer, NavButton, NavSwiperSlide } from './GroupsNavigation.styled';
 import { Sizes } from 'components/global';
 
 import 'swiper/css';
 import 'swiper/css/bundle';
 
-export const CoursesNav = () => {
+export const GroupsNavigation = () => {
   const breakpointStyles = {
     [Sizes.desktop]: {
       spaceBetween: 24,
     },
   };
+
   return (
-    <NavContainer>
+    <GroupsNavContainer>
       <Swiper
-        spaceBetween={12}
+        spaceBetween={16}
         slidesPerView="auto"
         breakpoints={breakpointStyles}
       >
@@ -24,16 +26,12 @@ export const CoursesNav = () => {
           </NavButton>
         </NavSwiperSlide>
         <NavSwiperSlide>
-          <NavButton to="course" end>
-            Курси
-          </NavButton>
+          <NavButton to="online">Онлайн</NavButton>
         </NavSwiperSlide>
         <NavSwiperSlide>
-          <NavButton to="master-classes" end>
-            Майстер-класи
-          </NavButton>
+          <NavButton to="offline">Офлайн</NavButton>
         </NavSwiperSlide>
       </Swiper>
-    </NavContainer>
+    </GroupsNavContainer>
   );
 };

@@ -42,7 +42,9 @@ export const Program = ({ category, program, price, image }) => {
               </ProgramList>
             </ProgramContainer>
             <PriceContainer>
-              <TitleH4 color="at">Вартість</TitleH4>
+              <TitleH4 color="at" weight={700}>
+                Вартість
+              </TitleH4>
               <Text weight={700} size={20} lh="big">
                 {price ? price : '?????'} грн
               </Text>

@@ -1,15 +1,11 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-//
-import {
-  Section, Text,
-  // Container
-} from 'components/global';
 
-import { GroupsNavigation } from './GroupsNavigation';
+import { Section, Text } from 'components/global';
 
 import { SectionTitle } from '../../common';
-import { Container, GroupsNavContainer } from './Groups.styled';
+import { Container } from './Groups.styled';
+import { GroupsNavigation } from './GroupsNavigation';
 
 export const Groups = ({ groups }) => {
   const isGroups = groups?.length > 0 ? true : false;
@@ -19,9 +15,7 @@ export const Groups = ({ groups }) => {
       <Container>
         <SectionTitle color="at">Старт навчання</SectionTitle>
         {isGroups && (
-          <GroupsNavContainer>
             <GroupsNavigation />
-          </GroupsNavContainer>
         )}
         {!isGroups && (
           <Text size={20} lh="body" textAlign="center">

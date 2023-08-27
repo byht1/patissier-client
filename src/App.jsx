@@ -5,11 +5,12 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { ProductList } from 'components/modules/Products/ProductList';
 import { CourseListContainer } from 'components/modules/Courses/CourseListContainer';
 import { GroupList } from 'components/modules/CourseDetails/components/Groups/GroupList';
-import AppBar from 'page/AppBar'; // Header
+import AppBar from 'page/AppBar/AppBar'; // Header
 
 import { RestrictedRoute } from 'components/global/RestrictedRoute';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 
 const Home = lazy(() => import('page/Home')); // Головна сторінка
 const Products = lazy(() => import('page/Products')); // Обраний товар

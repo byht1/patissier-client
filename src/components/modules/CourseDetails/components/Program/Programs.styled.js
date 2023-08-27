@@ -65,7 +65,7 @@ export const PriceContainer = styled.div`
 
   ${devices.desktop} {
     gap: 20px;
-    padding: 40px 60px;
+    padding: 40px 20px;
   }
 `;
 
@@ -75,7 +75,7 @@ export const ProgramList = styled.ul`
   gap: 12px;
 
   width: 100%;
-  
+
   ${devices.desktop} {
     align-items: center;
   }
@@ -87,10 +87,11 @@ export const Item = styled.li`
 
   ${devices.desktop} {
     flex-direction: row;
+    align-items: center;
     gap: 12px;
   }
 `;
 
 export const ButtonPay = styled(Button)`
-  padding: 18px 56.5px;
+  padding: 16px 56.5px;
 `;

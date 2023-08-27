@@ -1,26 +1,17 @@
-import { Container, Text } from 'components/global';
-import { H1 } from 'components/global/text/title/Title.styled';
-import { ImageWrap, NavLinkStyled } from './CourseHero.styled';
+import { TitleH1 } from 'components/global';
+import { HeroContainer, ImageWrap, NavLinkStyled, TopText } from './CourseHero.styled';
 
 export const CourseHero = () => {
   return (
     <ImageWrap>
-      <Container pt={114} pb={100}>
-        <H1 mb={40}>Станьте кондитером!</H1>
-        <Text
-          mb={60}
-          width={460}
-          color="t"
-          lh="big"
-          size={20}
-          weight={600}
-          lineHeight={30}
-        >
+      <HeroContainer>
+        <TitleH1 mb={40}>Станьте кондитером!</TitleH1>
+        <TopText color="t">
           Навчіться готувати вишукані десерти! Курси та майстер-класи від
           професіоналів
-        </Text>
+        </TopText>
         <NavLinkStyled to={'/about-us'}>Записатись</NavLinkStyled>
-      </Container>
+      </HeroContainer>
     </ImageWrap>
   );
 };

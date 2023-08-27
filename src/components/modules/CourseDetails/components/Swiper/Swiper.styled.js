@@ -8,7 +8,6 @@ import 'swiper/css/bundle';
 import 'swiper/css/pagination';
 
 export const SwiperContainer = styled.div`
-  margin-bottom: 400px;
   box-shadow: 52px 4px 104px -30px rgba(199, 103, 56, 0.1),
     -52px -4px 104px -30px rgba(199, 103, 56, 0.1);
 `;
@@ -21,7 +20,7 @@ export const GroupsSwiper = styled(Swiper)`
 export const GroupSwiperSlide = styled(SwiperSlide)`
   display: flex;
   flex-grow: 1;
-  width: 282px;
+  max-width: 282px;
   height: auto;
 
   box-shadow: var(--shadow);

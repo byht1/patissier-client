@@ -14,14 +14,14 @@ export default function Courses() {
       <Statistics />
       <Section>
         <Container>
-          <Title size={84} mb={48} color="at" textAlign="center">
+          <Title color="at" textAlign="center">
             Курси та майстер-класи
           </Title>
-          <CoursesNav />
-          <Suspense>
-            <Outlet />
-          </Suspense>
         </Container>
+        <CoursesNav />
+        <Suspense>
+          <Outlet />
+        </Suspense>
       </Section>
     </>
   );

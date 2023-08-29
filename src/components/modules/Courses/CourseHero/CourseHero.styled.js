@@ -13,26 +13,30 @@ export const ImageWrap = styled.section`
   margin: 0 auto;
   max-width: 1440px;
 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   @media (max-width: 479.98px) {
-    background: linear-gradient(
+    background-image: linear-gradient(
         59deg,
         rgba(3, 3, 5, 0.52) 0%,
         rgba(95, 95, 95, 0) 98.39%
       ),
-      url(${heroCoursesMob}) center / cover no-repeat;
+      url(${heroCoursesMob});
   }
 
-  background: linear-gradient(
+  background-image: linear-gradient(
       59deg,
       rgba(3, 3, 5, 0.52) 0%,
       rgba(95, 95, 95, 0) 98.39%
     ),
-    url(${heroCourses}) center / cover no-repeat;
+    url(${heroCourses});
 
   ${devices.desktop} {
     padding-top: 160px;
     padding-bottom: 186px;
-    background: url(${heroCourses}) center / cover no-repeat;
+    background-image: url(${heroCourses});
   }
 `;
 

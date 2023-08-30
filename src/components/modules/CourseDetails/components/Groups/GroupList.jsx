@@ -1,9 +1,10 @@
 import { useLocation } from 'react-router-dom';
-import { Slider } from '../Swiper/Swiper';
-import { SwiperWrap } from './Groups.styled';
 import { useQuery } from '@tanstack/react-query';
+
 import { getCourseGroups } from 'api';
+import { Slider } from '../Swiper';
 import { Text } from 'components/global';
+import { GroupsSwiperContainer } from './Groups.styled';
 
 export const GroupList = () => {
   const location = useLocation();
@@ -15,14 +16,14 @@ export const GroupList = () => {
   );
   return (
     <>
-      {isLoading && <p>Завантаження груп...</p>}
-      {isError && <p>Виникла помилка. Спробуйте пізніше</p>}
+      {isLoading && <Text textAlign="center">Завантаження груп...</Text>}
+      {isError && <Text textAlign="center">Виникла помилка. Спробуйте пізніше</Text>}
       {isSuccess && data.length > 0 && (
-        <SwiperWrap>
+        <GroupsSwiperContainer itemsQuantity={data?.length}>
           <Slider groups={data} />
-        </SwiperWrap>
+        </GroupsSwiperContainer>
       )}
-      {isSuccess && data.length <= 0 && (
+      {isSuccess && format && data.length <= 0 && (
         <Text size={20} textAlign="center">
           Групи {format} відсутні
         </Text>

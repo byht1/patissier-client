@@ -1,9 +1,9 @@
 import React from 'react';
-import { TitleH3 } from 'components/global/text';
-import { Container } from 'components/global/Container';
+import { Container, Section } from 'components/global';
 import { ConsistsItem } from './ConsistsItem';
 import { ConsistsList } from './Consists.styled';
-import { Section } from 'components/global/Section';
+
+import { SectionTitle } from '../../common';
 
 export const Consists = ({ details, type }) => {
   if (!details) return;
@@ -12,7 +12,7 @@ export const Consists = ({ details, type }) => {
   return (
     <Section>
       <Container>
-        <TitleH3 color="at">Що містить {type}?</TitleH3>
+        <SectionTitle color="at">Що містить {type}?</SectionTitle>
         <ConsistsList>
           {detailsArray.map(({ name, description }) => (
             <ConsistsItem key={name} name={name} description={description} />

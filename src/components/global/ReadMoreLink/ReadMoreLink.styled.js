@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 import ArrowRight from 'img/arrow/arrow_forward.svg';
+import { devices } from '../styled';
 
 export const ReadMore = styled(NavLink)`
   display: inline-block;
@@ -15,7 +16,7 @@ export const ReadMore = styled(NavLink)`
 
   order: 1;
 
-  @media (min-width: 1224px) {
+  ${devices.desktop} {
     margin: 0 0 24px auto;
     order: 0;
   }

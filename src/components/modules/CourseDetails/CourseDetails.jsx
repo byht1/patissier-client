@@ -3,7 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { useParams } from 'react-router-dom';
 import { getCourseById } from 'api';
 import { BackLinkRef } from 'components/global';
-import { Reviews } from 'components/modules/Reviews';
+// import { Reviews } from 'components/modules/Reviews';
 
 import { About, Consists, Groups, Program } from './components';
 
@@ -42,7 +42,7 @@ export const CourseDetails = () => {
         </>
       )}
 
-      <Reviews title={'Відгуки'} />
+      {/* <Reviews title={'Відгуки'} /> */}
     </>
   );
 };

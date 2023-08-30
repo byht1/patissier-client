@@ -1,46 +1,24 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { devices } from 'components/global';
 
-export const StartMKSection = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
+// Groups.jsx components:
+export const Container = styled.div`
+  padding-left: 12px;
 
-export const NavButton = styled(NavLink)`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 180px;
-  height: 58px;
-
-  color: ${p => p.theme.colors.wt};
-  background-color: ${p => p.theme.colors.btnBg};
-  border: ${p => p.theme.borders.none};
-  border-bottom: 1.5px solid transparent;
-  border-radius: 12px;
-  transition: var(--transition-bg), var(--transition-color),
-    var(--transition-border-color);
-
-  &:hover,
-  &:focus,
-  &.active {
-    color: ${p => p.theme.colors.aBg};
-    background-color: ${p => p.theme.colors.panelBg};
-    border-bottom: 1.5px solid ${p => p.theme.colors.aBg};
+  ${devices.desktop} {
+    width: 1224px;
+    padding-right: 12px;
+    margin: 0 auto;
   }
 `;
 
-export const NavList = styled.ul`
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  gap: 24px;
-  margin-bottom: 60px;
-`;
-
-export const SwiperWrap = styled.div`
+// GroupList.jsx components:
+export const GroupsSwiperContainer = styled.div`
   position: relative;
+  max-width: 100vw;
+  width: ${p => (p.itemsQuantity > 3 ? '100%' : 'min-content')};
+
+  border-radius: 12px;
+  box-shadow: 0px 0px 104px 15px rgba(199, 103, 56, 0.1),
+    inset 0px 0px 104px 30px rgba(199, 103, 56, 0.1);
 `;

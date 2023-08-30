@@ -1,20 +1,25 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { Text, devices } from 'components/global';
 
 export const CourseWrap = styled.li`
   width: 360px;
   border-radius: 12px;
   border: 1px solid transparent;
-  transition: var(--transition-border-color);
   box-shadow: var(--shadow);
+
 `;
 
 export const ImageWrap = styled.div`
   background-color: var(--background);
   position: relative;
   width: 100%;
-  height: 270px;
+  height: 224px;
   border-radius: 12px;
+
+  ${devices.mobile} {
+    height: 270px;
+  }
 `;
 
 export const CourseImg = styled.img`
@@ -30,20 +35,23 @@ export const CourseInfo = styled.span`
   font-size: 16px;
 `;
 
-export const CoursePrice = styled.span`
+export const CoursePrice = styled(Text)`
   font-weight: 600;
 `;
 
 export const DetailsLink = styled(NavLink)`
-  display: inline-block;
-  font-weight: 700;
-  font-size: 16px;
   min-width: 184px;
   padding: 16px 40px;
+  text-align: center;
+
+  font-weight: 700;
+  font-size: 16px;
+
   color: var(--accent-text);
   border: 2px solid var(--accent-text);
   border-radius: 12px;
   transition: var(--transition-bg), var(--transition-color);
+
   &:hover,
   &:focus {
     color: var(--background);

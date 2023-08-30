@@ -1,4 +1,3 @@
-// import { Container } from 'components/global';
 import { StatisticItem } from './StatisticItem';
 import {
   StaticSection,

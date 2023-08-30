@@ -3,10 +3,9 @@ import { useLocation } from 'react-router-dom';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { getAllCourses, getCoursesByCategory } from 'api';
 
-import { getCoursesCategory } from '../helpers/getCoursesCategory';
-import { getLoadMoreButtonProps } from '../helpers/getLoadMoreButtonProps';
+import { getCoursesCategory, getLoadMoreButtonProps } from '../helpers';
 
-import { Box } from 'components/global/Box';
+import { Box, Container, Text } from 'components/global';
 import { LoadMoreButton } from 'components/global/LoadMoreBtn';
 import { CourseListWrap } from './CourseListContainer.styled';
 import { CourseList } from '../common/CourseList';
@@ -49,9 +48,9 @@ export const CourseListContainer = () => {
   );
 
   return (
-    <Box>
-      {!isSuccess && !isError && <p>Завантаження курсів...</p>}
-      {isError && <p>Виникла помилка. Спробуйте пізніше</p>}
+    <Container>
+      {!isSuccess && !isError && <Text textAlign="center">Завантаження курсів...</Text>}
+      {isError && <Text textAlign="center">Виникла помилка. Спробуйте пізніше</Text>}
       {isSuccess && (
         <>
           <CourseListWrap>
@@ -76,6 +75,6 @@ export const CourseListContainer = () => {
           </Box>
         </>
       )}
-    </Box>
+    </Container>
   );
 };

@@ -8,7 +8,6 @@ import {
   CourseWrap,
   ImageWrap,
   CourseImg,
-  CoursePrice,
 } from './CourseItem.styled';
 
 export const CourseItem = ({ course }) => {
@@ -57,10 +56,8 @@ export const CourseItem = ({ course }) => {
           justifyContent="space-between"
           alignItems="center"
         >
-          <Text size={20}>
-            <CoursePrice>
-              {groups[0] ? groups[0].price : '?????'} грн
-            </CoursePrice>
+          <Text size={20} weight={600}>
+            {groups[0] ? groups[0].price : '?????'} грн
           </Text>
           <DetailsLink to={`/courses/${courseID}`}>Детальніше</DetailsLink>
         </Box>

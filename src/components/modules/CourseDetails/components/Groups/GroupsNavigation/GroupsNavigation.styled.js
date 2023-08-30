@@ -1,24 +1,17 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import { devices } from 'components/global/styled';
 import { SwiperSlide } from 'swiper/react';
 
-const NAV_BREAKPOINT_SMALL = 572;
+const NAV_BREAKPOINTS_SMALL = 572;
 
-export const NavContainer = styled.div`
-  padding-left: 12px;
+export const GroupsNavContainer = styled.div`
   margin: 0 auto 40px;
 
-  @media (min-width: ${NAV_BREAKPOINT_SMALL}px) {
+  @media (min-width: ${NAV_BREAKPOINTS_SMALL}px) {
     display: flex;
     justify-content: center;
     align-content: center;
-  }
-
-  ${devices.desktop} {
-    max-width: 1224px;
-    padding-right: 12px;
-    margin-bottom: 200px;
+    margin-bottom: 60px;
   }
 `;
 
@@ -54,7 +47,7 @@ export const NavButton = styled(NavLink)`
     border-bottom: 1.5px solid ${p => p.theme.colors.aBg};
   }
 
-  @media (min-width: ${NAV_BREAKPOINT_SMALL}px) {
+  @media (min-width: ${NAV_BREAKPOINTS_SMALL}px) {
     width: 180px;
     height: 58px;
     padding: 16px;

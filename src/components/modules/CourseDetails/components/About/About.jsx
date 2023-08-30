@@ -1,22 +1,26 @@
-import { Box, Section } from 'components/global';
-import { TitleH1, TitleH4, Text } from 'components/global/text';
-import { ImageWrap, Image, TextWrap, AboutContainer } from './About.styled';
+import { Section, Text, TitleH4 } from 'components/global';
+import {
+  ImageWrap,
+  Image,
+  TextWrap,
+  AboutContainer,
+  Title,
+  TopText,
+  ContentWrap,
+} from './About.styled';
 
 export const About = ({ category, type, previewText, description, image }) => {
-  
   const descriptionArray = description.split('\n\n');
 
   return (
     <Section>
       <AboutContainer>
-        <TitleH1 size={84} mb={52} color="at">
-          {category}
-        </TitleH1>
-        <Text color="t" mb={56} width={558} textAlign="center" lh="big">
+        <Title color="at">{category}</Title>
+        <TopText color="t" textAlign="center" lh="big">
           {previewText}
-        </Text>
+        </TopText>
 
-        <Box display="flex">
+        <ContentWrap>
           <ImageWrap>
             <Image src={image} alt={category} loading="lazy" />
           </ImageWrap>
@@ -28,7 +32,7 @@ export const About = ({ category, type, previewText, description, image }) => {
               </Text>
             ))}
           </TextWrap>
-        </Box>
+        </ContentWrap>
       </AboutContainer>
     </Section>
   );

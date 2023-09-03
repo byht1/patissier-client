@@ -1,22 +1,11 @@
 import React from 'react';
-// import { useQuery } from '@tanstack/react-query';
-// import { getCourses } from 'api';
+
+import { CourseList } from '../CourseList';
 
 import { Container, ReadMoreLink, Section, TitleH2 } from 'components/global';
-import { CourseList } from '../components/CourseList';
 import { TopText } from './CoursesSection.styled';
 
 export const CoursesSection = () => {
-  // const [courses, setCourses] = useState([]);
-
-  // useQuery({
-  //   queryKey: ['courses'],
-  //   queryFn: () => getCourses(),
-  //   onSuccess: data => {
-  //     setCourses(data.courses);
-  //   },
-  // });
-
   return (
     <Section>
       <Container display="flex" flexDirection="column" alignItems="center">

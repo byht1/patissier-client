@@ -9,15 +9,19 @@ import {
   getFavoriteProducts,
 } from 'api/products';
 import { getIsLogin } from 'redux/auth';
+import { addToFavorite } from 'redux/products';
+import { getProductCountByCategory } from 'api/products';
+
 import { Box } from 'components/global/Box';
+import { LoadMoreButton } from 'components/global/LoadMoreBtn';
 import { getProductCategory } from '../helpers/getProductCategory';
 import { getLoadMoreButtonProps } from '../helpers/getLoadMoreButtonProps';
+import { getProductCount } from '../helpers/getProductCount';
 import { sortingParams } from '../ProductFiltersAndSorting/Sorting/sortingParams';
 import { ProductItem } from '../ProductItem';
 import { ProductFiltersAndSorting } from '../ProductFiltersAndSorting';
-import { addToFavorite } from 'redux/products';
 
-import { ProductListWrap, LoadMoreButton } from './ProductList.styled';
+import { ProductListWrap } from './ProductList.styled';
 
 export const ProductList = () => {
   const location = useLocation();
@@ -25,15 +29,27 @@ export const ProductList = () => {
   const pathname = location.pathname.split('/')[2];
   const isLoggedIn = useSelector(getIsLogin);
   const [sortMethod, setSortMethod] = useState(sortingParams[0]);
+  const [productsCountArray, setProductsCountArray] = useState([]);
+  let hitsPerPage = 0;
+  let hitsTotal = 0;
+
   const applySortMethod = method => {
     setSortMethod(method);
   };
 
   useEffect(() => {
+    async function getProductCount() {
+      try {
+        const count = await getProductCountByCategory();
+        setProductsCountArray(count);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    getProductCount();
     if (!isLoggedIn) return;
     const setFavoritesArray = async () => {
       const favorites = await getFavoriteProducts();
-      console.log(favorites);
       dispatch(addToFavorite(favorites));
     };
     setFavoritesArray();
@@ -71,11 +87,8 @@ export const ProductList = () => {
     }
   );
 
-  // const loadingStatusText = getLoadingStatusText(status, error);
-
   const isLoadingInitialData = !isSuccess && !isError;
   return (
-    // !getLoadingStatusText(status, error) && (
     <Box>
       {isLoadingInitialData && <p>Завантаження товарів...</p>}
       {isError && <p>Виникла помилка. Спробуйте пізніше</p>}
@@ -87,6 +100,8 @@ export const ProductList = () => {
           />
           <ProductListWrap>
             {data.pages.map((group, i) => {
+              hitsTotal = getProductCount(pathname, productsCountArray);
+              hitsPerPage = data.pages[0].length;
               return (
                 <React.Fragment key={i}>
                   {group.map(product => {
@@ -96,12 +111,13 @@ export const ProductList = () => {
               );
             })}
           </ProductListWrap>
-          {data.pages[0].length > 2 && (
-            <LoadMoreButton
-              {...getLoadMoreButtonProps(hasNextPage, isFetchingNextPage)}
-              onClick={() => fetchNextPage()}
-            />
-          )}
+          {data.pages.length < Math.ceil(hitsTotal / hitsPerPage) &&
+            data.pages[0].length > 2 && (
+              <LoadMoreButton
+                {...getLoadMoreButtonProps(hasNextPage, isFetchingNextPage)}
+                onClick={() => fetchNextPage()}
+              />
+            )}
           <div>
             {isFetching && !isFetchingNextPage ? 'Завантаження...' : null}
           </div>

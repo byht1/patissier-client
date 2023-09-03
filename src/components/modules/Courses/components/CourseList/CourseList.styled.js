@@ -22,7 +22,6 @@ export const CourseCard = styled.li`
 `;
 
 export const ImageWpar = styled.div`
-  /* width: 360px; */
   width: 100%;
   height: 266px;
   margin-bottom: 16px;
@@ -78,4 +77,12 @@ export const ToDetailsLink = styled(NavLink)`
     background-color: ${p => p.theme.colors.aBg};
     color: ${p => p.theme.colors.bg};
   }
+`;
+
+export const CourseListWrap = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  margin-bottom: 35px;
+  justify-content: space-between;
 `;

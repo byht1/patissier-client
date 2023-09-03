@@ -1,9 +1,12 @@
 import styled from 'styled-components';
+import { ButtonsGhost } from 'components/global/button';
 
 export const ProductWrap = styled.li`
-  border: 1px solid var(--background);
   width: 360px;
   border-radius: 12px;
+  border: 1px solid transparent;
+  transition: var(--transition-border-color);
+  position: relative;
   &:hover,
   &:focus {
     border: 1px solid var(--accent-bg);
@@ -41,13 +44,21 @@ export const AddToFavBtn = styled.button`
   background-color: #262524;
   backdrop-filter: blur(2px);
   border-radius: ${p => p.theme.radii.round};
-  /* &:hover svg {
-    color: green;
-  } */
 `;
 
 export const RemoveFromFavBtn = styled(AddToFavBtn)`
   & svg {
     color: white;
   }
+`;
+
+export const ButtonBuy = styled(ButtonsGhost)`
+  position: absolute;
+  right: 21px;
+  bottom: 20px;
+  padding: 13px;
+  background-color: ${props =>
+    props.children === 'В кошику' ? 'var(--accent-bg)' : 'current'};
+  color: ${props =>
+    props.children === 'В кошику' ? 'var(--background)' : 'current'};
 `;

@@ -7,6 +7,7 @@ import { UserProfileSupportBlank } from 'components/modules/UserProfileSupportBl
 import { UserProfileBilling } from 'components/modules/UserProfileBilling/UserProfileBilling';
 import { UserProfilePersonalData } from 'components/modules/UserProfilePersonalData/UserProfilePersonalData';
 
+import { CourseList } from 'components/modules/Courses/components/CourseList';
 import AppBar from 'page/AppBar'; // Header
 import React from 'react';
 
@@ -52,7 +53,11 @@ function App() {
             <Route path="pies" element={<ProductList />} />
           </Route>
           <Route path="basket" element={<Basket />} />
-          <Route path="courses" element={<Courses />} />
+          <Route path="courses" element={<Courses />}>
+            <Route index element={<CourseList />} />
+            <Route path="course" element={<CourseList />} />
+            <Route path="master-classes" element={<CourseList />} />
+          </Route>
           <Route path="courses/:id" element={<MasterClasses />} />
           <Route path="sing-up-courses" element={<RegistrationForCourses />} />
           <Route path="about-us" element={<AboutUs />} />

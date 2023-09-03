@@ -6,6 +6,7 @@ export const FilterButton = styled.button`
   border: 1px solid transparent;
   border-radius: 8px;
   background-color: var(--button-bg);
+  transition: var(--transition-border-color);
   &:hover,
   &:focus {
     border-color: var(--accent-bg);

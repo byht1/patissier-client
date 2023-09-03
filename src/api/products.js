@@ -12,7 +12,6 @@ export const getAllProducts = async ({ page = 1, limit = 3, sortMethod }) => {
         `?page=${page}&limit=${limit}&sort=${sortProductsMethod(sortMethod)}`
     );
     const { products } = data;
-
     return products;
   } catch (error) {
     throw error;
@@ -25,11 +24,6 @@ export const getProductsByCategory = async ({
   limit = 3,
   sortMethod,
 }) => {
-  console.log(
-    `?page=${page}&limit=${limit}&category=${category}&sort=${sortProductsMethod(
-      sortMethod
-    )}`
-  );
   try {
     const { data } = await server.get(
       UrlProducts.all +
@@ -70,6 +64,17 @@ export const updateProductFavorite = async (productID, action) => {
     );
     const { favorites } = data;
     return favorites;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const addProductToBasket = async productID => {
+  try {
+    const { data } = await server.patch(
+      `store/order/basket/${productID}?action=add`
+    );
+    return data;
   } catch (error) {
     throw error;
   }
